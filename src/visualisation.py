@@ -16,43 +16,42 @@ from typing import Literal
 
 ############################################################
 # Color Definitions
-# Source: KU-farvepalet CMYK (designguide.ku.dk)
-# Converted via R/G/B = 255 × (1−channel) × (1−K)
+# Source: KU-farvepalet RGB (designguide.ku.dk)
 ############################################################
 
 # Primary KU brand colors
-ku_red  = "#A8003B"   # KU-rød   CMYK 0/100/65/34
-ku_gray = "#4D4D4D"   # KU-grå   CMYK 0/0/0/70
+ku_red  = "#901A1E"   # Official UCPH Red (RGB 144/26/30)
+ku_gray = "#666666"   # Official UCPH Gray (RGB 102/102/102)
 
 # Red family
-dark_red   = "#A8003B"  # CMYK  0/100/65/34
-red        = "#CE0C0C"  # CMYK 15/95/95/5
-light_red  = "#F22626"  # CMYK  5/85/85/0
+dark_red   = "#901A1E"  # Same as ku_red
+red        = "#C73028"  
+light_red  = "#DB3B0A"  
 
 # Blue family
-dark_blue  = "#001F5C"  # CMYK 100/80/40/40
-blue       = "#2B578D"  # CMYK  80/60/35/15
-light_blue = "#BFD9F2"  # CMYK  25/15/5/0
+dark_blue  = "#122947"  
+blue       = "#425570"  
+light_blue = "#BAC7D9"  
 
 # Petroleum (teal) family
-dark_petroleum  = "#136060"  # CMYK 90/50/50/25
-petroleum       = "#309E9E"  # CMYK 80/35/35/5
-light_petroleum = "#BFF2E6"  # CMYK 25/5/10/0
+dark_petroleum  = "#0A5963"  
+petroleum       = "#197F8E"  
+light_petroleum = "#B7D7DE"  
 
 # Green family
-dark_green  = "#2D6B00"  # CMYK 75/40/100/30
-green       = "#45AC00"  # CMYK 70/25/100/10
-light_green = "#BFE6A6"  # CMYK 25/10/35/0
+dark_green  = "#39641C"  
+green       = "#4B8325"  
+light_green = "#BECAA8"  
 
 # Gray family
-dark_gray  = "#262626"  # CMYK 0/0/0/85
-gray       = "#4D4D4D"  # CMYK 0/0/0/70
-light_gray = "#D9D9D9"  # CMYK 0/0/0/15
+dark_gray  = "#3D3D3D"  
+gray       = "#666666"  # Same as ku_gray
+light_gray = "#E1DFDF"  
 
 # Neutrals
-white      = "#FFFFFF"  # CMYK 0/0/0/0
-champagne  = "#FFF2E6"  # CMYK 0/5/10/0
-yellow     = "#FFB31A"  # CMYK 0/30/90/0
+white      = "#FFFFFF"  
+champagne  = "#FEFAF2"  
+yellow     = "#FFBD38"
 
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
@@ -139,10 +138,27 @@ class cmap:
 ############################################################
 
 plt.rcParams.update({
-    'font.family': 'sans-serif',
-    'font.sans-serif': ['CMU Serif'],
+    # Fonts
+    'font.family': 'serif',
+    'font.serif': ['CMU Serif'],
+    'mathtext.fontset': 'cm',
+
+    # Text
     'axes.titleweight': 'bold',
+
+    # Colour
     'axes.prop_cycle': plt.cycler(color=palette),
+
+    # Resolution
+    'figure.dpi': 300,
+
+    # Splines
+    'axes.spines.top': False,
+    'axes.spines.right': False,
+
+    # Series
+    'lines.linewidth': 1,
+    'lines.markersize': 1,
 })
 
 
