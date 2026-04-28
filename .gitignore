@@ -2,7 +2,7 @@
 data/
 .notes/
 .todo
-
+.temp/
 
 ### STANDARD PYTHON GITIGNORE
 
