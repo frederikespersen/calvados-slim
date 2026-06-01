@@ -3,6 +3,7 @@ data/
 .notes/
 .todo
 .temp/
+.old
 
 ### STANDARD PYTHON GITIGNORE
 
