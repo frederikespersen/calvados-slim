@@ -1,10 +1,11 @@
 ### LOCAL GITIGNORE
 data/
-.notes/
+.notes*
 .todo
 .temp/
 .old
 src/calvados
+*.code-workspace
 
 ### STANDARD PYTHON GITIGNORE
 

@@ -5,9 +5,7 @@ For analysis of AlphaFold3-generated structures.
 """
 
 
-from email import iterators
 import os
-import stat
 import numpy as np
 import json
 from typing import Literal
