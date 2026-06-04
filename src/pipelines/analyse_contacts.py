@@ -1,8 +1,7 @@
 """
-src.pipeline.curate_contacts
+src.pipeline.analyse_contacts
 ------------------------------------------------------------------------
-Generates a CSV of two-chain contacts defined from SMOG and PAE
-analysis of an AlphaFold3 structure.
+Generates numpy files of inter-chain arrays from analysis of SMOG and Alphafold modelling.
 """
 
 

@@ -4,6 +4,7 @@ data/
 .todo
 .temp/
 .old
+src/calvados
 
 ### STANDARD PYTHON GITIGNORE
 
