@@ -5,7 +5,7 @@
 #······································································#
 
 #SBATCH --job-name=<JOB-NAME>
-#SBATCH --partition=qany
+#SBATCH --partition=sbinlab_ib2
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=<CPUS-PER-TASK>
