@@ -8,9 +8,10 @@ import os
 import numpy as np
 import json
 from typing import Literal
-from Bio import PDB
+import MDAnalysis as mda
 from scipy.spatial import distance_matrix
 
+from src import utils
 from src.analysis import coarsegrain
 
 
@@ -23,7 +24,7 @@ def inter_chain_analysis(
         full_data_json: os.PathLike,
         chain1_id: str,
         chain2_id: str
-    ):
+    ) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
     """Takes the output of an AlphaFold invocation,
     returns the inter-residue PAE, P_{inc}, and minimum all atom distance matrices
     between two specified chains.
@@ -51,9 +52,9 @@ def inter_chain_analysis(
 
     """
     return (
-        inter_pae(full_data_json, chain1_id, chain2_id),
-        inter_pinc(structure_cif, full_data_json, chain1_id, chain2_id),
-        inter_res_min_dist(structure_cif, chain1_id, chain2_id),
+        inter_chain_pae(full_data_json, chain1_id, chain2_id),
+        inter_chain_pinc(structure_cif, full_data_json, chain1_id, chain2_id),
+        inter_chain_min_dist(structure_cif, chain1_id, chain2_id),
     )
 
 
@@ -62,7 +63,7 @@ def inter_chain_analysis(
 # Individual analyses
 #······································································#
 
-def inter_pae(
+def inter_chain_pae(
         full_data_json: os.PathLike,
         chain1_id: str,
         chain2_id: str,
@@ -112,7 +113,7 @@ def inter_pae(
     
 #······································································#
 
-def inter_res_min_dist(
+def inter_chain_min_dist(
         structure_cif: os.PathLike,
         chain1_id: str,
         chain2_id: str,
@@ -136,25 +137,16 @@ def inter_res_min_dist(
         A minimum all-atom inter-residue distance matrix between the specified chains.
     """
     
-    # Loading structure
-    parser = PDB.MMCIFParser(QUIET=True)
-    structure = parser.get_structure('afstruc', structure_cif)
+    # Loading and subsetting chains
+    universe = mda.Universe(structure_cif)
+    chain1 = utils.select_chain(universe, chain1_id).residues
+    chain2 = utils.select_chain(universe, chain2_id).residues
 
-    # Subsetting chains
-    model = structure[0]
-    chain1 = model[chain1_id]
-    chain2 = model[chain2_id]
-
-    # Getting residue heavy atom coordinates
-    def _get_res_coords(chain):
-        res_coords = []
-        for res in chain:
-            atoms = [a for a in res if not a.get_name().startswith('H')]
-            coords = np.array([a.get_coord() for a in atoms])
-            res_coords.append(coords)
-        return res_coords
-    res_coords_1 = _get_res_coords(chain1)
-    res_coords_2 = _get_res_coords(chain2)
+    # Per-residue heavy-atom coordinates (hydrogens excluded)
+    def _heavy_coords(residues):
+        return [res.atoms.select_atoms('not name H*').positions for res in residues]
+    res_coords_1 = _heavy_coords(chain1)
+    res_coords_2 = _heavy_coords(chain2)
 
     res_min_dist = np.zeros((len(res_coords_1), len(res_coords_2)))
     for i, rc1 in enumerate(res_coords_1):
@@ -165,7 +157,7 @@ def inter_res_min_dist(
 
 #······································································#
 
-def inter_pinc(
+def inter_chain_pinc(
         structure_cif: os.PathLike,
         full_data_json: os.PathLike,
         chain1_id: str,
@@ -253,25 +245,21 @@ def inter_pinc(
     """
 
 
-    # Loading structure
-    parser = PDB.MMCIFParser(QUIET=True)
-    structure = parser.get_structure('afstruc', structure_cif)
-
-    # Subsetting chains
-    model = structure[0]
-    chain1 = model[chain1_id]
-    chain2 = model[chain2_id]
+    # Loading and subsetting chains
+    universe = mda.Universe(structure_cif)
+    chain1 = utils.select_chain(universe, chain1_id).residues
+    chain2 = utils.select_chain(universe, chain2_id).residues
 
     # Getting residue representations
     if coordinate_mode == 'CA':
-        res_coords_1 = coarsegrain.get_ca(chain1)
-        res_coords_2 = coarsegrain.get_ca(chain2)
+        res_coords_1 = coarsegrain.get_ca_coords(chain1)
+        res_coords_2 = coarsegrain.get_ca_coords(chain2)
     else:  # 'COM'
-        res_coords_1 = coarsegrain.get_com(chain1)
-        res_coords_2 = coarsegrain.get_com(chain2)
+        res_coords_1 = coarsegrain.get_com_coords(chain1)
+        res_coords_2 = coarsegrain.get_com_coords(chain2)
     
     # Loading PAE data
-    res_pae = inter_pae(full_data_json, chain1_id, chain2_id, perspective='chain1')
+    res_pae = inter_chain_pae(full_data_json, chain1_id, chain2_id, perspective='chain1')
     
     # Asserting structure representation and PAE tokens match in length
     assert res_coords_1.shape[0] == res_pae.shape[0]

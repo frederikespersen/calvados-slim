@@ -8,13 +8,11 @@ Functions for curating CALVADOS systems.
 import json
 import os
 import logging
-import warnings
 import numpy as np
-import pandas as pd
-from Bio import PDB
+import MDAnalysis as mda
 
 from src.analysis import smog, alphafold, coarsegrain
-from src import utils
+from src import utils, constants
 from src.calvados.calvados import cfg, sequence
 
 
@@ -23,26 +21,23 @@ from src.calvados.calvados import cfg, sequence
 #······································································#
 
 class Simulation:
+    """Namespace for generating a single CALVADOS simulation directory."""
 
     @staticmethod
-    def from_jsons(
-        system: dict,
-        system_dir: dict,
-        conditions: dict,
-        sampling: dict,
-        slim_go_k: float,
-        sim_dir: str,
-        slurm_scripts_dir: str='data/configurations/slurm',
-    ):
-        
-        # Copying and editing specific_interactions.txt for system
-        utils.replace_copy_file(
-            os.path.join(system_dir, 'specific_interactions.txt'),
-            os.path.join(sim_dir, 'specific_interactions.txt'),
-            ori_str='<k>', new_str=f'{slim_go_k}'
-        )
+    def _write_config(system: dict, conditions: dict, sampling: dict, sim_dir: str) -> None:
+        """Write the CALVADOS ``config.yaml`` for one simulation.
 
-        # Setting up configuration file
+        Parameters
+        ----------
+        system : dict
+            A single system entry (see ``data/curation/scheme.json``).
+        conditions : dict
+            Thermodynamic conditions (temperature, ionic strength, pH).
+        sampling : dict
+            Sampling settings (``Stride`` and ``Frames``).
+        sim_dir : str
+            Output directory for the simulation.
+        """
         config = cfg.Config(
             # Conditions
             sysname = system['ID'],
@@ -69,14 +64,41 @@ class Simulation:
         )
         config.write(sim_dir)
 
-        # Setting up components files
+    #··································································#
+
+    @staticmethod
+    def _write_components(system: dict, conditions: dict, system_dir: str, sim_dir: str) -> int:
+        """Write the CALVADOS components file and return the particle count.
+
+        Each chain is added according to its specification: chains without a
+        PDB as IDPs (sequence only), chains with a PDB and no AlphaFold data
+        with harmonic domain restraints, and chains with AlphaFold data with
+        Go restraints derived from the PAE.
+
+        Parameters
+        ----------
+        system : dict
+            A single system entry.
+        conditions : dict
+            Thermodynamic conditions; provides the residue-parameter path.
+        system_dir : str
+            Directory holding the curated input files for ``system``.
+        sim_dir : str
+            Output directory for the simulation.
+
+        Returns
+        -------
+        int
+            Total number of coarse-grained particles in the system.
+        """
         particles = 0
         components = cfg.Components(
             fresidues = os.path.abspath(conditions["CALVADOS residue parameters"])
         )
         for chain in system['Chains']:
             particles += chain['Copies'] * len(chain['Sequence'])
-            # IDPs
+
+            # IDPs (no structure) carry only their sequence
             if chain['PDB'] == '':
                 components.add(
                     name = chain['ID'],
@@ -87,52 +109,128 @@ class Simulation:
                     restraint = False,
                     use_com = False,
                 )
-            # MDPs
-            else:
-                # PDB
-                if chain['PDB AlphaFold data JSON'] == '':
-                    mdp_kwarg = dict(
-                        restraint_type = 'harmonic',
-                        fdomains = os.path.join(system_dir, f"{chain['ID']}.yaml"),
-                        k_harmonic = 700.,
-                    )
-                # AlphaFold
-                else:
-                    mdp_kwarg = dict(
-                        restraint_type = 'go',
-                        colabfold = 2,
-                        k_go = 15.,
-                    )
-                components.add(
-                    name = chain['ID'],
-                    molecule_type = 'protein',
-                    nmol = chain['Copies'],
-                    charge_termini = 'both',
-                    pdb_folder = system_dir,
-                    use_com = True,
-                    restraint = True,
-                    **mdp_kwarg
-                )
-        components.write(sim_dir)
+                continue
 
-        # Generating submission script
+            # MDPs use harmonic (experimental) or Go (AlphaFold) restraints
+            if chain['PDB AlphaFold data JSON'] == '':
+                restraint_kwargs = dict(
+                    restraint_type = 'harmonic',
+                    fdomains = os.path.join(system_dir, f"{chain['ID']}.yaml"),
+                    k_harmonic = 700.,
+                )
+            else:
+                restraint_kwargs = dict(
+                    restraint_type = 'go',
+                    colabfold = 2,
+                    k_go = 15.,
+                )
+            components.add(
+                name = chain['ID'],
+                molecule_type = 'protein',
+                nmol = chain['Copies'],
+                charge_termini = 'both',
+                pdb_folder = system_dir,
+                use_com = True,
+                restraint = True,
+                **restraint_kwargs
+            )
+        components.write(sim_dir)
+        return particles
+    
+    #··································································#
+
+    @staticmethod
+    def _write_submission_scripts(system: dict, particles: int, slurm_scripts_dir: str, sim_dir: str) -> None:
+        """Instantiate the templated Slurm submission scripts for one simulation.
+
+        Substitutes the job name into every script and, for CPU scripts, fills
+        in the estimated CPU and memory requests.
+
+        Parameters
+        ----------
+        system : dict
+            A single system entry; provides the job name (``ID``).
+        particles : int
+            Total particle count, used to size CPU/memory requests.
+        slurm_scripts_dir : str
+            Directory of templated Slurm scripts.
+        sim_dir : str
+            Output directory for the simulation.
+        """
         for script in os.listdir(slurm_scripts_dir):
-            utils.replace_copy_file(
+            utils.copy_with_substitution(
                 os.path.join(slurm_scripts_dir, script),
                 os.path.join(sim_dir, script),
-                ori_str='<JOB-NAME>', new_str=system['ID']
+                old='<JOB-NAME>', new=system['ID']
             )
             if 'cpu' in script:
-                utils.replace_copy_file(
+                utils.copy_with_substitution(
                     os.path.join(sim_dir, script),
                     os.path.join(sim_dir, script),
-                    ori_str='<CPUS-PER-TASK>', new_str=str(utils.estimate_cpus(particles))
+                    old='<CPUS-PER-TASK>', new=str(utils.estimate_cpus(particles))
                 )
-                utils.replace_copy_file(
+                utils.copy_with_substitution(
                     os.path.join(sim_dir, script),
                     os.path.join(sim_dir, script),
-                    ori_str='<MEM>', new_str=utils.estimate_mem(particles)
+                    old='<MEM>', new=utils.estimate_memory(particles)
                 )
+    
+    #··································································#
+    
+    @staticmethod
+    def build(
+        system: dict,
+        system_dir: str,
+        conditions: dict,
+        sampling: dict,
+        slim_go_k: float,
+        sim_dir: str,
+        slurm_scripts_dir: str='data/configurations/slurm',
+    ) -> None:
+        """Write all input files for one runnable CALVADOS simulation.
+
+        Consumes the curated inputs produced by :meth:`System.curate`
+        (FASTA/PDB/domain/PAE files and ``specific_interactions.txt`` in
+        ``system_dir``) together with run conditions and writes a CALVADOS
+        config, components file, the per-run ``specific_interactions.txt``
+        (with the SLiM Go well depth filled in), and Slurm submission scripts
+        into ``sim_dir``.
+
+        Parameters
+        ----------
+        system : dict
+            A single system entry (see ``data/curation/scheme.json``).
+        system_dir : str
+            Directory holding the curated input files for ``system``.
+        conditions : dict
+            Thermodynamic conditions: ``Temperature`` (K), ``Ionic strength``
+            (M), ``pH``, and ``CALVADOS residue parameters`` (path).
+        sampling : dict
+            Sampling settings: ``Stride`` (steps between frames) and
+            ``Frames`` (number of frames to write).
+        slim_go_k : float
+            Well depth ``k`` substituted into the SLiM specific interactions.
+        sim_dir : str
+            Output directory for the simulation; created files are written here.
+        slurm_scripts_dir : str, optional
+            Directory of templated Slurm scripts to instantiate, by default
+            ``'data/configurations/slurm'``.
+        """
+
+        # Creating directories, non-overwriting
+        os.makedirs(sim_dir, exist_ok=False)
+        os.makedirs(os.path.join(sim_dir, 'logs'))
+
+        # Copy the system's specific interactions, filling in the Go well depth
+        utils.copy_with_substitution(
+            os.path.join(system_dir, 'specific_interactions.txt'),
+            os.path.join(sim_dir, 'specific_interactions.txt'),
+            old='<k>', new=f'{slim_go_k}'
+        )
+
+        Simulation._write_config(system, conditions, sampling, sim_dir)
+        particles = Simulation._write_components(system, conditions, system_dir, sim_dir)
+        Simulation._write_submission_scripts(system, particles, slurm_scripts_dir, sim_dir)
 
 
 
@@ -141,249 +239,407 @@ class Simulation:
 #······································································#
 
 class System:
+    """Namespace for curating CALVADOS inputs from a system specification."""
+
+    #··········································································#
+    # Logging
+    #··········································································#
 
     @staticmethod
-    def from_json(
-        system: dict,
-        dir='exp/scans/',
-        overwrite: bool=True,
-    ):
-        
-        # Creating directories for system
-        system_dir = os.path.join(dir, system['ID'])
-        os.makedirs(system_dir, exist_ok=overwrite)
-
-        # Setting up logging
-        log_file = os.path.join(system_dir, 'setup.log')
+    def _init_logger(system_dir: str) -> logging.Logger:
+        """Configure and return the per-system ``setup.log`` logger."""
         logging.basicConfig(
             level=logging.INFO,
             format='%(asctime)s: %(message)s',
             datefmt='%Y-%m-%d %H:%M:%S',
-            filename=log_file, filemode='a',
+            filename=os.path.join(system_dir, 'setup.log'), filemode='a',
             force=True
         )
-        log = logging.getLogger(__name__)
+        return logging.getLogger(__name__)
 
-        # Parsing chains
+    #··································································#
+    
+    @staticmethod
+    def _log_header(log: logging.Logger, message: str) -> None:
+        """Write a banner-delimited header line to the log."""
         log.info("·"*80)
-        log.info(f"Parsing chains of '{system['ID']}' system to CALVADOS input")
+        log.info(message)
         log.info("·"*80)
 
+    #··········································································#
+    # Per-chain curation
+    #··········································································#
+
+    @staticmethod
+    def _write_idp_fasta(chain: dict, system_dir: str, log: logging.Logger) -> None:
+        """Write an IDP chain's sequence to ``<ID>.fasta``."""
+        fasta_path = os.path.join(system_dir, f"{chain['ID']}.fasta")
+        log.info(f"\t- Appending sequence to '{fasta_path}'")
+        with open(fasta_path, 'w') as fasta:
+            fasta.write(f">{chain['ID']}\n")
+            fasta.write(f"{chain['Sequence']}\n")
+
+    #··································································#
+    
+    @staticmethod
+    def _write_domain_yaml(chain: dict, system_dir: str, log: logging.Logger) -> None:
+        """Write an experimental MDP chain's domain annotation to ``<ID>.yaml``.
+
+        Domain boundaries are shifted from author numbering into the chain's
+        own construct frame of reference.
+        """
+        if len(chain['PDB Domains']) < 1:
+            raise ValueError(f"Domain annotation must accompany an experimental structure (chain '{chain['ID']}')!")
+        yaml_path = os.path.join(system_dir, f"{chain['ID']}.yaml")
+        log.info(f"\t- Writing chain '{chain['PDB chain ID']}' domain annotations to '{yaml_path}'")
+        domain_shift = chain['Construct']['start'] - 1
+        with open(yaml_path, 'w') as domain_yaml:
+            domain_yaml.write(f"{chain['ID']}:")
+            for domain in chain['PDB Domains']:
+                domain_yaml.write(f"\n- [{domain['start'] - domain_shift},{domain['end'] - domain_shift}]")
+
+    #··································································#
+    
+    @staticmethod
+    def _write_intra_pae(chain: dict, system_dir: str, log: logging.Logger) -> None:
+        """Write an AlphaFold MDP chain's intra-chain PAE submatrix to ``<ID>.json``."""
+        pae_path = os.path.join(system_dir, f"{chain['ID']}.json")
+        log.info(f"\t- Writing chain '{chain['PDB chain ID']}' intra-chain PAEs to '{pae_path}'")
+        with open(chain['PDB AlphaFold data JSON'], 'r') as data_json:
+            data = json.load(data_json)
+        intra_mask = np.array(data['token_chain_ids']) == chain['PDB chain ID']
+        pae = np.array(data['pae'])[intra_mask][:, intra_mask]
+        with open(pae_path, 'w') as pae_json:
+            json.dump({'pae': pae.tolist()}, pae_json)
+
+    #··································································#
+    
+    @staticmethod
+    def _curate_chain(chain: dict, system_dir: str, log: logging.Logger) -> None:
+        """Curate one chain's CALVADOS inputs (IDP, experimental MDP, or AlphaFold MDP)."""
+        log.info(f"Chain '{chain['ID']}' ('{chain['Name']}')")
+
+        # Validate that the construct range matches the sequence length
+        construct_len = chain['Construct']['end'] - chain['Construct']['start'] + 1
+        if construct_len != len(chain['Sequence']):
+            raise ValueError(
+                f"Construct specifications do not agree with sequence length for chain '{chain['ID']}'")
+
+        # Chains without a PDB are treated as IDPs (sequence only)
+        if chain['PDB'] == '':
+            log.info("\t- Parsing chain as an IDP, as no chain PDB is specified")
+            System._write_idp_fasta(chain, system_dir, log)
+            log.info("")
+            return
+
+        # Chains with a PDB are treated as MDPs: select the chain and clean it
+        log.info("\t- Parsing chain as a MDP, as chain PDB is specified")
+        chain_input_pdb = os.path.join(system_dir, f"{chain['ID']}.pdb")
+        log.info(f"\t- Selecting chain '{chain['PDB chain ID']}' and pasting to '{chain_input_pdb}'")
+        utils.select_and_clean_chains(chain['PDB'], chain_input_pdb, chain_ids=[chain['PDB chain ID']])
+
+        # The cleaned PDB sequence must match the specified construct
+        pdb_sequence, _nter, _cter = sequence.seq_from_pdb(chain_input_pdb)
+        if pdb_sequence != chain['Sequence']:
+            raise ValueError(
+                f"The sequence extracted by CALVADOS from '{chain_input_pdb}' does not match the construct specified for chain '{chain['ID']}'")
+
+        # MDPs without AlphaFold data are experimental (domain restraints);
+        # MDPs with AlphaFold data use Go restraints derived from the PAE
+        if chain['PDB AlphaFold data JSON'] == '':
+            log.info("\t- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified")
+            System._write_domain_yaml(chain, system_dir, log)
+        else:
+            log.info("\t- Parsing MDP PDB as an AlphaFold structure, as chain PDB AlphaFold data JSON is specified")
+            System._write_intra_pae(chain, system_dir, log)
+
+        log.info("")
+
+    #··········································································#
+    # Per-SLiM curation
+    #··········································································#
+
+    @staticmethod
+    def _find_chain(system: dict, chain_id: str, role: str) -> dict:
+        """Return the system chain with ``chain_id``, or raise if absent.
+
+        Parameters
+        ----------
+        system : dict
+            A single system entry.
+        chain_id : str
+            The chain ``ID`` to look up.
+        role : str
+            Human-readable role (e.g. ``'Acceptor'``) used in the error message.
+
+        Returns
+        -------
+        dict
+            The matching chain entry.
+
+        Raises
+        ------
+        ValueError
+            If no chain in the system has the requested id.
+        """
         for chain in system['Chains']:
-            log.info(f"Chain '{chain['ID']}' ('{chain['Name']}')")
+            if chain['ID'] == chain_id:
+                return chain
+        raise ValueError(f"SLiM {role} chain '{chain_id}' not found in System '{system['Name']}' chains!")
 
-            # Validating specifications
-            construct_len = chain['Construct']['end'] - chain['Construct']['start'] + 1
-            sequence_len = len(chain['Sequence'])
-            assert construct_len == sequence_len, f"Construct specifications do not agree with sequence length for chain '{chain['ID']}'"
-            
-            # Treating chains without PDBs as IDPs
-            if chain['PDB'] == '':
-                log.info(f"\t- Parsing chain as an IDP, as no chain PDB is specified")
+    #··································································#
+    
+    @staticmethod
+    def _compute_slim_contacts(slim: dict, log: logging.Logger) -> np.ndarray:
+        """Compute the Boolean inter-chain contact map for one SLiM.
 
-                # Appending chain sequence to IDP FASTA
-                chain_info_fasta = os.path.join(system_dir, f"{chain['ID']}.fasta")
-                log.info(f"\t- Appending sequence to '{chain_info_fasta}'")
-                with open(chain_info_fasta, 'w') as fasta:
-                    fasta.write(f">{chain['ID']}\n")
-                    fasta.write(f"{chain['Sequence']}\n")
+        Always uses a SMOG Shadow Contact Map; for AlphaFold structures the map
+        is further intersected with PAE (< 5 Å) and Pinc (> 0.5) filters.
 
-            # Treating chains with PDBs as MDPs
-            else:
-                log.info(f"\t- Parsing chain as a MDP, as chain PDB is specified")
+        Parameters
+        ----------
+        slim : dict
+            A single SLiM entry.
+        log : logging.Logger
+            Logger for progress messages.
 
-                # Loading chain structure
-                chain_input_pdb = os.path.join(system_dir, f"{chain['ID']}.pdb")
-                log.info(f"\t- Selecting chain '{chain['PDB chain ID']}' and pasting to '{chain_input_pdb}'")
-                utils.pdbfix_select_chains(chain['PDB'], chain_input_pdb, chainids=[chain['PDB chain ID']])
+        Returns
+        -------
+        np.ndarray
+            Boolean ``(N_acc, N_don)`` contact map in the SLiM PDB frame.
+        """
+        log.info("\t\t- Calculating SMOG Shadow Contact Map (SCM) from SLiM PDB")
+        scm = smog.shadow_contact_map(slim['PDB'], slim['PDB Acceptor chain ID'], slim['PDB Donor chain ID'])
 
-                # Validating the PDB sequence matches expected
-                pdb_sequence, _nter, _cter = sequence.seq_from_pdb(chain_input_pdb)
-                assert pdb_sequence == chain['Sequence'], f"The sequence extracted by CALVADOS from '{chain_input_pdb}' does not match the construct specified for chain '{chain['ID']}'"
+        if slim['PDB AlphaFold data JSON'] == '':
+            log.info("\t\t- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified")
+            log.info("\t\t- Defining contacts")
+            return scm
 
-                # Treating MDPs without PAEs as experimental structures
-                if chain['PDB AlphaFold data JSON'] == '':
-                    log.info(f"\t- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified")
+        log.info("\t\t- Parsing SLiM PDB as an AlphaFold structure, as SLiM PDB AlphaFold data JSON is specified")
+        log.info("\t\t- Calculating AlphaFold contact metrics (PAE, Pinc)")
+        pae = 5 > alphafold.inter_chain_pae(
+            slim['PDB AlphaFold data JSON'], slim['PDB Acceptor chain ID'], slim['PDB Donor chain ID']
+        )
+        pinc = 0.5 < alphafold.inter_chain_pinc(
+            slim['PDB'], slim['PDB AlphaFold data JSON'], slim['PDB Acceptor chain ID'], slim['PDB Donor chain ID']
+        )
+        log.info("\t\t- Defining contacts")
+        return scm & pae & pinc
 
-                    # Writing domain annotation
-                    assert len(chain['PDB Domains']) >= 1, "Domain annotation must accompany an experimental structure!"
+    #··································································#
+    
+    @staticmethod
+    def _pdb_author_resids(universe: mda.Universe, chain_id: str) -> np.ndarray:
+        """Author residue ids of the standard amino acids in a structure chain."""
+        standard_resnames = set(constants.residue.name3to1)
+        residues = utils.select_chain(universe, chain_id).residues
+        return np.array([res.resid for res in residues if res.resname in standard_resnames])
 
-                    # Writing domains to YAML in input directory
-                    chain_domain_yaml = os.path.join(system_dir, f"{chain['ID']}.yaml")
-                    log.info(f"\t- Writing chain '{chain['PDB chain ID']}' domain annotations to '{chain_domain_yaml}'")
-                    domain_shift = chain['Construct']['start'] - 1
-                    with open(chain_domain_yaml, 'w') as domain_yaml:
-                        domain_yaml.write(f"{chain['ID']}:")
-                        for domain in chain['PDB Domains']:
-                            domain_yaml.write(f"\n- [{domain['start'] - domain_shift},{domain['end'] - domain_shift}]")
+    #··································································#
+    
+    @staticmethod
+    def _authres_index_map(pdb_authres: np.ndarray, construct: dict) -> dict:
+        """Map PDB residue indices to construct residue indices via author numbering.
 
-                # Treating MDPs with PAEs as AlphaFold structures
-                else:
-                    log.info(f"\t- Parsing MDP PDB as an AlphaFold structure, as chain PDB AlphaFold data JSON is specified")
-                    
-                    # Loading AlphaFold data file
-                    chain_input_pae = os.path.join(system_dir, f"{chain['ID']}.json")
-                    log.info(f"\t- Writing chain '{chain['PDB chain ID']}' intra-chain PAEs to '{chain_input_pae}'")
-                    with open(chain['PDB AlphaFold data JSON'], 'r') as data_json:
-                        data = json.load(data_json)
+        Parameters
+        ----------
+        pdb_authres : np.ndarray
+            Author residue ids of the resolved residues, in PDB order.
+        construct : dict
+            The chain's ``Construct`` (``start``/``end`` author residue ids).
 
-                    # Writing intra chain PAEs as JSON in input directory
-                    intra_mask = np.array(data['token_chain_ids']) == chain['PDB chain ID']
-                    pae = np.array(data['pae'])
-                    pae = pae[intra_mask][:,intra_mask]
-                    with open(chain_input_pae, 'w') as pae_json:
-                        json.dump({'pae': pae.tolist()}, pae_json)
+        Returns
+        -------
+        dict
+            Mapping from 0-based PDB residue index to 0-based construct index.
+        """
+        construct_authres = np.arange(construct['start'], construct['end'] + 1)
+        pairs = np.argwhere(pdb_authres[:, np.newaxis] == construct_authres[np.newaxis, :])
+        return {pdb_idx: construct_idx for pdb_idx, construct_idx in pairs}
 
-            log.info("")
+    #··································································#
+    
+    @staticmethod
+    def _map_contacts_to_construct(
+        slim: dict,
+        acceptor_chain: dict,
+        donor_chain: dict,
+        contact_pdb_idxs: np.ndarray,
+    ) -> tuple[np.ndarray, np.ndarray]:
+        """Map SLiM-PDB contact indices onto full-construct residue numbering.
 
-        # Preparing TXT file for specific interactions in input directory
-        input_specific_interactions = os.path.join(system_dir, 'specific_interactions.txt')
-        if os.path.exists(input_specific_interactions):
-            os.remove(input_specific_interactions)
+        Resolved-residue indices in the SLiM PDB are translated, via shared
+        author residue numbering, into the acceptor/donor construct frames.
 
-        # Parsing SLiMs
-        log.info("·"*80)
-        log.info(f"Parsing SLiMs of '{system['ID']}' system to CALVADOS input")
-        log.info("·"*80)
-        
+        Parameters
+        ----------
+        slim : dict
+            A single SLiM entry.
+        acceptor_chain, donor_chain : dict
+            The system chain entries referenced by the SLiM.
+        contact_pdb_idxs : np.ndarray
+            ``(N, 2)`` array of ``(acceptor_idx, donor_idx)`` PDB residue index
+            pairs (from ``np.argwhere`` on the contact map).
+
+        Returns
+        -------
+        tuple[np.ndarray, np.ndarray]
+            ``(construct_res_idxs, authres_ids)``, both ``(N, 2)``: the 0-based
+            construct indices and the author residue ids of each contact pair.
+        """
+        universe = mda.Universe(slim['PDB'])
+        acc_authres_pdb = System._pdb_author_resids(universe, slim['PDB Acceptor chain ID'])
+        don_authres_pdb = System._pdb_author_resids(universe, slim['PDB Donor chain ID'])
+        acc_map = System._authres_index_map(acc_authres_pdb, acceptor_chain['Construct'])
+        don_map = System._authres_index_map(don_authres_pdb, donor_chain['Construct'])
+
+        construct_res_idxs = np.zeros_like(contact_pdb_idxs)
+        authres_ids = np.zeros_like(contact_pdb_idxs)
+        for i, (acc_idx, don_idx) in enumerate(contact_pdb_idxs):
+            construct_res_idxs[i, 0] = acc_map[acc_idx]
+            construct_res_idxs[i, 1] = don_map[don_idx]
+            authres_ids[i, 0] = acc_authres_pdb[acc_idx]
+            authres_ids[i, 1] = don_authres_pdb[don_idx]
+        return construct_res_idxs, authres_ids
+
+    #··································································#
+    
+    @staticmethod
+    def _write_chimerax_script(slim: dict, authres_ids: np.ndarray, system_dir: str) -> None:
+        """Write a ChimeraX script selecting a SLiM's contacting residues."""
+        acc_resids = ",".join(np.unique(authres_ids[:, 0]).astype(str))
+        don_resids = ",".join(np.unique(authres_ids[:, 1]).astype(str))
+        with open(os.path.join(system_dir, f"{slim['ID']}_chimerax.text"), 'w') as file:
+            file.write("set bgColor white\nstyle stick\ncolor bychain\nshow cartoons\nhide\n")
+            file.write(f"hide ~/{slim['PDB Acceptor chain ID']},{slim['PDB Donor chain ID']} cartoons\n")
+            file.write("sel ")
+            file.write(f"/{slim['PDB Acceptor chain ID']}:{acc_resids}")
+            file.write(" | ")
+            file.write(f"/{slim['PDB Donor chain ID']}:{don_resids}")
+            file.write("\nview sel")
+
+    #··································································#
+    
+    @staticmethod
+    def _curate_slim(slim: dict, system: dict, system_dir: str, fspecific_interactions: str, log: logging.Logger) -> None:
+        """Derive one SLiM's specific contacts and append them to the system inputs."""
+        log.info(f"SLiM '{slim['ID']}' ('{slim['Name']}')")
+
+        # Resolve the acceptor/donor chains the SLiM refers to
+        log.info(f"\t- Verifying that acceptor '{slim['Acceptor ID']}' and donor '{slim['Donor ID']}' chains are found in system")
+        acceptor_chain = System._find_chain(system, slim['Acceptor ID'], 'Acceptor')
+        donor_chain = System._find_chain(system, slim['Donor ID'], 'Donor')
+        if not os.path.exists(slim['PDB']):
+            raise FileNotFoundError(f"Specified structure for SLiM '{slim['ID']}' does not exist! ({slim['PDB']})")
+
+        # Define inter-chain contacts and their equilibrium distances
+        log.info("\t- Performing contact analysis")
+        contacts = System._compute_slim_contacts(slim, log)
+        contact_pdb_idxs = np.argwhere(contacts)
+        log.info(f"\t\t- Found {contacts.sum()} pairwise contacts")
+
+        log.info("\t\t- Calculating contact distances")
+        eqdists = coarsegrain.bead_distances(
+            slim['PDB'],
+            chain1_id=slim['PDB Acceptor chain ID'], chain1_bead='COM',
+            chain2_id=slim['PDB Donor chain ID'], chain2_bead='CA',
+            pair_residue_idxs=contact_pdb_idxs
+        )
+        eqdists /= 10 # Å > nm
+
+        # Map contacts from PDB (resolved-residue) indexing onto the full constructs
+        log.info("\t- Mapping residue indices between System and SLiM constructs")
+        construct_res_idxs, authres_ids = System._map_contacts_to_construct(
+            slim, acceptor_chain, donor_chain, contact_pdb_idxs
+        )
+
+        # Drop contacts involving explicitly excluded residues
+        exclude_mask = (
+            np.isin(authres_ids[:, 0], slim['PDB Acceptor exclude'])
+            | np.isin(authres_ids[:, 1], slim['PDB Donor exclude'])
+        )
+        log.info(f"\t- Excluding {exclude_mask.sum()} contacts")
+        construct_res_idxs = construct_res_idxs[~exclude_mask]
+        eqdists = eqdists[~exclude_mask]
+        authres_ids = authres_ids[~exclude_mask]
+
+        # Warn about contacts that are far apart once coarse-grained
+        if (eqdists > 2.0).any():
+            log.warning(f"\t- There are {(eqdists > 2.0).sum():.0f} contacts with an equilibrium distance >2 nm after coarsegraining!")
+
+        # Append the contacts (1-based residue ids) to the specific interactions file
+        log.info(f"\t- Appending contacts to '{fspecific_interactions}'")
+        resids = construct_res_idxs + 1
+        with open(fspecific_interactions, 'a') as file:
+            for (acceptor_resid, donor_resid), eqdist in zip(resids, eqdists):
+                file.write(f"{acceptor_chain['ID']} {acceptor_resid} | {donor_chain['ID']} {donor_resid} | {eqdist:.4f} <k>\n")
+
+        # ChimeraX script for visual inspection of the contacts
+        System._write_chimerax_script(slim, authres_ids, system_dir)
+
+        log.info("")
+
+    #··········································································#
+    # Public interface
+    #··········································································#
+
+    @staticmethod
+    def curate(
+        system: dict,
+        output_dir: str='exp/scans/',
+        overwrite: bool=False,
+    ) -> None:
+        """Curate all CALVADOS input files for one system from its spec.
+
+        For each chain, writes a FASTA (IDPs), a cleaned PDB and domain YAML
+        (experimental MDPs), or a cleaned PDB and intra-chain PAE JSON
+        (AlphaFold MDPs). For each SLiM, derives inter-chain contacts by
+        combining a SMOG Shadow Contact Map (with AlphaFold PAE/Pinc filters,
+        when AlphaFold data is available), maps the contacts onto the full
+        construct numbering, computes COM-CA equilibrium distances, and
+        appends them to ``specific_interactions.txt``.
+
+        A ChimeraX selection script is written per SLiM for visual inspection,
+        and a ``setup.log`` records the curation steps. All outputs are placed
+        in ``<output_dir>/<system ID>/``.
+
+        Parameters
+        ----------
+        system : dict
+            A single system entry (see ``data/curation/scheme.json``).
+        output_dir : str, optional
+            Parent directory in which the per-system folder is created, by
+            default ``'exp/scans/'``.
+        overwrite : bool, optional
+            Passed as ``exist_ok`` when creating the system directory.
+
+        Raises
+        ------
+        ValueError
+            If construct/sequence lengths disagree, a parsed PDB sequence does
+            not match the specified construct, domain annotation is missing for
+            an experimental MDP, or a SLiM references an acceptor/donor chain id
+            absent from the system.
+        FileNotFoundError
+            If a SLiM's specified structure does not exist.
+        """
+        # Set up the system directory and logging
+        system_dir = os.path.join(output_dir, system['ID'])
+        os.makedirs(system_dir, exist_ok=overwrite)
+        log = System._init_logger(system_dir)
+
+        # Curate each chain into CALVADOS input files
+        System._log_header(log, f"Parsing chains of '{system['ID']}' system to CALVADOS input")
+        for chain in system['Chains']:
+            System._curate_chain(chain, system_dir, log)
+
+        # Start the specific interactions file fresh
+        fspecific_interactions = os.path.join(system_dir, 'specific_interactions.txt')
+        if os.path.exists(fspecific_interactions):
+            os.remove(fspecific_interactions)
+
+        # Curate each SLiM's specific contacts
+        System._log_header(log, f"Parsing SLiMs of '{system['ID']}' system to CALVADOS input")
         for slim in system['SLiMs']:
-            log.info(f"SLiM '{slim['ID']}' ('{slim['Name']}')")
-            
-            # Verifying JSON references
-            log.info(f"\t- Verifying that acceptor '{slim['Acceptor ID']}' and donor '{slim['Donor ID']}' chains are found in system")
-            for chain in system['Chains']:
-                if chain['ID'] == slim['Acceptor ID']:
-                    acceptor_chain = chain
-                    break
-            else:
-                raise ValueError(f"SLiM Acceptor chain '{slim['Acceptor ID']}' not found in System '{system['Name']}' chains!")
-            for chain in system['Chains']:
-                if chain['ID'] == slim['Donor ID']:
-                    donor_chain = chain
-                    break
-            else:
-                raise ValueError(f"SLiM Donor chain '{slim['Donor ID']}' not found in System '{system['Name']}' chains!")
-            
-            assert os.path.exists(slim['PDB']), f"Specified structure for SLiM '{slim['ID']}' does not exist! ({slim['PDB']})"
-
-            # Running contact analyses
-            log.info("\t- Performing contact analysis")
-
-            # SMOG Shadow Contact Map (SCM) for PDB
-            log.info("\t\t- Calculating SMOG Shadow Contact Map (SCM) from SLiM PDB")
-            scm = smog.scm(
-                slim['PDB'],
-                slim['PDB Acceptor chain ID'],
-                slim['PDB Donor chain ID']
-            )
-
-            # For experimental SLiM PDBs, SCM is sufficient
-            if slim['PDB AlphaFold data JSON'] == '':
-                log.info(f"\t\t- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified")
-
-                log.info(f"\t\t- Defining contacts")
-                contacts = scm
-
-            # For AlphaFold SLiM PDBs, PAE and Pinc is considered along SCM
-            else:
-                log.info(f"\t\t- Parsing SLiM PDB as an AlphaFold structure, as SLiM PDB AlphaFold data JSON is specified")
-
-                log.info("\t\t- Calculating AlphaFold contact metrics (PAE, Pinc)")
-                pae = 5 > alphafold.inter_pae(
-                    slim['PDB AlphaFold data JSON'],
-                    slim['PDB Acceptor chain ID'],
-                    slim['PDB Donor chain ID']
-                )
-                pinc = 0.5 < alphafold.inter_pinc(
-                    slim['PDB'],
-                    slim['PDB AlphaFold data JSON'],
-                    slim['PDB Acceptor chain ID'],
-                    slim['PDB Donor chain ID']
-                )
-
-                log.info(f"\t\t- Defining contacts")
-                contacts = scm & pae & pinc
-
-            # Inferring residue IDs in SLiM frame of reference
-            slim_residxs_pdb = np.argwhere(contacts)
-            log.info(f"\t\t- Found {contacts.sum()} pairwise contacts")
-
-            # Calculating equilibrium distances from structure, by COM-CA distances
-            log.info(f"\t\t- Calculating contact distances")
-            slim_eqdists = coarsegrain.dists(
-                slim['PDB'],
-                chain1_id=slim['PDB Acceptor chain ID'], chain1_cg='COM',
-                chain2_id=slim['PDB Donor chain ID'], chain2_cg='CA',
-                pair_residue_idxs=slim_residxs_pdb
-            )
-            slim_eqdists /= 10 # Å > nm
-
-            # Mapping contacts from PDB indexing (i.e. only resolved residues) to full construct sequence
-            # Determining AUTHRES numbering for SLiM PDB
-            extension = os.path.splitext(slim['PDB'])[-1]
-            if extension == '.pdb':
-                parser = PDB.PDBParser(QUIET=True)
-            elif extension == '.cif':
-                parser = PDB.MMCIFParser(QUIET=True)
-            else:
-                raise ValueError(f"Only PDB or CIF file parsing supported, not {extension.upper()}!")
-            structure = parser.get_structure("protein", slim['PDB'])
-            authres_acc_pdb = np.array([res.get_id()[1] for res in structure[0][slim['PDB Acceptor chain ID']].get_residues() if PDB.Polypeptide.is_aa(res, standard=True)])
-            authres_don_pdb = np.array([res.get_id()[1] for res in structure[0][slim['PDB Donor chain ID']].get_residues() if PDB.Polypeptide.is_aa(res, standard=True)])
-            # Determining AUTHRES numbering from sequence constructs
-            authres_acc_seq_first = acceptor_chain['Construct']['start']
-            authres_acc_seq_len = acceptor_chain['Construct']['end'] - acceptor_chain['Construct']['start'] + 1
-            authres_acc_seq = np.arange(authres_acc_seq_first, authres_acc_seq_first+authres_acc_seq_len)
-            authres_don_seq_first = donor_chain['Construct']['start']
-            authres_don_seq_len = donor_chain['Construct']['end'] - donor_chain['Construct']['start'] + 1
-            authres_don_seq = np.arange(authres_don_seq_first, authres_don_seq_first+authres_don_seq_len)
-            # Index mapping between AUTHRES numbering
-            residx_map_acc = np.argwhere(authres_acc_pdb[:,np.newaxis] == authres_acc_seq[np.newaxis,:])
-            residx_map_acc = {residx_pdb: residx_seq for residx_pdb, residx_seq in residx_map_acc}
-            residx_map_don = np.argwhere(authres_don_pdb[:,np.newaxis] == authres_don_seq[np.newaxis,:])
-            residx_map_don = {residx_pdb: residx_seq for residx_pdb, residx_seq in residx_map_don}
-            # Mapping contacts
-            slim_residxs = np.zeros_like(slim_residxs_pdb)
-            slim_authresids = np.zeros_like(slim_residxs_pdb)
-            for i, (acc_residxs_pdb, don_residxs_pdb) in enumerate(slim_residxs_pdb):
-                slim_residxs[i,0] = residx_map_acc[acc_residxs_pdb]
-                slim_residxs[i,1] = residx_map_don[don_residxs_pdb]
-                slim_authresids[i,0] = authres_acc_pdb[acc_residxs_pdb]
-                slim_authresids[i,1] = authres_don_pdb[don_residxs_pdb]
-            
-            # Removing contacts between excluded residues
-            #if slim['PDB Acceptor exclude'] or slim['PDB Donor exclude']:
-            slim_acceptor_exclude = np.isin(slim_authresids[:,0], slim['PDB Acceptor exclude'])
-            slim_donor_exclude = np.isin(slim_authresids[:,1], slim['PDB Donor exclude'])
-            slim_exclude = slim_acceptor_exclude | slim_donor_exclude
-            log.info(f"\t- Excluding {slim_exclude.sum()} contacts")
-            slim_residxs = slim_residxs[~slim_exclude]
-            slim_eqdists = slim_eqdists[~slim_exclude]
-
-            # Raising error if contacts are far away after coarsegraining
-            if (slim_eqdists > 2.0).any():
-                log.warning(f"\t- There are {(slim_eqdists > 2.0).sum():.0f} contacts with an equilibrium distance >2 nm after coarsegraining!")
-
-            # Mapping numbering from SLiM frame of reference to System frame of reference
-            log.info("\t- Mapping residue indices between System and SLiM constructs")
-            slim_resids = slim_residxs + 1
-
-            # Appending SLiM contacts to specific interactions TXT
-            log.info(f"\t- Appending contacts to '{input_specific_interactions}'")
-            with open(input_specific_interactions, 'a') as file:
-                for (acceptor_resid, donor_resid), eqdist in zip(slim_resids, slim_eqdists):
-                    file.write(f"{acceptor_chain['ID']} {acceptor_resid} | {donor_chain['ID']} {donor_resid} | {eqdist:.4f} <k>\n")
-
-            # Files for visualisation of contacts
-            with open(os.path.join(system_dir, f"{slim['ID']}_chimerax.text"), 'w') as file:
-                file.write("set bgColor white\nstyle stick\ncolor bychain\nshow cartoons\nhide\n")
-                file.write(f"hide ~/{slim['PDB Acceptor chain ID']},{slim['PDB Donor chain ID']} cartoons\n")
-                file.write("sel ")
-                file.write(f"/{slim['PDB Acceptor chain ID']}")
-                file.write(":" + ",".join(np.unique(slim_authresids[:,0][~slim_exclude]).astype(str)))
-                file.write(" | ")
-                file.write(f"/{slim['PDB Donor chain ID']}")
-                file.write(":" + ",".join(np.unique(slim_authresids[:,1][~slim_exclude]).astype(str)))
-                file.write("\nview sel")
-
-            log.info("")
+            System._curate_slim(slim, system, system_dir, fspecific_interactions, log)

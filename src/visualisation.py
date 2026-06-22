@@ -1,7 +1,7 @@
 """
-src.visualization
+src.visualisation
 ------------------------------------------------------------------------
-Utils and settings for plots.
+Matplotlib styling, colour palettes, and plotting helpers.
 """
 
 
@@ -49,7 +49,6 @@ light_gray = "#E1DFDF"
 white      = "#FFFFFF"  
 champagne  = "#FEFAF2"  
 yellow     = "#FFBD38"
-
 
 #······································································#
 
@@ -176,13 +175,14 @@ plt.rcParams.update({
 # Plotting
 #······································································#
 
-def percent_axis(which: Literal['x', 'y']):
-    """Formats an axis to have ticks in percent.
+def format_percent_axis(which: Literal['x', 'y']) -> None:
+    """Format the current axes' ticks as percentages.
 
-    Assumes values in [0,1].
+    Assumes the plotted values lie in ``[0, 1]``. Operates on the current
+    axes (``plt.gca()``).
 
-    Parameters:
-    -----------
+    Parameters
+    ----------
     which : Literal['x', 'y']
         Which axis to format.
     """

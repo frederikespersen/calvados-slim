@@ -1,5 +1,5 @@
 """
 src.analysis
 ------------------------------------------------------------------------
-Functions for analysing outputs from different softwares.
+Tools for analysing structural-modelling outputs and simulation trajectories.
 """
