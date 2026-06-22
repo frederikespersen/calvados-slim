@@ -1,11 +1,23 @@
 ### LOCAL GITIGNORE
-data/
-.notes*
-.todo
-.temp/
-.old
+data/alphafold3
+exp/
+.*
 src/calvados
 *.code-workspace
+
+#sim/scan/
+sim/sandbox
+sim/scan/**/*.dcd
+sim/scan/**/*.chk
+sim/scan/**/*.pdb
+sim/scan/**/*.xml
+sim/scan/**/*.yaml
+sim/scan/**/*.txt
+sim/scan/**/*.py
+sim/scan/**/*.sh
+sim/scan/**/*.log
+sim/scan/**/*.out
+sim/scan/**/*.err
 
 ### STANDARD PYTHON GITIGNORE
 
@@ -67,7 +79,6 @@ cover/
 *.pot
 
 # Django stuff:
-*.log
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
