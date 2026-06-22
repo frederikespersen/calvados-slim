@@ -1,0 +1,8 @@
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/B,A cartoons
+sel /B:356,359,360,363,365,368,399,402,403,405,406,407,408 | /A:148,149,151,153
+view sel
