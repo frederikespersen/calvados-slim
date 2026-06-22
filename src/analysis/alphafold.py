@@ -4,15 +4,14 @@ src.analysis.alphafold
 For analysis of AlphaFold3-generated structures.
 """
 
-
 import os
 import numpy as np
 import json
 from typing import Literal
-from Bio.PDB import MMCIFParser, PDBParser
-from Bio.PDB import Residue, Chain
+from Bio import PDB
 from scipy.spatial import distance_matrix
-from src import constants
+
+from src.analysis import coarsegrain
 
 
 #······································································#
@@ -138,7 +137,7 @@ def inter_res_min_dist(
     """
     
     # Loading structure
-    parser = MMCIFParser(QUIET=True)
+    parser = PDB.MMCIFParser(QUIET=True)
     structure = parser.get_structure('afstruc', structure_cif)
 
     # Subsetting chains
@@ -255,7 +254,7 @@ def inter_pinc(
 
 
     # Loading structure
-    parser = MMCIFParser(QUIET=True)
+    parser = PDB.MMCIFParser(QUIET=True)
     structure = parser.get_structure('afstruc', structure_cif)
 
     # Subsetting chains
@@ -265,11 +264,11 @@ def inter_pinc(
 
     # Getting residue representations
     if coordinate_mode == 'CA':
-        res_coords_1 = BioUtils.ca(chain1)
-        res_coords_2 = BioUtils.ca(chain2)
+        res_coords_1 = coarsegrain.get_ca(chain1)
+        res_coords_2 = coarsegrain.get_ca(chain2)
     else:  # 'COM'
-        res_coords_1 = BioUtils.com(chain1)
-        res_coords_2 = BioUtils.com(chain2)
+        res_coords_1 = coarsegrain.get_com(chain1)
+        res_coords_2 = coarsegrain.get_com(chain2)
     
     # Loading PAE data
     res_pae = inter_pae(full_data_json, chain1_id, chain2_id, perspective='chain1')
@@ -308,123 +307,3 @@ def inter_pinc(
     res_pinc[intersect_mask] = vol_intersect / vol_V_R
     
     return np.clip(res_pinc, 0.0, 1.0)
-
-
-
-#······································································#
-# SLiM contacts curation
-#······································································#
-
-def res_cg_dists(
-        structure_file: os.PathLike,
-        chain1_id: str,
-        chain2_id: str,
-        pair_residue_ids,
-        chain1_cg: Literal['CA', 'COM']='COM',
-        chain2_cg: Literal['CA', 'COM']='CA',
-    ) -> np.ndarray:
-
-    # Loading structure
-    if '.pdb' in os.path.basename(structure_file):
-        parser = PDBParser(QUIET=True)
-    elif '.cif' in os.path.basename(structure_file):
-        parser = MMCIFParser(QUIET=True)
-    else:
-        raise ValueError(f"Only PDB or CIF file parsing supported! (not applicable for {os.path.basename(structure_file)})")
-    structure = parser.get_structure('afstruc', structure_file)
-
-    # Subsetting chains
-    model = structure[0]
-    chain1 = model[chain1_id]
-    chain2 = model[chain2_id]
-
-    # Subsetting residues
-    pair_residues = [(chain1[int(res1_id)], chain2[int(res2_id)]) for (res1_id, res2_id) in pair_residue_ids]
-
-    # Determining equilibrium distance from structure
-    pair_eqdists = []
-    for (res1, res2) in pair_residues:
-        if chain1_cg == 'CA':
-            res1_coords = BioUtils.ca(res1)
-        elif chain1_cg == 'COM':
-            res1_coords = BioUtils.com(res1)
-        if chain2_cg == 'CA':
-            res2_coords = BioUtils.ca(res2)
-        elif chain2_cg == 'COM':
-            res2_coords = BioUtils.com(res2)
-        eqdist = np.linalg.norm(res1_coords - res2_coords)
-        pair_eqdists.append(eqdist)
-
-    return np.array(pair_eqdists)
-
-
-#······································································#
-# Utils
-#······································································#
-
-class BioUtils:
-    """
-    Utils for processing a BioPython Structure entity.
-    """
-
-    @staticmethod
-    def ca(entity) -> np.ndarray:
-        """Returns the C-alpha coordinates...
-
-        * For a single residue, if entity is of type residue
-        * For all residues in chain, if entity is of type chain
-
-        Parameters
-        ----------
-        entity : Residue, Chain
-            Either a Residue or Chain BioPython object
-
-        Returns
-        -------
-        np.ndarray
-            A float array of size ``(N,3)``, where N is the number of residues in the entity.
-        """
-
-        # If entity is residue, get CA atom coordinates
-        if type(entity) == Residue.Residue:
-            return entity['CA'].get_coord()
-        
-        # If entity is chain, perform iterative invocation on all residues
-        elif type(entity) == Chain.Chain:
-            return np.array([BioUtils.ca(res) for res in entity])
-        
-        else:
-            raise TypeError(f"Function not supported for entity {type(entity)}")    
-
-
-    @staticmethod
-    def com(entity) -> np.ndarray:
-        """Returns the center-of-mass (COM) coordinates...
-
-        * For a single residue, if entity is of type residue
-        * For all residues in chain, if entity is of type chain
-
-        Parameters
-        ----------
-        entity : Residue, Chain
-            Either a Residue or Chain BioPython object
-
-        Returns
-        -------
-        np.ndarray
-            A float array of size ``(N,3)``, where N is the number of residues in the entity.
-        """
-    
-        # If entity is residue, get mass-weighted average of atom corodinates
-        if type(entity) == Residue.Residue:
-            atoms = [a for a in entity]
-            coords = np.array([a.get_coord() for a in atoms])
-            masses = np.array([constants.element.mass[a.element] for a in atoms])
-            return np.average(coords, weights=masses, axis=0)
-
-        # If entity is chain, perform iterative invocation on all residues
-        elif type(entity) == Chain.Chain:
-            return np.array([BioUtils.com(res) for res in entity])
-        
-        else:
-            raise TypeError(f"Function not supported for entity {type(entity)}")  

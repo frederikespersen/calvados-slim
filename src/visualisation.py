@@ -60,7 +60,17 @@ palette = [
     petroleum,
     dark_green,
     yellow,
+    red,
+    blue,
+    green,
+    dark_petroleum,
+    light_red,
+    light_blue,
+    light_green,
+    light_petroleum,
     dark_gray,
+    ku_gray,
+    light_gray,
 ]
 
 # Muted palette — desaturated darks, suitable for academic papers

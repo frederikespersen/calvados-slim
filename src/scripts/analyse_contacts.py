@@ -1,5 +1,5 @@
 """
-src.pipeline.analyse_contacts
+src.scripts.analyse_contacts
 ------------------------------------------------------------------------
 Generates numpy files of inter-chain arrays from analysis of SMOG and Alphafold modelling.
 """
@@ -12,7 +12,7 @@ import os
 import subprocess
 from src.utils import cif_to_pdb
 from src.analysis.alphafold import inter_chain_analysis as af_analysis
-from src.analysis.smog import scm_res as shadow_contact_map
+from src.analysis.smog import scm as shadow_contact_map
 
 
 
@@ -69,7 +69,7 @@ if __name__ == '__main__':
     smog_output = os.path.join(misc_dir, 'smog.contacts')
 
     # Running analyses
-    pae, pinc, min_dist, avg_plddt = af_analysis(
+    pae, pinc, min_dist = af_analysis(
         args.af_model_cif,
         args.af_fulldata_json,
         args.chain1, args.chain2

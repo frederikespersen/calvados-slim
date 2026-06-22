@@ -1,0 +1,20 @@
+[
+    {
+        "PDB": "2FLU",
+        "Reason": "Cyclicised peptide makes 1:1 replication impractical; Uncertain about PDB structure truth to nature.",
+        "Rescue": "Graft cyclicised peptide with true flanking sequence. However, difficult to establish origin protein sequence, and whether that sequence segments is truly IDP.",
+        "Publication": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3668573/"
+    },
+    {
+        "PDB": "2LUE",
+        "Reason": "SLiM donor has phosphoserine PTMs; These can be modelled with CALVADOS, but for now fall out of the standard curation pipeline. Very nicely a NMR structure.",
+        "Rescue": "See CALVADOS example ``single_pIDR`` for example of implementing phosphoserines (and phosphotyrosines).",
+        "Publication": "https://www.sciencedirect.com/science/article/pii/S0006291X21006513?via%3Dihub#sec2"
+    },
+    {
+        "PDB": "2MRK",
+        "Reason": "SLiM donor has phosphotyrosine PTMs; These can be modelled with CALVADOS, but for now fall out of the standard curation pipeline. Very nicely a NMR structure.",
+        "Rescue": "See CALVADOS example ``single_pIDR`` for example of implementing phosphotyrosines (and phosphoserines).",
+        "Publication": "https://doi.org/10.1016/j.str.2016.08.016"
+    }
+]

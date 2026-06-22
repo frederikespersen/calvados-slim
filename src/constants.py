@@ -12,7 +12,7 @@ Global constants, such as natural constants and atom or residue metrics.
 N_A = 6.002214076e23 # mol⁻¹
 
 # Ideal gas constant
-R = 1.987e-3 # kcal·mol⁻¹
+R = 8.314e-3 # kJ·mol⁻¹
 
 
 
@@ -48,3 +48,24 @@ class element:
         "Rg": 282.0, "Cn": 285.0, "Nh": 286.0, "Fl": 289.0, "Mc": 290.0,
         "Lv": 293.0, "Ts": 294.0, "Og": 294.0
     }
+
+
+
+#······································································#
+# Residues
+#······································································#
+
+class residue:
+
+    name3to1 = {
+        # Canonical amino acids
+        'ALA': 'A', 'ARG': 'R', 'ASN': 'N', 'ASP': 'D',
+        'CYS': 'C', 'GLN': 'Q', 'GLU': 'E', 'GLY': 'G',
+        'HIS': 'H', 'ILE': 'I', 'LEU': 'L', 'LYS': 'K',
+        'MET': 'M', 'PHE': 'F', 'PRO': 'P', 'SER': 'S',
+        'THR': 'T', 'TRP': 'W', 'TYR': 'Y', 'VAL': 'V',
+    }
+    
+    """Dictionary for mapping amino acid 3-letter codes to 1-letter codes."""
+    name1to3 = {v: k for k, v in name3to1.items()}
+    """Dictionary for mapping amino acid 1-letter codes to 3-letter codes."""

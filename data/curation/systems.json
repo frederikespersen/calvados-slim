@@ -1,0 +1,675 @@
+[
+    {
+        "ID": "sh3-prm",
+        "Name": "Nck1[SH3]-ABL1[PRM]",
+        "Authenticity": "AlphaFold",
+        "Box sides": [20,20,20],
+        "Sources": [
+            {
+                "Name": "2012 Li et al.",
+                "Description": "Publication for seqeuences and affinity",
+                "Link": "www.nature.com/doifinder/10.1038/nature10879"
+            }
+        ],
+        "Chains": [
+            {
+                "ID": "sh3",
+                "Name": "Nck1[SH3]",
+                "Description": "The second SH3 domain of Nck1 (C139S)",
+                "Copies": 1,
+                "Sequence": "GHMDLNMPAYVKFNYMAEREDELSLIKGTKVIVMEKSSDGWWRGSYNGQVGWFPSNYVTEEGDSPL",
+                "Construct": {
+                    "start": 1,
+                    "end": 66
+                },
+                "PDB": "data/alphafold3/fold_sh3_1/fold_sh3_1_model_0.cif",
+                "PDB chain ID": "A",
+                "PDB AlphaFold data JSON": "data/alphafold3/fold_sh3_1/fold_sh3_1_full_data_0.json",
+                "PDB Domains": [],
+                "PTMs": []
+            },
+            {
+                "ID": "prm",
+                "Name": "ABL1[PRM]",
+                "Description": "The PRM domain of ABL1",
+                "Copies": 1,
+                "Sequence": "CGGSWGGSKKKKTAPTPPKRS",
+                "Construct": {
+                    "start": 1,
+                    "end": 21
+                },
+                "PDB": "",
+                "PDB chain ID": "",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [],
+                "PTMs": []
+            }
+        ],
+        "SLiMs": [
+            {
+                "ID": "sh3-prm",
+                "Name": "SH3-PRM",
+                "Notes": "",
+                "Acceptor ID": "sh3",
+                "Donor ID": "prm",
+                "Affinity": 350e-6,
+                "PDB": "data/alphafold3/fold_sh3_1_prm_1/fold_sh3_1_prm_1_model_0.cif",
+                "PDB AlphaFold data JSON": "data/alphafold3/fold_sh3_1_prm_1/fold_sh3_1_prm_1_full_data_0.json",
+                "PDB Acceptor chain ID": "A",
+                "PDB Acceptor construct": {
+                    "start": 1,
+                    "end": 66
+                },
+                "PDB Acceptor exclude": [],
+                "PDB Donor chain ID": "B",
+                "PDB Donor construct": {
+                    "start": 1,
+                    "end": 21
+                },
+                "PDB Donor exclude": []
+            }
+        ]
+    },
+    {
+        "ID": "psd95-cript",
+        "Name": "PSD-95[PDZ]-CRIPT[Cter]",
+        "Authenticity": "X-ray",
+        "Box sides": [20,20,20],
+        "Sources": [
+            {
+                "Name": "CRIPT_RAT",
+                "Description": "ELM instance linked to PDB",
+                "Link": "http://elm.eu.org/ELMI001590"
+            },
+            {
+                "Name": "1BE9",
+                "Description": "PDB structure",
+                "Link": "https://doi.org/10.2210/pdb1BE9/pdb"
+            },
+            {
+                "Name": "Doyle et al. 1996",
+                "Description": "Primary publication for crystallographic PDB 1BE9",
+                "Link": "https://doi.org/10.1016/S0092-8674(00)81307-0"
+            }
+        ],
+        "Chains": [
+            {
+                "ID": "pdz",
+                "Name": "PSD-95[PDZ]",
+                "Description": "The third PDZ domain from PSD-95 (302-402), including additional vector-derived residues: 5 additional residues on the N-terminus (GSPEF) and 13 on the C-terminus (NSRVNSSGRIVTN)",
+                "Copies": 1,
+                "Sequence": "GSPEFLGEEDIPREPRRIVIHRGSTGLGFNIIGGEDGEGIFISFILAGGPADLSGELRKGDQILSVNGVDLRNASHEQAAIALKNAGQTVTIIAQYKPEEYSRFEANSRVNSSGRIVTN",
+                "Construct":  {
+                    "start": 297,
+                    "end": 415
+                },
+                "PDB": "data/pdb/1BE9.cif",
+                "PDB chain ID": "A",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [
+                    {
+                        "start": 307,
+                        "end": 407
+                    }
+                ],
+                "PTMs": []
+            },
+            {
+                "ID": "cter",
+                "Name": "CRIPT[Cter]",
+                "Description": "C-terminal residue derived from CRIPT",
+                "Copies": 1,
+                "Sequence": "TKNYKQTSV",
+                "Construct":  {
+                    "start": 1,
+                    "end": 9
+                },
+                "PDB": "",
+                "PDB chain ID": "",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [],
+                "PTMs": []
+            }
+        ],
+        "SLiMs": [
+            {
+                "ID": "pdz-cter",
+                "Name": "PDZ-Cter",
+                "Notes": "",
+                "Acceptor ID": "pdz",
+                "Donor ID": "cter",
+                "Affinity": -1,
+                "PDB": "data/pdb/1BE9.cif",
+                "PDB AlphaFold data JSON": "",
+                "PDB Acceptor chain ID": "A",
+                "PDB Acceptor construct": {
+                    "start": 301,
+                    "end": 415
+                },
+                "PDB Acceptor exclude": [],
+                "PDB Donor chain ID": "B",
+                "PDB Donor construct":  {
+                    "start": 5,
+                    "end": 9
+                },
+                "PDB Donor exclude": []
+            }
+        ]
+    },
+    {
+        "ID": "fem1b-smcr8",
+        "Name": "FEM1B[Ankyrin]-SMCR8[Cdeg]",
+        "Authenticity": "X-ray;Split Fusion",
+        "Box sides": [25,25,25],
+        "Sources": [
+            {
+                "Name": "SMCR8_HUMAN",
+                "Description": "ELM instance linked to PDB",
+                "Link": "http://elm.eu.org/ELMI004684"
+            },
+            {
+                "Name": "7EL6",
+                "Description": "PDB structure, from which chains were separated (original construct grafted the donor and acceptor with a glycine linker)",
+                "Link": "https://www.rcsb.org/structure/7EL6"
+            },
+            {
+                "Name": "Zhao et al. 2021",
+                "Description": "Primary publication for crystallographic PDB 7EL6",
+                "Link": "https://doi.org/10.1016/j.bbrc.2021.04.046"
+            }
+        ],
+        "Chains": [
+            {
+                "ID": "ankyrin",
+                "Name": "FEM1B[Ankyrin]",
+                "Description": "The ankyrin domain of FEM1B",
+                "Copies": 1,
+                "Sequence": "MEGLAGYVYKAASEGKVLTLAALLLNRSESDIRYLLGYVSQQGGQRSTPLIIAARNGHAKVVRLLLEHYRVQTQQTGTVRFDGYVIDGATALWCAAGAGHFEVVKLLVSHGANVNHTTVTNSTPLRAACFDGRLDIVKYLVENNANISIANKYDNTCLMIAAYKGHTDVVRYLLEQRADPNAKAHCGATALHFAAEAGHIDIVKELIKWRAAIVVNGHGMTPLKVAAESCKADVVELLLSHADCDRRSRIEALELLGASFANDRENYDIIKTYHYLYLAMLERFQDGDNILEKEVLPPIHAYGNRTECRNPQELESIRQDRDALHMEGLIVRERILG",
+                "Construct":  {
+                    "start": 1,
+                    "end": 337
+                },
+                "PDB": "data/pdb/7EL6_split.cif",
+                "PDB chain ID": "A",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [
+                    {
+                        "start": 1,
+                        "end": 137
+                    }
+                ],
+                "PTMs": []
+            },
+            {
+                "ID": "cdeg",
+                "Name": "SMCR8[Cdeg]",
+                "Description": "C-degron of SMCR8",
+                "Copies": 1,
+                "Sequence": "SQKWKLIGLQR",
+                "Construct":  {
+                    "start": 347,
+                    "end": 357
+                },
+                "PDB": "",
+                "PDB chain ID": "",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [],
+                "PTMs": []
+            }
+        ],
+        "SLiMs": [
+            {
+                "ID": "ankyrin-cdeg",
+                "Name": "FEM1B[Ankyrin]-SMCR8[Cdeg]",
+                "Notes": "SLiM structure originally resolved from a fusion protein.",
+                "Acceptor ID": "ankyrin",
+                "Donor ID": "cdeg",
+                "Affinity": -1,
+                "PDB": "data/pdb/7EL6_split.cif",
+                "PDB AlphaFold data JSON": "",
+                "PDB Acceptor chain ID": "A",
+                "PDB Acceptor construct": {
+                        "start": 1,
+                        "end": 137
+                },
+                "PDB Acceptor exclude": [],
+                "PDB Donor chain ID": "B",
+                "PDB Donor construct":  {
+                    "start": 347,
+                    "end": 357
+                },
+                "PDB Donor exclude": []
+            }
+        ]
+    },
+    {
+        "ID": "trimy-rnf187",
+        "Name": "TRIM7[SPRY]-RNF187[Cter]",
+        "Authenticity": "X-ray",
+        "Box sides": [15,15,15],
+        "Sources": [
+            {
+                "Name": "RN187_HUMAN",
+                "Description": "ELM instance linked to PDB",
+                "Link": "http://elm.eu.org/instances/DEG_Cend_TRIM7_1/Q5TA31/232"
+            },
+            {
+                "Name": "7OW2",
+                "Description": "PDB structure",
+                "Link": "https://www.rcsb.org/structure/7OW2"
+            }
+        ],
+        "Chains": [
+            {
+                "ID": "spry",
+                "Name": "TRIM7[SPRY]",
+                "Description": "SPRY domain of TRIM7",
+                "Copies": 1,
+                "Sequence": "MVELTLDPDTANPRLILSLDLKGVRLGERAQDLPNHPCRFDTNTRVLASCGFSSGRHHWEVEVGSKDGWAFGVARESVRRKGLTPFTPEEGVWALQLNGGQYWAVTSPERSPLSCGHLSRVRVALDLEVGAVSFYAVEDMRHLYTFRVNFQERVFPLFSVCSTGTYLRIWP",
+                "Construct":  {
+                    "start": 0,
+                    "end": 170
+                },
+                "PDB": "data/pdb/7OW2.cif",
+                "PDB chain ID": "A",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [
+                    {
+                        "start": 3,
+                        "end": 168
+                    }
+                ],
+                "PTMs": []
+            },
+            {
+                "ID": "cter",
+                "Name": "RNF187[Cter]",
+                "Description": "C-terminal peptide of RNF187",
+                "Copies": 1,
+                "Sequence": "GLSMLLQ",
+                "Construct":  {
+                    "start": 19,
+                    "end": 25
+                },
+                "PDB": "",
+                "PDB chain ID": "",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [],
+                "PTMs": []
+            }
+        ],
+        "SLiMs": [
+            {
+                "ID": "spry-cter",
+                "Name": "TRIM7[SPRY]-RNF187[Cter]",
+                "Notes": "",
+                "Acceptor ID": "spry",
+                "Donor ID": "cter",
+                "Affinity": -1,
+                "PDB": "data/pdb/7OW2.cif",
+                "PDB AlphaFold data JSON": "",
+                "PDB Acceptor chain ID": "A",
+                "PDB Acceptor construct": {
+                    "start": 0,
+                    "end": 170
+                },
+                "PDB Acceptor exclude": [],
+                "PDB Donor chain ID": "E",
+                "PDB Donor construct":  {
+                    "start": 19,
+                    "end": 25
+                },
+                "PDB Donor exclude": []
+            }
+        ]
+    },
+    {
+        "ID": "klhdc2-ephb2",
+        "Name": "KLHDC2[SBD]-EPHB2[Cdeg]",
+        "Authenticity": "X-ray",
+        "Box sides": [20,20,20],
+        "Sources": [
+            {
+                "Name": "EPHB2_HUMAN",
+                "Description": "ELM instance linked to PDB",
+                "Link": "http://elm.eu.org/ELMI004827"
+            },
+            {
+                "Name": "8EBL",
+                "Description": "PDB structure",
+                "Link": "https://www.rcsb.org/structure/8EBL"
+            },
+            {
+                "Name": "Scott et al. 2023",
+                "Description": "Primary publication for crystallographic PDB 8EBL",
+                "Link": "https://doi.org/10.1016/j.molcel.2023.01.019"
+            }
+        ],
+        "Chains": [
+            {
+                "ID": "sbd",
+                "Name": "KLHDC2[SBD]",
+                "Description": "Substrate binding domain of KLHDC2",
+                "Copies": 1,
+                "Sequence": "GSGPAFESYESMELACPAERSGHVAVSDGRHMFVWGGYKSNQVRGLYDFYLPREELWIYNMETGRWKKINTEGDVPPSMSGSCAVCVDRVLYLFGGHHSRGNTNKFYMLDSRSTDRVLQWERIDCQGIPPSSKDKLGVWVYKNKLIFFGGYGYLPEDKVLGTFEFDETSFWNSSHPRGWNDHVHILDTETFTWSQPITTGKAPSPRAAHACATVGNRGFVFGGRYRDARMNDLHYLNLDTWEWNELIPQGICPVGRSWHSLTPVSSDHLFLFGGFTTDKQPLSDAWTYCISKNEWIQFNHPYTEKPRLWHTACASDEGEVIVFGGCANNLLVHHRAAHSNEILIFSVQP",
+                "Construct":  {
+                    "start": 13,
+                    "end": 361
+                },
+                "PDB": "data/pdb/8EBL.cif",
+                "PDB chain ID": "A",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [
+                    {
+                        "start": 25,
+                        "end": 359
+                    }
+                ],
+                "PTMs": []
+            },
+            {
+                "ID": "cdeg",
+                "Name": "EPHB2[Cdeg]",
+                "Description": "C degron of EPHB2",
+                "Copies": 1,
+                "Sequence": "EDSHKESNDCSCGG",
+                "Construct":  {
+                    "start": 1042,
+                    "end": 1055
+                },
+                "PDB": "",
+                "PDB chain ID": "",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [],
+                "PTMs": []
+            }
+        ],
+        "SLiMs": [
+            {
+                "ID": "sbd-cdeg",
+                "Name": "KLHDC2[SBD]-EPHB2[Cdeg]",
+                "Notes": "The CIF structure contains several models",
+                "Acceptor ID": "sbd",
+                "Donor ID": "cdeg",
+                "Affinity": -1,
+                "PDB": "data/pdb/8EBL.cif",
+                "PDB AlphaFold data JSON": "",
+                "PDB Acceptor chain ID": "A",
+                "PDB Acceptor construct": {
+                    "start": 13,
+                    "end": 361
+                },
+                "PDB Acceptor exclude": [],
+                "PDB Donor chain ID": "C",
+                "PDB Donor construct":  {
+                    "start": 1042,
+                    "end": 1055
+                },
+                "PDB Donor exclude": []
+            }
+        ]
+    },
+    {
+        "ID": "mdm2-p73",
+        "Name": "MDM2[SWIB/MDM2]-p73[TAD]",
+        "Authenticity": "NMR",
+        "Box sides": [25,25,25],
+        "Sources": [
+            {
+                "Name": "P73_HUMAN",
+                "Description": "ELM instance linked to PDB",
+                "Link": "http://elm.eu.org/ELMI002840"
+            },
+            {
+                "Name": "2MPS",
+                "Description": "PDB structure",
+                "Link": "https://www.rcsb.org/structure/2MPS"
+            },
+            {
+                "Name": "Shin et al. 2024",
+                "Description": "Primary publication for crystallographic PDB 2MPS; Publication for affinity",
+                "Link": "https://doi.org/10.1080/15384101.2014.998056"
+            }
+        ],
+        "Chains": [
+            {
+                "ID": "swib",
+                "Name": "MDM2[SWIB/MDM2]",
+                "Description": "SWIB/MDM2 domain of MDM2",
+                "Copies": 1,
+                "Sequence": "NTNMSVPTDGAVTTSQIPASEQETLVRPKPLLLKLLKSVGAQKDTYTMKEVLFYLGQYIMTKRLYDEKQQHIVYCSNDLLGDLFGVPSFSVKEHRKIYTMIYRNLVV",
+                "Construct":  {
+                    "start": 3,
+                    "end": 109
+                },
+                "PDB": "data/pdb/2MPS.cif",
+                "PDB chain ID": "A",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [
+                    {
+                        "start": 26,
+                        "end": 109
+                    }
+                ],
+                "PTMs": []
+            },
+            {
+                "ID": "tad",
+                "Name": "p73[TAD]",
+                "Description": "Trans-activation domain of p73",
+                "Copies": 1,
+                "Sequence": "DGGTTFEHLWSSLEPD",
+                "Construct":  {
+                    "start": 301,
+                    "end": 316
+                },
+                "PDB": "",
+                "PDB chain ID": "",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [],
+                "PTMs": []
+            }
+        ],
+        "SLiMs": [
+            {
+                "ID": "swib-tad",
+                "Name": "MDM2[SWIB/MDM2]-p73[TAD]",
+                "Notes": "Manual exlusion of residues from SLiM contacts based on NMR dynamics.",
+                "Acceptor ID": "swib",
+                "Donor ID": "tad",
+                "Affinity": 3.9e-6,
+                "PDB": "data/pdb/2MPS.cif",
+                "PDB AlphaFold data JSON": "",
+                "PDB Acceptor chain ID": "A",
+                "PDB Acceptor construct": {
+                    "start": 3,
+                    "end": 109
+                },
+                "PDB Acceptor exclude": [3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],
+                "PDB Donor chain ID": "B",
+                "PDB Donor construct":  {
+                    "start": 301,
+                    "end": 316
+                },
+                "PDB Donor exclude": [301,302,303,304,316]
+            }
+        ]
+    },
+    {
+        "ID": "mdm2-p53",
+        "Name": "MDM2[SWIB/MDM2]-p53[TAD]",
+        "Authenticity": "X-ray",
+        "Box sides": [25,25,25],
+        "Sources": [
+            {
+                "Name": "P53_HUMAN",
+                "Description": "ELM instance linked to PDB",
+                "Link": "http://elm.eu.org/ELMI002838"
+            },
+                        {
+                "Name": "1YCR",
+                "Description": "PDB structure",
+                "Link": "https://www.rcsb.org/structure/1YCR"
+            },
+                        {
+                "Name": "Kussie et al. 1996",
+                "Description": "Primary publication for crystallographic PDB 1YCR",
+                "Link": "https://doi.org/10.1126/science.274.5289.948"
+            },
+            {
+                "Name": "Shin et al. 2024",
+                "Description": "Publication for affinity",
+                "Link": "https://doi.org/10.1080/15384101.2014.998056"
+            }
+        ],
+        "Chains": [
+            {
+                "ID": "swib",
+                "Name": "MDM2[SWIB/MDM2]",
+                "Description": "SWIB/MDM2 domain of MDM2",
+                "Copies": 1,
+                "Sequence": "SQIPASEQETLVRPKPLLLKLLKSVGAQKDTYTMKEVLFYLGQYIMTKRLYDEKQQHIVYCSNDLLGDLFGVPSFSVKEHRKIYTMIYRNLVVVNQQESSDSGTSVSEN",
+                "Construct":  {
+                    "start": 17,
+                    "end": 125
+                },
+                "PDB": "data/pdb/1YCR.cif",
+                "PDB chain ID": "A",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [
+                    {
+                        "start": 25,
+                        "end": 109
+                    }
+                ],
+                "PTMs": []
+            },
+            {
+                "ID": "tad",
+                "Name": "p53[TAD]",
+                "Description": "Trans-activation domain of p53",
+                "Copies": 1,
+                "Sequence": "SQETFSDLWKLLPEN",
+                "Construct":  {
+                    "start": 15,
+                    "end": 29
+                },
+                "PDB": "",
+                "PDB chain ID": "",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [],
+                "PTMs": []
+            }
+        ],
+        "SLiMs": [
+            {
+                "ID": "swib-tad",
+                "Name": "MDM2[SWIB/MDM2]-p53[TAD]",
+                "Notes": "",
+                "Acceptor ID": "swib",
+                "Donor ID": "tad",
+                "Affinity": 1.6e-6,
+                "PDB": "data/pdb/1YCR.cif",
+                "PDB AlphaFold data JSON": "",
+                "PDB Acceptor chain ID": "A",
+                "PDB Acceptor construct": {
+                    "start": 17,
+                    "end": 125
+                },
+                "PDB Acceptor exclude": [],
+                "PDB Donor chain ID": "B",
+                "PDB Donor construct":  {
+                    "start": 15,
+                    "end": 29
+                },
+                "PDB Donor exclude": []
+            }
+        ]
+    },
+    {
+        "ID": "psip1-mll",
+        "Name": "PSIP1[IBD]-MLL[LBD]",
+        "Authenticity": "NMR",
+        "Box sides": [200,200,200],
+        "Sources": [
+            {
+                "Name": "MLL1_HUMAN",
+                "Description": "ELM instance linked to PDB",
+                "Link": "http://elm.eu.org/ELMI004528"
+            },
+            {
+                "Name": "2MSR",
+                "Description": "PDB structure",
+                "Link": "https://www.rcsb.org/structure/2MSR"
+            },
+            {
+                "Name": "Čermáková et al. 2014",
+                "Description": "Primary publication for crystallographic PDB 2MSR; Publication for affinity",
+                "Link": "https://doi.org/10.1158/0008-5472.CAN-13-3602"
+            }
+        ],
+        "Chains": [
+            {
+                "ID": "ibd",
+                "Name": "PSIP1[IBD]",
+                "Description": "Integrase-binding domain of PSIP1",
+                "Copies": 1,
+                "Sequence": "SNAASRETSMDSRLQRIHAEIKNSLKIDNLDVNRCIEALDELASLQVTMQQAQKHTEMITTLKKIRRFKVSQVIMEKSTMLYNKFKNM",
+                "Construct":  {
+                    "start": 339,
+                    "end": 426
+                },
+                "PDB": "data/pdb/2MSR.cif",
+                "PDB chain ID": "B",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [
+                    {
+                        "start": 348,
+                        "end": 426
+                    }
+                ],
+                "PTMs": []
+            },
+            {
+                "ID": "lbd",
+                "Name": "MLL[LBD]",
+                "Description": "Ligand-binding domain of MLL",
+                "Copies": 1,
+                "Sequence": "GGSGEDEQFLGFGSDEEVRVR",
+                "Construct":  {
+                    "start": 140,
+                    "end": 160
+                },
+                "PDB": "",
+                "PDB chain ID": "",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [],
+                "PTMs": []
+            }
+        ],
+        "SLiMs": [
+            {
+                "ID": "ibd-lbd",
+                "Name": "PSIP1[IBD]-MLL[LBD]",
+                "Notes": "Manual exlusion of residues from SLiM contacts based on NMR dynamics.",
+                "Acceptor ID": "ibd",
+                "Donor ID": "lbd",
+                "Affinity": 86.3e-6,
+                "PDB": "data/pdb/2MSR.cif",
+                "PDB AlphaFold data JSON": "",
+                "PDB Acceptor chain ID": "B",
+                "PDB Acceptor construct": {
+                    "start": 339,
+                    "end": 426
+                },
+                "PDB Acceptor exclude": [339, 340, 341, 342, 343, 344, 345, 346, 347],
+                "PDB Donor chain ID": "A",
+                "PDB Donor construct":  {
+                    "start": 140,
+                    "end": 160
+                },
+                "PDB Donor exclude": [140, 141, 142, 143, 144, 145, 146, 147, 150, 154, 155, 156, 157, 158, 159, 160]
+            }
+        ]
+    }
+]

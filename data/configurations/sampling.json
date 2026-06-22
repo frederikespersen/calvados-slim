@@ -1,0 +1,18 @@
+{
+    "Visualisation": {
+        "Stride": 100,
+        "Frames": 10000
+    },
+    "Validation": {
+        "Stride": 1000,
+        "Frames": 10000
+    },
+    "Scan": {
+        "Stride": 50000,
+        "Frames": 10000
+    },
+    "Convergence": {
+        "Stride": 50000, 
+        "Frames": 100000
+    }
+}

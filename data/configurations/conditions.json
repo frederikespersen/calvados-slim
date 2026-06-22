@@ -1,0 +1,10 @@
+
+{
+    "Default": {
+        "Temperature": 298.15,
+        "Ionic strength": 0.150,
+        "pH": 7.0,
+        "CALVADOS residue parameters": "data/configurations/residues.csv"
+    }
+}
+
