@@ -488,7 +488,7 @@ class System:
             ``(construct_res_idxs, authres_ids)``, both ``(N, 2)``: the 0-based
             construct indices and the author residue ids of each contact pair.
         """
-        universe = mda.Universe(slim['PDB'])
+        universe = utils.load_structure(slim['PDB'])
         acc_authres_pdb = System._pdb_author_resids(universe, slim['PDB Acceptor chain ID'])
         don_authres_pdb = System._pdb_author_resids(universe, slim['PDB Donor chain ID'])
         acc_map = System._authres_index_map(acc_authres_pdb, acceptor_chain['Construct'])

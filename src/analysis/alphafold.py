@@ -8,7 +8,6 @@ import os
 import numpy as np
 import json
 from typing import Literal
-import MDAnalysis as mda
 from scipy.spatial import distance_matrix
 
 from src import utils
@@ -138,7 +137,7 @@ def inter_chain_min_dist(
     """
     
     # Loading and subsetting chains
-    universe = mda.Universe(structure_cif)
+    universe = utils.load_structure(structure_cif)
     chain1 = utils.select_chain(universe, chain1_id).residues
     chain2 = utils.select_chain(universe, chain2_id).residues
 
@@ -246,7 +245,7 @@ def inter_chain_pinc(
 
 
     # Loading and subsetting chains
-    universe = mda.Universe(structure_cif)
+    universe = utils.load_structure(structure_cif)
     chain1 = utils.select_chain(universe, chain1_id).residues
     chain2 = utils.select_chain(universe, chain2_id).residues
 

@@ -8,7 +8,6 @@ import os
 import warnings
 from typing import Literal
 import numpy as np
-import MDAnalysis as mda
 from MDAnalysis.core.groups import Residue, ResidueGroup, AtomGroup
 from src.calvados.calvados.sequence import seq_from_pdb
 
@@ -52,7 +51,7 @@ def validate_chain_pdb(pdb_path: str, expected_seq: str, use_com: bool = False) 
 
     with warnings.catch_warnings():
         warnings.simplefilter("ignore")
-        u = mda.Universe(pdb_path)
+        u = utils.load_structure(pdb_path)
 
     # one chain only
     if len(u.segments) != 1:
@@ -220,7 +219,7 @@ def bead_distances(
         1-D array of inter-bead distances (Angstrom), one per input pair.
     """
     # Load the structure and isolate each chain's residues (in file order)
-    universe = mda.Universe(structure_file)
+    universe = utils.load_structure(structure_file)
     chain1 = utils.select_chain(universe, chain1_id).residues
     chain2 = utils.select_chain(universe, chain2_id).residues
 

@@ -8,7 +8,9 @@ Miscellaneous utility helpers used across the curation and analysis pipeline.
 import pandas as pd
 import numpy as np
 import os
+from io import StringIO
 import MDAnalysis as mda
+from MDAnalysis.lib.util import NamedStream
 from pdbfixer import PDBFixer
 from openmm.app import PDBFile, Modeller
 import gemmi
@@ -186,6 +188,33 @@ def select_and_clean_chains(input_path: str, output_path: str, chain_ids: list[s
 
 #······································································#
 # MDAnalysis
+#······································································#
+
+def load_structure(structure_file: str) -> mda.Universe:
+    """Load a PDB or mmCIF structure into an MDAnalysis ``Universe``.
+
+    MDAnalysis has no mmCIF topology parser (confirmed through 2.9.0), so it
+    cannot load ``.cif`` files directly. ``.cif`` inputs are therefore converted
+    to PDB in-memory with gemmi (which preserves author chain ids and residue
+    numbering) before being handed to MDAnalysis; ``.pdb`` inputs are read
+    directly.
+
+    Parameters
+    ----------
+    structure_file : str
+        Path to the structure file (``.pdb`` or ``.cif``).
+
+    Returns
+    -------
+    MDAnalysis.Universe
+        The loaded structure.
+    """
+    if os.path.splitext(structure_file)[-1].lower() in ('.cif', '.mmcif'):
+        structure = gemmi.read_structure(str(structure_file))
+        structure.setup_entities()
+        return mda.Universe(NamedStream(StringIO(structure.make_pdb_string()), 'structure.pdb'))
+    return mda.Universe(structure_file)
+
 #······································································#
 
 def select_chain(universe: mda.Universe, chain_id: str) -> mda.AtomGroup:
