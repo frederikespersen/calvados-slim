@@ -1,32 +1,32 @@
 {
-    "Rough": {
+    "Coarse limited": {
         "Upper": 4.0,
         "Lower": 2.0,
         "Step": 1.0
     },
     "Coarse": {
-        "Upper": 6.0,
+        "Upper": 5.0,
         "Lower": 0.0,
         "Step": 1.0
     },
     "Thorough": {
-        "Upper": 5.0,
+        "Upper": 6.0,
         "Lower": 0.0,
-        "Step": 0.1
+        "Step": 0.2
     },
     "Thorough limited": {
         "Upper": 4.0,
         "Lower": 2.0,
-        "Step": 0.1
+        "Step": 0.2
     },
     "Fine": {
         "Upper": 4.0,
         "Lower": 0.0,
-        "Step": 0.02
+        "Step": 0.1
     },
     "Fine limited": {
         "Upper": 3.5,
         "Lower": 2.5,
-        "Step": 0.02
+        "Step": 0.1
     }
 }
