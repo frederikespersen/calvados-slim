@@ -5,6 +5,7 @@ Utils for analysis of SLiM interactions in MD trajectories.
 """
 
 
+import warnings
 import numpy as np
 import MDAnalysis as mda
 from MDAnalysis.lib.distances import calc_bonds
@@ -122,9 +123,13 @@ class TwoChain:
             array (one entry per frame) and ``concentration`` is the single-copy
             box concentration in molar.
         """
-        # Load contacts and trajectory
+        # Load contacts and trajectory. The DCDReader emits a 3.0-deprecation
+        # notice about making independent timesteps; it doesn't affect this
+        # estimator (positions are read fresh per frame), so silence just it.
         specific_interactions = utils.parse_specific_interactions(specific_interactions_txt)
-        u = mda.Universe(top_pdb, traj_dcd)
+        with warnings.catch_warnings():
+            warnings.filterwarnings("ignore", message="DCDReader currently makes independent timesteps")
+            u = mda.Universe(top_pdb, traj_dcd)
 
         # This estimator assumes a two-chain box (acceptor = chain 0, donor =
         # chain 1) with CALVADOS' one bead per residue; validate before indexing.
