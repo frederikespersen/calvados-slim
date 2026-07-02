@@ -29,3 +29,34 @@
 2026-06-22 12:03:55: 	- Mapping residue indices between System and SLiM constructs
 2026-06-22 12:03:55: 	- Appending contacts to '/home/fknudsen/calvados-slim/data/curation/systems/psip1-mll/specific_interactions.txt'
 2026-06-22 12:03:55: 
+2026-06-22 17:18:08: ················································································
+2026-06-22 17:18:08: Parsing chains of 'psip1-mll' system to CALVADOS input
+2026-06-22 17:18:08: ················································································
+2026-06-22 17:18:08: Chain 'ibd' ('PSIP1[IBD]')
+2026-06-22 17:18:08: 	- Parsing chain as a MDP, as chain PDB is specified
+2026-06-22 17:18:08: 	- Selecting chain 'B' and pasting to '/home/fknudsen/calvados-slim/data/curation/systems/psip1-mll/ibd.pdb'
+2026-06-22 17:18:09: The attribute(s) types have already been read from the topology file. The guesser will only guess empty values for this attribute, if any exists. To overwrite it by completely guessed values, you can pass the attribute to the force_guess parameter instead of the to_guess one
+2026-06-22 17:18:09: There is no empty types values. Guesser did not guess any new values for types attribute
+2026-06-22 17:18:09: attribute masses has been guessed successfully.
+2026-06-22 17:18:09: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-06-22 17:18:09: 	- Writing chain 'B' domain annotations to '/home/fknudsen/calvados-slim/data/curation/systems/psip1-mll/ibd.yaml'
+2026-06-22 17:18:09: 
+2026-06-22 17:18:09: Chain 'lbd' ('MLL[LBD]')
+2026-06-22 17:18:09: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-06-22 17:18:09: 	- Appending sequence to '/home/fknudsen/calvados-slim/data/curation/systems/psip1-mll/lbd.fasta'
+2026-06-22 17:18:09: 
+2026-06-22 17:18:09: ················································································
+2026-06-22 17:18:09: Parsing SLiMs of 'psip1-mll' system to CALVADOS input
+2026-06-22 17:18:09: ················································································
+2026-06-22 17:18:09: SLiM 'ibd-lbd' ('PSIP1[IBD]-MLL[LBD]')
+2026-06-22 17:18:09: 	- Verifying that acceptor 'ibd' and donor 'lbd' chains are found in system
+2026-06-22 17:18:09: 	- Performing contact analysis
+2026-06-22 17:18:09: 		- Calculating SMOG Shadow Contact Map (SCM) from SLiM PDB
+2026-06-22 17:18:13: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-06-22 17:18:13: 		- Defining contacts
+2026-06-22 17:18:13: 		- Found 19 pairwise contacts
+2026-06-22 17:18:13: 		- Calculating contact distances
+2026-06-22 17:18:16: 	- Excluding 2 contacts
+2026-06-22 17:18:16: 	- Mapping residue indices between System and SLiM constructs
+2026-06-22 17:18:16: 	- Appending contacts to '/home/fknudsen/calvados-slim/data/curation/systems/psip1-mll/specific_interactions.txt'
+2026-06-22 17:18:16: 

@@ -8,12 +8,42 @@ Miscellaneous utility helpers used across the curation and analysis pipeline.
 import pandas as pd
 import numpy as np
 import os
+import urllib.request
 from io import StringIO
 import MDAnalysis as mda
 from MDAnalysis.lib.util import NamedStream
 from pdbfixer import PDBFixer
 from openmm.app import PDBFile, Modeller
 import gemmi
+import struct
+
+
+#······································································#
+# File download
+#······································································#
+
+def download_cif(pdb_id: str, pdb_path: str) -> None:
+    """
+    Downloads an mmCIF from the RCSB Protein Data Bank.
+
+    Parameters
+    ----------
+    pdb_id : str
+        The 4-character PDB identifier (case-insensitive).
+    pdb_dir : str
+        The directory path where the downloaded file should be stored.
+    """    
+    # Ensure target directory exists
+    pdb_dir = os.path.dirname(pdb_path)
+    assert os.path.exists(pdb_dir), f"Directory '{pdb_dir}' to save {pdb_id.upper()}.cif to does not exist!"
+    
+    # Construct standard URL and local destination path
+    url = f"https://files.rcsb.org/download/{pdb_id.upper()}.cif"
+    
+    # Execute retrieval
+    print(f"Retrieving {pdb_id.upper()}.cif from RCSB PDB")
+    filename, headers = urllib.request.urlretrieve(url, pdb_path)
+
 
 
 #······································································#
@@ -77,6 +107,31 @@ def parse_specific_interactions(fspecific_interactions: str) -> pd.DataFrame:
             s, k = params.split()
             values.append([chain_i, int(bead_i), chain_j, int(bead_j), float(s), k]) # 1-based
     return pd.DataFrame(values, columns=['Acceptor chain', 'Acceptor residue', 'Donor chain', 'Donor residue', 'Equilibrium distance', 'Well depth'])
+
+#······································································#
+
+def get_dcd_frame_count(dcd_path: str):
+    """Gets the number of frames in a DCD-file.
+
+    Parameters
+    ----------
+    dcd_path : str
+        The path to a DCD file.
+
+    Returns
+    -------
+    n_frames : int
+        The number of frames the DCD file, as specified by its header.
+    """
+    try:
+        with open(dcd_path, 'rb') as f:
+            # Skip the first record length (4 bytes) and the 'CORD' ID (4 bytes)
+            f.seek(8)
+            # Read the first 4-byte integer of the header array
+            n_frames = struct.unpack('i', f.read(4))[0]
+    except FileNotFoundError:
+        return np.nan
+    return n_frames
 
 
 

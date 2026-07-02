@@ -29,3 +29,34 @@
 2026-06-22 12:03:14: 	- Mapping residue indices between System and SLiM constructs
 2026-06-22 12:03:14: 	- Appending contacts to '/home/fknudsen/calvados-slim/data/curation/systems/trimy-rnf187/specific_interactions.txt'
 2026-06-22 12:03:14: 
+2026-06-22 17:17:35: ················································································
+2026-06-22 17:17:35: Parsing chains of 'trimy-rnf187' system to CALVADOS input
+2026-06-22 17:17:35: ················································································
+2026-06-22 17:17:35: Chain 'spry' ('TRIM7[SPRY]')
+2026-06-22 17:17:35: 	- Parsing chain as a MDP, as chain PDB is specified
+2026-06-22 17:17:35: 	- Selecting chain 'A' and pasting to '/home/fknudsen/calvados-slim/data/curation/systems/trimy-rnf187/spry.pdb'
+2026-06-22 17:17:36: The attribute(s) types have already been read from the topology file. The guesser will only guess empty values for this attribute, if any exists. To overwrite it by completely guessed values, you can pass the attribute to the force_guess parameter instead of the to_guess one
+2026-06-22 17:17:36: There is no empty types values. Guesser did not guess any new values for types attribute
+2026-06-22 17:17:36: attribute masses has been guessed successfully.
+2026-06-22 17:17:36: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-06-22 17:17:36: 	- Writing chain 'A' domain annotations to '/home/fknudsen/calvados-slim/data/curation/systems/trimy-rnf187/spry.yaml'
+2026-06-22 17:17:36: 
+2026-06-22 17:17:36: Chain 'cter' ('RNF187[Cter]')
+2026-06-22 17:17:36: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-06-22 17:17:36: 	- Appending sequence to '/home/fknudsen/calvados-slim/data/curation/systems/trimy-rnf187/cter.fasta'
+2026-06-22 17:17:36: 
+2026-06-22 17:17:36: ················································································
+2026-06-22 17:17:36: Parsing SLiMs of 'trimy-rnf187' system to CALVADOS input
+2026-06-22 17:17:36: ················································································
+2026-06-22 17:17:36: SLiM 'spry-cter' ('TRIM7[SPRY]-RNF187[Cter]')
+2026-06-22 17:17:36: 	- Verifying that acceptor 'spry' and donor 'cter' chains are found in system
+2026-06-22 17:17:36: 	- Performing contact analysis
+2026-06-22 17:17:36: 		- Calculating SMOG Shadow Contact Map (SCM) from SLiM PDB
+2026-06-22 17:17:39: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-06-22 17:17:39: 		- Defining contacts
+2026-06-22 17:17:39: 		- Found 35 pairwise contacts
+2026-06-22 17:17:39: 		- Calculating contact distances
+2026-06-22 17:17:40: 	- Excluding 0 contacts
+2026-06-22 17:17:40: 	- Mapping residue indices between System and SLiM constructs
+2026-06-22 17:17:40: 	- Appending contacts to '/home/fknudsen/calvados-slim/data/curation/systems/trimy-rnf187/specific_interactions.txt'
+2026-06-22 17:17:40: 

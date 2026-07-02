@@ -29,3 +29,34 @@
 2026-06-22 12:03:41: 	- Mapping residue indices between System and SLiM constructs
 2026-06-22 12:03:41: 	- Appending contacts to '/home/fknudsen/calvados-slim/data/curation/systems/mdm2-p73/specific_interactions.txt'
 2026-06-22 12:03:41: 
+2026-06-22 17:17:50: ················································································
+2026-06-22 17:17:50: Parsing chains of 'mdm2-p73' system to CALVADOS input
+2026-06-22 17:17:50: ················································································
+2026-06-22 17:17:50: Chain 'swib' ('MDM2[SWIB/MDM2]')
+2026-06-22 17:17:50: 	- Parsing chain as a MDP, as chain PDB is specified
+2026-06-22 17:17:50: 	- Selecting chain 'A' and pasting to '/home/fknudsen/calvados-slim/data/curation/systems/mdm2-p73/swib.pdb'
+2026-06-22 17:17:52: The attribute(s) types have already been read from the topology file. The guesser will only guess empty values for this attribute, if any exists. To overwrite it by completely guessed values, you can pass the attribute to the force_guess parameter instead of the to_guess one
+2026-06-22 17:17:52: There is no empty types values. Guesser did not guess any new values for types attribute
+2026-06-22 17:17:52: attribute masses has been guessed successfully.
+2026-06-22 17:17:52: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-06-22 17:17:52: 	- Writing chain 'A' domain annotations to '/home/fknudsen/calvados-slim/data/curation/systems/mdm2-p73/swib.yaml'
+2026-06-22 17:17:52: 
+2026-06-22 17:17:52: Chain 'tad' ('p73[TAD]')
+2026-06-22 17:17:52: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-06-22 17:17:52: 	- Appending sequence to '/home/fknudsen/calvados-slim/data/curation/systems/mdm2-p73/tad.fasta'
+2026-06-22 17:17:52: 
+2026-06-22 17:17:52: ················································································
+2026-06-22 17:17:52: Parsing SLiMs of 'mdm2-p73' system to CALVADOS input
+2026-06-22 17:17:52: ················································································
+2026-06-22 17:17:52: SLiM 'swib-tad' ('MDM2[SWIB/MDM2]-p73[TAD]')
+2026-06-22 17:17:52: 	- Verifying that acceptor 'swib' and donor 'tad' chains are found in system
+2026-06-22 17:17:52: 	- Performing contact analysis
+2026-06-22 17:17:52: 		- Calculating SMOG Shadow Contact Map (SCM) from SLiM PDB
+2026-06-22 17:17:56: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-06-22 17:17:56: 		- Defining contacts
+2026-06-22 17:17:56: 		- Found 62 pairwise contacts
+2026-06-22 17:17:56: 		- Calculating contact distances
+2026-06-22 17:17:59: 	- Excluding 13 contacts
+2026-06-22 17:17:59: 	- Mapping residue indices between System and SLiM constructs
+2026-06-22 17:17:59: 	- Appending contacts to '/home/fknudsen/calvados-slim/data/curation/systems/mdm2-p73/specific_interactions.txt'
+2026-06-22 17:17:59: 

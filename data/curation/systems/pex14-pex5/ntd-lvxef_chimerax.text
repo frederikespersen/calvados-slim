@@ -1,0 +1,9 @@
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/A,B cartoons
+sel /A:35,38,40,41,43,44,45,48,49,52,55,56 | /B:62,63,65,66,67
+show sel surfaces
+view sel

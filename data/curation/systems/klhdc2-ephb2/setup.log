@@ -29,3 +29,34 @@
 2026-06-22 12:03:32: 	- Mapping residue indices between System and SLiM constructs
 2026-06-22 12:03:32: 	- Appending contacts to '/home/fknudsen/calvados-slim/data/curation/systems/klhdc2-ephb2/specific_interactions.txt'
 2026-06-22 12:03:32: 
+2026-06-22 17:17:40: ················································································
+2026-06-22 17:17:40: Parsing chains of 'klhdc2-ephb2' system to CALVADOS input
+2026-06-22 17:17:40: ················································································
+2026-06-22 17:17:40: Chain 'sbd' ('KLHDC2[SBD]')
+2026-06-22 17:17:40: 	- Parsing chain as a MDP, as chain PDB is specified
+2026-06-22 17:17:40: 	- Selecting chain 'A' and pasting to '/home/fknudsen/calvados-slim/data/curation/systems/klhdc2-ephb2/sbd.pdb'
+2026-06-22 17:17:44: The attribute(s) types have already been read from the topology file. The guesser will only guess empty values for this attribute, if any exists. To overwrite it by completely guessed values, you can pass the attribute to the force_guess parameter instead of the to_guess one
+2026-06-22 17:17:44: There is no empty types values. Guesser did not guess any new values for types attribute
+2026-06-22 17:17:44: attribute masses has been guessed successfully.
+2026-06-22 17:17:44: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-06-22 17:17:44: 	- Writing chain 'A' domain annotations to '/home/fknudsen/calvados-slim/data/curation/systems/klhdc2-ephb2/sbd.yaml'
+2026-06-22 17:17:44: 
+2026-06-22 17:17:44: Chain 'cdeg' ('EPHB2[Cdeg]')
+2026-06-22 17:17:44: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-06-22 17:17:44: 	- Appending sequence to '/home/fknudsen/calvados-slim/data/curation/systems/klhdc2-ephb2/cdeg.fasta'
+2026-06-22 17:17:44: 
+2026-06-22 17:17:44: ················································································
+2026-06-22 17:17:44: Parsing SLiMs of 'klhdc2-ephb2' system to CALVADOS input
+2026-06-22 17:17:44: ················································································
+2026-06-22 17:17:44: SLiM 'sbd-cdeg' ('KLHDC2[SBD]-EPHB2[Cdeg]')
+2026-06-22 17:17:44: 	- Verifying that acceptor 'sbd' and donor 'cdeg' chains are found in system
+2026-06-22 17:17:44: 	- Performing contact analysis
+2026-06-22 17:17:44: 		- Calculating SMOG Shadow Contact Map (SCM) from SLiM PDB
+2026-06-22 17:17:49: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-06-22 17:17:49: 		- Defining contacts
+2026-06-22 17:17:49: 		- Found 55 pairwise contacts
+2026-06-22 17:17:49: 		- Calculating contact distances
+2026-06-22 17:17:50: 	- Excluding 0 contacts
+2026-06-22 17:17:50: 	- Mapping residue indices between System and SLiM constructs
+2026-06-22 17:17:50: 	- Appending contacts to '/home/fknudsen/calvados-slim/data/curation/systems/klhdc2-ephb2/specific_interactions.txt'
+2026-06-22 17:17:50: 

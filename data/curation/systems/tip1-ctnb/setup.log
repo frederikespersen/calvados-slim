@@ -1,0 +1,37 @@
+2026-06-22 23:07:08: ················································································
+2026-06-22 23:07:08: Parsing chains of 'tip1-ctnb' system to CALVADOS input
+2026-06-22 23:07:08: ················································································
+2026-06-22 23:07:08: Chain 'pdz' ('TIP1[PDZ]')
+2026-06-22 23:07:08: 	- Parsing chain as a MDP, as chain PDB is specified
+2026-06-22 23:07:08: 	- Selecting chain 'A' and pasting to '/home/fknudsen/calvados-slim/data/curation/systems/tip1-ctnb/pdz.pdb'
+2026-06-22 23:07:09: The attribute(s) types have already been read from the topology file. The guesser will only guess empty values for this attribute, if any exists. To overwrite it by completely guessed values, you can pass the attribute to the force_guess parameter instead of the to_guess one
+2026-06-22 23:07:09: There is no empty types values. Guesser did not guess any new values for types attribute
+2026-06-22 23:07:09: attribute masses has been guessed successfully.
+2026-06-22 23:07:09: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-06-22 23:07:09: 	- Writing chain 'A' domain annotations to '/home/fknudsen/calvados-slim/data/curation/systems/tip1-ctnb/pdz.yaml'
+2026-06-22 23:07:09: 
+2026-06-22 23:07:09: Chain 'cter' ('CTNB[Cter]')
+2026-06-22 23:07:09: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-06-22 23:07:09: 	- Appending sequence to '/home/fknudsen/calvados-slim/data/curation/systems/tip1-ctnb/cter.fasta'
+2026-06-22 23:07:09: 
+2026-06-22 23:07:09: ················································································
+2026-06-22 23:07:09: Parsing SLiMs of 'tip1-ctnb' system to CALVADOS input
+2026-06-22 23:07:09: ················································································
+2026-06-22 23:07:09: SLiM 'pdz-cter' ('TIP1[PDZ]-CTNB[Cter]')
+2026-06-22 23:07:09: 	- Verifying that acceptor 'pdz' and donor 'cter' chains are found in system
+2026-06-22 23:07:09: 	- Performing contact analysis
+2026-06-22 23:07:09: 		- Calculating SMOG Shadow Contact Map (SCM) from SLiM PDB
+2026-06-22 23:07:12: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-06-22 23:07:12: 		- Defining contacts
+2026-06-22 23:07:12: 		- Found 58 pairwise contacts
+2026-06-22 23:07:12: 		- Calculating contact distances
+2026-06-22 23:07:12: The attribute(s) types have already been read from the topology file. The guesser will only guess empty values for this attribute, if any exists. To overwrite it by completely guessed values, you can pass the attribute to the force_guess parameter instead of the to_guess one
+2026-06-22 23:07:12: There is no empty types values. Guesser did not guess any new values for types attribute
+2026-06-22 23:07:12: attribute masses has been guessed successfully.
+2026-06-22 23:07:12: 	- Mapping residue indices between System and SLiM constructs
+2026-06-22 23:07:12: The attribute(s) types have already been read from the topology file. The guesser will only guess empty values for this attribute, if any exists. To overwrite it by completely guessed values, you can pass the attribute to the force_guess parameter instead of the to_guess one
+2026-06-22 23:07:12: There is no empty types values. Guesser did not guess any new values for types attribute
+2026-06-22 23:07:12: attribute masses has been guessed successfully.
+2026-06-22 23:07:12: 	- Excluding 0 contacts
+2026-06-22 23:07:12: 	- Appending contacts to '/home/fknudsen/calvados-slim/data/curation/systems/tip1-ctnb/specific_interactions.txt'
+2026-06-22 23:07:12: 

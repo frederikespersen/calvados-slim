@@ -333,7 +333,7 @@ class System:
             return
 
         # Chains with a PDB are treated as MDPs: select the chain and clean it
-        log.info("\t- Parsing chain as a MDP, as chain PDB is specified")
+        log.info(f"\t- Parsing chain as a MDP, as chain PDB '{chain['PDB']}' is specified")
         chain_input_pdb = os.path.join(system_dir, f"{chain['ID']}.pdb")
         log.info(f"\t- Selecting chain '{chain['PDB chain ID']}' and pasting to '{chain_input_pdb}'")
         utils.select_and_clean_chains(chain['PDB'], chain_input_pdb, chain_ids=[chain['PDB chain ID']])
@@ -517,7 +517,9 @@ class System:
             file.write(f"/{slim['PDB Acceptor chain ID']}:{acc_resids}")
             file.write(" | ")
             file.write(f"/{slim['PDB Donor chain ID']}:{don_resids}")
+            file.write("\nshow sel surfaces")
             file.write("\nview sel")
+
 
     #··································································#
     

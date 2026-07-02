@@ -20,13 +20,13 @@
         "Step": 0.2
     },
     "Fine": {
-        "Upper": 4.0,
+        "Upper": 6.0,
         "Lower": 0.0,
         "Step": 0.1
     },
     "Fine limited": {
-        "Upper": 3.5,
-        "Lower": 2.5,
+        "Upper": 4.0,
+        "Lower": 2.0,
         "Step": 0.1
     }
 }

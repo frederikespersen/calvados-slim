@@ -590,7 +590,7 @@
         "ID": "psip1-mll",
         "Name": "PSIP1[IBD]-MLL[LBD]",
         "Authenticity": "NMR",
-        "Box sides": [200,200,200],
+        "Box sides": [20,20,20],
         "Sources": [
             {
                 "Name": "MLL1_HUMAN",
@@ -669,6 +669,431 @@
                     "end": 160
                 },
                 "PDB Donor exclude": [140, 141, 142, 143, 144, 145, 146, 147, 150, 154, 155, 156, 157, 158, 159, 160]
+            }
+        ]
+    },
+    {
+        "ID": "tip1-ctnb",
+        "Name": "TIP1[PDZ]-CTNB[Cter]",
+        "Authenticity": "X-ray",
+        "Box sides": [15,15,15],
+        "Sources": [
+            {
+                "Name": "CTNB1_HUMAN",
+                "Description": "ELM instance linked to PDB",
+                "Link": "http://elm.eu.org/ELMI001576"
+            },
+            {
+                "Name": "3DIW",
+                "Description": "PDB structure",
+                "Link": "https://www.rcsb.org/structure/3DIW"
+            },
+            {
+                "Name": "Zhang et al. 2008",
+                "Description": "Primary publication for crystallographic PDB 3DIW; Publication for affinity",
+                "Link": "https://doi.org/10.1016/j.jmb.2008.09.034"
+            }
+        ],
+        "Chains": [
+            {
+                "ID": "pdz",
+                "Name": "TIP1[PDZ]",
+                "Description": "PDZ-domain of TIP-1",
+                "Copies": 1,
+                "Sequence": "MSYTPGQPVTAVVQRVEIHKLRQGENLILGFSIGGGIDQDPSQNPFSEDKTDKGIYVTRVSEGGPAEIAGLQIGDKIMQVNGWDMTMVTHDQARKRLTKRSEEVVRLLVTRQSLQKAVQQSMLS",
+                "Construct":  {
+                    "start": 1,
+                    "end": 124
+                },
+                "PDB": "data/pdb/3DIW.cif",
+                "PDB chain ID": "A",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [
+                    {
+                        "start": 11,
+                        "end": 114
+                    }
+                ],
+                "PTMs": []
+            },
+            {
+                "ID": "cter",
+                "Name": "CTNB[Cter]",
+                "Description": "C-terminal of β-catenin",
+                "Copies": 1,
+                "Sequence": "NQLAWFDTDL",
+                "Construct":  {
+                    "start": 772,
+                    "end": 781
+                },
+                "PDB": "",
+                "PDB chain ID": "",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [],
+                "PTMs": []
+            }
+        ],
+        "SLiMs": [
+            {
+                "ID": "pdz-cter",
+                "Name": "TIP1[PDZ]-CTNB[Cter]",
+                "Notes": "",
+                "Acceptor ID": "pdz",
+                "Donor ID": "cter",
+                "Affinity": 0.19e-6,
+                "PDB": "data/pdb/3DIW.cif",
+                "PDB AlphaFold data JSON": "",
+                "PDB Acceptor chain ID": "A",
+                "PDB Acceptor construct": {
+                    "start": 1,
+                    "end": 124
+                },
+                "PDB Acceptor exclude": [],
+                "PDB Donor chain ID": "C",
+                "PDB Donor construct":  {
+                    "start": 772,
+                    "end": 781
+                },
+                "PDB Donor exclude": []
+            }
+        ]
+    },
+    {
+        "ID": "vps4a-chmp1a",
+        "Name": "VPS4A[MIT]-CHMP1A[Cter]",
+        "Authenticity": "NMR",
+        "Box sides": [15,15,15],
+        "Sources": [
+            {
+                "Name": "CHM1A_HUMAN",
+                "Description": "ELM instance linked to PDB",
+                "Link": "http://elm.eu.org/ELMI004432"
+            },
+            {
+                "Name": "2JQ9",
+                "Description": "PDB structure",
+                "Link": "https://www.rcsb.org/structure/2JQ9"
+            },
+            {
+                "Name": "Stuchell-Brereton et al. 2007",
+                "Description": "Primary publication for crystallographic PDB 2JQ9; Publication for affinity",
+                "Link": "https://doi.org/10.1038/nature06172"
+            }
+        ],
+        "Chains": [
+            {
+                "ID": "mit",
+                "Name": "VPS4A[MIT]",
+                "Description": "MIT domain of VPS4A",
+                "Copies": 1,
+                "Sequence": "MTTSTLQKAIDLVTKATEEDKAKNYEEALRLYQHAVEYFLHAIKYEAHSDKAKESIRAKCVQYLDRAEKLKDYLRSKEKHGKKP",
+                "Construct":  {
+                    "start": 1,
+                    "end": 84
+                },
+                "PDB": "data/pdb/2JQ9.cif",
+                "PDB chain ID": "A",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [
+                    {
+                        "start": 5,
+                        "end": 75
+                    }
+                ],
+                "PTMs": []
+            },
+            {
+                "ID": "cter",
+                "Name": "CHMP1A[Cter]",
+                "Description": "C-terminus of CHMP1A",
+                "Copies": 1,
+                "Sequence": "VRSQEDQLSRRLAALRN",
+                "Construct":  {
+                    "start": 111,
+                    "end": 127
+                },
+                "PDB": "",
+                "PDB chain ID": "",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [],
+                "PTMs": []
+            }
+        ],
+        "SLiMs": [
+            {
+                "ID": "mit-cter",
+                "Name": "VPS4A[MIT]-CHMP1A[Cter]",
+                "Notes": "",
+                "Acceptor ID": "mit",
+                "Donor ID": "cter",
+                "Affinity": 34e-6,
+                "PDB": "data/pdb/2JQ9.cif",
+                "PDB AlphaFold data JSON": "",
+                "PDB Acceptor chain ID": "A",
+                "PDB Acceptor construct": {
+                        "start": 5,
+                        "end": 75
+                },
+                "PDB Acceptor exclude": [],
+                "PDB Donor chain ID": "B",
+                "PDB Donor construct":  {
+                    "start": 111,
+                    "end": 127
+                },
+                "PDB Donor exclude": []
+            }
+        ]
+    },
+    {
+        "ID": "nedd4-arrdc3",
+        "Name": "NEDD4[WW3]-ARRDC3[PPxY]",
+        "Authenticity": "X-ray; Claude+Val",
+        "Box sides": [15,15,15],
+        "Sources": [
+            {
+                "Name": "4N7H",
+                "Description": "PDB structure: NEDD4 WW3 domain bound to ARRDC3 first PPxY motif",
+                "Link": "https://www.rcsb.org/structure/4N7H"
+            },
+            {
+                "Name": "Qi et al. 2014",
+                "Description": "Primary publication for crystallographic PDB 4N7H; Publication for affinity",
+                "Link": "https://doi.org/10.1074/jbc.M113.527473"
+            }
+        ],
+        "Chains": [
+            {
+                "ID": "ww3",
+                "Name": "NEDD4[WW3]",
+                "Description": "Third WW domain of NEDD4",
+                "Copies": 1,
+                "Sequence": "AMGSGFLPKGWEVRHAPNGRPFFIDHNTKTTTWEDPR",
+                "Construct": {
+                    "start": 417,
+                    "end": 453
+                },
+                "PDB": "data/pdb/4N7H.cif",
+                "PDB chain ID": "A",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [
+                    {
+                        "start": 421,
+                        "end": 453
+                    }
+                ],
+                "PTMs": []
+            },
+            {
+                "ID": "pxy",
+                "Name": "ARRDC3[PPxY]",
+                "Description": "PPxY motif from the C-terminal region of ARRDC3",
+                "Copies": 1,
+                "Sequence": "RPEAPPSYAEVVT",
+                "Construct": {
+                    "start": 342,
+                    "end": 354
+                },
+                "PDB": "",
+                "PDB chain ID": "",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [],
+                "PTMs": []
+            }
+        ],
+        "SLiMs": [
+            {
+                "ID": "ww3-pxy",
+                "Name": "NEDD4[WW3]-ARRDC3[PPxY]",
+                "Notes": "",
+                "Acceptor ID": "ww3",
+                "Donor ID": "pxy",
+                "Affinity": 3.3e-6,
+                "PDB": "data/pdb/4N7H.cif",
+                "PDB AlphaFold data JSON": "",
+                "PDB Acceptor chain ID": "A",
+                "PDB Acceptor construct": {
+                    "start": 417,
+                    "end": 453
+                },
+                "PDB Acceptor exclude": [],
+                "PDB Donor chain ID": "B",
+                "PDB Donor construct": {
+                    "start": 342,
+                    "end": 352
+                },
+                "PDB Donor exclude": []
+            }
+        ]
+    },
+    {
+        "ID": "pex14-pex5",
+        "Name": "PEX14[NTD]-PEX5[LVxEF]",
+        "Authenticity": "NMR; Claude+Val",
+        "Box sides": [20,20,20],
+        "Sources": [
+            {
+                "Name": " PEX5_HUMAN",
+                "Description": "ELM instance linked to PDB",
+                "Link": "http://elm.eu.org/ELMI002818"
+            },
+            {
+                "Name": "4BXU",
+                "Description": "PDB structure",
+                "Link": "https://www.rcsb.org/structure/4BXU"
+            },
+            {
+                "Name": "Neuhaus et al. 2014",
+                "Description": "Primary publication for NMR PDB 4BXU; Publication for affinity",
+                "Link": "https://doi.org/10.1074/jbc.M113.499707"
+            }
+        ],
+        "Chains": [
+            {
+                "ID": "ntd",
+                "Name": "PEX14[NTD]",
+                "Description": "N-terminal three-helix-bundle domain of PEX14",
+                "Copies": 1,
+                "Sequence": "GAMATPGSENVLPREPLIATAVKFLQNSRVRQSPLATRRAFLKKKGLTDEEIDMAFQQSGTAADEPSSL",
+                "Construct": {
+                    "start": 12,
+                    "end": 80
+                },
+                "PDB": "data/pdb/4BXU.cif",
+                "PDB chain ID": "A",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [
+                    {
+                        "start": 25,
+                        "end": 71
+                    }
+                ],
+                "PTMs": []
+            },
+            {
+                "ID": "lvxef",
+                "Name": "PEX5[LVxEF]",
+                "Description": "LVxEF motif from the N-terminal region of the PTS1",
+                "Copies": 1,
+                "Sequence": "ASEDELVAEFLQDQN",
+                "Construct": {
+                    "start": 57,
+                    "end": 71
+                },
+                "PDB": "",
+                "PDB chain ID": "",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [],
+                "PTMs": []
+            }
+        ],
+        "SLiMs": [
+            {
+                "ID": "ntd-lvxef",
+                "Name": "PEX14[NTD]-PEX5[LVxEF]",
+                "Notes": "Manual exclusion of residues from SLiM contacts based on NMR backbone RMSF across the 10 conformers (acceptor rigid core 25-71; donor contact core 62-67). Affinity is the single-LVxEF-motif Kd (ITC, Pex5 1-110); a bare 15-mer Kd was not separately reported.",
+                "Acceptor ID": "ntd",
+                "Donor ID": "lvxef",
+                "Affinity": 1.57e-7,
+                "PDB": "data/pdb/4BXU.cif",
+                "PDB AlphaFold data JSON": "",
+                "PDB Acceptor chain ID": "A",
+                "PDB Acceptor construct": {
+                    "start": 12,
+                    "end": 80
+                },
+                "PDB Acceptor exclude": [12,13,14,15,16,17,18,19,20,21,22,23,24,72,73,74,75,76,77,78,79,80],
+                "PDB Donor chain ID": "B",
+                "PDB Donor construct": {
+                    "start": 57,
+                    "end": 71
+                },
+                "PDB Donor exclude": [57,58,59,60,61,68,69,70,71]
+            }
+        ]
+    },
+    {
+        "ID": "pcna-paf15",
+        "Name": "PCNA-PAF15[PIP]",
+        "Authenticity": "X-ray; Claude+Val",
+        "Box sides": [20,20,20],
+        "Sources": [
+            {
+                "Name": "PAF15_HUMAN",
+                "Description": "ELM instance linked to PDB",
+                "Link": "http://elm.eu.org/ELMI003910"
+            },
+            {
+                "Name": "4D2G",
+                "Description": "PDB structure",
+                "Link": "https://www.rcsb.org/structure/4D2G"
+            },
+            {
+                "Name": "De Biasio et al. 2015",
+                "Description": "Primary publication for crystallographic PDB 4D2G; Publication for affinity",
+                "Link": "https://doi.org/10.1038/ncomms7439"
+            }
+        ],
+        "Chains": [
+            {
+                "ID": "pcna",
+                "Name": "PCNA",
+                "Description": "Proliferating cell nuclear antigen",
+                "Copies": 1,
+                "Sequence": "GPHMFEARLVQGSILKKVLEALKDLINEACWDISSSGVNLQSMDSSHVSLVQLTLRSEGFDTYRCDRNLAMGVNLTSMSKILKCAGNEDIITLRAEDNADTLALVFEAPNQEKVSDYEMKLMDLDVEQLGIPEQEYSCVVKMPSGEFARICRDLSHIGDAVVISCAKDGVKFSASGELGNGNIKLSQTSNVDKEEEAVTIEMNEPVQLTFALRYLNFFTKATPLSSTVTLSMSADVPLVVEYKIADMGHLKYYLAPKIEDEEGS",
+                "Construct": {
+                    "start": -2,
+                    "end": 261
+                },
+                "PDB": "data/pdb/4D2G.cif",
+                "PDB chain ID": "C",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [
+                    {
+                        "start": 1,
+                        "end": 255
+                    }
+                ],
+                "PTMs": []
+            },
+            {
+                "ID": "pip",
+                "Name": "PAF15[PIP]",
+                "Description": "PIP-box motif of PAF15",
+                "Copies": 1,
+                "Sequence": "APVCVRPTPKWQKGIGEFFAA",
+                "Construct": {
+                    "start": 51,
+                    "end": 71
+                },
+                "PDB": "",
+                "PDB chain ID": "",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [],
+                "PTMs": []
+            }
+        ],
+        "SLiMs": [
+            {
+                "ID": "pcna-pip",
+                "Name": "PCNA-PAF15[PIP]",
+                "Notes": "PCNA models a single protomer of the homotrimeric clamp.",
+                "Acceptor ID": "pcna",
+                "Donor ID": "pip",
+                "Affinity": 1.1e-6,
+                "PDB": "data/pdb/4D2G.cif",
+                "PDB AlphaFold data JSON": "",
+                "PDB Acceptor chain ID": "C",
+                "PDB Acceptor construct": {
+                    "start": -2,
+                    "end": 261
+                },
+                "PDB Acceptor exclude": [],
+                "PDB Donor chain ID": "D",
+                "PDB Donor construct": {
+                    "start": 51,
+                    "end": 71
+                },
+                "PDB Donor exclude": []
             }
         ]
     }

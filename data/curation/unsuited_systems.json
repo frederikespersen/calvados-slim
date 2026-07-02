@@ -1,4 +1,10 @@
-[
+[   
+    {
+        "PDB": "4ELL",
+        "Reason": "Intramolecular SLiM.",
+        "Rescue": "New pipeline setup for intramolecular interactions",
+        "Publication": "https://doi.org/10.1101/gad.189837.112"
+    },
     {
         "PDB": "2FLU",
         "Reason": "Cyclicised peptide makes 1:1 replication impractical; Uncertain about PDB structure truth to nature.",
@@ -16,5 +22,17 @@
         "Reason": "SLiM donor has phosphotyrosine PTMs; These can be modelled with CALVADOS, but for now fall out of the standard curation pipeline. Very nicely a NMR structure.",
         "Rescue": "See CALVADOS example ``single_pIDR`` for example of implementing phosphotyrosines (and phosphoserines).",
         "Publication": "https://doi.org/10.1016/j.str.2016.08.016"
+    },
+    {
+        "PDB": "3D9T",
+        "Reason": "Peptide is only 6 AA short.",
+        "Rescue": "Extend with full protein sequence of caspase as flanking regions.",
+        "Publication": "https://doi.org/10.1107/S0907444908039243"
+    },
+    {
+        "PDB": "3ZFW",
+        "Reason": "Large expression tag flanking regions.",
+        "Rescue": "Graft true flanking sequences on.",
+        "Publication": "https://doi.org/10.1126/SCIENCE.1234264"
     }
 ]
