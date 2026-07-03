@@ -19,7 +19,10 @@
 # Main
 #······································································#
 
-echo "1. Setting up environment"
+# Timestamped logging: [YYYYMMDD-HHMMSSmmm] message
+log() { echo "[$(date +%Y%m%d-%H%M%S%3N)] $*"; }
+
+log "1. Setting up environment"
 source /home/fknudsen/.bashrc
 conda activate calvados
 
@@ -27,5 +30,7 @@ export PYTHONPATH=/home/fknudsen/calvados-slim/src/calvados:$PYTHONPATH
 export LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$LD_LIBRARY_PATH
 
 #······································································#
-echo "2. Running run.py"
+log "2. Running run.py"
 python run.py
+
+log "3. Job done"

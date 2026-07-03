@@ -18,7 +18,10 @@
 # Main
 #······································································#
 
-echo "1. Setting up environment"
+# Timestamped logging: [YYYYMMDD-HHMMSSmmm] message
+log() { echo "[$(date +%Y%m%d-%H%M%S%3N)] $*"; }
+
+log "1. Setting up environment"
 source /home/fknudsen/.bashrc
 conda activate calvados
 
@@ -32,5 +35,7 @@ export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 export MKL_NUM_THREADS=$SLURM_CPUS_PER_TASK
 
 #······································································#
-echo "2. Running run.py"
+log "2. Running run.py"
 python run.py
+
+log "3. Job done"
