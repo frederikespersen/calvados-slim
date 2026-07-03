@@ -105,7 +105,7 @@ class Simulation:
                     molecule_type = 'protein',
                     nmol = chain['Copies'],
                     ffasta = os.path.join(system_dir, f"{chain['ID']}.fasta"),
-                    charge_termini = 'both',
+                    charge_termini = False,
                     restraint = False,
                     use_com = False,
                 )
