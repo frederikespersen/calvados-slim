@@ -245,7 +245,7 @@ def select_and_clean_chains(input_path: str, output_path: str, chain_ids: list[s
 # MDAnalysis
 #······································································#
 
-def load_structure(structure_file: str) -> mda.Universe:
+def load_structure(structure_file: os.PathLike) -> mda.Universe:
     """Load a PDB or mmCIF structure into an MDAnalysis ``Universe``.
 
     MDAnalysis has no mmCIF topology parser (confirmed through 2.9.0), so it
