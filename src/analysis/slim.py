@@ -476,7 +476,7 @@ class TwoChain:
             specific_interactions_txt: str,
             beta_q: float=_DEFAULT_BETA_Q,
             lambda_q: float=_DEFAULT_LAMBDA_Q,
-            bound_q: Union[float, None]=_DEFAULT_BOUND_Q,
+            bound_q: Union[float, None]=None,
         ) -> tuple[np.ndarray, float]:
         """Per-frame bound state and box concentration for a two-chain run.
 
@@ -502,7 +502,7 @@ class TwoChain:
             Tolerance factor on each contact's equilibrium distance, by
             default ``1.4``.
         bound_q : float or None, optional
-            Bound/unbound dividing point on ``Q``, by default ``0.22``.
+            Bound/unbound dividing point on ``Q``.
             If not specified, it will be calculated from the estimated
             ``Q`` distribution using :func:`_bound_q`.
 
@@ -532,7 +532,7 @@ class TwoChain:
             specific_interactions_txt: str,
             beta_q: float=_DEFAULT_BETA_Q,
             lambda_q: float=_DEFAULT_LAMBDA_Q,
-            bound_q: Union[float, None]=_DEFAULT_BOUND_Q,
+            bound_q: Union[float, None]=None,
         ) -> float:
         """Estimate the dissociation constant from a two-chain trajectory.
 
@@ -560,7 +560,7 @@ class TwoChain:
             default ``1.4``. Ignored if ``calibrate`` is ``True``. See
             :func:`_native_contact_fraction`.
         bound_q : float or None, optional
-            Bound/unbound dividing point on ``Q``, by default ``0.22``.
+            Bound/unbound dividing point on ``Q``.
             If not specified, it will be calculated from the estimated
             ``Q`` distribution using :func:`_bound_q`.
 
@@ -589,7 +589,7 @@ class TwoChain:
             specific_interactions_txt: str,
             beta_q: float=_DEFAULT_BETA_Q,
             lambda_q: float=_DEFAULT_LAMBDA_Q,
-            bound_q: Union[float, None]=_DEFAULT_BOUND_Q,
+            bound_q: Union[float, None]=None,
             n_sem: float=1,
             csv_path: Union[str, None]=None,
         ) -> tuple[float, float, float]:
@@ -618,7 +618,7 @@ class TwoChain:
             default ``1.4``. Ignored if ``calibrate`` is ``True``. See
             :func:`_native_contact_fraction`.
         bound_q : float or None, optional
-            Bound/unbound dividing point on ``Q``, by default ``0.22``.
+            Bound/unbound dividing point on ``Q``.
             If not specified, it will be calculated from the estimated
             ``Q`` distribution using :func:`_bound_q`.
         n_sem : float, optional
