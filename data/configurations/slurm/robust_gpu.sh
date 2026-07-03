@@ -19,8 +19,9 @@
 # Main
 #······································································#
 
-# Timestamped logging: [YYYYMMDD-HHMMSSmmm] message
-log() { echo "[$(date +%Y%m%d-%H%M%S%3N)] $*"; }
+log() {
+    echo "[$(date +'%Y-%m-%d %H:%M:%S:%3N')] $*"
+}
 
 log "1. Setting up environment"
 source /home/fknudsen/.bashrc

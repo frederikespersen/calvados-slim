@@ -10,6 +10,7 @@ import os
 import logging
 import numpy as np
 import MDAnalysis as mda
+from typing import Literal
 
 from src.analysis import smog, alphafold, coarsegrain
 from src import utils, constants
@@ -24,7 +25,7 @@ class Simulation:
     """Namespace for generating a single CALVADOS simulation directory."""
 
     @staticmethod
-    def _write_config(system: dict, conditions: dict, sampling: dict, sim_dir: str) -> None:
+    def _write_config(system: dict, conditions: dict, sampling: dict, sim_dir: str, platform: Literal['GPU', 'CPU']) -> None:
         """Write the CALVADOS ``config.yaml`` for one simulation.
 
         Parameters
@@ -37,6 +38,8 @@ class Simulation:
             Sampling settings (``Stride`` and ``Frames``).
         sim_dir : str
             Output directory for the simulation.
+        platform : Literal['GPU', 'CPU']
+            Which platform to specify for the config YAML and submssion scripts.
         """
         config = cfg.Config(
             # Conditions
@@ -51,7 +54,7 @@ class Simulation:
             wfreq = sampling['Stride'], # dcd writing interval, 1 = 10 fs
             steps = sampling['Stride']*sampling['Frames'], # number of simulation steps
             runtime = 0,
-            platform = 'CUDA',
+            platform = 'CUDA' if platform == 'GPU' else platform,
             restart = 'checkpoint',
             frestart = 'restart.chk',
             verbose = True,
@@ -105,7 +108,7 @@ class Simulation:
                     molecule_type = 'protein',
                     nmol = chain['Copies'],
                     ffasta = os.path.join(system_dir, f"{chain['ID']}.fasta"),
-                    charge_termini = False,
+                    charge_termini = False, # No charged termini; We assume the SLiM is
                     restraint = False,
                     use_com = False,
                 )
@@ -140,7 +143,7 @@ class Simulation:
     #··································································#
 
     @staticmethod
-    def _write_submission_scripts(system: dict, particles: int, slurm_scripts_dir: str, sim_dir: str) -> None:
+    def _write_submission_scripts(system: dict, particles: int, slurm_scripts_dir: str, sim_dir: str, platform: Literal['GPU', 'CPU']) -> None:
         """Instantiate the templated Slurm submission scripts for one simulation.
 
         Substitutes the job name into every script and, for CPU scripts, fills
@@ -156,23 +159,15 @@ class Simulation:
             Directory of templated Slurm scripts.
         sim_dir : str
             Output directory for the simulation.
+        platform : Literal['GPU', 'CPU']
+            Which platform to specify for the config YAML and submssion scripts.
         """
         for script in os.listdir(slurm_scripts_dir):
-            utils.copy_with_substitution(
-                os.path.join(slurm_scripts_dir, script),
-                os.path.join(sim_dir, script),
-                old='<JOB-NAME>', new=system['ID']
-            )
-            if 'cpu' in script:
+            if platform.lower() in script:
                 utils.copy_with_substitution(
+                    os.path.join(slurm_scripts_dir, script),
                     os.path.join(sim_dir, script),
-                    os.path.join(sim_dir, script),
-                    old='<CPUS-PER-TASK>', new=str(utils.estimate_cpus(particles))
-                )
-                utils.copy_with_substitution(
-                    os.path.join(sim_dir, script),
-                    os.path.join(sim_dir, script),
-                    old='<MEM>', new=utils.estimate_memory(particles)
+                    old='<JOB-NAME>', new=system['ID']
                 )
     
     #··································································#
@@ -185,6 +180,7 @@ class Simulation:
         sampling: dict,
         slim_go_k: float,
         sim_dir: str,
+        platform: Literal['GPU', 'CPU'],
         slurm_scripts_dir: str='data/configurations/slurm',
     ) -> None:
         """Write all input files for one runnable CALVADOS simulation.
@@ -212,6 +208,8 @@ class Simulation:
             Well depth ``k`` substituted into the SLiM specific interactions.
         sim_dir : str
             Output directory for the simulation; created files are written here.
+        platform : Literal['GPU', 'CPU']
+            Which platform to specify for the config YAML and submssion scripts.
         slurm_scripts_dir : str, optional
             Directory of templated Slurm scripts to instantiate, by default
             ``'data/configurations/slurm'``.
@@ -228,9 +226,9 @@ class Simulation:
             old='<k>', new=f'{slim_go_k}'
         )
 
-        Simulation._write_config(system, conditions, sampling, sim_dir)
+        Simulation._write_config(system, conditions, sampling, sim_dir, platform)
         particles = Simulation._write_components(system, conditions, system_dir, sim_dir)
-        Simulation._write_submission_scripts(system, particles, slurm_scripts_dir, sim_dir)
+        Simulation._write_submission_scripts(system, particles, slurm_scripts_dir, sim_dir, platform)
 
 
 
