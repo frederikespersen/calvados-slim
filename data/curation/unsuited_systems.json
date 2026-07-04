@@ -34,5 +34,41 @@
         "Reason": "Large expression tag flanking regions.",
         "Rescue": "Graft true flanking sequences on.",
         "Publication": "https://doi.org/10.1126/SCIENCE.1234264"
+    },
+    {
+        "PDB": "2A3Z",
+        "Reason": "Actin (acceptor) contains a non-canonical tele-methylhistidine (HIC73) that breaks the SEQRES/PDBFixer rebuild contract; also co-crystallized with DNase I as a folding chaperone.",
+        "Rescue": "Substitute HIC73->HIS (natural methyl-His), then curate actin chain A + WASP WH2 peptide chain C, ignoring DNase I chain B.",
+        "Publication": "https://doi.org/10.1016/j.molcel.2005.09.005"
+    },
+    {
+        "PDB": "1N4M",
+        "Reason": "Retinoblastoma pocket acceptor construct has a genuine ~61-residue spacer deletion (582-642) absent from the deposited SEQRES entirely (confirmed via pdbx_poly_seq_scheme, not just unresolved density) -- discontinuous author numbering.",
+        "Rescue": "Model the A-box and B-box as two separate acceptor sub-domains bridged by a modelled/grafted flexible linker, if the schema supports multi-domain acceptors.",
+        "Publication": "https://doi.org/10.1101/gad.1046102"
+    },
+    {
+        "PDB": "4YOS",
+        "Reason": "LIN52 donor peptide carries a phosphoserine (SEP@12); PTMs are out of scope for the standard curation pipeline.",
+        "Rescue": "See CALVADOS example ``single_pIDR`` for implementing phosphoserines.",
+        "Publication": "https://doi.org/10.1101/gad.257568.114"
+    },
+    {
+        "PDB": "3AA6",
+        "Reason": "Acceptor is the obligate F-actin capping protein alpha/beta heterodimer (different gene products); the CPI-motif binding site is composite across both chains (164 contacts to beta, 9 to alpha), not representable as a single-chain acceptor.",
+        "Rescue": "Extend schema to support a two-chain heterodimeric acceptor with inter-chain domain restraints holding the heterodimer together.",
+        "Publication": "https://doi.org/10.1371/journal.pbio.1000416"
+    },
+    {
+        "PDB": "4UM9",
+        "Reason": "Donor is a synthetic peptide with ACE/NH2 caps (non-canonical termini breaking the SEQRES contract), not a natural IDR fragment from the latency-associated peptide.",
+        "Rescue": "Graft the true native LAP flanking sequence onto the RGD motif instead of using the capped synthetic peptide.",
+        "Publication": "https://doi.org/10.1038/nsmb.2905"
+    },
+    {
+        "PDB": "3AU4",
+        "Reason": "Myosin-X MyTH4-FERM acceptor construct has a genuine 20-residue spacer deletion (1872-1891) absent from the deposited SEQRES entirely -- discontinuous author numbering, same failure mode as 1N4M.",
+        "Rescue": "Model the deleted loop with a grafted/modelled linker to restore continuous authored numbering.",
+        "Publication": "https://doi.org/10.1038/emboj.2011.177"
     }
 ]
