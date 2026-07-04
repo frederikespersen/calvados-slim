@@ -60,7 +60,13 @@ conda activate calvados
 This provides Python 3.10 together with OpenMM, MDAnalysis, MDTraj, BioPython,
 PDBFixer, gemmi, and the rest of the stack.
 
-### 4. Install SMOG2 (for curation)
+### 4. Install the CALVADOS fork as a module in the environment
+
+```bash
+pip install -e src/CALVADOS
+```
+
+### 5. Install SMOG2 (for curation)
 
 Deriving SLiM contacts requires [SMOG2](https://smog-server.org/smog2/). Install
 it separately and point the `SMOGBIN` environment variable at its `bin`
@@ -73,7 +79,7 @@ export SMOGBIN="$HOME/software/smog-2.5/bin"
 > SMOG2 is only needed for the **curation** stage. Running and analysing existing
 > simulations does not require it.
 
-### 5. Run from the repository root
+### 6. Run from the repository root
 
 The package is imported as `src.…`, and the CALVADOS fork as
 `src.calvados.calvados.…`, so commands and notebooks should be run from the
