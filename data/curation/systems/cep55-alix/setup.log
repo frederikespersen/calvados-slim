@@ -1,0 +1,28 @@
+2026-07-04 18:56:17: ················································································
+2026-07-04 18:56:17: Parsing chains of 'cep55-alix' system to CALVADOS input
+2026-07-04 18:56:17: ················································································
+2026-07-04 18:56:17: Chain 'eabr' ('CEP55[EABR]')
+2026-07-04 18:56:17: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/3E1R.cif' is specified
+2026-07-04 18:56:17: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/cep55-alix/eabr.pdb'
+2026-07-04 18:56:17: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-04 18:56:17: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/cep55-alix/eabr.yaml'
+2026-07-04 18:56:17: 
+2026-07-04 18:56:17: Chain 'prm' ('ALIX[PRM]')
+2026-07-04 18:56:17: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-04 18:56:17: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/cep55-alix/prm.fasta'
+2026-07-04 18:56:17: 
+2026-07-04 18:56:17: ················································································
+2026-07-04 18:56:17: Parsing SLiMs of 'cep55-alix' system to CALVADOS input
+2026-07-04 18:56:17: ················································································
+2026-07-04 18:56:17: SLiM 'eabr-prm' ('CEP55[EABR]-ALIX[PRM]')
+2026-07-04 18:56:17: 	- Verifying that acceptor 'eabr' and donor 'prm' chains are found in system
+2026-07-04 18:56:17: 	- Performing contact analysis
+2026-07-04 18:56:17: 		- Calculating SMOG Shadow Contact Map (SCM) from SLiM PDB
+2026-07-04 18:56:18: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-04 18:56:18: 		- Defining contacts
+2026-07-04 18:56:18: 		- Found 38 pairwise contacts
+2026-07-04 18:56:18: 		- Calculating contact distances
+2026-07-04 18:56:18: 	- Mapping residue indices between System and SLiM constructs
+2026-07-04 18:56:18: 	- Excluding 0 contacts
+2026-07-04 18:56:18: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/cep55-alix/specific_interactions.txt'
+2026-07-04 18:56:18: 

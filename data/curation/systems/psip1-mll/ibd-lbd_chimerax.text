@@ -1,3 +1,4 @@
+open 2MSR
 set bgColor white
 style stick
 color bychain

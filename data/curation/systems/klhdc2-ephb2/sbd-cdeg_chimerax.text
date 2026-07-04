@@ -1,3 +1,4 @@
+open 8EBL
 set bgColor white
 style stick
 color bychain
