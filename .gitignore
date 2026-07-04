@@ -5,6 +5,9 @@ exp/
 src/calvados
 *.code-workspace
 
+# GIF constructions
+figs/**/*.gif.png
+
 #sim/scan/
 sim/sandbox
 sim/scan/**/*.dcd
