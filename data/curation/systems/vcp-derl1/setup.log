@@ -1,0 +1,28 @@
+2026-07-04 21:32:10: ················································································
+2026-07-04 21:32:10: Parsing chains of 'vcp-derl1' system to CALVADOS input
+2026-07-04 21:32:10: ················································································
+2026-07-04 21:32:10: Chain 'ntd' ('VCP[N]')
+2026-07-04 21:32:10: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/5GLF.cif' is specified
+2026-07-04 21:32:10: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/vcp-derl1/ntd.pdb'
+2026-07-04 21:32:11: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-04 21:32:11: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/vcp-derl1/ntd.yaml'
+2026-07-04 21:32:11: 
+2026-07-04 21:32:11: Chain 'shp' ('DERL1[SHP]')
+2026-07-04 21:32:11: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-04 21:32:11: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/vcp-derl1/shp.fasta'
+2026-07-04 21:32:11: 
+2026-07-04 21:32:11: ················································································
+2026-07-04 21:32:11: Parsing SLiMs of 'vcp-derl1' system to CALVADOS input
+2026-07-04 21:32:11: ················································································
+2026-07-04 21:32:11: SLiM 'ntd-shp' ('VCP[N]-DERL1[SHP]')
+2026-07-04 21:32:11: 	- Verifying that acceptor 'ntd' and donor 'shp' chains are found in system
+2026-07-04 21:32:11: 	- Performing contact analysis
+2026-07-04 21:32:11: 		- Calculating SMOG Shadow Contact Map (SCM) from SLiM PDB
+2026-07-04 21:32:12: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-04 21:32:12: 		- Defining contacts
+2026-07-04 21:32:12: 		- Found 56 pairwise contacts
+2026-07-04 21:32:12: 		- Calculating contact distances
+2026-07-04 21:32:12: 	- Mapping residue indices between System and SLiM constructs
+2026-07-04 21:32:12: 	- Excluding 0 contacts
+2026-07-04 21:32:12: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/vcp-derl1/specific_interactions.txt'
+2026-07-04 21:32:12: 

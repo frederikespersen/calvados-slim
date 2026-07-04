@@ -1,0 +1,28 @@
+2026-07-04 21:31:54: ················································································
+2026-07-04 21:31:54: Parsing chains of 'mint1-app' system to CALVADOS input
+2026-07-04 21:31:54: ················································································
+2026-07-04 21:31:54: Chain 'ptb' ('MINT1[PTB]')
+2026-07-04 21:31:54: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/3DXC.cif' is specified
+2026-07-04 21:31:54: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/mint1-app/ptb.pdb'
+2026-07-04 21:31:55: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-04 21:31:55: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/mint1-app/ptb.yaml'
+2026-07-04 21:31:55: 
+2026-07-04 21:31:55: Chain 'yenpty' ('APP[YENPTY]')
+2026-07-04 21:31:55: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-04 21:31:55: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/mint1-app/yenpty.fasta'
+2026-07-04 21:31:55: 
+2026-07-04 21:31:55: ················································································
+2026-07-04 21:31:55: Parsing SLiMs of 'mint1-app' system to CALVADOS input
+2026-07-04 21:31:55: ················································································
+2026-07-04 21:31:55: SLiM 'ptb-yenpty' ('MINT1[PTB]-APP[YENPTY]')
+2026-07-04 21:31:55: 	- Verifying that acceptor 'ptb' and donor 'yenpty' chains are found in system
+2026-07-04 21:31:55: 	- Performing contact analysis
+2026-07-04 21:31:55: 		- Calculating SMOG Shadow Contact Map (SCM) from SLiM PDB
+2026-07-04 21:31:56: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-04 21:31:56: 		- Defining contacts
+2026-07-04 21:31:56: 		- Found 94 pairwise contacts
+2026-07-04 21:31:56: 		- Calculating contact distances
+2026-07-04 21:31:56: 	- Mapping residue indices between System and SLiM constructs
+2026-07-04 21:31:56: 	- Excluding 0 contacts
+2026-07-04 21:31:56: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/mint1-app/specific_interactions.txt'
+2026-07-04 21:31:56: 

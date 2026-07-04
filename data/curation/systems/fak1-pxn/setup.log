@@ -1,0 +1,28 @@
+2026-07-04 21:32:06: ················································································
+2026-07-04 21:32:06: Parsing chains of 'fak1-pxn' system to CALVADOS input
+2026-07-04 21:32:06: ················································································
+2026-07-04 21:32:06: Chain 'fat' ('FAK1[FAT]')
+2026-07-04 21:32:06: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/1OW6.cif' is specified
+2026-07-04 21:32:06: 	- Selecting chain 'C' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/fak1-pxn/fat.pdb'
+2026-07-04 21:32:07: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-04 21:32:07: 	- Writing chain 'C' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/fak1-pxn/fat.yaml'
+2026-07-04 21:32:07: 
+2026-07-04 21:32:07: Chain 'ld4' ('PXN[LD4]')
+2026-07-04 21:32:07: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-04 21:32:07: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/fak1-pxn/ld4.fasta'
+2026-07-04 21:32:07: 
+2026-07-04 21:32:07: ················································································
+2026-07-04 21:32:07: Parsing SLiMs of 'fak1-pxn' system to CALVADOS input
+2026-07-04 21:32:07: ················································································
+2026-07-04 21:32:07: SLiM 'fat-ld4' ('FAK1[FAT]-PXN[LD4]')
+2026-07-04 21:32:07: 	- Verifying that acceptor 'fat' and donor 'ld4' chains are found in system
+2026-07-04 21:32:07: 	- Performing contact analysis
+2026-07-04 21:32:07: 		- Calculating SMOG Shadow Contact Map (SCM) from SLiM PDB
+2026-07-04 21:32:08: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-04 21:32:08: 		- Defining contacts
+2026-07-04 21:32:08: 		- Found 30 pairwise contacts
+2026-07-04 21:32:08: 		- Calculating contact distances
+2026-07-04 21:32:08: 	- Mapping residue indices between System and SLiM constructs
+2026-07-04 21:32:08: 	- Excluding 0 contacts
+2026-07-04 21:32:08: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/fak1-pxn/specific_interactions.txt'
+2026-07-04 21:32:08: 

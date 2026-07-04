@@ -1831,5 +1831,2214 @@
                 "PDB Donor exclude": []
             }
         ]
+    },
+    {
+        "ID": "kapa-myc",
+        "Name": "KAPA[ARM]-Myc[NLS]",
+        "Authenticity": "X-ray; Claude+Val",
+        "Box sides": [
+            25,
+            25,
+            25
+        ],
+        "Sources": [
+            {
+                "Name": "ELMI001381",
+                "Description": "ELM instance: TRG_NLS_MonoExtN_4 extended monopartite NLS of c-Myc",
+                "Link": "http://elm.eu.org/instances/TRG_NLS_MonoExtN_4/"
+            },
+            {
+                "Name": "1EE4",
+                "Description": "PDB structure: yeast karyopherin alpha ARM domain bound to the c-Myc NLS peptide",
+                "Link": "https://www.rcsb.org/structure/1EE4"
+            },
+            {
+                "Name": "Conti & Kuriyan 2000",
+                "Description": "Primary publication for crystallographic PDB 1EE4",
+                "Link": "https://doi.org/10.1016/s0969-2126(00)00107-6"
+            },
+            {
+                "Name": "Affinity",
+                "Description": "No Kd readily available for this yeast karyopherin-Myc NLS complex; a ~0.5 uM value reported elsewhere is for a different paralog (human importin-alpha3), so not used.",
+                "Link": ""
+            }
+        ],
+        "Chains": [
+            {
+                "ID": "kapa",
+                "Name": "KAPA[ARM]",
+                "Description": "ARM-repeat domain of yeast karyopherin alpha",
+                "Copies": 1,
+                "Sequence": "QELPQMTQQLNSDDMQEQLSATVKFRQILSREHRPPIDVVIQAGVVPRLVEFMRENQPEMLQLEAAWALTNIASGTSAQTKVVVDADAVPLFIQLLYTGSVEVKEQAIWALGNVAGDSTDYRDYVLQCNAMEPILGLFNSNKPSLIRTATWTLSNLCRGKKPQPDWSVVSQALPTLAKLIYSMDTETLVDACWAISYLSDGPQEAIQAVIDVRIPKRLVELLSHESTLVQTPALRAVGNIVTGNDLQTQVVINAGVLPALRLLLSSPKENIKKEACWTISNITAGNTEQIQAVIDANLIPPLVKLLEVAEDKTKKEACWAISNASSGGLQRPDIIRYLVSQGCIKPLCDLLEIADNRIIEVTLDALENILKMGEADKEARGLNINENADFIEKAGGMEKIFNCQQNENDKIYEKAYKIIETYF",
+                "Construct": {
+                    "start": 87,
+                    "end": 509
+                },
+                "PDB": "data/pdb/1EE4.cif",
+                "PDB chain ID": "A",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [
+                    {
+                        "start": 87,
+                        "end": 509
+                    }
+                ],
+                "PTMs": []
+            },
+            {
+                "ID": "nls",
+                "Name": "Myc[NLS]",
+                "Description": "Monopartite nuclear localization signal of c-Myc",
+                "Copies": 1,
+                "Sequence": "PAAKRVKLD",
+                "Construct": {
+                    "start": 320,
+                    "end": 328
+                },
+                "PDB": "",
+                "PDB chain ID": "",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [],
+                "PTMs": []
+            }
+        ],
+        "SLiMs": [
+            {
+                "ID": "kapa-nls",
+                "Name": "KAPA[ARM]-Myc[NLS]",
+                "Notes": "Karyopherin alpha has two NLS-binding sites (major, ARM 2-4, and minor, ARM 7-8) on the same ARM solenoid. Only the major site (chain A + peptide C, 182 contacts) is modelled; the peptide also binds a minor site on the same acceptor chain (chain D, 83 contacts), not modelled.",
+                "Acceptor ID": "kapa",
+                "Donor ID": "nls",
+                "Affinity": -1,
+                "PDB": "data/pdb/1EE4.cif",
+                "PDB AlphaFold data JSON": "",
+                "PDB Acceptor chain ID": "A",
+                "PDB Acceptor construct": {
+                    "start": 87,
+                    "end": 509
+                },
+                "PDB Acceptor exclude": [],
+                "PDB Donor chain ID": "C",
+                "PDB Donor construct": {
+                    "start": 320,
+                    "end": 328
+                },
+                "PDB Donor exclude": []
+            }
+        ]
+    },
+    {
+        "ID": "cltc-ap3",
+        "Name": "CLTC[NTD]-AP3B1[ClBox]",
+        "Authenticity": "X-ray; Claude+Val",
+        "Box sides": [
+            20,
+            20,
+            20
+        ],
+        "Sources": [
+            {
+                "Name": "ELMI000432",
+                "Description": "ELM instance: LIG_Clathr_ClatBox_1 clathrin box of AP-3 beta-adaptin (AP3B1)",
+                "Link": "http://elm.eu.org/instances/LIG_Clathr_ClatBox_1/"
+            },
+            {
+                "Name": "1C9I",
+                "Description": "PDB structure: clathrin heavy chain N-terminal beta-propeller domain bound to the AP-3 beta-adaptin clathrin-box peptide",
+                "Link": "https://www.rcsb.org/structure/1C9I"
+            },
+            {
+                "Name": "ter Haar et al. 2000",
+                "Description": "Primary publication for crystallographic PDB 1C9I",
+                "Link": "https://pubmed.ncbi.nlm.nih.gov/10655490/"
+            }
+        ],
+        "Chains": [
+            {
+                "ID": "ntd",
+                "Name": "CLTC[NTD]",
+                "Description": "N-terminal beta-propeller domain of clathrin heavy chain",
+                "Copies": 1,
+                "Sequence": "MAQILPIRFQEHLQLQNLGINPANIGFSTLTMESDKFICIREKVGEQAQVVIIDMNDPSNPIRRPISADSAIMNPASKVIALKAGKTLQIFNIEMKSKMKAHTMTDDVTFWKWISLNTVALVTDNAVYHWSMEGESQPVKMFDRHSSLAGCQIINYRTDAKQKWLLLTGISAQQNRVVGAMQLYSVDRKVSQPIEGHAASFAQFKMEGNAEESTLFCFAVRGQAGGKLHIIEVGTPPTGNQPFPKKAVDVFFPPEAQNDFPVAMQISEKHDVVFLITKYGYIHLYDLETGTCIYMNRISGETIFVTAPHEATAGIIGVNRKGQVLSVCVEEENIIPYITNVLQNPDLALRMAVRNNLAG",
+                "Construct": {
+                    "start": 1,
+                    "end": 359
+                },
+                "PDB": "data/pdb/1C9I.cif",
+                "PDB chain ID": "A",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [
+                    {
+                        "start": 3,
+                        "end": 357
+                    }
+                ],
+                "PTMs": []
+            },
+            {
+                "ID": "clbox",
+                "Name": "AP3B1[ClBox]",
+                "Description": "Clathrin box motif of the AP-3 complex beta-adaptin subunit",
+                "Copies": 1,
+                "Sequence": "AVSLLDLDA",
+                "Construct": {
+                    "start": 815,
+                    "end": 823
+                },
+                "PDB": "",
+                "PDB chain ID": "",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [],
+                "PTMs": []
+            }
+        ],
+        "SLiMs": [
+            {
+                "ID": "ntd-clbox",
+                "Name": "CLTC[NTD]-AP3B1[ClBox]",
+                "Notes": "",
+                "Acceptor ID": "ntd",
+                "Donor ID": "clbox",
+                "Affinity": -1,
+                "PDB": "data/pdb/1C9I.cif",
+                "PDB AlphaFold data JSON": "",
+                "PDB Acceptor chain ID": "A",
+                "PDB Acceptor construct": {
+                    "start": 1,
+                    "end": 359
+                },
+                "PDB Acceptor exclude": [],
+                "PDB Donor chain ID": "C",
+                "PDB Donor construct": {
+                    "start": 815,
+                    "end": 823
+                },
+                "PDB Donor exclude": []
+            }
+        ]
+    },
+    {
+        "ID": "traf4-gp1bb",
+        "Name": "TRAF4[MATH]-GP1BB[TBM]",
+        "Authenticity": "X-ray; Claude+Val",
+        "Box sides": [
+            20,
+            20,
+            20
+        ],
+        "Sources": [
+            {
+                "Name": "ELMI004518",
+                "Description": "ELM instance: LIG_TRAF4_MATH_1 TRAF4-binding motif of platelet glycoprotein Ib beta chain (GP1BB)",
+                "Link": "http://elm.eu.org/instances/LIG_TRAF4_MATH_1/"
+            },
+            {
+                "Name": "5YC1",
+                "Description": "PDB structure: TRAF4 MATH domain bound to the GP1BB TRAF-binding peptide",
+                "Link": "https://www.rcsb.org/structure/5YC1"
+            },
+            {
+                "Name": "Xu et al. 2017",
+                "Description": "Primary publication for crystallographic PDB 5YC1",
+                "Link": "https://doi.org/10.1073/pnas.1708688114"
+            }
+        ],
+        "Chains": [
+            {
+                "ID": "traf4",
+                "Name": "TRAF4[MATH]",
+                "Description": "MATH domain of TRAF4",
+                "Copies": 1,
+                "Sequence": "QELQELRRELEELSVGSDGVLIWKIGSYGRRLQEAKAKPNLECFSPAFYTHKYGYKLQVSAFLNGNGSGEGTHLSLYIRVLPGAFDNLLEWPFARRVTFSLLDQSDPGLAKPQHVTETFHPDPNWKNFQKPGTWRGSLDESSLGFGYPKFISHQDIRKRNYVRDDAVFIRAAVELPRKILS",
+                "Construct": {
+                    "start": 290,
+                    "end": 470
+                },
+                "PDB": "data/pdb/5YC1.cif",
+                "PDB chain ID": "A",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [
+                    {
+                        "start": 296,
+                        "end": 465
+                    }
+                ],
+                "PTMs": []
+            },
+            {
+                "ID": "tbm",
+                "Name": "GP1BB[TBM]",
+                "Description": "TRAF4-binding motif of platelet glycoprotein Ib beta chain",
+                "Copies": 1,
+                "Sequence": "RLRAR",
+                "Construct": {
+                    "start": 297,
+                    "end": 301
+                },
+                "PDB": "",
+                "PDB chain ID": "",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [],
+                "PTMs": []
+            }
+        ],
+        "SLiMs": [
+            {
+                "ID": "traf4-tbm",
+                "Name": "TRAF4[MATH]-GP1BB[TBM]",
+                "Notes": "TRAF4 MATH domain is present as 6 copies in the ASU, each binding one peptide copy at an independent, non-composite site; chain A + peptide I used (clean single-partner pair).",
+                "Acceptor ID": "traf4",
+                "Donor ID": "tbm",
+                "Affinity": -1,
+                "PDB": "data/pdb/5YC1.cif",
+                "PDB AlphaFold data JSON": "",
+                "PDB Acceptor chain ID": "A",
+                "PDB Acceptor construct": {
+                    "start": 290,
+                    "end": 470
+                },
+                "PDB Acceptor exclude": [],
+                "PDB Donor chain ID": "I",
+                "PDB Donor construct": {
+                    "start": 297,
+                    "end": 301
+                },
+                "PDB Donor exclude": []
+            }
+        ]
+    },
+    {
+        "ID": "klhl12-dvl1",
+        "Name": "KLHL12[Kelch]-DVL1[PGXPP]",
+        "Authenticity": "X-ray; Claude+Val",
+        "Box sides": [
+            20,
+            20,
+            20
+        ],
+        "Sources": [
+            {
+                "Name": "ELMI004557",
+                "Description": "ELM instance: DEG_Kelch_KLHL12_1 PGXPP degron motif of DVL1",
+                "Link": "http://elm.eu.org/instances/DEG_Kelch_KLHL12_1/"
+            },
+            {
+                "Name": "6TTK",
+                "Description": "PDB structure: KLHL12 Kelch beta-propeller domain bound to the DVL1 PGXPP degron peptide",
+                "Link": "https://www.rcsb.org/structure/6TTK"
+            },
+            {
+                "Name": "Sanchez-Weatherby et al. 2020",
+                "Description": "Primary publication for crystallographic PDB 6TTK; Publication for affinity",
+                "Link": "https://pubmed.ncbi.nlm.nih.gov/32574548/"
+            },
+            {
+                "Name": "Affinity",
+                "Description": "DVL1(650-669) 'Spot A13' peptide binds KLHL12 with Kd = 22.3 uM (matches the construct used here)",
+                "Link": "https://pubmed.ncbi.nlm.nih.gov/32574548/"
+            }
+        ],
+        "Chains": [
+            {
+                "ID": "klhl12",
+                "Name": "KLHL12[Kelch]",
+                "Description": "Kelch-repeat beta-propeller domain of KLHL12",
+                "Copies": 1,
+                "Sequence": "SMQGPRTRARLGANEVLLVVGGFGSQQSPIDVVEKYDPKTQEWSFLPSITRKRRYVASVSLHDRIYVIGGYDGRSRLSSVECLDYTADEDGVWYSVAPMNVRRGLAGATTLGDMIYVSGGFDGSRRHTSMERYDPNIDQWSMLGDMQTAREGAGLVVASGVIYCLGGYDGLNILNSVEKYDPHTGHWTNVTPMATKRSGAGVALLNDHIYVVGGFDGTAHLSSVEAYNIRTDSWTTVTSMTTPRCYVGATVLRGRLYAIAGYDGNSLLSSIECYDPIIDSWEVVTSMGTQRCDAGVCVLRE",
+                "Construct": {
+                    "start": 267,
+                    "end": 567
+                },
+                "PDB": "data/pdb/6TTK.cif",
+                "PDB chain ID": "A",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [
+                    {
+                        "start": 279,
+                        "end": 567
+                    }
+                ],
+                "PTMs": []
+            },
+            {
+                "ID": "pgxpp",
+                "Name": "DVL1[PGXPP]",
+                "Description": "PGXPP degron motif of DVL1",
+                "Copies": 1,
+                "Sequence": "AYTVVGGPPGGPPVR",
+                "Construct": {
+                    "start": 650,
+                    "end": 664
+                },
+                "PDB": "",
+                "PDB chain ID": "",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [],
+                "PTMs": []
+            }
+        ],
+        "SLiMs": [
+            {
+                "ID": "klhl12-pgxpp",
+                "Name": "KLHL12[Kelch]-DVL1[PGXPP]",
+                "Notes": "",
+                "Acceptor ID": "klhl12",
+                "Donor ID": "pgxpp",
+                "Affinity": 2.23e-05,
+                "PDB": "data/pdb/6TTK.cif",
+                "PDB AlphaFold data JSON": "",
+                "PDB Acceptor chain ID": "A",
+                "PDB Acceptor construct": {
+                    "start": 267,
+                    "end": 567
+                },
+                "PDB Acceptor exclude": [],
+                "PDB Donor chain ID": "E",
+                "PDB Donor construct": {
+                    "start": 656,
+                    "end": 663
+                },
+                "PDB Donor exclude": []
+            }
+        ]
+    },
+    {
+        "ID": "mint1-app",
+        "Name": "MINT1[PTB]-APP[YENPTY]",
+        "Authenticity": "X-ray; Claude+Val",
+        "Box sides": [
+            25,
+            25,
+            25
+        ],
+        "Sources": [
+            {
+                "Name": "ELMI001555",
+                "Description": "ELM instance: LIG_PTB_Apo_2 YENPTY motif of the amyloid precursor protein (APP)",
+                "Link": "http://elm.eu.org/instances/LIG_PTB_Apo_2/"
+            },
+            {
+                "Name": "3DXC",
+                "Description": "PDB structure: Mint1/APBA1 PTB domain bound to the APP intracellular domain (YENPTY motif)",
+                "Link": "https://www.rcsb.org/structure/3DXC"
+            },
+            {
+                "Name": "Radzimanowski et al. 2008",
+                "Description": "Primary publication for crystallographic PDB 3DXC",
+                "Link": "https://pubmed.ncbi.nlm.nih.gov/18833287/"
+            },
+            {
+                "Name": "Affinity",
+                "Description": "X11alpha/Mint1 PTB domain binds the APP YENPTY peptide with Kd = 0.32 uM (same interaction, apo/non-phosphorylated mode)",
+                "Link": "https://pubmed.ncbi.nlm.nih.gov/18833287/"
+            }
+        ],
+        "Chains": [
+            {
+                "ID": "ptb",
+                "Name": "MINT1[PTB]",
+                "Description": "PTB domain of Mint1/APBA1",
+                "Copies": 1,
+                "Sequence": "APKNELVQKFQVYYLGNVPVAKPVGVDVINGALESVLSSSSREQWTPSHVSVAPATLTILHQQTEAVLGECRVRFLSFLAVGRDVHTFAFIMAAGPASFCCHMFWCEPNAASLSEAVQAACMLRYQKCLDARSQHHHHHH",
+                "Construct": {
+                    "start": 534,
+                    "end": 673
+                },
+                "PDB": "data/pdb/3DXC.cif",
+                "PDB chain ID": "A",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [
+                    {
+                        "start": 537,
+                        "end": 666
+                    }
+                ],
+                "PTMs": []
+            },
+            {
+                "ID": "yenpty",
+                "Name": "APP[YENPTY]",
+                "Description": "Cytoplasmic YENPTY motif of the amyloid precursor protein",
+                "Copies": 1,
+                "Sequence": "GAMDAAVTPEERHLSKMQQNGYENPTYKFFEQMQN",
+                "Construct": {
+                    "start": 661,
+                    "end": 695
+                },
+                "PDB": "",
+                "PDB chain ID": "",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [],
+                "PTMs": []
+            }
+        ],
+        "SLiMs": [
+            {
+                "ID": "ptb-yenpty",
+                "Name": "MINT1[PTB]-APP[YENPTY]",
+                "Notes": "",
+                "Acceptor ID": "ptb",
+                "Donor ID": "yenpty",
+                "Affinity": 3.2e-07,
+                "PDB": "data/pdb/3DXC.cif",
+                "PDB AlphaFold data JSON": "",
+                "PDB Acceptor chain ID": "A",
+                "PDB Acceptor construct": {
+                    "start": 534,
+                    "end": 673
+                },
+                "PDB Acceptor exclude": [],
+                "PDB Donor chain ID": "B",
+                "PDB Donor construct": {
+                    "start": 666,
+                    "end": 693
+                },
+                "PDB Donor exclude": []
+            }
+        ]
+    },
+    {
+        "ID": "traf2-tnfr2",
+        "Name": "TRAF2[MATH]-TNFR2[TBM]",
+        "Authenticity": "X-ray; Claude+Val",
+        "Box sides": [
+            20,
+            20,
+            20
+        ],
+        "Sources": [
+            {
+                "Name": "ELMI004695",
+                "Description": "ELM instance: LIG_TRAF2like_MATH_loPxQ_2 low-affinity PxQ TRAF-binding motif of TNFR2",
+                "Link": "http://elm.eu.org/instances/LIG_TRAF2like_MATH_loPxQ_2/"
+            },
+            {
+                "Name": "1CA9",
+                "Description": "PDB structure: TRAF2 MATH domain bound to the TNFR2 TRAF-binding peptide",
+                "Link": "https://www.rcsb.org/structure/1CA9"
+            },
+            {
+                "Name": "Park et al. 1999",
+                "Description": "Primary publication for crystallographic PDB 1CA9",
+                "Link": "https://doi.org/10.1038/19110"
+            },
+            {
+                "Name": "Affinity",
+                "Description": "TRAF2-TNFR2 peptide Kd reported in the ~0.5-1.9 mM range by ITC (weak, consistent with the 'low-affinity PxQ' ELM subclass); no single precise value found without further digging, so left as -1.",
+                "Link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC16804/"
+            }
+        ],
+        "Chains": [
+            {
+                "ID": "traf2",
+                "Name": "TRAF2[MATH]",
+                "Description": "MATH domain of TRAF2",
+                "Copies": 1,
+                "Sequence": "DQDKIEALSSKVQQLERSIGLKDLAMADLEQKVLEMEASTYDGVFIWKISDFARKRQEAVAGRIPAIFSPAFYTSRYGYKMCLRIYLNGDGTGRGTHLSLFFVVMKGPNDALLRWPFNQKVTLMLLDQNNREHVIDAFRPDVTSSSFQRPVNDMNIASGCPLFCPVSKMEAKNSYVRDDAIFIKAIVDLTGL",
+                "Construct": {
+                    "start": 310,
+                    "end": 501
+                },
+                "PDB": "data/pdb/1CA9.cif",
+                "PDB chain ID": "B",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [
+                    {
+                        "start": 311,
+                        "end": 501
+                    }
+                ],
+                "PTMs": []
+            },
+            {
+                "ID": "tbm",
+                "Name": "TNFR2[TBM]",
+                "Description": "TRAF-binding motif of TNF receptor 2",
+                "Copies": 1,
+                "Sequence": "GQVPFSKEEC",
+                "Construct": {
+                    "start": 419,
+                    "end": 428
+                },
+                "PDB": "",
+                "PDB chain ID": "",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [],
+                "PTMs": []
+            }
+        ],
+        "SLiMs": [
+            {
+                "ID": "traf2-tbm",
+                "Name": "TRAF2[MATH]-TNFR2[TBM]",
+                "Notes": "TRAF2 MATH domain is present as 6 copies in the ASU; chain B + peptide H used (clean single-partner pair, avoiding a nearby copy with a minor composite contact).",
+                "Acceptor ID": "traf2",
+                "Donor ID": "tbm",
+                "Affinity": -1,
+                "PDB": "data/pdb/1CA9.cif",
+                "PDB AlphaFold data JSON": "",
+                "PDB Acceptor chain ID": "B",
+                "PDB Acceptor construct": {
+                    "start": 310,
+                    "end": 501
+                },
+                "PDB Acceptor exclude": [],
+                "PDB Donor chain ID": "H",
+                "PDB Donor construct": {
+                    "start": 419,
+                    "end": 428
+                },
+                "PDB Donor exclude": []
+            }
+        ]
+    },
+    {
+        "ID": "sumo1-pml",
+        "Name": "SUMO1-PML[SIM]",
+        "Authenticity": "X-ray; Claude+Val",
+        "Box sides": [
+            20,
+            20,
+            20
+        ],
+        "Sources": [
+            {
+                "Name": "ELMI002773",
+                "Description": "ELM instance: LIG_SUMO_SIM_par_1 parallel SUMO-interacting motif of PML",
+                "Link": "http://elm.eu.org/instances/LIG_SUMO_SIM_par_1/"
+            },
+            {
+                "Name": "4WJO",
+                "Description": "PDB structure: SUMO1 bound to the (non-phosphorylated) PML SIM peptide",
+                "Link": "https://www.rcsb.org/structure/4WJO"
+            },
+            {
+                "Name": "Sekiyama et al. 2015",
+                "Description": "Primary publication for crystallographic PDB 4WJO",
+                "Link": "https://doi.org/10.1016/j.str.2014.10.015"
+            }
+        ],
+        "Chains": [
+            {
+                "ID": "sumo1",
+                "Name": "SUMO1",
+                "Description": "Small ubiquitin-related modifier 1",
+                "Copies": 1,
+                "Sequence": "GSKEGEYIKLKVIGQDSSEIHFKVKMTTHLKKLKESYAQRQGVPMNSLRFLFEGQRIADNHTPKELGMEEEDVIEVYQEQTGG",
+                "Construct": {
+                    "start": 15,
+                    "end": 97
+                },
+                "PDB": "data/pdb/4WJO.cif",
+                "PDB chain ID": "A",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [
+                    {
+                        "start": 18,
+                        "end": 94
+                    }
+                ],
+                "PTMs": []
+            },
+            {
+                "ID": "sim",
+                "Name": "PML[SIM]",
+                "Description": "Parallel SUMO-interacting motif of PML",
+                "Copies": 1,
+                "Sequence": "GSGAGEAEERVVVISSSEDSDAENSSSRY",
+                "Construct": {
+                    "start": 1,
+                    "end": 29
+                },
+                "PDB": "",
+                "PDB chain ID": "",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [],
+                "PTMs": []
+            }
+        ],
+        "SLiMs": [
+            {
+                "ID": "sumo1-sim",
+                "Name": "SUMO1-PML[SIM]",
+                "Notes": "",
+                "Acceptor ID": "sumo1",
+                "Donor ID": "sim",
+                "Affinity": -1,
+                "PDB": "data/pdb/4WJO.cif",
+                "PDB AlphaFold data JSON": "",
+                "PDB Acceptor chain ID": "A",
+                "PDB Acceptor construct": {
+                    "start": 15,
+                    "end": 97
+                },
+                "PDB Acceptor exclude": [],
+                "PDB Donor chain ID": "B",
+                "PDB Donor construct": {
+                    "start": 7,
+                    "end": 29
+                },
+                "PDB Donor exclude": []
+            }
+        ]
+    },
+    {
+        "ID": "wdr5-mll2",
+        "Name": "WDR5-MLL2[WIN]",
+        "Authenticity": "X-ray; Claude+Val",
+        "Box sides": [
+            20,
+            20,
+            20
+        ],
+        "Sources": [
+            {
+                "Name": "ELMI002646",
+                "Description": "ELM instance: LIG_WD40_WDR5_WIN_1 WIN motif of MLL2/KMT2D",
+                "Link": "http://elm.eu.org/instances/LIG_WD40_WDR5_WIN_1/"
+            },
+            {
+                "Name": "3UVK",
+                "Description": "PDB structure: WDR5 WD40 beta-propeller domain bound to the MLL2 WIN motif peptide",
+                "Link": "https://www.rcsb.org/structure/3UVK"
+            },
+            {
+                "Name": "Patel et al. 2012",
+                "Description": "Primary publication for crystallographic PDB 3UVK; Publication for affinity",
+                "Link": "https://doi.org/10.1093/nar/gkr1235"
+            },
+            {
+                "Name": "Affinity",
+                "Description": "MLL2 WIN motif peptide binds WDR5 with Kd = 75 nM",
+                "Link": "https://doi.org/10.1093/nar/gkr1235"
+            }
+        ],
+        "Chains": [
+            {
+                "ID": "wdr5",
+                "Name": "WDR5",
+                "Description": "WD40 beta-propeller domain of WDR5",
+                "Copies": 1,
+                "Sequence": "GAMGSSATQSKPTPVKPNYALKFTLAGHTKAVSSVKFSPNGEWLASSSADKLIKIWGAYDGKFEKTISGHKLGISDVAWSSDSNLLVSASDDKTLKIWDVSSGKCLKTLKGHSNYVFCCNFNPQSNLIVSGSFDESVRIWDVKTGKCLKTLPAHSDPVSAVHFNRDGSLIVSSSYDGLCRIWDTASGQCLKTLIDDDNPPVSFVKFSPNGKYILAATLDNTLKLWDYSKGKCLKTYTGHKNEKYCIFANFSVTGGKWIVSGSEDNLVYIWNLQTKEIVQKLQGHTDVVISTACHPTENIIASAALENDKTIKLWKSDC",
+                "Construct": {
+                    "start": 17,
+                    "end": 334
+                },
+                "PDB": "data/pdb/3UVK.cif",
+                "PDB chain ID": "A",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [
+                    {
+                        "start": 31,
+                        "end": 334
+                    }
+                ],
+                "PTMs": []
+            },
+            {
+                "ID": "win",
+                "Name": "MLL2[WIN]",
+                "Description": "WIN motif of MLL2/KMT2D",
+                "Copies": 1,
+                "Sequence": "GCARSEPKILT",
+                "Construct": {
+                    "start": 5062,
+                    "end": 5072
+                },
+                "PDB": "",
+                "PDB chain ID": "",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [],
+                "PTMs": []
+            }
+        ],
+        "SLiMs": [
+            {
+                "ID": "wdr5-win",
+                "Name": "WDR5-MLL2[WIN]",
+                "Notes": "",
+                "Acceptor ID": "wdr5",
+                "Donor ID": "win",
+                "Affinity": 7.5e-08,
+                "PDB": "data/pdb/3UVK.cif",
+                "PDB AlphaFold data JSON": "",
+                "PDB Acceptor chain ID": "A",
+                "PDB Acceptor construct": {
+                    "start": 17,
+                    "end": 334
+                },
+                "PDB Acceptor exclude": [],
+                "PDB Donor chain ID": "B",
+                "PDB Donor construct": {
+                    "start": 5062,
+                    "end": 5072
+                },
+                "PDB Donor exclude": []
+            }
+        ]
+    },
+    {
+        "ID": "ap2b-arrb1",
+        "Name": "AP2B1[Appendage]-ARRB1[Cargo]",
+        "Authenticity": "X-ray; Claude+Val",
+        "Box sides": [
+            20,
+            20,
+            20
+        ],
+        "Sources": [
+            {
+                "Name": "ELMI001207",
+                "Description": "ELM instance: TRG_AP2beta_CARGO_1 cargo motif of beta-arrestin-1 (ARRB1)",
+                "Link": "http://elm.eu.org/instances/TRG_AP2beta_CARGO_1/"
+            },
+            {
+                "Name": "2IV8",
+                "Description": "PDB structure: AP-2 beta-appendage domain bound to the beta-arrestin-1 peptide",
+                "Link": "https://www.rcsb.org/structure/2IV8"
+            },
+            {
+                "Name": "Schmid et al. 2006",
+                "Description": "Primary publication for crystallographic PDB 2IV8; Publication for affinity",
+                "Link": "https://doi.org/10.1371/journal.pbio.0040262"
+            },
+            {
+                "Name": "Affinity",
+                "Description": "Beta-arrestin-1 peptide binds the AP2 beta-appendage top site with Kd = 2.1 uM",
+                "Link": "https://doi.org/10.1371/journal.pbio.0040262"
+            }
+        ],
+        "Chains": [
+            {
+                "ID": "ap2b",
+                "Name": "AP2B1[Appendage]",
+                "Description": "Beta-appendage domain of the AP-2 complex subunit beta-1",
+                "Copies": 1,
+                "Sequence": "IGMAPGGYVAPKAVWLPAVKAKGLEISGTFTHRQGHIYMEMNFTNKALQHMTDFAIQFNKNSFGVIPSTPLAIHTPLMPNQSIDVSLPLNTLGPVMKMEPLNNLQVAVKNNIDVFYFSCLIPLNVLFVEDGKMERQVFLATWKDIPNENELQFQIKECHLNADTVSSKLQNNNVYTIAKRNVEGQDMLYQSLKLTNGIWILAELRIQPGNPNYTLSLKCRAPEVSQYIYQVYDSILKN",
+                "Construct": {
+                    "start": 700,
+                    "end": 937
+                },
+                "PDB": "data/pdb/2IV8.cif",
+                "PDB chain ID": "A",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [
+                    {
+                        "start": 705,
+                        "end": 937
+                    }
+                ],
+                "PTMs": []
+            },
+            {
+                "ID": "cargo",
+                "Name": "ARRB1[Cargo]",
+                "Description": "AP-2 beta-appendage-binding cargo motif of beta-arrestin-1",
+                "Copies": 1,
+                "Sequence": "DDDIVFEDFARQRLKGMKDD",
+                "Construct": {
+                    "start": 1,
+                    "end": 20
+                },
+                "PDB": "",
+                "PDB chain ID": "",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [],
+                "PTMs": []
+            }
+        ],
+        "SLiMs": [
+            {
+                "ID": "ap2b-cargo",
+                "Name": "AP2B1[Appendage]-ARRB1[Cargo]",
+                "Notes": "Two peptide copies (P, Q) are present in the ASU binding the same acceptor site with differing resolved extents; the better-resolved copy (P) was used.",
+                "Acceptor ID": "ap2b",
+                "Donor ID": "cargo",
+                "Affinity": 2.1e-06,
+                "PDB": "data/pdb/2IV8.cif",
+                "PDB AlphaFold data JSON": "",
+                "PDB Acceptor chain ID": "A",
+                "PDB Acceptor construct": {
+                    "start": 700,
+                    "end": 937
+                },
+                "PDB Acceptor exclude": [],
+                "PDB Donor chain ID": "P",
+                "PDB Donor construct": {
+                    "start": 1,
+                    "end": 14
+                },
+                "PDB Donor exclude": []
+            }
+        ]
+    },
+    {
+        "ID": "pfn1-vasp",
+        "Name": "PFN1-VASP[PRM]",
+        "Authenticity": "X-ray; Claude+Val",
+        "Box sides": [
+            20,
+            20,
+            20
+        ],
+        "Sources": [
+            {
+                "Name": "ELMI003398",
+                "Description": "ELM instance: LIG_PROFILIN_1 GPPPPP polyproline motif of VASP",
+                "Link": "http://elm.eu.org/instances/LIG_PROFILIN_1/"
+            },
+            {
+                "Name": "2PAV",
+                "Description": "PDB structure: profilin-actin-VASP ternary complex; only profilin and the VASP peptide are used here (VASP contacts profilin exclusively, not the co-crystallized actin)",
+                "Link": "https://www.rcsb.org/structure/2PAV"
+            },
+            {
+                "Name": "Ferron et al. 2007",
+                "Description": "Primary publication for crystallographic PDB 2PAV; Publication for affinity",
+                "Link": "https://pubmed.ncbi.nlm.nih.gov/17914456/"
+            },
+            {
+                "Name": "Affinity",
+                "Description": "Profilin (without actin) binds the VASP GPPPPP polyproline peptide with Kd = 84 uM",
+                "Link": "https://pubmed.ncbi.nlm.nih.gov/17914456/"
+            }
+        ],
+        "Chains": [
+            {
+                "ID": "pfn1",
+                "Name": "PFN1",
+                "Description": "Profilin-1",
+                "Copies": 1,
+                "Sequence": "AGWNAYIDNLMADGTCQDAAIVGYKDSPSVWAAVPGKTFVNITPAEVGVLVGKDRSSFYVNGLTLGGQKCSVIRDSLLQDGEFSMDLRTKSTGGAPTFNVTVTKTDKTLVLLMGKEGVHGGLINKKCYEMASHLRRSQY",
+                "Construct": {
+                    "start": 1,
+                    "end": 139
+                },
+                "PDB": "data/pdb/2PAV.cif",
+                "PDB chain ID": "P",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [
+                    {
+                        "start": 1,
+                        "end": 139
+                    }
+                ],
+                "PTMs": []
+            },
+            {
+                "ID": "gp5",
+                "Name": "VASP[PRM]",
+                "Description": "GPPPPP polyproline motif of VASP",
+                "Copies": 1,
+                "Sequence": "GAGGGPPPAPPLPAAQ",
+                "Construct": {
+                    "start": 198,
+                    "end": 213
+                },
+                "PDB": "",
+                "PDB chain ID": "",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [],
+                "PTMs": []
+            }
+        ],
+        "SLiMs": [
+            {
+                "ID": "pfn1-gp5",
+                "Name": "PFN1-VASP[PRM]",
+                "Notes": "Extracted from a profilin-actin-VASP ternary complex; the VASP peptide contacts only profilin (86 contacts), not the co-crystallized actin (0 contacts), so actin is omitted entirely (also sidesteps that chain's non-canonical HIC73, the same issue seen in 2A3Z).",
+                "Acceptor ID": "pfn1",
+                "Donor ID": "gp5",
+                "Affinity": 8.4e-05,
+                "PDB": "data/pdb/2PAV.cif",
+                "PDB AlphaFold data JSON": "",
+                "PDB Acceptor chain ID": "P",
+                "PDB Acceptor construct": {
+                    "start": 1,
+                    "end": 139
+                },
+                "PDB Acceptor exclude": [],
+                "PDB Donor chain ID": "V",
+                "PDB Donor construct": {
+                    "start": 201,
+                    "end": 213
+                },
+                "PDB Donor exclude": []
+            }
+        ]
+    },
+    {
+        "ID": "fak1-pxn",
+        "Name": "FAK1[FAT]-PXN[LD4]",
+        "Authenticity": "X-ray; Claude+Val",
+        "Box sides": [
+            20,
+            20,
+            20
+        ],
+        "Sources": [
+            {
+                "Name": "ELMI001518",
+                "Description": "ELM instance: LIG_FAT_LD_1 LD4 motif of paxillin (PXN)",
+                "Link": "http://elm.eu.org/instances/LIG_FAT_LD_1/"
+            },
+            {
+                "Name": "1OW6",
+                "Description": "PDB structure: FAK focal adhesion targeting (FAT) domain bound to the paxillin LD4 motif peptide",
+                "Link": "https://www.rcsb.org/structure/1OW6"
+            },
+            {
+                "Name": "Hoellerer et al. 2003",
+                "Description": "Primary publication for crystallographic PDB 1OW6; Publication for affinity",
+                "Link": "https://doi.org/10.1016/j.str.2003.08.010"
+            },
+            {
+                "Name": "Affinity",
+                "Description": "FAT domain binds the isolated paxillin LD4 peptide with Kd = 13 +/- 2 mM (weak, consistent with dynamic multivalent LD-motif recognition)",
+                "Link": "https://doi.org/10.1016/j.str.2003.08.010"
+            }
+        ],
+        "Chains": [
+            {
+                "ID": "fat",
+                "Name": "FAK1[FAT]",
+                "Description": "Focal adhesion targeting domain of focal adhesion kinase 1",
+                "Copies": 1,
+                "Sequence": "SSPADSYNEGVKLQPQEISPPPTANLDRSNDKVYENVTGLVKAVIEMSSKIQPAPPEEYVPMVKEVGLALRTLLATVDETIPLLPASTHREIEMAQKLLNSDLGELINKMKLAQQYVMTSLQQEYKKQMLTAAHALAVDAKNLLDVIDQARLKMLGQTRPH",
+                "Construct": {
+                    "start": 892,
+                    "end": 1052
+                },
+                "PDB": "data/pdb/1OW6.cif",
+                "PDB chain ID": "C",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [
+                    {
+                        "start": 909,
+                        "end": 1047
+                    }
+                ],
+                "PTMs": []
+            },
+            {
+                "ID": "ld4",
+                "Name": "PXN[LD4]",
+                "Description": "LD4 motif of paxillin",
+                "Copies": 1,
+                "Sequence": "ATRELDELMASLS",
+                "Construct": {
+                    "start": 1,
+                    "end": 13
+                },
+                "PDB": "",
+                "PDB chain ID": "",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [],
+                "PTMs": []
+            }
+        ],
+        "SLiMs": [
+            {
+                "ID": "fat-ld4",
+                "Name": "FAK1[FAT]-PXN[LD4]",
+                "Notes": "FAT domain is present as 3 copies in the ASU, each binding one peptide copy at an independent site; chain C + peptide F used (clean single-partner pair).",
+                "Acceptor ID": "fat",
+                "Donor ID": "ld4",
+                "Affinity": 0.013,
+                "PDB": "data/pdb/1OW6.cif",
+                "PDB AlphaFold data JSON": "",
+                "PDB Acceptor chain ID": "C",
+                "PDB Acceptor construct": {
+                    "start": 892,
+                    "end": 1052
+                },
+                "PDB Acceptor exclude": [],
+                "PDB Donor chain ID": "F",
+                "PDB Donor construct": {
+                    "start": 2,
+                    "end": 12
+                },
+                "PDB Donor exclude": []
+            }
+        ]
+    },
+    {
+        "ID": "esrrg-nrip1",
+        "Name": "ESRRG[LBD]-NRIP1[NRbox]",
+        "Authenticity": "X-ray; Claude+Val",
+        "Box sides": [
+            20,
+            20,
+            20
+        ],
+        "Sources": [
+            {
+                "Name": "ELMI000775",
+                "Description": "ELM instance: LIG_NRBOX nuclear receptor box (LXXLL) of NRIP1/RIP140",
+                "Link": "http://elm.eu.org/instances/LIG_NRBOX/"
+            },
+            {
+                "Name": "2GPO",
+                "Description": "PDB structure: estrogen-related receptor gamma ligand-binding domain bound to the NRIP1 NR-box peptide",
+                "Link": "https://www.rcsb.org/structure/2GPO"
+            },
+            {
+                "Name": "Wang et al. 2006",
+                "Description": "Primary publication for crystallographic PDB 2GPO",
+                "Link": "https://doi.org/10.1074/jbc.M608410200"
+            }
+        ],
+        "Chains": [
+            {
+                "ID": "lbd",
+                "Name": "ESRRG[LBD]",
+                "Description": "Ligand-binding domain of estrogen-related receptor gamma",
+                "Copies": 1,
+                "Sequence": "PAKKPYNKIVSHLLVAEPEKIYAMPDPTVPDSDIKALTTLCDLADRELVVIIGWAKHIPGFSTLSLADQMSLLQSAWMEILILGVVYRSLSFEDELVYADDYIMDEDQSKLAGLLDLNNAILQLVKKYKSMKLEKEEFVTLKAIALANSDSMHIEDVEAVQKLQDVLHEALQDYEAGQHMEDPRRAGKMLMTLPLLRQTSTKAVQHFYNIKLEGKVPMHKLFLEMLEAKV",
+                "Construct": {
+                    "start": 229,
+                    "end": 458
+                },
+                "PDB": "data/pdb/2GPO.cif",
+                "PDB chain ID": "A",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [
+                    {
+                        "start": 235,
+                        "end": 458
+                    }
+                ],
+                "PTMs": []
+            },
+            {
+                "ID": "nrbox",
+                "Name": "NRIP1[NRbox]",
+                "Description": "Nuclear receptor box (LXXLL motif) of NRIP1/RIP140",
+                "Copies": 1,
+                "Sequence": "LERNNIKQAANNSLLLHLLKSQTIP",
+                "Construct": {
+                    "start": 366,
+                    "end": 390
+                },
+                "PDB": "",
+                "PDB chain ID": "",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [],
+                "PTMs": []
+            }
+        ],
+        "SLiMs": [
+            {
+                "ID": "lbd-nrbox",
+                "Name": "ESRRG[LBD]-NRIP1[NRbox]",
+                "Notes": "",
+                "Acceptor ID": "lbd",
+                "Donor ID": "nrbox",
+                "Affinity": -1,
+                "PDB": "data/pdb/2GPO.cif",
+                "PDB AlphaFold data JSON": "",
+                "PDB Acceptor chain ID": "A",
+                "PDB Acceptor construct": {
+                    "start": 229,
+                    "end": 458
+                },
+                "PDB Acceptor exclude": [],
+                "PDB Donor chain ID": "C",
+                "PDB Donor construct": {
+                    "start": 378,
+                    "end": 387
+                },
+                "PDB Donor exclude": []
+            }
+        ]
+    },
+    {
+        "ID": "vcp-derl1",
+        "Name": "VCP[N]-DERL1[SHP]",
+        "Authenticity": "X-ray; Claude+Val",
+        "Box sides": [
+            20,
+            20,
+            20
+        ],
+        "Sources": [
+            {
+                "Name": "ELMI004587",
+                "Description": "ELM instance: LIG_VCP_SHPBox_1 SHP-box motif of Derlin-1 (DERL1)",
+                "Link": "http://elm.eu.org/instances/LIG_VCP_SHPBox_1/"
+            },
+            {
+                "Name": "5GLF",
+                "Description": "PDB structure: p97/VCP N-terminal domain bound to the Derlin-1 SHP-box peptide",
+                "Link": "https://www.rcsb.org/structure/5GLF"
+            },
+            {
+                "Name": "Lim et al. 2016",
+                "Description": "Primary publication for crystallographic PDB 5GLF",
+                "Link": "https://pubmed.ncbi.nlm.nih.gov/27714797/"
+            }
+        ],
+        "Chains": [
+            {
+                "ID": "ntd",
+                "Name": "VCP[N]",
+                "Description": "N-terminal domain of transitional endoplasmic reticulum ATPase (p97/VCP)",
+                "Copies": 1,
+                "Sequence": "GAMGSNRPNRLIVDEAINEDNSVVSLSQPKMDELQLFRGDTVLLKGKKRREAVCIVLSDDTCSDEKIRMNRVVRNNLRVRLGDVISIQPCPDVKYGKRIHVLPIDDTVEGITGNLFEVYLKPYFLEAYRPIRKGDIFLVRGGMRAVEFKVVETDPSPYCIVAPDTVIHCEGEPIKREDEEESLN",
+                "Construct": {
+                    "start": 16,
+                    "end": 199
+                },
+                "PDB": "data/pdb/5GLF.cif",
+                "PDB chain ID": "A",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [
+                    {
+                        "start": 23,
+                        "end": 192
+                    }
+                ],
+                "PTMs": []
+            },
+            {
+                "ID": "shp",
+                "Name": "DERL1[SHP]",
+                "Description": "SHP-box motif of Derlin-1",
+                "Copies": 1,
+                "Sequence": "RHNWGQGFRLGD",
+                "Construct": {
+                    "start": 239,
+                    "end": 250
+                },
+                "PDB": "",
+                "PDB chain ID": "",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [],
+                "PTMs": []
+            }
+        ],
+        "SLiMs": [
+            {
+                "ID": "ntd-shp",
+                "Name": "VCP[N]-DERL1[SHP]",
+                "Notes": "",
+                "Acceptor ID": "ntd",
+                "Donor ID": "shp",
+                "Affinity": -1,
+                "PDB": "data/pdb/5GLF.cif",
+                "PDB AlphaFold data JSON": "",
+                "PDB Acceptor chain ID": "A",
+                "PDB Acceptor construct": {
+                    "start": 16,
+                    "end": 199
+                },
+                "PDB Acceptor exclude": [],
+                "PDB Donor chain ID": "B",
+                "PDB Donor construct": {
+                    "start": 239,
+                    "end": 250
+                },
+                "PDB Donor exclude": []
+            }
+        ]
+    },
+    {
+        "ID": "dctn1-clip1",
+        "Name": "DCTN1[CAP-Gly]-CLIP1[EEY]",
+        "Authenticity": "X-ray; Claude+Val",
+        "Box sides": [
+            20,
+            20,
+            20
+        ],
+        "Sources": [
+            {
+                "Name": "ELMI001058",
+                "Description": "ELM instance: LIG_CAP-Gly_1 EEY/F-COOH motif of CLIP-170 (CLIP1)",
+                "Link": "http://elm.eu.org/instances/LIG_CAP-Gly_1/"
+            },
+            {
+                "Name": "2PZO",
+                "Description": "PDB structure: dynactin p150Glued CAP-Gly domain bound to the CLIP-170 C-terminal EEY motif peptide",
+                "Link": "https://www.rcsb.org/structure/2PZO"
+            }
+        ],
+        "Chains": [
+            {
+                "ID": "capgly",
+                "Name": "DCTN1[CAP-Gly]",
+                "Description": "CAP-Gly domain of dynactin subunit 1 (p150Glued)",
+                "Copies": 1,
+                "Sequence": "GSHMSAEASARPLRVGSRVEVIGKGHRGTVAYVGATLFATGKWVGVILDEAKGKNDGTVQGRKYFTCDEGHGIFVRQSQIQVFEDGADTTSPETPDS",
+                "Construct": {
+                    "start": 15,
+                    "end": 111
+                },
+                "PDB": "data/pdb/2PZO.cif",
+                "PDB chain ID": "A",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [
+                    {
+                        "start": 26,
+                        "end": 97
+                    }
+                ],
+                "PTMs": []
+            },
+            {
+                "ID": "eey",
+                "Name": "CLIP1[EEY]",
+                "Description": "C-terminal EEY/F-COOH motif of CLIP-170",
+                "Copies": 1,
+                "Sequence": "GSMSEDPPHSTHHGSRGEERPYCEICEMFGHWATNCNDDETF",
+                "Construct": {
+                    "start": 1386,
+                    "end": 1427
+                },
+                "PDB": "",
+                "PDB chain ID": "",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [],
+                "PTMs": []
+            }
+        ],
+        "SLiMs": [
+            {
+                "ID": "capgly-eey",
+                "Name": "DCTN1[CAP-Gly]-CLIP1[EEY]",
+                "Notes": "CAP-Gly domain is present as 4 copies in the ASU; each peptide contacts one dominant acceptor plus a minor secondary contact to a neighbouring copy (e.g. peptide E: 106 contacts to chain A, 41 to chain D). Chain A + peptide E used (dominant single-partner pair).",
+                "Acceptor ID": "capgly",
+                "Donor ID": "eey",
+                "Affinity": -1,
+                "PDB": "data/pdb/2PZO.cif",
+                "PDB AlphaFold data JSON": "",
+                "PDB Acceptor chain ID": "A",
+                "PDB Acceptor construct": {
+                    "start": 15,
+                    "end": 111
+                },
+                "PDB Acceptor exclude": [],
+                "PDB Donor chain ID": "E",
+                "PDB Donor construct": {
+                    "start": 1406,
+                    "end": 1427
+                },
+                "PDB Donor exclude": []
+            }
+        ]
+    },
+    {
+        "ID": "usp7-mdmx",
+        "Name": "USP7[MATH]-MDMX[Deg]",
+        "Authenticity": "X-ray; Claude+Val",
+        "Box sides": [
+            20,
+            20,
+            20
+        ],
+        "Sources": [
+            {
+                "Name": "ELMI002273",
+                "Description": "ELM instance: DOC_USP7_MATH_1 USP7-binding degron of MDMX (HdmX)",
+                "Link": "http://elm.eu.org/instances/DOC_USP7_MATH_1/"
+            },
+            {
+                "Name": "3MQR",
+                "Description": "PDB structure: USP7 MATH domain bound to the MDMX (HdmX) peptide",
+                "Link": "https://www.rcsb.org/structure/3MQR"
+            }
+        ],
+        "Chains": [
+            {
+                "ID": "math",
+                "Name": "USP7[MATH]",
+                "Description": "MATH domain of ubiquitin carboxyl-terminal hydrolase 7 (USP7/HAUSP)",
+                "Copies": 1,
+                "Sequence": "GSHTAEEDMEDDTSWRSEATFQFTVERFSRLSESVLSPPCFVRNLPWKIMVMPRFYPDRPHQKSVGFFLQCNAESDSTSWSCHAQAVLKIINYRDDEKSFSRRISHLFFHKENDWGFSNFMAWSEVTDPEKGFIDDDKVTFEVFVQADAPHGVAW",
+                "Construct": {
+                    "start": 51,
+                    "end": 205
+                },
+                "PDB": "data/pdb/3MQR.cif",
+                "PDB chain ID": "A",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [
+                    {
+                        "start": 63,
+                        "end": 205
+                    }
+                ],
+                "PTMs": []
+            },
+            {
+                "ID": "deg",
+                "Name": "MDMX[Deg]",
+                "Description": "USP7-binding degron peptide of MDMX (HdmX)",
+                "Copies": 1,
+                "Sequence": "LDLAHSSESQ",
+                "Construct": {
+                    "start": 395,
+                    "end": 404
+                },
+                "PDB": "",
+                "PDB chain ID": "",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [],
+                "PTMs": []
+            }
+        ],
+        "SLiMs": [
+            {
+                "ID": "math-deg",
+                "Name": "USP7[MATH]-MDMX[Deg]",
+                "Notes": "",
+                "Acceptor ID": "math",
+                "Donor ID": "deg",
+                "Affinity": -1,
+                "PDB": "data/pdb/3MQR.cif",
+                "PDB AlphaFold data JSON": "",
+                "PDB Acceptor chain ID": "A",
+                "PDB Acceptor construct": {
+                    "start": 51,
+                    "end": 205
+                },
+                "PDB Acceptor exclude": [],
+                "PDB Donor chain ID": "B",
+                "PDB Donor construct": {
+                    "start": 398,
+                    "end": 401
+                },
+                "PDB Donor exclude": []
+            }
+        ]
+    },
+    {
+        "ID": "rfxank-rfx5",
+        "Name": "RFXANK[ANK]-RFX5[PxLPxL]",
+        "Authenticity": "X-ray; Claude+Val",
+        "Box sides": [
+            20,
+            20,
+            20
+        ],
+        "Sources": [
+            {
+                "Name": "ELMI002952",
+                "Description": "ELM instance: LIG_ANK_PxLPxL_1 motif of RFX5",
+                "Link": "http://elm.eu.org/instances/LIG_ANK_PxLPxL_1/"
+            },
+            {
+                "Name": "3V30",
+                "Description": "PDB structure: RFXANK ankyrin repeat domain bound to the RFX5 PxLPxL peptide",
+                "Link": "https://www.rcsb.org/structure/3V30"
+            },
+            {
+                "Name": "Xu et al. 2012",
+                "Description": "Primary publication for crystallographic PDB 3V30",
+                "Link": "https://doi.org/10.1126/scisignal.2002979"
+            }
+        ],
+        "Chains": [
+            {
+                "ID": "ank",
+                "Name": "RFXANK[ANK]",
+                "Description": "Ankyrin repeat domain of RFXANK",
+                "Copies": 1,
+                "Sequence": "GDSLSIHQLAAQGELDQLKEHLRKGDNLVNKPDERGFTPLIWASAFGEIETVRFLLEWGADPHILAKERESALSLASTGGYTDIVGLLLERDVDINIYDWNGGTPLLYAVRGNHVKCVEALLARGADLTTEADSGYTPMDLAVALGYRKVQQVIENHILKLFQSNLVPADPE",
+                "Construct": {
+                    "start": 89,
+                    "end": 260
+                },
+                "PDB": "data/pdb/3V30.cif",
+                "PDB chain ID": "A",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [
+                    {
+                        "start": 92,
+                        "end": 252
+                    }
+                ],
+                "PTMs": []
+            },
+            {
+                "ID": "pxlpxl",
+                "Name": "RFX5[PxLPxL]",
+                "Description": "PxLPxL/I motif peptide from RFX5",
+                "Copies": 1,
+                "Sequence": "KTLVSMPPLPGLDLKGS",
+                "Construct": {
+                    "start": 1,
+                    "end": 17
+                },
+                "PDB": "",
+                "PDB chain ID": "",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [],
+                "PTMs": []
+            }
+        ],
+        "SLiMs": [
+            {
+                "ID": "ank-pxlpxl",
+                "Name": "RFXANK[ANK]-RFX5[PxLPxL]",
+                "Notes": "",
+                "Acceptor ID": "ank",
+                "Donor ID": "pxlpxl",
+                "Affinity": -1,
+                "PDB": "data/pdb/3V30.cif",
+                "PDB AlphaFold data JSON": "",
+                "PDB Acceptor chain ID": "A",
+                "PDB Acceptor construct": {
+                    "start": 89,
+                    "end": 260
+                },
+                "PDB Acceptor exclude": [],
+                "PDB Donor chain ID": "B",
+                "PDB Donor construct": {
+                    "start": 2,
+                    "end": 17
+                },
+                "PDB Donor exclude": []
+            }
+        ]
+    },
+    {
+        "ID": "b56g-bubr1",
+        "Name": "B56G[ARM]-BUBR1[LxxIxE]",
+        "Authenticity": "X-ray; Claude+Val",
+        "Box sides": [
+            25,
+            25,
+            25
+        ],
+        "Sources": [
+            {
+                "Name": "ELMI003165",
+                "Description": "ELM instance: DOC_PP2A_B56_1 docking motif of BUB1B/BUBR1",
+                "Link": "http://elm.eu.org/instances/DOC_PP2A_B56_1/"
+            },
+            {
+                "Name": "5JJA",
+                "Description": "PDB structure: PP2A B56-gamma regulatory subunit bound to the BUBR1 LxxIxE peptide",
+                "Link": "https://www.rcsb.org/structure/5JJA"
+            },
+            {
+                "Name": "Wang et al. 2016",
+                "Description": "Primary publication for crystallographic PDB 5JJA",
+                "Link": "https://doi.org/10.1007/s13238-016-0283-4"
+            }
+        ],
+        "Chains": [
+            {
+                "ID": "arm",
+                "Name": "B56G[ARM]",
+                "Description": "Armadillo-repeat regulatory domain of PP2A B56-gamma (PPP2R5C)",
+                "Copies": 1,
+                "Sequence": "GIRDVPPADQEKLFIQKLRQCCVLFDFVSDPLSDLKWKEVKRAALSEMVEYITHNRNVITEPIYPEVVHMFAVNMFRTLPPSSNPTGAEFDPEEDEPTLEAAWPHLQLVYEFFLRFLESPDFQPNIAKKYIDQKFVLQLLELFDSEDPRERDFLKTTLHRIYGKFLGLRAYIRKQINNIFYRFIYETEHHNGIAELLEILGSIINGFALPLKEEHKIFLLKVLLPLHKVKSLSVYHPQLAYCVVQFLEKDSTLTEPVVMALLKYWPKTHSPKEVMFLNELEEILDVIEPSEFVKIMEPLFRQLAKCVSSPHFQVAERALYYWNNEYIMSLISDNAAKILPIMFPSLYRNSKT",
+                "Construct": {
+                    "start": 29,
+                    "end": 380
+                },
+                "PDB": "data/pdb/5JJA.cif",
+                "PDB chain ID": "A",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [
+                    {
+                        "start": 29,
+                        "end": 375
+                    }
+                ],
+                "PTMs": []
+            },
+            {
+                "ID": "lxxixe",
+                "Name": "BUBR1[LxxIxE]",
+                "Description": "LxxIxE docking motif region from BUB1B/BUBR1",
+                "Copies": 1,
+                "Sequence": "GKTSEDQQTACGTIYSQTLSIKKLDPIIEDDREADHSSGFSGSSASVASTSSIKCLQIPEKLELTNETSENPTQS",
+                "Construct": {
+                    "start": 646,
+                    "end": 720
+                },
+                "PDB": "",
+                "PDB chain ID": "",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [],
+                "PTMs": []
+            }
+        ],
+        "SLiMs": [
+            {
+                "ID": "arm-lxxixe",
+                "Name": "B56G[ARM]-BUBR1[LxxIxE]",
+                "Notes": "",
+                "Acceptor ID": "arm",
+                "Donor ID": "lxxixe",
+                "Affinity": -1,
+                "PDB": "data/pdb/5JJA.cif",
+                "PDB AlphaFold data JSON": "",
+                "PDB Acceptor chain ID": "A",
+                "PDB Acceptor construct": {
+                    "start": 29,
+                    "end": 380
+                },
+                "PDB Acceptor exclude": [],
+                "PDB Donor chain ID": "C",
+                "PDB Donor construct": {
+                    "start": 668,
+                    "end": 675
+                },
+                "PDB Donor exclude": []
+            }
+        ]
+    },
+    {
+        "ID": "ccna2-cdc6",
+        "Name": "CCNA2[Cyclin]-CDC6[RxL]",
+        "Authenticity": "X-ray; Claude+Val",
+        "Box sides": [
+            20,
+            20,
+            20
+        ],
+        "Sources": [
+            {
+                "Name": "ELMI000064",
+                "Description": "ELM instance: DOC_CYCLIN_RxL_1 motif of CDC6",
+                "Link": "http://elm.eu.org/instances/DOC_CYCLIN_RxL_1/"
+            },
+            {
+                "Name": "2CCH",
+                "Description": "PDB structure: Cyclin A2 bound to the CDC6 RxL recruitment peptide (extracted from a pCDK2/cyclin A2/CDC6-peptide complex)",
+                "Link": "https://www.rcsb.org/structure/2CCH"
+            },
+            {
+                "Name": "Cheng et al. 2006",
+                "Description": "Primary publication for crystallographic PDB 2CCH",
+                "Link": "https://doi.org/10.1074/jbc.M600480200"
+            }
+        ],
+        "Chains": [
+            {
+                "ID": "cyclin",
+                "Name": "CCNA2[Cyclin]",
+                "Description": "Cyclin box domain of Cyclin A2",
+                "Copies": 1,
+                "Sequence": "NEVPDYHEDIHTYLREMEVKCKPKVGYMKKQPDITNSMRAILVDWLVEVGEEYKLQNETLHLAVNYIDRFLSSMSVLRGKLQLVGTAAMLLASKFEEIYPPEVAEFVYITDDTYTKKQVLRMEHLVLKVLTFDLAAPTVNQFLTQYFLHQQPANCKVESLAMFLGELSLIDADPYLKYLPSVIAGAAFHLALYTVTGQSWPESLIRKTGYTLESLKPCLMDLHQTYLKAPQHAQQSIREKYKNSKYHGVSLLNPPETLNL",
+                "Construct": {
+                    "start": 173,
+                    "end": 432
+                },
+                "PDB": "data/pdb/2CCH.cif",
+                "PDB chain ID": "B",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [
+                    {
+                        "start": 173,
+                        "end": 432
+                    }
+                ],
+                "PTMs": []
+            },
+            {
+                "ID": "rxl",
+                "Name": "CDC6[RxL]",
+                "Description": "N-terminal RxL cyclin-recruitment motif of CDC6",
+                "Copies": 1,
+                "Sequence": "HTLKGRRLVFDN",
+                "Construct": {
+                    "start": 1,
+                    "end": 12
+                },
+                "PDB": "",
+                "PDB chain ID": "",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [],
+                "PTMs": []
+            }
+        ],
+        "SLiMs": [
+            {
+                "ID": "cyclin-rxl",
+                "Name": "CCNA2[Cyclin]-CDC6[RxL]",
+                "Notes": "Cyclin A2 + CDC6 RxL peptide extracted from a pT160-CDK2/cyclin A2/CDC6-peptide ternary complex; the CDK2 chain (phospho-Thr160) is omitted as the RxL peptide makes zero contacts with it (138 contacts to cyclin A2, 0 to CDK2).",
+                "Acceptor ID": "cyclin",
+                "Donor ID": "rxl",
+                "Affinity": -1,
+                "PDB": "data/pdb/2CCH.cif",
+                "PDB AlphaFold data JSON": "",
+                "PDB Acceptor chain ID": "B",
+                "PDB Acceptor construct": {
+                    "start": 173,
+                    "end": 432
+                },
+                "PDB Acceptor exclude": [],
+                "PDB Donor chain ID": "E",
+                "PDB Donor construct": {
+                    "start": 1,
+                    "end": 12
+                },
+                "PDB Donor exclude": []
+            }
+        ]
+    },
+    {
+        "ID": "rev1-polh",
+        "Name": "REV1[CT]-POLH[RIR]",
+        "Authenticity": "NMR; Claude+Val",
+        "Box sides": [
+            20,
+            20,
+            20
+        ],
+        "Sources": [
+            {
+                "Name": "ELMI003490",
+                "Description": "ELM instance: LIG_REV1ctd_RIR_1 motif of DNA polymerase eta (POLH)",
+                "Link": "http://elm.eu.org/instances/LIG_REV1ctd_RIR_1/"
+            },
+            {
+                "Name": "2LSK",
+                "Description": "NMR structure: REV1 C-terminal domain bound to the POLH RIR peptide",
+                "Link": "https://www.rcsb.org/structure/2LSK"
+            },
+            {
+                "Name": "Pozhidaeva et al. 2012",
+                "Description": "Primary publication for NMR PDB 2LSK",
+                "Link": "https://doi.org/10.1021/bi300566z"
+            }
+        ],
+        "Chains": [
+            {
+                "ID": "ct",
+                "Name": "REV1[CT]",
+                "Description": "C-terminal four-helix-bundle domain of REV1",
+                "Copies": 1,
+                "Sequence": "GNLAGAVEFNDVKTLLREWITTISDPMEEDILQVVKYCTDLIEEKDLEKLDLVIKYMKRLMQQSVESVWNMAFDFILDNVQVVLQQTYGSTLKVT",
+                "Construct": {
+                    "start": 1157,
+                    "end": 1251
+                },
+                "PDB": "data/pdb/2LSK.cif",
+                "PDB chain ID": "A",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [
+                    {
+                        "start": 1159,
+                        "end": 1250
+                    }
+                ],
+                "PTMs": []
+            },
+            {
+                "ID": "rir",
+                "Name": "POLH[RIR]",
+                "Description": "REV1-interacting region (RIR) peptide of DNA polymerase eta",
+                "Copies": 1,
+                "Sequence": "QSTGTEPFFKQKSLLL",
+                "Construct": {
+                    "start": 524,
+                    "end": 539
+                },
+                "PDB": "",
+                "PDB chain ID": "",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [],
+                "PTMs": []
+            }
+        ],
+        "SLiMs": [
+            {
+                "ID": "ct-rir",
+                "Name": "REV1[CT]-POLH[RIR]",
+                "Notes": "Manual exclusion of residues from SLiM contacts based on NMR backbone RMSF across the 20 conformers (acceptor rigid core 1159-1250; donor contact core 530-536, containing the two conserved Phe residues implicated in binding).",
+                "Acceptor ID": "ct",
+                "Donor ID": "rir",
+                "Affinity": -1,
+                "PDB": "data/pdb/2LSK.cif",
+                "PDB AlphaFold data JSON": "",
+                "PDB Acceptor chain ID": "A",
+                "PDB Acceptor construct": {
+                    "start": 1157,
+                    "end": 1251
+                },
+                "PDB Acceptor exclude": [
+                    1157,
+                    1158,
+                    1251
+                ],
+                "PDB Donor chain ID": "B",
+                "PDB Donor construct": {
+                    "start": 524,
+                    "end": 539
+                },
+                "PDB Donor exclude": [
+                    524,
+                    525,
+                    526,
+                    527,
+                    528,
+                    529,
+                    537,
+                    538,
+                    539
+                ]
+            }
+        ]
+    },
+    {
+        "ID": "cd2bp2-cd2",
+        "Name": "CD2BP2[GYF]-CD2[Cterm]",
+        "Authenticity": "NMR; Claude+Val",
+        "Box sides": [
+            20,
+            20,
+            20
+        ],
+        "Sources": [
+            {
+                "Name": "ELMI000208",
+                "Description": "ELM instance: LIG_GYF motif of the CD2 cytoplasmic tail",
+                "Link": "http://elm.eu.org/instances/LIG_GYF/"
+            },
+            {
+                "Name": "1L2Z",
+                "Description": "NMR structure: CD2BP2 GYF domain bound to the CD2 cytoplasmic-tail proline-rich peptide",
+                "Link": "https://www.rcsb.org/structure/1L2Z"
+            },
+            {
+                "Name": "Freund et al. 2002",
+                "Description": "Primary publication for NMR PDB 1L2Z",
+                "Link": "https://doi.org/10.1093/emboj/cdf602"
+            }
+        ],
+        "Chains": [
+            {
+                "ID": "gyf",
+                "Name": "CD2BP2[GYF]",
+                "Description": "GYF domain of CD2BP2",
+                "Copies": 1,
+                "Sequence": "DVMWEYKWENTGDAELYGPFTSAQMQTWVSEGYFPDGVYCRKLDPPGGQFYNSKRIDFDLYT",
+                "Construct": {
+                    "start": 1,
+                    "end": 62
+                },
+                "PDB": "data/pdb/1L2Z.cif",
+                "PDB chain ID": "A",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [
+                    {
+                        "start": 1,
+                        "end": 62
+                    }
+                ],
+                "PTMs": []
+            },
+            {
+                "ID": "cterm",
+                "Name": "CD2[Cterm]",
+                "Description": "Membrane-proximal proline-rich cytoplasmic-tail peptide of CD2",
+                "Copies": 1,
+                "Sequence": "SHRPPPPGHRV",
+                "Construct": {
+                    "start": 63,
+                    "end": 73
+                },
+                "PDB": "",
+                "PDB chain ID": "",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [],
+                "PTMs": []
+            }
+        ],
+        "SLiMs": [
+            {
+                "ID": "gyf-cterm",
+                "Name": "CD2BP2[GYF]-CD2[Cterm]",
+                "Notes": "Manual exclusion of residues from SLiM contacts based on NMR backbone RMSF across the 15 conformers (acceptor fully rigid 1-62; donor contact core 65-71).",
+                "Acceptor ID": "gyf",
+                "Donor ID": "cterm",
+                "Affinity": -1,
+                "PDB": "data/pdb/1L2Z.cif",
+                "PDB AlphaFold data JSON": "",
+                "PDB Acceptor chain ID": "A",
+                "PDB Acceptor construct": {
+                    "start": 1,
+                    "end": 62
+                },
+                "PDB Acceptor exclude": [],
+                "PDB Donor chain ID": "B",
+                "PDB Donor construct": {
+                    "start": 63,
+                    "end": 73
+                },
+                "PDB Donor exclude": [
+                    63,
+                    64,
+                    72,
+                    73
+                ]
+            }
+        ]
+    },
+    {
+        "ID": "siah1-cacybp",
+        "Name": "SIAH1[SBD]-CACYBP[Deg]",
+        "Authenticity": "X-ray; Claude+Val",
+        "Box sides": [
+            20,
+            20,
+            20
+        ],
+        "Sources": [
+            {
+                "Name": "ELMI001105",
+                "Description": "ELM instance: DEG_SIAH_1 motif of calcyclin-binding protein (CACYBP/SIP)",
+                "Link": "http://elm.eu.org/instances/DEG_SIAH_1/"
+            },
+            {
+                "Name": "2A25",
+                "Description": "PDB structure: SIAH1 substrate-binding domain bound to the CACYBP/SIP degron peptide",
+                "Link": "https://www.rcsb.org/structure/2A25"
+            },
+            {
+                "Name": "Santelli et al. 2005",
+                "Description": "Primary publication for crystallographic PDB 2A25",
+                "Link": "https://doi.org/10.1074/jbc.M506707200"
+            }
+        ],
+        "Chains": [
+            {
+                "ID": "sbd",
+                "Name": "SIAH1[SBD]",
+                "Description": "Substrate-binding domain of E3 ubiquitin ligase SIAH1",
+                "Copies": 1,
+                "Sequence": "VANSVLFPCKYASSGCEITLPHTEKADHEELCEFRPYSCPCPGASCKWQGSLDAVMPHLMHQHKSITTLQGEDIVFLATDINLPGAVDWVMMQSCFGFHFMLVLEKQEKYDGHQQFFAIVQLIGTRKQAENFAYRLELNGHRRRLTWEATPRSIHEGIATAIMNSDCLVFDTSIAQLFAENGNLGINVTISMC",
+                "Construct": {
+                    "start": 90,
+                    "end": 282
+                },
+                "PDB": "data/pdb/2A25.cif",
+                "PDB chain ID": "A",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [
+                    {
+                        "start": 125,
+                        "end": 282
+                    }
+                ],
+                "PTMs": []
+            },
+            {
+                "ID": "deg",
+                "Name": "CACYBP[Deg]",
+                "Description": "SIAH1-binding degron peptide of calcyclin-binding protein (CACYBP/SIP)",
+                "Copies": 1,
+                "Sequence": "EKPAAVVAPITTG",
+                "Construct": {
+                    "start": 58,
+                    "end": 70
+                },
+                "PDB": "",
+                "PDB chain ID": "",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [],
+                "PTMs": []
+            }
+        ],
+        "SLiMs": [
+            {
+                "ID": "sbd-deg",
+                "Name": "SIAH1[SBD]-CACYBP[Deg]",
+                "Notes": "",
+                "Acceptor ID": "sbd",
+                "Donor ID": "deg",
+                "Affinity": -1,
+                "PDB": "data/pdb/2A25.cif",
+                "PDB AlphaFold data JSON": "",
+                "PDB Acceptor chain ID": "A",
+                "PDB Acceptor construct": {
+                    "start": 90,
+                    "end": 282
+                },
+                "PDB Acceptor exclude": [],
+                "PDB Donor chain ID": "B",
+                "PDB Donor construct": {
+                    "start": 59,
+                    "end": 67
+                },
+                "PDB Donor exclude": []
+            }
+        ]
+    },
+    {
+        "ID": "cdc20-bub1b",
+        "Name": "CDC20[WD40]-BUB1B[KENbox]",
+        "Authenticity": "X-ray; Claude+Val",
+        "Box sides": [
+            25,
+            25,
+            25
+        ],
+        "Sources": [
+            {
+                "Name": "ELMI002601",
+                "Description": "ELM instance: DEG_APCC_KENBOX_2 motif of BUB1B/BUBR1",
+                "Link": "http://elm.eu.org/instances/DEG_APCC_KENBOX_2/"
+            },
+            {
+                "Name": "4GGD",
+                "Description": "PDB structure: CDC20 WD40 propeller bound to the BUBR1 KEN-box peptide",
+                "Link": "https://www.rcsb.org/structure/4GGD"
+            },
+            {
+                "Name": "Tian et al. 2012",
+                "Description": "Primary publication for crystallographic PDB 4GGD",
+                "Link": "https://doi.org/10.1073/pnas.1213438109"
+            }
+        ],
+        "Chains": [
+            {
+                "ID": "wd40",
+                "Name": "CDC20[WD40]",
+                "Description": "WD40 beta-propeller domain of CDC20 (with disordered N-terminal linker)",
+                "Copies": 1,
+                "Sequence": "GAPSKPGGDRYIPHRSAAQMEVASFLLSKENQPENSQTPTKKEHQKAWALNLNGFDVEEAKILRLSGKPQNAPEGYQNRLKVLYSQKATPGSSRKTCRYIPSLPDRILDAPEIRNDYYLNLVDWSSGNVLAVALDNSVYLWSASSGDILQLLQMEQPGEYISSVAWIKEGNYLAVGTSSAEVQLWDVQQQKRLRNMTSHSARVGSLSWNSYILSSGSRSGHIHHHDVRVAEHHVATLSGHSQEVCGLRWAPDGRHLASGGNDNLVNVWPSAPGEGGWVPLQTFTQHQGAVKAVAWCPWQSNVLATGGGTSDRHIRIWNVCSGACLSAVDAHSQVCSILWSPHYKELISGHGFAQNQLVIWKYPTMAKVAELKGHTSRVLSLTMSPDGATVASAAADETLRLWRCFELDPARRREREKASAAKSSLIHQGIR",
+                "Construct": {
+                    "start": 69,
+                    "end": 499
+                },
+                "PDB": "data/pdb/4GGD.cif",
+                "PDB chain ID": "A",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [
+                    {
+                        "start": 165,
+                        "end": 476
+                    }
+                ],
+                "PTMs": []
+            },
+            {
+                "ID": "kenbox",
+                "Name": "BUB1B[KENbox]",
+                "Description": "N-terminal KEN-box degron peptide of BUB1B/BUBR1",
+                "Copies": 1,
+                "Sequence": "DEWELSKENVQPLRQGRIMSTLQ",
+                "Construct": {
+                    "start": 1,
+                    "end": 23
+                },
+                "PDB": "",
+                "PDB chain ID": "",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [],
+                "PTMs": []
+            }
+        ],
+        "SLiMs": [
+            {
+                "ID": "wd40-kenbox",
+                "Name": "CDC20[WD40]-BUB1B[KENbox]",
+                "Notes": "",
+                "Acceptor ID": "wd40",
+                "Donor ID": "kenbox",
+                "Affinity": -1,
+                "PDB": "data/pdb/4GGD.cif",
+                "PDB AlphaFold data JSON": "",
+                "PDB Acceptor chain ID": "A",
+                "PDB Acceptor construct": {
+                    "start": 69,
+                    "end": 499
+                },
+                "PDB Acceptor exclude": [],
+                "PDB Donor chain ID": "C",
+                "PDB Donor construct": {
+                    "start": 5,
+                    "end": 11
+                },
+                "PDB Donor exclude": []
+            }
+        ]
+    },
+    {
+        "ID": "traf6-tifa",
+        "Name": "TRAF6[MATH]-TIFA[TBM]",
+        "Authenticity": "X-ray; Claude+Val",
+        "Box sides": [
+            20,
+            20,
+            20
+        ],
+        "Sources": [
+            {
+                "Name": "ELMI004501",
+                "Description": "ELM instance: LIG_TRAF6_MATH_1 motif of TIFA",
+                "Link": "http://elm.eu.org/instances/LIG_TRAF6_MATH_1/"
+            },
+            {
+                "Name": "6A33",
+                "Description": "PDB structure: TRAF6 MATH domain bound to the TIFA TRAF-binding motif peptide",
+                "Link": "https://www.rcsb.org/structure/6A33"
+            },
+            {
+                "Name": "Huang et al. 2019",
+                "Description": "Primary publication for crystallographic PDB 6A33",
+                "Link": "https://doi.org/10.1002/cbic.201800436"
+            }
+        ],
+        "Chains": [
+            {
+                "ID": "math",
+                "Name": "TRAF6[MATH]",
+                "Description": "MATH domain of TRAF6",
+                "Copies": 1,
+                "Sequence": "MNGIYIWKIGNFGMHLKCQEEEKPVVIHSPGFYTGKPGYKLCMRLHLQLPTAQRCANYISLFVHTMQGEYDSHLPWPFQGTIRLTILDQSEAPVRQNHEEIMDAKPELLAFQRPTIPRNPKGFGYVTFMHLEALRQRTFIKDDTLLVRCEVSTLEHHHHHH",
+                "Construct": {
+                    "start": 349,
+                    "end": 509
+                },
+                "PDB": "data/pdb/6A33.cif",
+                "PDB chain ID": "A",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [
+                    {
+                        "start": 350,
+                        "end": 501
+                    }
+                ],
+                "PTMs": []
+            },
+            {
+                "ID": "tbm",
+                "Name": "TIFA[TBM]",
+                "Description": "TRAF-binding motif peptide of TIFA",
+                "Copies": 1,
+                "Sequence": "SSQSSSPTEMDENES",
+                "Construct": {
+                    "start": 170,
+                    "end": 184
+                },
+                "PDB": "",
+                "PDB chain ID": "",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [],
+                "PTMs": []
+            }
+        ],
+        "SLiMs": [
+            {
+                "ID": "math-tbm",
+                "Name": "TRAF6[MATH]-TIFA[TBM]",
+                "Notes": "Single protomer of the native TRAF6 homotrimer taken (crystallographic ASU contains one MATH domain + one peptide); mirrors the traf4-gp1bb/traf2-tnfr2 treatment.",
+                "Acceptor ID": "math",
+                "Donor ID": "tbm",
+                "Affinity": -1,
+                "PDB": "data/pdb/6A33.cif",
+                "PDB AlphaFold data JSON": "",
+                "PDB Acceptor chain ID": "A",
+                "PDB Acceptor construct": {
+                    "start": 349,
+                    "end": 509
+                },
+                "PDB Acceptor exclude": [],
+                "PDB Donor chain ID": "I",
+                "PDB Donor construct": {
+                    "start": 174,
+                    "end": 184
+                },
+                "PDB Donor exclude": []
+            }
+        ]
+    },
+    {
+        "ID": "cd2ap-rin3",
+        "Name": "CD2AP[SH3-1]-RIN3[PxpxPR]",
+        "Authenticity": "X-ray; Claude+Val",
+        "Box sides": [
+            20,
+            20,
+            20
+        ],
+        "Sources": [
+            {
+                "Name": "ELMI004424",
+                "Description": "ELM instance: LIG_SH3_CIN85_PxpxPR_1 motif of RIN3",
+                "Link": "http://elm.eu.org/instances/LIG_SH3_CIN85_PxpxPR_1/"
+            },
+            {
+                "Name": "4WCI",
+                "Description": "PDB structure: CD2AP first SH3 domain bound to the RIN3 PxpxPR peptide",
+                "Link": "https://www.rcsb.org/structure/4WCI"
+            },
+            {
+                "Name": "Rouka et al. 2015",
+                "Description": "Primary publication for crystallographic PDB 4WCI",
+                "Link": "https://doi.org/10.1074/jbc.M115.637207"
+            }
+        ],
+        "Chains": [
+            {
+                "ID": "sh3-1",
+                "Name": "CD2AP[SH3-1]",
+                "Description": "First (N-terminal) SH3 domain of CD2AP",
+                "Copies": 1,
+                "Sequence": "GPLGSMVDYIVEYDYDAVHDDELTIRVGEIIRNVKKLQEEGWLEGELNGRRGMFPDNFVKEIKRE",
+                "Construct": {
+                    "start": -4,
+                    "end": 60
+                },
+                "PDB": "data/pdb/4WCI.cif",
+                "PDB chain ID": "A",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [
+                    {
+                        "start": 0,
+                        "end": 58
+                    }
+                ],
+                "PTMs": []
+            },
+            {
+                "ID": "pxpxpr",
+                "Name": "RIN3[PxpxPR]",
+                "Description": "PxpxPR proline-rich peptide from RIN3",
+                "Copies": 1,
+                "Sequence": "AKKNLPTAPPRRRVSE",
+                "Construct": {
+                    "start": 378,
+                    "end": 393
+                },
+                "PDB": "",
+                "PDB chain ID": "",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [],
+                "PTMs": []
+            }
+        ],
+        "SLiMs": [
+            {
+                "ID": "sh3-1-pxpxpr",
+                "Name": "CD2AP[SH3-1]-RIN3[PxpxPR]",
+                "Notes": "",
+                "Acceptor ID": "sh3-1",
+                "Donor ID": "pxpxpr",
+                "Affinity": -1,
+                "PDB": "data/pdb/4WCI.cif",
+                "PDB AlphaFold data JSON": "",
+                "PDB Acceptor chain ID": "A",
+                "PDB Acceptor construct": {
+                    "start": -4,
+                    "end": 60
+                },
+                "PDB Acceptor exclude": [],
+                "PDB Donor chain ID": "B",
+                "PDB Donor construct": {
+                    "start": 381,
+                    "end": 390
+                },
+                "PDB Donor exclude": []
+            }
+        ]
     }
 ]

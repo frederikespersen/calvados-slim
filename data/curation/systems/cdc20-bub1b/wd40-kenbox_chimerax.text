@@ -1,0 +1,10 @@
+open 4GGD
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/A,C cartoons
+sel /A:183,184,185,186,270,286,310,311,328,329,331,355,356,357,376,377,378,379,401,445 | /C:5,6,7,8,9,10
+show sel surfaces
+view sel

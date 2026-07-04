@@ -1,74 +1,233 @@
-[   
+[
     {
         "PDB": "4ELL",
+        "Category": "Intramolecular",
         "Reason": "Intramolecular SLiM.",
         "Rescue": "New pipeline setup for intramolecular interactions",
         "Publication": "https://doi.org/10.1101/gad.189837.112"
     },
     {
         "PDB": "2FLU",
+        "Category": "Cyclised peptide",
         "Reason": "Cyclicised peptide makes 1:1 replication impractical; Uncertain about PDB structure truth to nature.",
         "Rescue": "Graft cyclicised peptide with true flanking sequence. However, difficult to establish origin protein sequence, and whether that sequence segments is truly IDP.",
         "Publication": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3668573/"
     },
     {
         "PDB": "2LUE",
+        "Category": "PTM",
         "Reason": "SLiM donor has phosphoserine PTMs; These can be modelled with CALVADOS, but for now fall out of the standard curation pipeline. Very nicely a NMR structure.",
         "Rescue": "See CALVADOS example ``single_pIDR`` for example of implementing phosphoserines (and phosphotyrosines).",
         "Publication": "https://www.sciencedirect.com/science/article/pii/S0006291X21006513?via%3Dihub#sec2"
     },
     {
         "PDB": "2MRK",
+        "Category": "PTM",
         "Reason": "SLiM donor has phosphotyrosine PTMs; These can be modelled with CALVADOS, but for now fall out of the standard curation pipeline. Very nicely a NMR structure.",
         "Rescue": "See CALVADOS example ``single_pIDR`` for example of implementing phosphotyrosines (and phosphoserines).",
         "Publication": "https://doi.org/10.1016/j.str.2016.08.016"
     },
     {
         "PDB": "3D9T",
+        "Category": "Short peptide",
         "Reason": "Peptide is only 6 AA short.",
         "Rescue": "Extend with full protein sequence of caspase as flanking regions.",
         "Publication": "https://doi.org/10.1107/S0907444908039243"
     },
     {
         "PDB": "3ZFW",
+        "Category": "Expression tag",
         "Reason": "Large expression tag flanking regions.",
         "Rescue": "Graft true flanking sequences on.",
         "Publication": "https://doi.org/10.1126/SCIENCE.1234264"
     },
     {
         "PDB": "2A3Z",
+        "Category": "Non-canonical residue",
         "Reason": "Actin (acceptor) contains a non-canonical tele-methylhistidine (HIC73) that breaks the SEQRES/PDBFixer rebuild contract; also co-crystallized with DNase I as a folding chaperone.",
         "Rescue": "Substitute HIC73->HIS (natural methyl-His), then curate actin chain A + WASP WH2 peptide chain C, ignoring DNase I chain B.",
         "Publication": "https://doi.org/10.1016/j.molcel.2005.09.005"
     },
     {
         "PDB": "1N4M",
+        "Category": "Bad numbering",
         "Reason": "Retinoblastoma pocket acceptor construct has a genuine ~61-residue spacer deletion (582-642) absent from the deposited SEQRES entirely (confirmed via pdbx_poly_seq_scheme, not just unresolved density) -- discontinuous author numbering.",
         "Rescue": "Model the A-box and B-box as two separate acceptor sub-domains bridged by a modelled/grafted flexible linker, if the schema supports multi-domain acceptors.",
         "Publication": "https://doi.org/10.1101/gad.1046102"
     },
     {
         "PDB": "4YOS",
+        "Category": "PTM",
         "Reason": "LIN52 donor peptide carries a phosphoserine (SEP@12); PTMs are out of scope for the standard curation pipeline.",
         "Rescue": "See CALVADOS example ``single_pIDR`` for implementing phosphoserines.",
         "Publication": "https://doi.org/10.1101/gad.257568.114"
     },
     {
         "PDB": "3AA6",
+        "Category": "Multi-chain acceptor",
         "Reason": "Acceptor is the obligate F-actin capping protein alpha/beta heterodimer (different gene products); the CPI-motif binding site is composite across both chains (164 contacts to beta, 9 to alpha), not representable as a single-chain acceptor.",
         "Rescue": "Extend schema to support a two-chain heterodimeric acceptor with inter-chain domain restraints holding the heterodimer together.",
         "Publication": "https://doi.org/10.1371/journal.pbio.1000416"
     },
     {
         "PDB": "4UM9",
+        "Category": "Non-canonical residue",
         "Reason": "Donor is a synthetic peptide with ACE/NH2 caps (non-canonical termini breaking the SEQRES contract), not a natural IDR fragment from the latency-associated peptide.",
         "Rescue": "Graft the true native LAP flanking sequence onto the RGD motif instead of using the capped synthetic peptide.",
         "Publication": "https://doi.org/10.1038/nsmb.2905"
     },
     {
         "PDB": "3AU4",
+        "Category": "Bad numbering",
         "Reason": "Myosin-X MyTH4-FERM acceptor construct has a genuine 20-residue spacer deletion (1872-1891) absent from the deposited SEQRES entirely -- discontinuous author numbering, same failure mode as 1N4M.",
         "Rescue": "Model the deleted loop with a grafted/modelled linker to restore continuous authored numbering.",
         "Publication": "https://doi.org/10.1038/emboj.2011.177"
+    },
+    {
+        "PDB": "3BH6",
+        "Category": "Not a domain+SLiM pair",
+        "Reason": "Not a folded-acceptor + disordered-SLiM pair: chain A (ARL3, ~160 residues) and chain B (RP2/XRP2, ~310 residues) are both large folded domains forming a GTPase-GAP complex. The ELM MOD_NMyristoyl instance annotates ARL3's own N-terminal myristoylation site (Gly2), which lies outside the crystallized/resolved construct entirely.",
+        "Rescue": "Find an NMT (N-myristoyltransferase)-substrate peptide co-crystal instead; the ELM Fold label 'NMT_C' refers to the modifying enzyme, not this GAP-complex PDB. MOD-class ELM instances generally need a different kind of structure than the LIG/DOC/TRG priority list assumes.",
+        "Publication": "https://doi.org/10.1038/nsmb.1379"
+    },
+    {
+        "PDB": "1EJ5",
+        "Category": "Intramolecular",
+        "Reason": "Single-chain NMR structure (chain A only, no bound partner) of the isolated, autoinhibited WASP GBD domain. The LIG_GBD_Chelix_1 SLiM (C-helix) packs intramolecularly against the same GBD fold rather than binding a separate acceptor chain.",
+        "Rescue": "New pipeline setup for intramolecular interactions (same rescue as 4ELL).",
+        "Publication": "https://doi.org/10.1038/35004513"
+    },
+    {
+        "PDB": "4IHL",
+        "Category": "PTM",
+        "Reason": "RAF1 donor peptide carries two phosphoserines (SEP@233, SEP@259); canonical-mode 14-3-3 binding (LIG_14-3-3_CanoR_1) is inherently phosphorylation-dependent, so PTMs are essentially unavoidable for this ELM class.",
+        "Rescue": "See CALVADOS example ``single_pIDR`` for implementing phosphoserines.",
+        "Publication": "https://doi.org/10.1021/cb400177m"
+    },
+    {
+        "PDB": "5LCW",
+        "Category": "Not a domain+SLiM pair",
+        "Reason": "Cryo-EM structure of the entire 19-subunit anaphase-promoting complex (APC/C) holoenzyme with coactivator CDC20 and the checkpoint protein MAD2, but no bound D-box/degron substrate peptide is present anywhere in the deposited model -- there is no SLiM donor chain to pair with the CDC20 WD40 propeller acceptor.",
+        "Rescue": "Find a dedicated CDC20 (or CDH1) WD40 propeller + D-box degron peptide co-crystal/NMR structure instead of the full holoenzyme cryo-EM assembly.",
+        "Publication": "https://doi.org/10.1038/nature19083"
+    },
+    {
+        "PDB": "4BLB",
+        "Category": "Expression tag",
+        "Reason": "Acceptor is expressed as a maltose-binding protein (MBP) N-terminal fusion to SUFU (~370-residue non-native folded tag fused to the ~380-residue SUFU domain); same failure mode as 3ZFW, just via a folded fusion partner rather than a short linear tag.",
+        "Rescue": "Find an alternative SUFU structure solved without the MBP crystallization chaperone fusion.",
+        "Publication": "https://doi.org/10.1107/S0907444913028473"
+    },
+    {
+        "PDB": "2L1C",
+        "Category": "PTM",
+        "Reason": "Integrin beta-3 donor peptide carries two phosphotyrosines (PTR@747, PTR@759); the SHC1 PTB domain interaction (LIG_PTB_Phospho_1) is inherently phosphorylation-dependent.",
+        "Rescue": "See CALVADOS example ``single_pIDR`` for implementing phosphotyrosines.",
+        "Publication": "https://doi.org/10.1074/jbc.M110.159087"
+    },
+    {
+        "PDB": "3DOE",
+        "Category": "Not a domain+SLiM pair",
+        "Reason": "Both chains are complete, independently folded proteins: ARL2 (full ~190-residue small GTPase G-domain) and its effector BART/ARL2BP (114 resolved residues of an independently folded, largely helical protein), forming an obligate folded-folded GTPase-effector complex rather than a folded acceptor + disordered donor peptide. The ELM 'LIG_ARL_BART_1' motif likely refers to a structural epitope on folded ARL2, not an extractable linear motif.",
+        "Rescue": "Not obviously rescuable within this pipeline; would need a different kind of structure entirely (e.g. an isolated, genuinely disordered ARL2 C-terminal fragment bound to BART, if one exists).",
+        "Publication": "https://doi.org/10.1016/j.str.2009.01.014"
+    },
+    {
+        "PDB": "2C0L",
+        "Category": "Not a domain+SLiM pair",
+        "Reason": "Donor chain (nonspecific lipid-transfer protein / SCP2) is a complete, independently folded ~122-residue enzyme, not a disordered IDR; only its extreme C-terminal tripeptide (...AKL, a PTS1 signal) is the actual recognition motif. Curating the whole folded passenger as a 'donor IDP chain' would misrepresent it as disordered.",
+        "Rescue": "Find a PEX5 TPR domain structure bound to just a short synthetic PTS1 peptide (e.g. -SKL and flanking residues only), rather than a full folded passenger protein.",
+        "Publication": "https://doi.org/10.1016/j.molcel.2006.10.024"
+    },
+    {
+        "PDB": "3OBQ",
+        "Category": "Bad numbering",
+        "Reason": "TSG101 UEV domain acceptor has a genuine 3-residue deletion (44-46 or thereabouts) absent from the deposited SEQRES entirely (auto-flagged: span=149 vs SEQRES length=146) -- discontinuous author numbering, same failure mode as 1N4M/3AU4.",
+        "Rescue": "Model the deleted residues with a grafted/modelled linker to restore continuous authored numbering.",
+        "Publication": "https://doi.org/10.1016/j.str.2010.08.010"
+    },
+    {
+        "PDB": "1LQB",
+        "Category": "PTM",
+        "Reason": "HIF-1alpha donor peptide requires hydroxyproline (HYP@564) for pVHL recognition -- this is the defining, biologically essential modification for the VHL-HIF1alpha interaction (non-hydroxylated HIF1alpha does not bind pVHL), not an incidental crystallization aid like MSE. Also note the acceptor is the VHL-ElonginB-ElonginC heterotrimer, though the peptide contacts VHL almost exclusively (199 vs 8 contacts to ElonginC, 0 to ElonginB) so that alone would not have blocked curation.",
+        "Rescue": "See CALVADOS example ``single_pIDR``-style approach extended to hydroxyproline, if the pipeline ever supports non-phospho PTMs.",
+        "Publication": "https://doi.org/10.1126/science.1073440"
+    },
+    {
+        "PDB": "5JEM",
+        "Category": "Not a domain+SLiM pair",
+        "Reason": "CBP's Nuclear Coactivator Binding Domain (NCBD, chain C/D/F/H, residues 2065-2111) is a classic 'coupled folding and binding' IDP domain -- it has no fixed native fold on its own and only becomes a stable three-helix bundle in complex with a partner (like IRF-3's C-terminal domain here, or ACTR/p53TAD2 in other complexes). This breaks the folded-acceptor assumption entirely: there is no independently stable scaffold to anchor Go-model domain restraints on.",
+        "Rescue": "Not obviously rescuable within this pipeline without a dedicated mutual/coupled-folding treatment (neither partner is a fixed reference structure on its own).",
+        "Publication": "https://doi.org/10.1073/pnas.1603269113"
+    },
+    {
+        "PDB": "1S1H",
+        "Category": "Not a domain+SLiM pair",
+        "Reason": "Cryo-EM structure of the entire yeast 80S ribosome (18S rRNA + ~17 ribosomal proteins) with eEF2 bound -- a massive macromolecular machine, not an extractable folded-acceptor + disordered-SLiM pair. The mapped ELM instance does not correspond to an isolable 2-chain interaction anywhere in this assembly.",
+        "Rescue": "Not rescuable; find a dedicated structure for the actual domain-motif pair the ELM instance describes, if one exists, rather than this ribosome assembly.",
+        "Publication": "https://www.rcsb.org/structure/1S1H"
+    },
+    {
+        "PDB": "3U86",
+        "Category": "Bad numbering",
+        "Reason": "Both chains have discontinuous author numbering (a genuine construct deletion absent from the deposited SEQRES, not just unresolved density): Menin acceptor (chain A) is missing residues 460-519 (60 aa) from its own SEQRES, and the JunD peptide (chain B) is missing residues 40-45 (6 aa).",
+        "Rescue": "Model the deleted Menin loop with a grafted/modelled linker to restore continuous authored numbering; separately reconstruct the JunD peptide's true continuous sequence over the gap.",
+        "Publication": "https://doi.org/10.1038/nature10806"
+    },
+    {
+        "PDB": "2AST",
+        "Category": "PTM",
+        "Reason": "The p27(Kip1)/CDKN1B donor peptide carries a phosphothreonine (TPO@4187, native Thr187); SCF(Skp2)-Cks1 recognition of p27 is inherently dependent on this phosphorylation (the defining degron-activating modification), so it cannot be curated as a canonical-residue system.",
+        "Rescue": "See CALVADOS example ``single_pIDR`` for implementing phosphothreonine.",
+        "Publication": "https://doi.org/10.1016/j.molcel.2005.09.003"
+    },
+    {
+        "PDB": "6NUC",
+        "Category": "Multi-chain acceptor",
+        "Reason": "The NHE1 PxIxIT peptide contacts both calcineurin subunits substantially (863 contacts to the catalytic A subunit, 213 to the regulatory B subunit) -- the PxIxIT-binding groove is a known composite surface formed across the CnA/CnB heterodimer, not a single-chain acceptor site (same failure mode as 3AA6's CapZ alpha/beta).",
+        "Rescue": "Extend schema to support a two-chain heterodimeric acceptor with inter-chain domain restraints holding the CnA/CnB heterodimer together.",
+        "Publication": "https://doi.org/10.1038/s41467-019-11391-7"
+    },
+    {
+        "PDB": "2SRC",
+        "Category": "Intramolecular",
+        "Reason": "Single-chain autoinhibited c-Src catalytic-domain structure; its own C-terminal phosphotyrosine tail (PTR@527) docks intramolecularly onto its own SH2 domain within the same chain, rather than a separate acceptor binding a separate disordered donor. Also inherently phosphorylation-dependent.",
+        "Rescue": "New pipeline setup for intramolecular interactions (same rescue as 4ELL/1EJ5).",
+        "Publication": "https://doi.org/10.1016/s1097-2765(00)80356-1"
+    },
+    {
+        "PDB": "1QG1",
+        "Category": "PTM",
+        "Reason": "Shc-derived donor peptide carries a phosphotyrosine (PTR@5); Grb2 SH2 domain recognition is inherently phosphotyrosine-dependent, the same failure mode as 4IHL/1QG1-type SH2-ligand pairs.",
+        "Rescue": "See CALVADOS example ``single_pIDR`` for implementing phosphotyrosine.",
+        "Publication": "https://doi.org/10.1006/jmbi.1999.2792"
+    },
+    {
+        "PDB": "3GB8",
+        "Category": "Not a domain+SLiM pair",
+        "Reason": "Donor entity is the complete, independently folded Snurportin-1 protein (~329 aa, itself containing an importin-beta-binding domain), not an isolated disordered NES peptide -- only a short internal helix constitutes the actual TRG_NES_CRM1_1 motif. Curating the whole folded passenger as a disordered donor chain would misrepresent it, same failure mode as 2C0L. Acceptor (CRM1/Exportin-1) is also the entire 1071-residue HEAT-repeat protein, far outside normal acceptor domain scale.",
+        "Rescue": "Find a CRM1 structure bound to just a short synthetic/isolated NES peptide rather than the full folded Snurportin-1 cargo.",
+        "Publication": "https://doi.org/10.1038/nature07975"
+    },
+    {
+        "PDB": "3SOV",
+        "Category": "Non-canonical residue",
+        "Reason": "Sclerostin-derived donor peptide is synthetic with ACE/NH2 caps at both termini (non-canonical engineered termini breaking the SEQRES contract), not a natural IDR fragment -- same failure mode as 4UM9.",
+        "Rescue": "Graft the true native Sclerostin flanking sequence onto the LRP6-binding core instead of using the capped synthetic peptide.",
+        "Publication": "https://doi.org/10.1016/j.str.2011.07.005"
+    },
+    {
+        "PDB": "1D8D",
+        "Category": "Multi-chain acceptor",
+        "Reason": "Farnesyltransferase is an obligate alpha/beta heterodimer (different gene products) whose composite active site (with bound Zn and an FPP-analog substrate) recognizes the K-Ras4B CAAX-box peptide -- an enzymatic substrate-in-active-site complex, not a simple non-covalent domain-SLiM interaction. Mirrors 3BH6's observation that MOD-class ELM instances (here, a prenylation site) generally need a different kind of structure than the LIG/DOC/TRG priority list assumes.",
+        "Rescue": "Not obviously rescuable within this pipeline; would need a different kind of structure for a non-catalytic CAAX-recognition event, if one exists.",
+        "Publication": "https://doi.org/10.1016/s0969-2126(00)00096-4"
+    },
+    {
+        "PDB": "5VZU",
+        "Category": "PTM",
+        "Reason": "Cyclin D1 donor peptide carries a phosphothreonine (TPO@286); this specific structure captures the phosphorylated degron even though the paper's broader point is that FBXO31 recognition of Cyclin D1 is phosphorylation-independent -- the crystallized peptide itself still has the modified residue, so it remains blocked at the sequence level. The SKP1 chains (A/C) also show discontinuous author numbering, but that alone would have been salvageable via assembly extraction (curate FBXO31 + Cyclin D1 peptide only, dropping SKP1) if not for the peptide PTM.",
+        "Rescue": "Look for a companion apo/non-phosphorylated Cyclin D1-FBXO31 structure from the same study (the paper explicitly reports phosphorylation-independent recognition, implying an unmodified structure may exist).",
+        "Publication": "https://doi.org/10.1073/pnas.1708677115"
     }
 ]

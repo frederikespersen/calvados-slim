@@ -1,0 +1,28 @@
+2026-07-04 21:32:05: ················································································
+2026-07-04 21:32:05: Parsing chains of 'pfn1-vasp' system to CALVADOS input
+2026-07-04 21:32:05: ················································································
+2026-07-04 21:32:05: Chain 'pfn1' ('PFN1')
+2026-07-04 21:32:05: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/2PAV.cif' is specified
+2026-07-04 21:32:05: 	- Selecting chain 'P' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pfn1-vasp/pfn1.pdb'
+2026-07-04 21:32:05: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-04 21:32:05: 	- Writing chain 'P' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pfn1-vasp/pfn1.yaml'
+2026-07-04 21:32:05: 
+2026-07-04 21:32:05: Chain 'gp5' ('VASP[PRM]')
+2026-07-04 21:32:05: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-04 21:32:05: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pfn1-vasp/gp5.fasta'
+2026-07-04 21:32:05: 
+2026-07-04 21:32:05: ················································································
+2026-07-04 21:32:05: Parsing SLiMs of 'pfn1-vasp' system to CALVADOS input
+2026-07-04 21:32:05: ················································································
+2026-07-04 21:32:05: SLiM 'pfn1-gp5' ('PFN1-VASP[PRM]')
+2026-07-04 21:32:05: 	- Verifying that acceptor 'pfn1' and donor 'gp5' chains are found in system
+2026-07-04 21:32:05: 	- Performing contact analysis
+2026-07-04 21:32:05: 		- Calculating SMOG Shadow Contact Map (SCM) from SLiM PDB
+2026-07-04 21:32:06: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-04 21:32:06: 		- Defining contacts
+2026-07-04 21:32:06: 		- Found 39 pairwise contacts
+2026-07-04 21:32:06: 		- Calculating contact distances
+2026-07-04 21:32:06: 	- Mapping residue indices between System and SLiM constructs
+2026-07-04 21:32:06: 	- Excluding 0 contacts
+2026-07-04 21:32:06: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pfn1-vasp/specific_interactions.txt'
+2026-07-04 21:32:06: 

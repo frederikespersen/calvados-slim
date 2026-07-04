@@ -1,0 +1,10 @@
+open 2PAV
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/P,V cartoons
+sel /P:1,2,3,5,6,9,29,30,31,107,129,130,133,134,136,137,139 | /V:203,204,205,206,207,208,209,210,213
+show sel surfaces
+view sel

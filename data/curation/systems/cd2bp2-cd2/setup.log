@@ -1,0 +1,28 @@
+2026-07-04 21:32:26: ················································································
+2026-07-04 21:32:26: Parsing chains of 'cd2bp2-cd2' system to CALVADOS input
+2026-07-04 21:32:26: ················································································
+2026-07-04 21:32:26: Chain 'gyf' ('CD2BP2[GYF]')
+2026-07-04 21:32:26: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/1L2Z.cif' is specified
+2026-07-04 21:32:26: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/cd2bp2-cd2/gyf.pdb'
+2026-07-04 21:32:26: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-04 21:32:26: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/cd2bp2-cd2/gyf.yaml'
+2026-07-04 21:32:26: 
+2026-07-04 21:32:26: Chain 'cterm' ('CD2[Cterm]')
+2026-07-04 21:32:26: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-04 21:32:26: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/cd2bp2-cd2/cterm.fasta'
+2026-07-04 21:32:26: 
+2026-07-04 21:32:26: ················································································
+2026-07-04 21:32:26: Parsing SLiMs of 'cd2bp2-cd2' system to CALVADOS input
+2026-07-04 21:32:26: ················································································
+2026-07-04 21:32:26: SLiM 'gyf-cterm' ('CD2BP2[GYF]-CD2[Cterm]')
+2026-07-04 21:32:26: 	- Verifying that acceptor 'gyf' and donor 'cterm' chains are found in system
+2026-07-04 21:32:26: 	- Performing contact analysis
+2026-07-04 21:32:26: 		- Calculating SMOG Shadow Contact Map (SCM) from SLiM PDB
+2026-07-04 21:32:27: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-04 21:32:27: 		- Defining contacts
+2026-07-04 21:32:27: 		- Found 34 pairwise contacts
+2026-07-04 21:32:27: 		- Calculating contact distances
+2026-07-04 21:32:27: 	- Mapping residue indices between System and SLiM constructs
+2026-07-04 21:32:27: 	- Excluding 6 contacts
+2026-07-04 21:32:27: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/cd2bp2-cd2/specific_interactions.txt'
+2026-07-04 21:32:27: 
