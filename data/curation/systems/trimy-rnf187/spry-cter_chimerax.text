@@ -1,3 +1,4 @@
+open 7OW2
 set bgColor white
 style stick
 color bychain

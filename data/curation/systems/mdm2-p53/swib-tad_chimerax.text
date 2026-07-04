@@ -1,3 +1,4 @@
+open 1YCR
 set bgColor white
 style stick
 color bychain

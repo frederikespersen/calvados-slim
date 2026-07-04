@@ -1,3 +1,4 @@
+open 2MPS
 set bgColor white
 style stick
 color bychain

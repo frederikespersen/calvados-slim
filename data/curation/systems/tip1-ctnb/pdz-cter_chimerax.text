@@ -1,3 +1,4 @@
+open 3DIW
 set bgColor white
 style stick
 color bychain
