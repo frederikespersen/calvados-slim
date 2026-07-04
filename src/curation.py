@@ -170,6 +170,12 @@ class Simulation:
                     os.path.join(sim_dir, script),
                     old='<JOB-NAME>', new=system['ID']
                 )
+                utils.copy_with_substitution(
+                    os.path.join(sim_dir, script),
+                    os.path.join(sim_dir, script),
+                    old='<MEM>', new=utils.estimate_memory(particles)
+                )
+                
     
     #··································································#
     
