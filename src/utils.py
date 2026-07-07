@@ -11,7 +11,6 @@ import os
 import urllib.request
 from io import StringIO
 import MDAnalysis as mda
-from MDAnalysis.lib.util import NamedStream
 from pdbfixer import PDBFixer
 from openmm.app import PDBFile, Modeller
 import gemmi
@@ -286,7 +285,7 @@ def load_structure(structure_file: os.PathLike) -> mda.Universe:
     if os.path.splitext(structure_file)[-1].lower() in ('.cif', '.mmcif'):
         structure = gemmi.read_structure(str(structure_file))
         structure.setup_entities()
-        return mda.Universe(NamedStream(StringIO(structure.make_pdb_string()), 'structure.pdb'))
+        return mda.Universe(StringIO(structure.make_pdb_string()), format='PDB')
     return mda.Universe(structure_file)
 
 #······································································#
