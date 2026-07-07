@@ -1,5 +1,4 @@
 ### LOCAL GITIGNORE
-data/alphafold3
 exp/
 .*
 src/calvados
