@@ -16,6 +16,7 @@ from pdbfixer import PDBFixer
 from openmm.app import PDBFile, Modeller
 import gemmi
 import struct
+import re
 
 
 #······································································#
@@ -238,6 +239,24 @@ def select_and_clean_chains(input_path: str, output_path: str, chain_ids: list[s
 
     with open(output_path, 'w') as f:
         PDBFile.writeFile(modeller.topology, modeller.positions, f, keepIds=True)
+
+#······································································#
+
+def is_pdb(pdb_id: str) -> bool:
+    """Evaluates whether a string conforms to the standard 4-character PDB ID format.
+    
+    Parameters
+    ----------
+    pdb_id : str
+        The string to evaluate.
+    
+    Returns
+    -------
+    bool
+        True if the input is a valid legacy PDB ID (one digit from 1-9 
+        followed by three alphanumeric characters), False otherwise.
+    """
+    return bool(re.fullmatch(r'[1-9][A-Za-z0-9]{3}', pdb_id))
 
 
 
