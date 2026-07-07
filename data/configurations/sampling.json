@@ -3,9 +3,9 @@
         "Stride": 100,
         "Frames": 10000
     },
-    "Validation": {
-        "Stride": 1000,
-        "Frames": 10000
+    "Speed": {
+        "Stride": 50000,
+        "Frames": 100
     },
     "Scan": {
         "Stride": 50000,
