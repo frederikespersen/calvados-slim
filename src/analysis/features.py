@@ -1,7 +1,7 @@
 """
 src.analysis.features
 ------------------------------------------------------------------------
-Features for predicting the Go strength ``k`` needed to reach a target
+Features for predicting the Go strength ``eps_go`` needed to reach a target
 binding free energy, computed from a curated system entry (``systems.json``),
 its ``specific_interactions.txt`` contacts, and the CALVADOS residue table.
 """
@@ -250,10 +250,10 @@ def contact_topology_features(
     ) -> dict:
     """Count and topology features of the native-contact set.
 
-    The Go enthalpy scales as ``-k*N_C``, so these counting features are the
-    primary scalers of the ``dG``-vs-``k`` slope. Footprint spans, valencies,
-    contact clusters (multivalent subsites) and contact-graph degree
-    statistics describe how those contacts are distributed.
+    The Go enthalpy scales as ``-eps_go*N_C``, so these counting features are
+    the primary scalers of the ``dG``-vs-``eps_go`` slope. Footprint spans,
+    valencies, contact clusters (multivalent subsites) and contact-graph
+    degree statistics describe how those contacts are distributed.
 
     Parameters
     ----------
@@ -308,8 +308,8 @@ def contact_geometry_features(specific_interactions: pd.DataFrame) -> dict:
 
     Tighter contacts (shorter equilibrium distance) form more readily and
     contribute a deeper, narrower Go well, so a distance-weighted "effective"
-    contact count often tracks the ``dG``-vs-``k`` slope better than the raw
-    count.
+    contact count often tracks the ``dG``-vs-``eps_go`` slope better than the
+    raw count.
 
     Parameters
     ----------
@@ -349,8 +349,8 @@ def confinement_features(
     """Donor tethering features that set the entropic cost of binding.
 
     Disordered donor residues flanking the contact footprint must be confined
-    on binding; longer flanks raise the entropic penalty and the ``k`` needed
-    to reach a given ``dG``.
+    on binding; longer flanks raise the entropic penalty and the ``eps_go``
+    needed to reach a given ``dG``.
 
     Parameters
     ----------
@@ -386,8 +386,8 @@ def interface_features(contacts_with_params: pd.DataFrame) -> dict:
 
     Built from the per-contact residue parameters: electrostatic
     complementarity (the sign of each contact's charge product) and the
-    summed/mean Ashbaugh-Hatch hydrophobicity that drives the ``k``-independent
-    background attraction.
+    summed/mean Ashbaugh-Hatch hydrophobicity that drives the
+    ``eps_go``-independent background attraction.
 
     Parameters
     ----------
@@ -418,7 +418,7 @@ def interface_features(contacts_with_params: pd.DataFrame) -> dict:
 
 
 #······································································#
-# H. CALVADOS background energetics (the dG intercept at k = 0)
+# H. CALVADOS background energetics (the dG intercept at eps_go = 0)
 #······································································#
 
 def background_energy_features(
@@ -428,14 +428,15 @@ def background_energy_features(
         cutoff_lj: float = CUTOFF_LJ,
         cutoff_yu: float = CUTOFF_YU,
     ) -> dict:
-    """``k``-independent CALVADOS background energy over the native contacts.
+    """``eps_go``-independent CALVADOS background energy over the native
+    contacts.
 
     Evaluates the Ashbaugh-Hatch and Debye-Hückel (Yukawa) potentials at each
     contact's equilibrium distance using the same forms and constants as the
     simulations, and sums them. This is the generic attraction already present
-    at ``k = 0`` and thus an estimate of the intercept of the ``dG``-vs-``k``
-    relationship (it is a contact-geometry enthalpy proxy, not a calibrated
-    binding free energy).
+    at ``eps_go = 0`` and thus an estimate of the intercept of the
+    ``dG``-vs-``eps_go`` relationship (it is a contact-geometry enthalpy
+    proxy, not a calibrated binding free energy).
 
     Parameters
     ----------
@@ -486,11 +487,11 @@ def target_features(
     ) -> dict:
     """Composite features conditioning on the target free energy.
 
-    Combines the target with the contact count and the ``k = 0`` background to
-    form physically-motivated predictors. ``k_estimate`` is a crude
-    first-principles guess from ``dG_target ≈ E_bg - k*N_C`` (each bound
-    contact adds ``-k``); it is an uncalibrated heuristic, not a substitute for
-    the fitted model.
+    Combines the target with the contact count and the ``eps_go = 0``
+    background to form physically-motivated predictors. ``eps_go_estimate``
+    is a crude first-principles guess from ``dG_target ≈ E_bg - eps_go*N_C``
+    (each bound contact adds ``-eps_go``); it is an uncalibrated heuristic,
+    not a substitute for the fitted model.
 
     Parameters
     ----------
@@ -499,7 +500,7 @@ def target_features(
     n_contacts : int
         Number of native contacts ``N_C``.
     background_energy : float
-        ``k``-independent background energy ``E_bg`` (kJ/mol).
+        ``eps_go``-independent background energy ``E_bg`` (kJ/mol).
     conditions : dict, optional
         Thermodynamic conditions (uses ``Temperature``); by default
         :data:`DEFAULT_CONDITIONS`.
@@ -508,7 +509,7 @@ def target_features(
     -------
     dict
         ``Kd_target`` (M), the per-contact target energy, the background-to-
-        target energy gap and the heuristic ``k_estimate``.
+        target energy gap and the heuristic ``eps_go_estimate``.
     """
     rt = constants.R * conditions["Temperature"]
     gap = background_energy - dG_target
@@ -517,7 +518,7 @@ def target_features(
         "Kd_target": float(np.exp(dG_target / rt)),
         "dG_per_contact": dG_target / n_contacts if n_contacts else np.nan,
         "dG_gap": gap,
-        "k_estimate": max(0.0, gap / n_contacts) if n_contacts else np.nan,
+        "eps_go_estimate": max(0.0, gap / n_contacts) if n_contacts else np.nan,
     }
 
 

@@ -80,8 +80,9 @@ def parse_specific_interactions(fspecific_interactions: str) -> pd.DataFrame:
     """Parse a CALVADOS ``specific_interactions.txt`` file into a table.
 
     Each non-comment line encodes one specific inter-molecular contact in the
-    format ``name_i bead_i | name_j bead_j | eqdist k``, where bead indices are
-    1-based. Blank lines and lines starting with ``#`` are ignored.
+    format ``name_i bead_i | name_j bead_j | eqdist eps_go``, where bead
+    indices are 1-based. Blank lines and lines starting with ``#`` are
+    ignored.
 
     Parameters
     ----------
@@ -104,8 +105,8 @@ def parse_specific_interactions(fspecific_interactions: str) -> pd.DataFrame:
             left, right, params = line.split('|')
             chain_i, bead_i = left.split()
             chain_j, bead_j = right.split()
-            s, k = params.split()
-            values.append([chain_i, int(bead_i), chain_j, int(bead_j), float(s), k]) # 1-based
+            s, eps_go = params.split()
+            values.append([chain_i, int(bead_i), chain_j, int(bead_j), float(s), eps_go]) # 1-based
     return pd.DataFrame(values, columns=['Acceptor chain', 'Acceptor residue', 'Donor chain', 'Donor residue', 'Equilibrium distance', 'Well depth'])
 
 #······································································#

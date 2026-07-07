@@ -185,7 +185,7 @@ class Simulation:
         system_dir: str,
         conditions: dict,
         sampling: dict,
-        slim_go_k: float,
+        eps_go: float,
         sim_dir: str,
         platform: Literal['GPU', 'CPU'],
         slurm_scripts_dir: str='data/configurations/slurm',
@@ -211,8 +211,9 @@ class Simulation:
         sampling : dict
             Sampling settings: ``Stride`` (steps between frames) and
             ``Frames`` (number of frames to write).
-        slim_go_k : float
-            Well depth ``k`` substituted into the SLiM specific interactions.
+        eps_go : float
+            Well depth (``ε_Go``) substituted into the SLiM specific
+            interactions, in place of the ``<eps_go>`` template placeholder.
         sim_dir : str
             Output directory for the simulation; created files are written here.
         platform : Literal['GPU', 'CPU']
@@ -230,7 +231,7 @@ class Simulation:
         utils.copy_with_substitution(
             os.path.join(system_dir, 'specific_interactions.txt'),
             os.path.join(sim_dir, 'specific_interactions.txt'),
-            old='<k>', new=f'{slim_go_k}'
+            old='<eps_go>', new=f'{eps_go}'
         )
 
         Simulation._write_config(system, conditions, sampling, sim_dir, platform)
@@ -584,7 +585,7 @@ class System:
         resids = construct_res_idxs + 1
         with open(fspecific_interactions, 'a') as file:
             for (acceptor_resid, donor_resid), eqdist in zip(resids, eqdists):
-                file.write(f"{acceptor_chain['ID']} {acceptor_resid} | {donor_chain['ID']} {donor_resid} | {eqdist:.4f} <k>\n")
+                file.write(f"{acceptor_chain['ID']} {acceptor_resid} | {donor_chain['ID']} {donor_resid} | {eqdist:.4f} <eps_go>\n")
 
         # ChimeraX script for visual inspection of the contacts
         System._write_chimerax_script(slim, authres_ids, system_dir)
