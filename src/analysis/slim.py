@@ -82,12 +82,11 @@ def dG(Kd: float, T: float = 298.15) -> float:
 # Native-contact order parameter
 #······································································#
 
-# Default switching-function parameters, rescaled from Best, Hummer & Eaton's
-# atomistic 50 nm⁻¹/1.8 for CALVADOS bead-scale contacts (see
-# :func:`_native_contact_fraction`). Used whenever calibration is disabled or
-# falls back for lack of near-equilibrium frames (:func:`_calibrate_switching_params`).
-_DEFAULT_BETA_Q = 8.0 # nm⁻¹
-_DEFAULT_LAMBDA_Q = 1.6
+# Default switching-function parameters. For now these match Best, Hummer &
+# Eaton's atomistic values directly (see :func:`_native_contact_fraction`) as
+# a placeholder, pending validated per-system calibration. 
+_DEFAULT_BETA_Q = 50.0 # nm⁻¹ (5 Å⁻¹), Best, Hummer & Eaton (2013)
+_DEFAULT_LAMBDA_Q = 1.8 # Best, Hummer & Eaton (2013)
 _DEFAULT_BOUND_Q = 0.22
 
 #······································································#
@@ -114,18 +113,11 @@ def _native_contact_fraction(
         Equilibrium distance ``r0`` per contact, shape ``(n_contacts,)``, nm.
     beta_q : float, optional
         Sharpness of the switching function, in nm⁻¹; larger values approach
-        a hard cutoff, by default ``8.0``. Best, Hummer and Eaton [1]_ use
-        ``50`` nm⁻¹ (5 Å⁻¹) for atomistic native contacts; that value is not
-        reused here, since one-bead-per-residue CALVADOS contacts fluctuate
-        on a much larger (nm, not Å) length scale, and a switching function
-        that sharp would reintroduce the hard-cutoff recrossing problem this
-        order parameter is meant to avoid. Prefer calibrating this
-        empirically per trajectory with :func:`_calibrate_switching_params`
-        over hand-picking a value.
+        a hard cutoff, by default ``50.0`` (5 Å⁻¹), matching Best, Hummer and
+        Eaton [1]_ directly.
     lambda_q : float, optional
         Tolerance on the equilibrium distance -- a contact is "native-like"
-        up to ``lambda_q * r0`` -- by default ``1.6`` (vs. ``1.8`` in [1]_; see
-        ``beta_q`` for why the atomistic value doesn't transfer directly).
+        up to ``lambda_q * r0`` -- by default ``1.8``, matching [1]_ directly.
 
     Returns
     -------
@@ -205,10 +197,10 @@ def _calibrate_switching_params(
         still considered native-like, by default ``3.0``.
     beta_q_fallback : float, optional
         Value returned if no contact has enough near-equilibrium frames to
-        calibrate from, by default ``15.0``.
+        calibrate from, by default ``_DEFAULT_BETA_Q``.
     lambda_q_fallback : float, optional
         Value returned if no contact has enough near-equilibrium frames to
-        calibrate from, by default ``1.4``.
+        calibrate from, by default ``_DEFAULT_LAMBDA_Q``.
 
     Returns
     -------
@@ -496,11 +488,11 @@ class TwoChain:
             Path to the run's ``specific_interactions.txt`` defining the
             contacts and their equilibrium distances.
         beta_q : float, optional
-            Sharpness of the per-contact switching function, in nm⁻¹, by
-            default ``15.0``.
+            Sharpness of the per-contact switching function, in nm⁻¹. See
+            :func:`_native_contact_fraction`.
         lambda_q : float, optional
-            Tolerance factor on each contact's equilibrium distance, by
-            default ``1.4``.
+            Tolerance factor on each contact's equilibrium distance. See
+            :func:`_native_contact_fraction`.
         bound_q : float or None, optional
             Bound/unbound dividing point on ``Q``.
             If not specified, it will be calculated from the estimated
@@ -552,12 +544,10 @@ class TwoChain:
             Path to the run's ``specific_interactions.txt`` defining the
             contacts and their equilibrium distances.
         beta_q : float, optional
-            Sharpness of the per-contact switching function, in nm⁻¹, by
-            default ``15.0``. Ignored if ``calibrate`` is ``True``. See
+            Sharpness of the per-contact switching function, in nm⁻¹. See
             :func:`_native_contact_fraction`.
         lambda_q : float, optional
-            Tolerance factor on each contact's equilibrium distance, by
-            default ``1.4``. Ignored if ``calibrate`` is ``True``. See
+            Tolerance factor on each contact's equilibrium distance. See
             :func:`_native_contact_fraction`.
         bound_q : float or None, optional
             Bound/unbound dividing point on ``Q``.
@@ -610,12 +600,10 @@ class TwoChain:
         specific_interactions_txt : str
             Path to the run's ``specific_interactions.txt``.
         beta_q : float, optional
-            Sharpness of the per-contact switching function, in nm⁻¹, by
-            default ``15.0``. Ignored if ``calibrate`` is ``True``. See
+            Sharpness of the per-contact switching function, in nm⁻¹. See
             :func:`_native_contact_fraction`.
         lambda_q : float, optional
-            Tolerance factor on each contact's equilibrium distance, by
-            default ``1.4``. Ignored if ``calibrate`` is ``True``. See
+            Tolerance factor on each contact's equilibrium distance. See
             :func:`_native_contact_fraction`.
         bound_q : float or None, optional
             Bound/unbound dividing point on ``Q``.
