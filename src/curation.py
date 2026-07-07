@@ -13,7 +13,7 @@ import numpy as np
 import MDAnalysis as mda
 from typing import Literal
 
-from src.analysis import smog, alphafold, coarsegrain
+from src.analysis import bsa, alphafold, coarsegrain
 from src import utils, constants
 from src.calvados.calvados import cfg, sequence
 
@@ -398,8 +398,9 @@ class System:
     def _compute_slim_contacts(slim: dict, log: logging.Logger) -> np.ndarray:
         """Compute the Boolean inter-chain contact map for one SLiM.
 
-        Always uses a SMOG Shadow Contact Map; for AlphaFold structures the map
-        is further intersected with PAE (< 5 Å) and Pinc (> 0.5) filters.
+        Always uses a buried-surface-area contact map (see
+        :func:`src.analysis.sasa.buried_contact_map`); for AlphaFold structures
+        the map is further intersected with PAE (< 5 Å) and Pinc (> 0.5) filters.
 
         Parameters
         ----------
@@ -413,13 +414,13 @@ class System:
         np.ndarray
             Boolean ``(N_acc, N_don)`` contact map in the SLiM PDB frame.
         """
-        log.info("\t\t- Calculating SMOG Shadow Contact Map (SCM) from SLiM PDB")
-        scm = smog.shadow_contact_map(slim['PDB'], slim['PDB Acceptor chain ID'], slim['PDB Donor chain ID'])
+        log.info("\t\t- Calculating buried-surface-area (BSA) contact map from SLiM PDB")
+        contacts = bsa.buried_contact_map(slim['PDB'], slim['PDB Acceptor chain ID'], slim['PDB Donor chain ID'])
 
         if slim['PDB AlphaFold data JSON'] == '':
             log.info("\t\t- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified")
             log.info("\t\t- Defining contacts")
-            return scm
+            return contacts
 
         log.info("\t\t- Parsing SLiM PDB as an AlphaFold structure, as SLiM PDB AlphaFold data JSON is specified")
         log.info("\t\t- Calculating AlphaFold contact metrics (PAE, Pinc)")
@@ -430,7 +431,7 @@ class System:
             slim['PDB'], slim['PDB AlphaFold data JSON'], slim['PDB Acceptor chain ID'], slim['PDB Donor chain ID']
         )
         log.info("\t\t- Defining contacts")
-        return scm & pae & pinc
+        return contacts & pae & pinc
 
     #··································································#
     
@@ -605,9 +606,9 @@ class System:
         For each chain, writes a FASTA (IDPs), a cleaned PDB and domain YAML
         (experimental MDPs), or a cleaned PDB and intra-chain PAE JSON
         (AlphaFold MDPs). For each SLiM, derives inter-chain contacts by
-        combining a SMOG Shadow Contact Map (with AlphaFold PAE/Pinc filters,
-        when AlphaFold data is available), maps the contacts onto the full
-        construct numbering, computes COM-CA equilibrium distances, and
+        combining a buried-surface-area contact map (with AlphaFold PAE/Pinc
+        filters, when AlphaFold data is available), maps the contacts onto the
+        full construct numbering, computes COM-CA equilibrium distances, and
         appends them to ``specific_interactions.txt``.
 
         A ChimeraX selection script is written per SLiM for visual inspection,

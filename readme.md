@@ -18,9 +18,10 @@ The pipeline has three stages:
 
 1. **Curation** — turn a structural specification of a system (chains + SLiMs,
    backed by PDB and/or AlphaFold structures) into ready-to-run CALVADOS input.
-   SLiM interfaces are derived by a SMOG2 *Shadow Contact Map*, optionally combined with
-   AlphaFold confidence metrics (PAE and the P<sub>inc</sub> interface score),
-   then assigned equilibrium distances from the structure.
+   SLiM interfaces are derived from the *buried solvent-accessible surface area*
+   between the chains, optionally combined with AlphaFold confidence metrics
+   (PAE and the P<sub>inc</sub> interface score), then assigned equilibrium
+   distances from the structure.
 2. **Simulation** — run the curated systems with the `slim` branch of a CALVADOS
    fork, scanning the Go interaction strength `k`.
 3. **Analysis** — estimate binding affinities (K<sub>d</sub>, ΔG) from the

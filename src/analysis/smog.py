@@ -18,29 +18,6 @@ from src import utils
 # SMOG invocation
 #······································································#
 
-def _smog_bin() -> str:
-    """Return SMOG2's ``bin`` directory from the ``SMOGBIN`` environment variable.
-
-    Returns
-    -------
-    str
-        Path to SMOG2's ``bin`` directory.
-
-    Raises
-    ------
-    FileNotFoundError
-        If the ``SMOGBIN`` environment variable is not set.
-    """
-    try:
-        return os.environ['SMOGBIN']
-    except KeyError:
-        raise FileNotFoundError(
-            "src.analysis.smog requires the environment variable 'SMOGBIN', "
-            "specifying SMOG2's bin directory, to be set so that SMOG analyses "
-            "can be run!"
-        )
-
-
 def _run_smog(structure_file: os.PathLike, chain_ids: list[str], smog_bin: str, work_dir: str) -> tuple[str, str]:
     """Select the given chains and run SMOG2 to obtain a contact list.
 
@@ -167,14 +144,14 @@ def shadow_contact_map(
         structure_file: os.PathLike,
         chain1_id: str,
         chain2_id: str,
+        smog_bin: str,
     ) -> np.ndarray:
     """Compute the inter-chain Shadow Contact Map between two chains.
 
     Runs SMOG2's all-atom shadow algorithm on the two selected chains and
     reduces the atomic contact list to a Boolean residue-by-residue map of
     inter-chain contacts. Missing loops are intentionally not reconstructed,
-    since contacts cannot be inferred for unresolved regions. Requires the
-    ``SMOGBIN`` environment variable to point at SMOG2's ``bin`` directory.
+    since contacts cannot be inferred for unresolved regions.
 
     Parameters
     ----------
@@ -184,6 +161,9 @@ def shadow_contact_map(
         Author chain id of the first chain.
     chain2_id : str
         Author chain id of the second chain.
+    smog_bin : str
+        Path to SMOG2's ``bin`` directory (containing ``smog_adjustPDB`` and
+        ``smog2``).
 
     Returns
     -------
@@ -191,14 +171,7 @@ def shadow_contact_map(
         Boolean array of shape ``(N1, N2)`` where entry ``[i, j]`` is ``True``
         if residue ``i`` of ``chain1_id`` contacts residue ``j`` of
         ``chain2_id``.
-
-    Raises
-    ------
-    FileNotFoundError
-        If the ``SMOGBIN`` environment variable is not set.
     """
-    smog_bin = _smog_bin()
-
     with tempfile.TemporaryDirectory() as work_dir:
         adjusted_pdb, contacts_file = _run_smog(
             structure_file, [chain1_id, chain2_id], smog_bin, work_dir,

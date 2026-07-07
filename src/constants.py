@@ -51,6 +51,13 @@ class element:
     }
     """Standard atomic weights in g/mol, keyed by element symbol (e.g. ``"C"``)."""
 
+    vdw_radius = {
+        "H": 1.20, "C": 1.70, "N": 1.55, "O": 1.52, "F": 1.47,
+        "P": 1.80, "S": 1.80, "Cl": 1.75, "Se": 1.90, "Br": 1.85,
+        "I": 1.98,
+    }
+    """Bondi van der Waals radii in Å, keyed by element symbol (e.g. ``"C"``)."""
+
 
 
 #······································································#
