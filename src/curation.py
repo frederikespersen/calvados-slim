@@ -528,7 +528,7 @@ class System:
         acc_resids = ",".join(np.unique(authres_ids[:, 0]).astype(str))
         don_resids = ",".join(np.unique(authres_ids[:, 1]).astype(str))
         pdb_id = os.path.splitext(os.path.basename(slim['PDB']))[0]
-        with open(os.path.join(system_dir, f"{slim['ID']}_chimerax.text"), 'w') as file:
+        with open(os.path.join(system_dir, f"{slim['ID']}_chimerax.cxc"), 'w') as file:
             if utils.is_pdb(pdb_id):
                 file.write(f"open {pdb_id.upper()}\n")
             file.write("set bgColor white\nstyle stick\ncolor bychain\nshow cartoons\nhide\n")
