@@ -35,7 +35,6 @@ class Simulation:
         pH: float,
         sim_dir: str,
         platform: Literal['GPU', 'CPU'],
-        replicates: int=1,
     ) -> None:
         """Write the CALVADOS ``config.yaml`` for one simulation.
 
@@ -46,8 +45,7 @@ class Simulation:
         stride : int
             Write stride (simulation steps between written frames).
         frames : int
-            Total number of frames to write across all replicates; divided
-            evenly across ``replicates``.
+            Total number of frames to sample to DCD.
         temperature : float
             Temperature, in Kelvin.
         ionic_strength : float
@@ -58,23 +56,8 @@ class Simulation:
             Output directory for the simulation.
         platform : Literal['GPU', 'CPU']
             Which platform to specify for the config YAML and submssion scripts.
-        replicates : int, optional
-            Number of replicates the total sampling is split across, by default
-            1. The write stride is kept fixed and ``frames`` is divided evenly,
-            so every replicate DCD shares a common frame interval (and can be
-            concatenated) and their frames together sum to ``frames``.
 
-        Raises
-        ------
-        ValueError
-            If ``frames`` is not divisible by ``replicates``.
         """
-        # Split the total sampling evenly across replicates, keeping the write
-        # stride fixed so replicate DCDs share a common frame interval.
-        if frames % replicates != 0:
-            raise ValueError(
-                f"Sampling frames ({frames}) must be divisible by the number of replicates ({replicates})")
-        rep_frames = frames // replicates
 
         config = cfg.Config(
             # Conditions
@@ -87,7 +70,7 @@ class Simulation:
 
             # Runtime
             wfreq = stride, # dcd writing interval, 1 = 10 fs
-            steps = stride*rep_frames, # number of simulation steps (this replicate's share)
+            steps = stride*frames, # number of simulation steps
             runtime = 0,
             platform = 'CUDA' if platform == 'GPU' else platform,
             restart = 'checkpoint',
@@ -220,14 +203,12 @@ class Simulation:
         eps_go: float,
         sim_dir: str,
         platform: Literal['GPU', 'CPU'],
-        *,
         stride: int,
         frames: int,
         temperature: float=298.15,
         ionic_strength: float=0.150,
         pH: float=7.0,
         fresidues: str='data/configurations/residues.csv',
-        replicates: int=1,
         slurm_scripts_dir: str='data/configurations/slurm',
     ) -> None:
         """Write all input files for one runnable CALVADOS simulation.
@@ -258,7 +239,7 @@ class Simulation:
         stride : int
             Write stride (simulation steps between written frames).
         frames : int
-            Total number of frames to write across all replicates.
+            Total number of frames to sample to DCD.
         temperature : float, optional
             Temperature, in Kelvin, by default 298.15.
         ionic_strength : float, optional
@@ -268,10 +249,6 @@ class Simulation:
         fresidues : str, optional
             Path to the CALVADOS residue-parameter table, by default
             ``'data/configurations/residues.csv'``.
-        replicates : int, optional
-            Number of replicates the total sampling is divided across, by
-            default 1. Each built simulation is one replicate running ``frames /
-            replicates`` frames at the shared write stride.
         slurm_scripts_dir : str, optional
             Directory of templated Slurm scripts to instantiate, by default
             ``'data/configurations/slurm'``.
@@ -290,7 +267,7 @@ class Simulation:
 
         Simulation._write_config(
             system, stride, frames, temperature, ionic_strength, pH,
-            sim_dir, platform, replicates,
+            sim_dir, platform,
         )
         particles = Simulation._write_components(system, fresidues, system_dir, sim_dir)
         Simulation._write_submission_scripts(system, particles, slurm_scripts_dir, sim_dir, platform)
