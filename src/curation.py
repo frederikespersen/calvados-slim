@@ -372,11 +372,15 @@ class System:
             log.info("")
             return
 
-        # Chains with a PDB are treated as MDPs: select the chain and clean it
+        # Chains with a PDB are treated as MDPs: select the chain and clean it.
+        # AlphaFold MDPs use Go restraints whose scale is read back from the PDB
+        # B-factor column, so the source pLDDT must be preserved on that path.
+        is_alphafold = chain['PDB AlphaFold data JSON'] != ''
         log.info(f"\t- Parsing chain as a MDP, as chain PDB '{chain['PDB']}' is specified")
         chain_input_pdb = os.path.join(system_dir, f"{chain['ID']}.pdb")
         log.info(f"\t- Selecting chain '{chain['PDB chain ID']}' and pasting to '{chain_input_pdb}'")
-        utils.select_and_clean_chains(chain['PDB'], chain_input_pdb, chain_ids=[chain['PDB chain ID']])
+        utils.select_and_clean_chains(chain['PDB'], chain_input_pdb,
+                                      chain_ids=[chain['PDB chain ID']], preserve_bfactors=is_alphafold)
 
         # The cleaned PDB sequence must match the specified construct
         pdb_sequence, _nter, _cter = sequence.seq_from_pdb(chain_input_pdb)
@@ -386,7 +390,7 @@ class System:
 
         # MDPs without AlphaFold data are experimental (domain restraints);
         # MDPs with AlphaFold data use Go restraints derived from the PAE
-        if chain['PDB AlphaFold data JSON'] == '':
+        if not is_alphafold:
             log.info("\t- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified")
             System._write_domain_yaml(chain, system_dir, log)
         else:

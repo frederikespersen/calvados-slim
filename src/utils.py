@@ -262,7 +262,8 @@ def _cif_input_for_pdbfixer(cif_path: str) -> str:
 
 #······································································#
 
-def select_and_clean_chains(input_path: str, output_path: str, chain_ids: list[str], add_missing: bool = True) -> None:
+def select_and_clean_chains(input_path: str, output_path: str, chain_ids: list[str],
+                            add_missing: bool = True, preserve_bfactors: bool = False) -> None:
     """Isolate selected chains and clean a structure with PDBFixer.
 
     Keeps only the requested author chains, strips water and heterogens,
@@ -285,6 +286,12 @@ def select_and_clean_chains(input_path: str, output_path: str, chain_ids: list[s
         If ``True`` (default), reconstruct missing residues and heavy atoms;
         if ``False``, leave gaps in place (e.g. for contact analysis from
         experimental structures where unresolved regions must not be modelled).
+    preserve_bfactors : bool, optional
+        If ``True``, copy the per-residue mean B-factor from ``input_path`` into
+        the output B-factor column, keyed by author chain and residue number.
+        OpenMM's PDB writer otherwise zeroes the column, which would discard the
+        AlphaFold pLDDT that the Go-restraint pathway reads back from the PDB.
+        Defaults to ``False`` (experimental structures do not need it).
 
     Raises
     ------
@@ -339,6 +346,57 @@ def select_and_clean_chains(input_path: str, output_path: str, chain_ids: list[s
 
     with open(output_path, 'w') as f:
         PDBFile.writeFile(modeller.topology, modeller.positions, f, keepIds=True)
+
+    # OpenMM's writer zeroes the B-factor column; restore the source pLDDT so
+    # the Go-restraint scale (read from the PDB B-factors) is not silently lost
+    if preserve_bfactors:
+        _restore_bfactors(input_path, output_path, chain_ids)
+
+#······································································#
+
+def _restore_bfactors(source_path: str, pdb_path: str, chain_ids: list[str]) -> None:
+    """Splice per-residue mean B-factors from ``source_path`` into ``pdb_path``.
+
+    Reads the mean B-factor of each residue in the selected author chains of
+    ``source_path`` (e.g. AlphaFold pLDDT) and overwrites the B-factor column of
+    the matching ``ATOM``/``HETATM`` records in ``pdb_path`` in place, keeping
+    OpenMM's formatting untouched. Residues are matched by author chain id and
+    residue number.
+
+    Parameters
+    ----------
+    source_path : str
+        Structure carrying the B-factors to copy (``.pdb`` or ``.cif``).
+    pdb_path : str
+        Cleaned PDB file to update in place.
+    chain_ids : list[str]
+        Author chain ids to read from ``source_path``.
+
+    Raises
+    ------
+    ValueError
+        If a residue in ``pdb_path`` has no matching residue in ``source_path``.
+    """
+    structure = gemmi.read_structure(source_path)
+    bfactors = {}
+    for chain in structure[0]:
+        if chain.name not in chain_ids:
+            continue
+        for res in chain:
+            bfactors[(chain.name, res.seqid.num)] = np.mean([atom.b_iso for atom in res])
+
+    with open(pdb_path) as f:
+        lines = f.readlines()
+    for idx, line in enumerate(lines):
+        if not line.startswith(('ATOM  ', 'HETATM')):
+            continue
+        key = (line[21], int(line[22:26]))
+        if key not in bfactors:
+            raise ValueError(
+                f"Residue {key} in '{pdb_path}' has no B-factor in source '{source_path}'")
+        lines[idx] = f"{line[:60]}{bfactors[key]:6.2f}{line[66:]}"
+    with open(pdb_path, 'w') as f:
+        f.writelines(lines)
 
 #······································································#
 
