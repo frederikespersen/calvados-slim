@@ -26,7 +26,7 @@ class Simulation:
     """Namespace for generating a single CALVADOS simulation directory."""
 
     @staticmethod
-    def _write_config(system: dict, conditions: dict, sampling: dict, sim_dir: str, platform: Literal['GPU', 'CPU']) -> None:
+    def _write_config(system: dict, conditions: dict, sampling: dict, sim_dir: str, platform: Literal['GPU', 'CPU'], replicates: int=1) -> None:
         """Write the CALVADOS ``config.yaml`` for one simulation.
 
         Parameters
@@ -36,12 +36,30 @@ class Simulation:
         conditions : dict
             Thermodynamic conditions (temperature, ionic strength, pH).
         sampling : dict
-            Sampling settings (``Stride`` and ``Frames``).
+            Sampling settings (``Stride`` and ``Frames``); these describe the
+            total sampling to divide across replicates.
         sim_dir : str
             Output directory for the simulation.
         platform : Literal['GPU', 'CPU']
             Which platform to specify for the config YAML and submssion scripts.
+        replicates : int, optional
+            Number of replicates the total sampling is split across, by default
+            1. The write stride is kept fixed and ``Frames`` is divided evenly,
+            so every replicate DCD shares a common frame interval (and can be
+            concatenated) and their frames together sum to ``Frames``.
+
+        Raises
+        ------
+        ValueError
+            If ``Frames`` is not divisible by ``replicates``.
         """
+        # Split the total sampling evenly across replicates, keeping the write
+        # stride fixed so replicate DCDs share a common frame interval.
+        if sampling['Frames'] % replicates != 0:
+            raise ValueError(
+                f"Sampling frames ({sampling['Frames']}) must be divisible by the number of replicates ({replicates})")
+        frames = sampling['Frames'] // replicates
+
         config = cfg.Config(
             # Conditions
             sysname = system['ID'],
@@ -53,7 +71,7 @@ class Simulation:
 
             # Runtime
             wfreq = sampling['Stride'], # dcd writing interval, 1 = 10 fs
-            steps = sampling['Stride']*sampling['Frames'], # number of simulation steps
+            steps = sampling['Stride']*frames, # number of simulation steps (this replicate's share)
             runtime = 0,
             platform = 'CUDA' if platform == 'GPU' else platform,
             restart = 'checkpoint',
@@ -188,6 +206,7 @@ class Simulation:
         eps_go: float,
         sim_dir: str,
         platform: Literal['GPU', 'CPU'],
+        replicates: int=1,
         slurm_scripts_dir: str='data/configurations/slurm',
     ) -> None:
         """Write all input files for one runnable CALVADOS simulation.
@@ -210,7 +229,7 @@ class Simulation:
             (M), ``pH``, and ``CALVADOS residue parameters`` (path).
         sampling : dict
             Sampling settings: ``Stride`` (steps between frames) and
-            ``Frames`` (number of frames to write).
+            ``Frames`` (total number of frames to write across all replicates).
         eps_go : float
             Well depth (``ε_Go``) substituted into the SLiM specific
             interactions, in place of the ``<eps_go>`` template placeholder.
@@ -218,6 +237,10 @@ class Simulation:
             Output directory for the simulation; created files are written here.
         platform : Literal['GPU', 'CPU']
             Which platform to specify for the config YAML and submssion scripts.
+        replicates : int, optional
+            Number of replicates the total sampling is divided across, by
+            default 1. Each built simulation is one replicate running ``Frames /
+            replicates`` frames at the shared write stride.
         slurm_scripts_dir : str, optional
             Directory of templated Slurm scripts to instantiate, by default
             ``'data/configurations/slurm'``.
@@ -234,7 +257,7 @@ class Simulation:
             old='<eps_go>', new=f'{eps_go}'
         )
 
-        Simulation._write_config(system, conditions, sampling, sim_dir, platform)
+        Simulation._write_config(system, conditions, sampling, sim_dir, platform, replicates)
         particles = Simulation._write_components(system, conditions, system_dir, sim_dir)
         Simulation._write_submission_scripts(system, particles, slurm_scripts_dir, sim_dir, platform)
 
