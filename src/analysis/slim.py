@@ -243,28 +243,32 @@ def _calibrate_switching_params(
 def _bound_q(
         Q: np.ndarray,
         n_grid: int = 500,
-        min_mode_separation: float = 0.05,
+        min_mode_separation: float = 0.10,
         bound_q_fallback: float = _DEFAULT_BOUND_Q,
     ) -> float:
     """Data-driven bound/unbound dividing point on a ``Q`` trace.
 
     Evaluates a Gaussian kernel density estimate of the ``Q`` trace on a fine
-    grid and returns the density minimum between its two tallest,
-    sufficiently separated modes, i.e. the dividing surface at the
-    trajectory's own apparent free-energy barrier.
-    
+    grid and returns the density minimum between the unbound mode -- anchored
+    at ``Q = 0`` by construction, since "no native contacts formed" is a
+    well-defined physical reference point -- and the bound mode, taken as the
+    tallest remaining peak at least ``min_mode_separation`` away from ``Q = 0``.
+    Picking the *tallest* peak, rather than e.g. the one nearest ``Q = 1``,
+    correctly handles two distinct bound states: it selects the dominant one
+    instead of an arbitrary or incidental secondary population.
+
     A KDE is used instead of a
     fixed-bin-count histogram because ``Q`` is often heavily imbalanced
     across a scan (some runs never bind, some are essentially always bound,
     some sit in between), and a fixed bin count either over-resolves a
     sparse tail into spurious noise or under-resolves a dominant, narrow
     mode; Silverman's rule instead adapts smoothing to the data itself.
-    
+
     Falls back to ``bound_q_fallback``, ``Q = 0.22``, which has been
     observed to often segregate the ``Q``distribution well, if the trace has
-    negligible spread or is effectively unimodal (e.g. an always-bound or
-    always-unbound run, where a data-driven barrier isn't a meaningful
-    concept).
+    negligible spread, has no peak beyond ``min_mode_separation``, or rises
+    monotonically from ``Q = 0`` to the bound mode with no interior dip (i.e.
+    no real unbound population to divide from, e.g. an always-bound run).
 
     Parameters
     ----------
@@ -275,9 +279,9 @@ def _bound_q(
         Number of points on the evaluation grid over ``[0, 1]``, by default
         ``500``.
     min_mode_separation : float, optional
-        Minimum ``Q``-distance between two density peaks for them to count
-        as distinct modes, by default ``0.05``. Guards against a dominant
-        mode's shoulder being mistaken for a second mode on a fine grid.
+        Minimum ``Q`` a peak must exceed to be considered the bound mode, by
+        default ``0.10``. Guards against a dominant mode's shoulder near
+        ``Q = 0`` being mistaken for a genuine bound population.
     bound_q_fallback : float, optional
         Value returned if ``bound_q`` estimation fails.
 
@@ -292,29 +296,31 @@ def _bound_q(
     grid = np.linspace(0.0, 1.0, n_grid)
     density = gaussian_kde(Q, bw_method="silverman")(grid)
 
-    # Local density maxima, including plateaus running up to either edge
+    # Unbound mode is anchored at Q=0 by construction, rather than found by
+    # peak height.
+    mode_a = 0
+
+    # Bound mode: the tallest peak beyond min_mode_separation, including a
+    # plateau running up to the Q=1 edge. Taking the tallest (not e.g. the
+    # nearest to Q=1) selects the dominant bound state when there are two.
     is_peak = np.zeros(n_grid, dtype=bool)
     is_peak[1:-1] = (density[1:-1] > density[:-2]) & (density[1:-1] > density[2:])
-    is_peak[0] = density[0] > density[1]
     is_peak[-1] = density[-1] > density[-2]
-    peaks = np.flatnonzero(is_peak)
-    if peaks.size < 2:
+    candidates = np.flatnonzero(is_peak & (grid >= min_mode_separation))
+    if candidates.size == 0:
         return bound_q_fallback
-
-    # Tallest peak, then the tallest peak far enough away to be a distinct mode
-    peaks = peaks[np.argsort(density[peaks])[::-1]]
-    mode_a = peaks[0]
-    mode_b = next(
-        (p for p in peaks[1:] if abs(grid[p] - grid[mode_a]) >= min_mode_separation),
-        None,
-    )
-    if mode_b is None:
-        return bound_q_fallback
+    mode_b = candidates[np.argmax(density[candidates])]
 
     # Deepest point in the density between the two modes
-    mode_lo, mode_hi = sorted((mode_a, mode_b))
-    valley_offset = np.argmin(density[mode_lo:mode_hi + 1])
-    return grid[mode_lo + valley_offset]
+    valley_offset = np.argmin(density[mode_a:mode_b + 1])
+    valley = mode_a + valley_offset
+    if valley == mode_a:
+        # Density rises monotonically all the way from Q=0 to the bound
+        # mode with no interior dip -- there is no real unbound population
+        # to divide from (e.g. an always-bound run).
+        return bound_q_fallback
+
+    return grid[valley]
 
 
 #······································································#
