@@ -26,52 +26,68 @@ class Simulation:
     """Namespace for generating a single CALVADOS simulation directory."""
 
     @staticmethod
-    def _write_config(system: dict, conditions: dict, sampling: dict, sim_dir: str, platform: Literal['GPU', 'CPU'], replicates: int=1) -> None:
+    def _write_config(
+        system: dict,
+        stride: int,
+        frames: int,
+        temperature: float,
+        ionic_strength: float,
+        pH: float,
+        sim_dir: str,
+        platform: Literal['GPU', 'CPU'],
+        replicates: int=1,
+    ) -> None:
         """Write the CALVADOS ``config.yaml`` for one simulation.
 
         Parameters
         ----------
         system : dict
             A single system entry (see ``data/curation/scheme.json``).
-        conditions : dict
-            Thermodynamic conditions (temperature, ionic strength, pH).
-        sampling : dict
-            Sampling settings (``Stride`` and ``Frames``); these describe the
-            total sampling to divide across replicates.
+        stride : int
+            Write stride (simulation steps between written frames).
+        frames : int
+            Total number of frames to write across all replicates; divided
+            evenly across ``replicates``.
+        temperature : float
+            Temperature, in Kelvin.
+        ionic_strength : float
+            Ionic strength, in molar.
+        pH : float
+            The pH.
         sim_dir : str
             Output directory for the simulation.
         platform : Literal['GPU', 'CPU']
             Which platform to specify for the config YAML and submssion scripts.
         replicates : int, optional
             Number of replicates the total sampling is split across, by default
-            1. The write stride is kept fixed and ``Frames`` is divided evenly,
+            1. The write stride is kept fixed and ``frames`` is divided evenly,
             so every replicate DCD shares a common frame interval (and can be
-            concatenated) and their frames together sum to ``Frames``.
+            concatenated) and their frames together sum to ``frames``.
 
         Raises
         ------
         ValueError
-            If ``Frames`` is not divisible by ``replicates``.
+            If ``frames`` is not divisible by ``replicates``.
         """
         # Split the total sampling evenly across replicates, keeping the write
         # stride fixed so replicate DCDs share a common frame interval.
-        if sampling['Frames'] % replicates != 0:
+        if frames % replicates != 0:
             raise ValueError(
-                f"Sampling frames ({sampling['Frames']}) must be divisible by the number of replicates ({replicates})")
-        frames = sampling['Frames'] // replicates
+                f"Sampling frames ({frames}) must be divisible by the number of replicates ({replicates})")
+        rep_frames = frames // replicates
 
         config = cfg.Config(
             # Conditions
             sysname = system['ID'],
             box = system['Box sides'],
-            temp = conditions['Temperature'], # K
-            ionic = conditions['Ionic strength'], # molar
-            pH = conditions['pH'],
+            temp = temperature, # K
+            ionic = ionic_strength, # molar
+            pH = pH,
             topol = 'grid', # two molecules -> grid placement
 
             # Runtime
-            wfreq = sampling['Stride'], # dcd writing interval, 1 = 10 fs
-            steps = sampling['Stride']*frames, # number of simulation steps (this replicate's share)
+            wfreq = stride, # dcd writing interval, 1 = 10 fs
+            steps = stride*rep_frames, # number of simulation steps (this replicate's share)
             runtime = 0,
             platform = 'CUDA' if platform == 'GPU' else platform,
             restart = 'checkpoint',
@@ -89,7 +105,7 @@ class Simulation:
     #··································································#
 
     @staticmethod
-    def _write_components(system: dict, conditions: dict, system_dir: str, sim_dir: str) -> int:
+    def _write_components(system: dict, fresidues: str, system_dir: str, sim_dir: str) -> int:
         """Write the CALVADOS components file and return the particle count.
 
         Each chain is added according to its specification: chains without a
@@ -101,8 +117,8 @@ class Simulation:
         ----------
         system : dict
             A single system entry.
-        conditions : dict
-            Thermodynamic conditions; provides the residue-parameter path.
+        fresidues : str
+            Path to the CALVADOS residue-parameter table (``residues.csv``).
         system_dir : str
             Directory holding the curated input files for ``system``.
         sim_dir : str
@@ -115,7 +131,7 @@ class Simulation:
         """
         particles = 0
         components = cfg.Components(
-            fresidues = os.path.abspath(conditions["CALVADOS residue parameters"])
+            fresidues = os.path.abspath(fresidues)
         )
         for chain in system['Chains']:
             particles += chain['Copies'] * len(chain['Sequence'])
@@ -201,11 +217,16 @@ class Simulation:
     def build(
         system: dict,
         system_dir: str,
-        conditions: dict,
-        sampling: dict,
         eps_go: float,
         sim_dir: str,
         platform: Literal['GPU', 'CPU'],
+        *,
+        stride: int,
+        frames: int,
+        temperature: float=298.15,
+        ionic_strength: float=0.150,
+        pH: float=7.0,
+        fresidues: str='data/configurations/residues.csv',
         replicates: int=1,
         slurm_scripts_dir: str='data/configurations/slurm',
     ) -> None:
@@ -218,18 +239,15 @@ class Simulation:
         (with the SLiM Go well depth filled in), and Slurm submission scripts
         into ``sim_dir``.
 
+        Sampling (``stride`` and ``frames``) is mandatory; thermodynamic
+        conditions default to standard physiological values.
+
         Parameters
         ----------
         system : dict
             A single system entry (see ``data/curation/scheme.json``).
         system_dir : str
             Directory holding the curated input files for ``system``.
-        conditions : dict
-            Thermodynamic conditions: ``Temperature`` (K), ``Ionic strength``
-            (M), ``pH``, and ``CALVADOS residue parameters`` (path).
-        sampling : dict
-            Sampling settings: ``Stride`` (steps between frames) and
-            ``Frames`` (total number of frames to write across all replicates).
         eps_go : float
             Well depth (``ε_Go``) substituted into the SLiM specific
             interactions, in place of the ``<eps_go>`` template placeholder.
@@ -237,9 +255,22 @@ class Simulation:
             Output directory for the simulation; created files are written here.
         platform : Literal['GPU', 'CPU']
             Which platform to specify for the config YAML and submssion scripts.
+        stride : int
+            Write stride (simulation steps between written frames).
+        frames : int
+            Total number of frames to write across all replicates.
+        temperature : float, optional
+            Temperature, in Kelvin, by default 298.15.
+        ionic_strength : float, optional
+            Ionic strength, in molar, by default 0.150.
+        pH : float, optional
+            The pH, by default 7.0.
+        fresidues : str, optional
+            Path to the CALVADOS residue-parameter table, by default
+            ``'data/configurations/residues.csv'``.
         replicates : int, optional
             Number of replicates the total sampling is divided across, by
-            default 1. Each built simulation is one replicate running ``Frames /
+            default 1. Each built simulation is one replicate running ``frames /
             replicates`` frames at the shared write stride.
         slurm_scripts_dir : str, optional
             Directory of templated Slurm scripts to instantiate, by default
@@ -257,8 +288,11 @@ class Simulation:
             old='<eps_go>', new=f'{eps_go}'
         )
 
-        Simulation._write_config(system, conditions, sampling, sim_dir, platform, replicates)
-        particles = Simulation._write_components(system, conditions, system_dir, sim_dir)
+        Simulation._write_config(
+            system, stride, frames, temperature, ionic_strength, pH,
+            sim_dir, platform, replicates,
+        )
+        particles = Simulation._write_components(system, fresidues, system_dir, sim_dir)
         Simulation._write_submission_scripts(system, particles, slurm_scripts_dir, sim_dir, platform)
 
 
