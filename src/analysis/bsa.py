@@ -410,11 +410,12 @@ def buried_surface_area(
     ) -> np.ndarray:
     """Inter-chain residue buried-surface-area map from a full-atom structure.
 
-    Scores the two chains' heavy-atom solvent-accessible surface with a
-    Shrake-Rupley rolling ball and returns, per residue pair, the surface
-    buried between them when the complex forms. Only resolved standard amino
-    acids are considered; missing loops are not reconstructed, since burial
-    cannot be inferred for unresolved regions.
+    Scores the two chains' heavy-atom solvent-accessible surface [1]_ with a
+    Shrake-Rupley rolling ball [2]_, each atom taking its Bondi van der Waals
+    radius [3]_, and returns, per residue pair, the surface buried between
+    them when the complex forms. Only resolved standard amino acids are
+    considered; missing loops are not reconstructed, since burial cannot be
+    inferred for unresolved regions.
 
     Parameters
     ----------
@@ -435,6 +436,18 @@ def buried_surface_area(
         Buried surface area of shape ``(N1, N2)``, Å², where entry ``[i, j]``
         is the surface buried between residue ``i`` of ``chain1_id`` and
         residue ``j`` of ``chain2_id``.
+
+    References
+    ----------
+    .. [1] Lee B., Richards F.M. (1971) The interpretation of protein
+       structures: estimation of static accessibility. Journal of Molecular
+       Biology, 55(3), 379-400. https://doi.org/10.1016/0022-2836(71)90324-X
+    .. [2] Shrake A., Rupley J.A. (1973) Environment and exposure to solvent
+       of protein atoms. Lysozyme and insulin. Journal of Molecular Biology,
+       79(2), 351-371. https://doi.org/10.1016/0022-2836(73)90011-9
+    .. [3] Bondi A. (1964) van der Waals volumes and radii. The Journal of
+       Physical Chemistry, 68(3), 441-451.
+       https://doi.org/10.1021/j100785a001
     """
     universe = utils.load_structure(structure_file)
     pos1, rad1, res1, n1 = _chain_atoms(universe, chain1_id)

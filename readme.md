@@ -76,7 +76,7 @@ repository root (with it on `PYTHONPATH`).
 ### 6. (Optional) Install SMOG2
 
 Curation derives SLiM contacts from buried surface area
-([`src.analysis.sasa`](src/analysis/sasa.py)) and needs no external tools.
+([`src.analysis.bsa`](src/analysis/bsa.py)) and needs no external tools.
 SMOG2 is only required if you want to cross-check those contacts against a
 [SMOG2](https://smog-server.org/smog2/) *Shadow Contact Map*
 ([`src.analysis.smog`](src/analysis/smog.py)); if so, install it separately and

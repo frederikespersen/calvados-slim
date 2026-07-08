@@ -400,7 +400,7 @@ class System:
         """Compute the Boolean inter-chain contact map for one SLiM.
 
         Always uses a buried-surface-area contact map (see
-        :func:`src.analysis.sasa.buried_contact_map`); for AlphaFold structures
+        :func:`src.analysis.bsa.buried_contact_map`); for AlphaFold structures
         the map is further intersected with PAE (< 5 Å) and Pinc (> 0.5) filters.
 
         Parameters
