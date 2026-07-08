@@ -19039,186 +19039,6 @@
         ]
     },
     {
-        "ID": "kpna1-pb2",
-        "Name": "KPNA1-PB2[NLS]",
-        "Authenticity": "X-ray; Claude+Val",
-        "Box sides": [
-            25,
-            25,
-            25
-        ],
-        "Sources": [
-            {
-                "Name": "PB2_I34A1",
-                "Description": "ELM instance linked to PDB",
-                "Link": "http://elm.eu.org/ELMI001858"
-            },
-            {
-                "Name": "2JDQ",
-                "Description": "PDB structure",
-                "Link": "https://www.rcsb.org/structure/2JDQ"
-            },
-            {
-                "Name": "Tarendeau et al. 2007",
-                "Description": "Primary publication for PDB 2JDQ",
-                "Link": "https://doi.org/10.1038/NSMB1212"
-            }
-        ],
-        "Chains": [
-            {
-                "ID": "arm",
-                "Name": "KPNA1[ARM]",
-                "Description": "Armadillo-repeat (ARM) domain of importin alpha-5 (KPNA1)",
-                "Copies": 1,
-                "Sequence": "GAMGFHEAQINNMEMAPGGVITSDMIEMIFSKSPEQQLSATQKFRKLLSKEPNPPIDEVISTPGVVARFVEFLKRKENCTLQFESAWVLTNIASGNSLQTRIVIQAGAVPIFIELLSSEFEDVQEQAVWALGNIAGDSTMCRDYVLDCNILPPLLQLFSKQNRLTMTRNAVWALSNLCRGKSPPPEFAKVSPCLNVLSWLLFVSDTDVLADACWALSYLSDGPNDKIQAVIDAGVCRRLVELLMHNDYKVVSPALRAVGNIVTGDDIQTQVILNCSALQSLLHLLSSPKESIKKEACWTISNITAGNRAQIQTVIDANIFPALISILQTAEFRTRKEAAWAITNATSGGSAEQIKYLVELGCIKPLCDLLTVMDSKIVQVALNGLENILRLGEQEAKRNGTGINPYCALIEEAYGLDKIEFLQSHENQEIYQKAFDLIEHYFGTEDEDSS",
-                "Construct": {
-                    "start": 63,
-                    "end": 512
-                },
-                "PDB": "data/pdb/2JDQ.cif",
-                "PDB chain ID": "A",
-                "PDB AlphaFold data JSON": "",
-                "PDB Domains": [
-                    {
-                        "start": 84,
-                        "end": 507
-                    }
-                ],
-                "PTMs": []
-            },
-            {
-                "ID": "nls",
-                "Name": "PB2[NLS]",
-                "Description": "Bipartite nuclear localization sequence of influenza A polymerase subunit PB2",
-                "Copies": 1,
-                "Sequence": "GDPDESTSGVESAVLRGFLILGKEDRRYGPALSINELSNLAKGEKANVLIGQGDVVLVMKRKRDSSILTDSQTATKRIRMAIN",
-                "Construct": {
-                    "start": 677,
-                    "end": 759
-                },
-                "PDB": "",
-                "PDB chain ID": "",
-                "PDB AlphaFold data JSON": "",
-                "PDB Domains": [],
-                "PTMs": []
-            }
-        ],
-        "SLiMs": [
-            {
-                "ID": "arm-nls",
-                "Name": "KPNA1-PB2[NLS]",
-                "Notes": "",
-                "Acceptor ID": "arm",
-                "Donor ID": "nls",
-                "Affinity": -1,
-                "PDB": "data/pdb/2JDQ.cif",
-                "PDB AlphaFold data JSON": "",
-                "PDB Acceptor chain ID": "A",
-                "PDB Acceptor construct": {
-                    "start": 84,
-                    "end": 507
-                },
-                "PDB Acceptor exclude": [],
-                "PDB Donor chain ID": "E",
-                "PDB Donor construct": {
-                    "start": 686,
-                    "end": 757
-                },
-                "PDB Donor exclude": []
-            }
-        ]
-    },
-    {
-        "ID": "map1lc3b-ravz",
-        "Name": "MAP1LC3B[Atg8]-RavZ[cLIR]",
-        "Authenticity": "X-ray; Claude+Val",
-        "Box sides": [
-            20,
-            20,
-            20
-        ],
-        "Sources": [
-            {
-                "Name": "RAVZ_LEGPH",
-                "Description": "ELM instance linked to PDB",
-                "Link": "http://elm.eu.org/ELMI004483"
-            },
-            {
-                "Name": "5XAD",
-                "Description": "PDB structure",
-                "Link": "https://www.rcsb.org/structure/5XAD"
-            },
-            {
-                "Name": "Kwon et al. 2017",
-                "Description": "Primary publication for PDB 5XAD",
-                "Link": "https://doi.org/10.1016/j.bbrc.2017.06.173"
-            }
-        ],
-        "Chains": [
-            {
-                "ID": "atg8",
-                "Name": "MAP1LC3B[Atg8]",
-                "Description": "Ubiquitin-like Atg8-family protein MAP1LC3B (LC3B)",
-                "Copies": 1,
-                "Sequence": "PSEKTFKQRRTFEQRVEDVRLIREQHPTKIPVIIERYKGEKQLPVLDKTKFLVPDHVNMSELIKIIRRRLQLNANQAFFLLVNGHSMVSVSTPISEVYESEKDEDGFLYMVYASQETFG",
-                "Construct": {
-                    "start": 2,
-                    "end": 120
-                },
-                "PDB": "data/pdb/5XAD.cif",
-                "PDB chain ID": "A",
-                "PDB AlphaFold data JSON": "",
-                "PDB Domains": [
-                    {
-                        "start": 2,
-                        "end": 118
-                    }
-                ],
-                "PTMs": []
-            },
-            {
-                "ID": "lir",
-                "Name": "RavZ[cLIR]",
-                "Description": "Tandem LIR1-LIR2 (cLIR) motif from the N-terminal region of the Legionella effector RavZ",
-                "Copies": 1,
-                "Sequence": "GSIVDEFEELGEQESDIDEFDLLEG",
-                "Construct": {
-                    "start": 10,
-                    "end": 34
-                },
-                "PDB": "",
-                "PDB chain ID": "",
-                "PDB AlphaFold data JSON": "",
-                "PDB Domains": [],
-                "PTMs": []
-            }
-        ],
-        "SLiMs": [
-            {
-                "ID": "atg8-lir",
-                "Name": "MAP1LC3B[Atg8]-RavZ[cLIR]",
-                "Notes": "",
-                "Acceptor ID": "atg8",
-                "Donor ID": "lir",
-                "Affinity": -1,
-                "PDB": "data/pdb/5XAD.cif",
-                "PDB AlphaFold data JSON": "",
-                "PDB Acceptor chain ID": "A",
-                "PDB Acceptor construct": {
-                    "start": 2,
-                    "end": 118
-                },
-                "PDB Acceptor exclude": [],
-                "PDB Donor chain ID": "C",
-                "PDB Donor construct": {
-                    "start": 11,
-                    "end": 34
-                },
-                "PDB Donor exclude": []
-            }
-        ]
-    },
-    {
         "ID": "trim7-mnv1ns6",
         "Name": "TRIM7[SPRY]-NS6[Cend]",
         "Authenticity": "X-ray; Claude+Val",
@@ -19557,10 +19377,10 @@
             {
                 "ID": "pp1c-ppp1r2",
                 "Name": "PP1C[gamma]-PPP1R2[SILK]",
-                "Notes": "Donor is intrinsically disordered with two separated ordered patches contacting PP1 (resolved 12-169 with large internal gaps); kept as one resolved-range construct per X-ray convention.",
+                "Notes": "Donor is intrinsically disordered with three separated ordered patches contacting PP1 (SILK 12-17, RVxF 44-56, IDoHA/HYNE 130-169; resolved 12-169 with large internal gaps); kept as one resolved-range construct per X-ray convention. Affinity is the whole-I-2 avidity Kd (multivalent SILK+RVxF+IDoHA), not an isolated SILK-motif Kd.",
                 "Acceptor ID": "pp1c",
                 "Donor ID": "ppp1r2",
-                "Affinity": -1,
+                "Affinity": 5e-9,
                 "PDB": "data/pdb/2O8G.cif",
                 "PDB AlphaFold data JSON": "",
                 "PDB Acceptor chain ID": "A",
@@ -21998,7 +21818,7 @@
                 "Notes": "",
                 "Acceptor ID": "pdz",
                 "Donor ID": "grm5",
-                "Affinity": -1,
+                "Affinity": 85.3e-6,
                 "PDB": "data/pdb/2EGN.cif",
                 "PDB AlphaFold data JSON": "",
                 "PDB Acceptor chain ID": "A",

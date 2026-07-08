@@ -1,6 +1,0 @@
-atg8 1 | lir 3 | 0.7185 <eps_go>
-atg8 1 | lir 25 | 0.4174 <eps_go>
-atg8 2 | lir 2 | 0.5861 <eps_go>
-atg8 2 | lir 3 | 0.6041 <eps_go>
-atg8 9 | lir 3 | 0.7531 <eps_go>
-atg8 9 | lir 4 | 0.9939 <eps_go>

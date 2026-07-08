@@ -1718,8 +1718,8 @@
     {
         "PDB": "5XAC",
         "Category": "Fusion protein",
-        "Reason": "Companion structure to 5XAD (curated instead). Only 1 polymer entity (auto-flagged); the extra N-terminal tail on the LC3B chain ('DDTIDDFVTIE...') is an exact sequence match to RavZ's own C-terminal LIR3 region (UniProt Q5ZUV9), confirming this is a single-chain genetic fusion of a third RavZ LIR motif directly onto LC3B, not two separately crystallized chains.",
-        "Rescue": "Hand-split the CIF into separate RavZ-LIR3 and LC3B chains at the fusion junction, mirroring the 7EL6_split.cif precedent (fem1b-smcr8); not pursued since 5XAD already covers the LC3B-RavZ LIR binding mode in this batch.",
+        "Reason": "Companion structure to 5XAD (also moved to unsuited: its ASU acceptor/donor pairing captures only the fusion tether, with the RavZ LIR binding a symmetry-related LC3B). Only 1 polymer entity (auto-flagged); the extra N-terminal tail on the LC3B chain ('DDTIDDFVTIE...') is an exact sequence match to RavZ's own C-terminal LIR3 region (UniProt Q5ZUV9), confirming this is a single-chain genetic fusion of a third RavZ LIR motif directly onto LC3B, not two separately crystallized chains.",
+        "Rescue": "Hand-split the CIF into separate RavZ-LIR3 and LC3B chains at the fusion junction, mirroring the 7EL6_split.cif precedent (fem1b-smcr8); not pursued (5XAD, the companion originally curated for the LC3B-RavZ LIR binding mode, is also unsuited).",
         "Publication": "https://doi.org/10.1016/j.bbrc.2017.06.173"
     },
     {
@@ -2099,5 +2099,19 @@
         "Reason": "FEM1B's ankyrin domain and the SMCR8 C-degron are deposited as a single-chain genetic fusion joined by an engineered glycine linker (one auth chain, one entity, one SEQRES). This system was previously registered as fem1b-smcr8 by hand-splitting the CIF into two synthetic chains (data/pdb/7EL6_split.cif), but is being moved here for consistency with the other fusion-protein entries in this dataset (1MKE, 6HYL, 5V4K, 6HOJ, 4BLD, 7BRT, 7BRQ, 6HYM, 6HYO, 7CNG) that cite the same hand-split rescue path without acting on it.",
         "Rescue": "Hand-split the CIF into two synthetic chains at the fusion linker, as was previously done for the now-removed data/pdb/7EL6_split.cif, if this system is reinstated.",
         "Publication": "https://doi.org/10.1016/j.bbrc.2021.04.046"
+    },
+    {
+        "PDB": "5XAD",
+        "Category": "Fusion protein",
+        "Reason": "The 'NLIR-LC3B fusion protein' crystal (2 LC3B chains A/B + 2 RavZ tandem-LIR peptide chains C/D) has 2 polymer entities, so it was not auto-flagged and was curated as acceptor LC3B chain A + donor RavZ-LIR chain C. But that ASU pairing is only the fusion tether: the LIR motif cores (FEEL 16-19, FDLL 29-32) sit 10-25 Angstrom from the LC3B they are paired with, and the 28 A+C atomic contacts involve only the peptide termini (res 12, 34). The genuine LIR-binding interface forms exclusively across a crystallographic contact (space group P4_3 2_1 2): peptide C docks into a lattice-translated copy of chain B (52 contacts), and reciprocally chain A's LIR groove is filled by a translated copy of peptide D (77 contacts, engaging LIR residues 18-28). The 2-chain box built from the deposited ASU pairing is therefore a non-physiological interface.",
+        "Rescue": "Rebuild the binding complex from crystal symmetry -- pair LC3B chain A with RavZ-LIR peptide chain D translated +1 unit cell along b (65.7 Angstrom), i.e. the 77-contact docked complex, then re-curate the interface and specific_interactions from those coordinates. Not pursued in this batch.",
+        "Publication": "https://doi.org/10.1016/j.bbrc.2017.06.173"
+    },
+    {
+        "PDB": "2JDQ",
+        "Category": "Not a domain+SLiM pair",
+        "Reason": "The 'donor' is not a disordered NLS peptide but the folded influenza PB2 C-terminal '627-NLS' domain (entity 2 is literally named 'POLYMERASE BASIC PROTEIN 2, C-TERMINAL DOMAIN, RESIDUES 678-759'; Tarendeau et al. 2007 solved it as an autonomous fold). The resolved donor chain (E, 686-757) has a genuine alpha/beta tertiary structure -- 3 helices (686-692, 701-705, 712-716) and a 3-stranded beta-sheet (694-699 / 722-727 / 730-736), ~55% of resolved residues in regular secondary structure -- so this is a domain-domain interaction (importin-alpha ARM domain + PB2 folded domain) with only the C-terminal bipartite-NLS tail (basic clusters contacting importin at ~735-741 and ~749-757) behaving SLiM-like. The ELM instance ELMI001858 annotates only that short bipartite NLS, but the curated donor took the whole folded 678-759 construct, which CALVADOS would incorrectly model as a flexible chain.",
+        "Rescue": "Not rescuable as a domain+SLiM pair; the donor is a folded domain. Would require truncating to just the bipartite-NLS tail, but the deposited coordinates fold that tail against the rest of the domain, so the isolated-motif binding geometry is not available here.",
+        "Publication": "https://doi.org/10.1038/NSMB1212"
     }
 ]
