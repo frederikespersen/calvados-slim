@@ -11803,7 +11803,7 @@
                     "end": 334
                 },
                 "PDB Acceptor exclude": [],
-                "PDB Donor chain ID": "D",
+                "PDB Donor chain ID": "E",
                 "PDB Donor construct": {
                     "start": 2504,
                     "end": 2515
@@ -21247,7 +21247,7 @@
                     "end": 370
                 },
                 "PDB Acceptor exclude": [],
-                "PDB Donor chain ID": "C",
+                "PDB Donor chain ID": "D",
                 "PDB Donor construct": {
                     "start": 51,
                     "end": 61
@@ -25744,7 +25744,7 @@
         ],
         "Chains": [
             {
-                "ID": "1433",
+                "ID": "fttt",
                 "Name": "YWHAB",
                 "Description": "14-3-3 protein beta/alpha",
                 "Copies": 1,
@@ -25783,10 +25783,10 @@
         ],
         "SLiMs": [
             {
-                "ID": "1433-chrebp",
+                "ID": "fttt-chrebp",
                 "Name": "YWHAB-MLXIPL[peptide]",
                 "Notes": "",
-                "Acceptor ID": "1433",
+                "Acceptor ID": "fttt",
                 "Donor ID": "chrebp",
                 "Affinity": -1,
                 "PDB": "data/pdb/5F74.cif",

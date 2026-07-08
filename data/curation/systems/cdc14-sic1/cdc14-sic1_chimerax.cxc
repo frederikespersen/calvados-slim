@@ -4,8 +4,8 @@ style stick
 color bychain
 show cartoons
 hide
-hide ~/A,C cartoons
-sel /A: | /C:
+hide ~/A,D cartoons
+sel /A:13,14,17,18,60,63,64,66,67,70,71,101,102,105,106,108,112,159,160 | /D:52,54,55,56,57,58,59,60,61
 show sel surfaces
 view sel
 scale 200

@@ -603,6 +603,8 @@ class System:
         # Append the contacts (1-based residue ids) to the specific interactions file
         log.info(f"\t- Appending contacts to '{fspecific_interactions}'")
         resids = construct_res_idxs + 1
+        if len(resids) == 0:
+            raise ValueError("No contacts identified!")
         with open(fspecific_interactions, 'a') as file:
             for (acceptor_resid, donor_resid), eqdist in zip(resids, eqdists):
                 file.write(f"{acceptor_chain['ID']} {acceptor_resid} | {donor_chain['ID']} {donor_resid} | {eqdist:.4f} <eps_go>\n")
