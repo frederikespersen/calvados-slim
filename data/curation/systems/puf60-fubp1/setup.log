@@ -1,29 +1,29 @@
-2026-07-08 15:01:22: ················································································
-2026-07-08 15:01:22: Parsing chains of 'puf60-fubp1' system to CALVADOS input
-2026-07-08 15:01:22: ················································································
-2026-07-08 15:01:22: Chain 'rrm' ('PUF60[RRM]')
-2026-07-08 15:01:22: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/2KXH.cif' is specified
-2026-07-08 15:01:22: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/puf60-fubp1/rrm.pdb'
-2026-07-08 15:01:23: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
-2026-07-08 15:01:23: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/puf60-fubp1/rrm.yaml'
-2026-07-08 15:01:23: 
-2026-07-08 15:01:23: Chain 'nbox' ('FUBP1[Nbox]')
-2026-07-08 15:01:23: 	- Parsing chain as an IDP, as no chain PDB is specified
-2026-07-08 15:01:23: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/puf60-fubp1/nbox.fasta'
-2026-07-08 15:01:23: 
-2026-07-08 15:01:23: ················································································
-2026-07-08 15:01:23: Parsing SLiMs of 'puf60-fubp1' system to CALVADOS input
-2026-07-08 15:01:23: ················································································
-2026-07-08 15:01:23: SLiM 'rrm-nbox' ('PUF60[RRM]-FUBP1[Nbox]')
-2026-07-08 15:01:23: 	- Verifying that acceptor 'rrm' and donor 'nbox' chains are found in system
-2026-07-08 15:01:23: 	- Performing contact analysis
-2026-07-08 15:01:23: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
-2026-07-08 15:01:23: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
-2026-07-08 15:01:23: 		- Defining contacts
-2026-07-08 15:01:23: 		- Found 47 pairwise contacts
-2026-07-08 15:01:23: 		- Calculating contact distances
-2026-07-08 15:01:23: 	- Mapping residue indices between System and SLiM constructs
-2026-07-08 15:01:24: 	- Dropping 0 contacts outside the construct windows
-2026-07-08 15:01:24: 	- Excluding 7 contacts
-2026-07-08 15:01:24: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/puf60-fubp1/specific_interactions.txt'
-2026-07-08 15:01:24: 
+2026-07-08 15:51:39: ················································································
+2026-07-08 15:51:39: Parsing chains of 'puf60-fubp1' system to CALVADOS input
+2026-07-08 15:51:39: ················································································
+2026-07-08 15:51:39: Chain 'rrm' ('PUF60[RRM]')
+2026-07-08 15:51:39: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/2KXH.cif' is specified
+2026-07-08 15:51:39: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/puf60-fubp1/rrm.pdb'
+2026-07-08 15:51:40: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:51:40: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/puf60-fubp1/rrm.yaml'
+2026-07-08 15:51:40: 
+2026-07-08 15:51:40: Chain 'nbox' ('FUBP1[Nbox]')
+2026-07-08 15:51:40: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:51:40: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/puf60-fubp1/nbox.fasta'
+2026-07-08 15:51:40: 
+2026-07-08 15:51:40: ················································································
+2026-07-08 15:51:40: Parsing SLiMs of 'puf60-fubp1' system to CALVADOS input
+2026-07-08 15:51:40: ················································································
+2026-07-08 15:51:40: SLiM 'rrm-nbox' ('PUF60[RRM]-FUBP1[Nbox]')
+2026-07-08 15:51:40: 	- Verifying that acceptor 'rrm' and donor 'nbox' chains are found in system
+2026-07-08 15:51:40: 	- Performing contact analysis
+2026-07-08 15:51:40: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:51:41: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:51:41: 		- Defining contacts
+2026-07-08 15:51:41: 		- Found 47 pairwise contacts
+2026-07-08 15:51:41: 		- Calculating contact distances
+2026-07-08 15:51:41: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:51:41: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:51:41: 	- Excluding 7 contacts
+2026-07-08 15:51:41: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/puf60-fubp1/specific_interactions.txt'
+2026-07-08 15:51:41: 

@@ -1,29 +1,29 @@
-2026-07-08 15:02:47: ················································································
-2026-07-08 15:02:47: Parsing chains of 'trim7-eva71-2c' system to CALVADOS input
-2026-07-08 15:02:47: ················································································
-2026-07-08 15:02:47: Chain 'spry' ('TRIM7[SPRY]')
-2026-07-08 15:02:47: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/8A5L.cif' is specified
-2026-07-08 15:02:47: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/trim7-eva71-2c/spry.pdb'
-2026-07-08 15:02:47: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
-2026-07-08 15:02:47: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/trim7-eva71-2c/spry.yaml'
-2026-07-08 15:02:47: 
-2026-07-08 15:02:47: Chain 'cend' ('EVA71_2C[Cend]')
-2026-07-08 15:02:47: 	- Parsing chain as an IDP, as no chain PDB is specified
-2026-07-08 15:02:47: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/trim7-eva71-2c/cend.fasta'
-2026-07-08 15:02:47: 
-2026-07-08 15:02:47: ················································································
-2026-07-08 15:02:47: Parsing SLiMs of 'trim7-eva71-2c' system to CALVADOS input
-2026-07-08 15:02:47: ················································································
-2026-07-08 15:02:47: SLiM 'spry-cend' ('TRIM7[SPRY]-EVA71_2C[Cend]')
-2026-07-08 15:02:47: 	- Verifying that acceptor 'spry' and donor 'cend' chains are found in system
-2026-07-08 15:02:47: 	- Performing contact analysis
-2026-07-08 15:02:47: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
-2026-07-08 15:02:48: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
-2026-07-08 15:02:48: 		- Defining contacts
-2026-07-08 15:02:48: 		- Found 26 pairwise contacts
-2026-07-08 15:02:48: 		- Calculating contact distances
-2026-07-08 15:02:48: 	- Mapping residue indices between System and SLiM constructs
-2026-07-08 15:02:48: 	- Dropping 0 contacts outside the construct windows
-2026-07-08 15:02:48: 	- Excluding 0 contacts
-2026-07-08 15:02:48: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/trim7-eva71-2c/specific_interactions.txt'
-2026-07-08 15:02:48: 
+2026-07-08 15:53:20: ················································································
+2026-07-08 15:53:20: Parsing chains of 'trim7-eva71-2c' system to CALVADOS input
+2026-07-08 15:53:20: ················································································
+2026-07-08 15:53:20: Chain 'spry' ('TRIM7[SPRY]')
+2026-07-08 15:53:20: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/8A5L.cif' is specified
+2026-07-08 15:53:20: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/trim7-eva71-2c/spry.pdb'
+2026-07-08 15:53:20: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:53:20: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/trim7-eva71-2c/spry.yaml'
+2026-07-08 15:53:20: 
+2026-07-08 15:53:20: Chain 'cend' ('EVA71_2C[Cend]')
+2026-07-08 15:53:20: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:53:20: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/trim7-eva71-2c/cend.fasta'
+2026-07-08 15:53:20: 
+2026-07-08 15:53:20: ················································································
+2026-07-08 15:53:20: Parsing SLiMs of 'trim7-eva71-2c' system to CALVADOS input
+2026-07-08 15:53:20: ················································································
+2026-07-08 15:53:20: SLiM 'spry-cend' ('TRIM7[SPRY]-EVA71_2C[Cend]')
+2026-07-08 15:53:20: 	- Verifying that acceptor 'spry' and donor 'cend' chains are found in system
+2026-07-08 15:53:20: 	- Performing contact analysis
+2026-07-08 15:53:20: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:53:21: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:53:21: 		- Defining contacts
+2026-07-08 15:53:21: 		- Found 26 pairwise contacts
+2026-07-08 15:53:21: 		- Calculating contact distances
+2026-07-08 15:53:21: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:53:21: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:53:21: 	- Excluding 0 contacts
+2026-07-08 15:53:21: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/trim7-eva71-2c/specific_interactions.txt'
+2026-07-08 15:53:21: 

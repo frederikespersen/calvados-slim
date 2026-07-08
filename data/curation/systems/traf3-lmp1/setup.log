@@ -1,29 +1,29 @@
-2026-07-08 15:02:55: ················································································
-2026-07-08 15:02:55: Parsing chains of 'traf3-lmp1' system to CALVADOS input
-2026-07-08 15:02:55: ················································································
-2026-07-08 15:02:55: Chain 'math' ('TRAF3[MATH]')
-2026-07-08 15:02:55: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/1ZMS.cif' is specified
-2026-07-08 15:02:55: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/traf3-lmp1/math.pdb'
-2026-07-08 15:02:55: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
-2026-07-08 15:02:55: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/traf3-lmp1/math.yaml'
-2026-07-08 15:02:55: 
-2026-07-08 15:02:55: Chain 'tbm' ('LMP1[TBM]')
-2026-07-08 15:02:55: 	- Parsing chain as an IDP, as no chain PDB is specified
-2026-07-08 15:02:55: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/traf3-lmp1/tbm.fasta'
-2026-07-08 15:02:55: 
-2026-07-08 15:02:55: ················································································
-2026-07-08 15:02:55: Parsing SLiMs of 'traf3-lmp1' system to CALVADOS input
-2026-07-08 15:02:55: ················································································
-2026-07-08 15:02:55: SLiM 'math-tbm' ('TRAF3[MATH]-LMP1[TBM]')
-2026-07-08 15:02:55: 	- Verifying that acceptor 'math' and donor 'tbm' chains are found in system
-2026-07-08 15:02:55: 	- Performing contact analysis
-2026-07-08 15:02:55: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
-2026-07-08 15:02:56: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
-2026-07-08 15:02:56: 		- Defining contacts
-2026-07-08 15:02:56: 		- Found 31 pairwise contacts
-2026-07-08 15:02:56: 		- Calculating contact distances
-2026-07-08 15:02:56: 	- Mapping residue indices between System and SLiM constructs
-2026-07-08 15:02:56: 	- Dropping 0 contacts outside the construct windows
-2026-07-08 15:02:56: 	- Excluding 0 contacts
-2026-07-08 15:02:56: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/traf3-lmp1/specific_interactions.txt'
-2026-07-08 15:02:56: 
+2026-07-08 15:53:29: ················································································
+2026-07-08 15:53:29: Parsing chains of 'traf3-lmp1' system to CALVADOS input
+2026-07-08 15:53:29: ················································································
+2026-07-08 15:53:29: Chain 'math' ('TRAF3[MATH]')
+2026-07-08 15:53:29: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/1ZMS.cif' is specified
+2026-07-08 15:53:29: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/traf3-lmp1/math.pdb'
+2026-07-08 15:53:29: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:53:29: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/traf3-lmp1/math.yaml'
+2026-07-08 15:53:29: 
+2026-07-08 15:53:29: Chain 'tbm' ('LMP1[TBM]')
+2026-07-08 15:53:29: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:53:29: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/traf3-lmp1/tbm.fasta'
+2026-07-08 15:53:29: 
+2026-07-08 15:53:29: ················································································
+2026-07-08 15:53:29: Parsing SLiMs of 'traf3-lmp1' system to CALVADOS input
+2026-07-08 15:53:29: ················································································
+2026-07-08 15:53:29: SLiM 'math-tbm' ('TRAF3[MATH]-LMP1[TBM]')
+2026-07-08 15:53:29: 	- Verifying that acceptor 'math' and donor 'tbm' chains are found in system
+2026-07-08 15:53:29: 	- Performing contact analysis
+2026-07-08 15:53:29: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:53:30: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:53:30: 		- Defining contacts
+2026-07-08 15:53:30: 		- Found 31 pairwise contacts
+2026-07-08 15:53:30: 		- Calculating contact distances
+2026-07-08 15:53:30: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:53:30: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:53:30: 	- Excluding 0 contacts
+2026-07-08 15:53:30: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/traf3-lmp1/specific_interactions.txt'
+2026-07-08 15:53:30: 

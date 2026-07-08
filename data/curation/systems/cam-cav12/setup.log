@@ -1,29 +1,29 @@
-2026-07-08 15:00:26: ················································································
-2026-07-08 15:00:26: Parsing chains of 'cam-cav12' system to CALVADOS input
-2026-07-08 15:00:26: ················································································
-2026-07-08 15:00:26: Chain 'cam' ('CaM')
-2026-07-08 15:00:26: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/2F3Y.cif' is specified
-2026-07-08 15:00:26: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/cam-cav12/cam.pdb'
-2026-07-08 15:00:26: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
-2026-07-08 15:00:26: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/cam-cav12/cam.yaml'
-2026-07-08 15:00:26: 
-2026-07-08 15:00:26: Chain 'cav12' ('CAV1.2[IQ]')
-2026-07-08 15:00:26: 	- Parsing chain as an IDP, as no chain PDB is specified
-2026-07-08 15:00:26: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/cam-cav12/cav12.fasta'
-2026-07-08 15:00:26: 
-2026-07-08 15:00:26: ················································································
-2026-07-08 15:00:26: Parsing SLiMs of 'cam-cav12' system to CALVADOS input
-2026-07-08 15:00:26: ················································································
-2026-07-08 15:00:26: SLiM 'cam-cav12' ('CaM-CAV1.2[IQ]')
-2026-07-08 15:00:26: 	- Verifying that acceptor 'cam' and donor 'cav12' chains are found in system
-2026-07-08 15:00:26: 	- Performing contact analysis
-2026-07-08 15:00:26: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
-2026-07-08 15:00:26: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
-2026-07-08 15:00:26: 		- Defining contacts
-2026-07-08 15:00:26: 		- Found 72 pairwise contacts
-2026-07-08 15:00:26: 		- Calculating contact distances
-2026-07-08 15:00:26: 	- Mapping residue indices between System and SLiM constructs
-2026-07-08 15:00:26: 	- Dropping 0 contacts outside the construct windows
-2026-07-08 15:00:26: 	- Excluding 0 contacts
-2026-07-08 15:00:26: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/cam-cav12/specific_interactions.txt'
-2026-07-08 15:00:26: 
+2026-07-08 15:50:28: ················································································
+2026-07-08 15:50:28: Parsing chains of 'cam-cav12' system to CALVADOS input
+2026-07-08 15:50:28: ················································································
+2026-07-08 15:50:28: Chain 'cam' ('CaM')
+2026-07-08 15:50:28: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/2F3Y.cif' is specified
+2026-07-08 15:50:28: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/cam-cav12/cam.pdb'
+2026-07-08 15:50:29: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:50:29: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/cam-cav12/cam.yaml'
+2026-07-08 15:50:29: 
+2026-07-08 15:50:29: Chain 'cav12' ('CAV1.2[IQ]')
+2026-07-08 15:50:29: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:50:29: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/cam-cav12/cav12.fasta'
+2026-07-08 15:50:29: 
+2026-07-08 15:50:29: ················································································
+2026-07-08 15:50:29: Parsing SLiMs of 'cam-cav12' system to CALVADOS input
+2026-07-08 15:50:29: ················································································
+2026-07-08 15:50:29: SLiM 'cam-cav12' ('CaM-CAV1.2[IQ]')
+2026-07-08 15:50:29: 	- Verifying that acceptor 'cam' and donor 'cav12' chains are found in system
+2026-07-08 15:50:29: 	- Performing contact analysis
+2026-07-08 15:50:29: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:50:29: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:50:29: 		- Defining contacts
+2026-07-08 15:50:29: 		- Found 72 pairwise contacts
+2026-07-08 15:50:29: 		- Calculating contact distances
+2026-07-08 15:50:29: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:50:29: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:50:29: 	- Excluding 0 contacts
+2026-07-08 15:50:29: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/cam-cav12/specific_interactions.txt'
+2026-07-08 15:50:29: 

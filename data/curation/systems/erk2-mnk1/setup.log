@@ -1,29 +1,29 @@
-2026-07-08 15:00:26: ················································································
-2026-07-08 15:00:26: Parsing chains of 'erk2-mnk1' system to CALVADOS input
-2026-07-08 15:00:26: ················································································
-2026-07-08 15:00:26: Chain 'erk2' ('ERK2')
-2026-07-08 15:00:26: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/2Y9Q.cif' is specified
-2026-07-08 15:00:26: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/erk2-mnk1/erk2.pdb'
-2026-07-08 15:00:27: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
-2026-07-08 15:00:27: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/erk2-mnk1/erk2.yaml'
-2026-07-08 15:00:27: 
-2026-07-08 15:00:27: Chain 'mnk1' ('MNK1[D]')
-2026-07-08 15:00:27: 	- Parsing chain as an IDP, as no chain PDB is specified
-2026-07-08 15:00:27: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/erk2-mnk1/mnk1.fasta'
-2026-07-08 15:00:27: 
-2026-07-08 15:00:27: ················································································
-2026-07-08 15:00:27: Parsing SLiMs of 'erk2-mnk1' system to CALVADOS input
-2026-07-08 15:00:27: ················································································
-2026-07-08 15:00:27: SLiM 'erk2-mnk1' ('ERK2-MNK1[D]')
-2026-07-08 15:00:27: 	- Verifying that acceptor 'erk2' and donor 'mnk1' chains are found in system
-2026-07-08 15:00:27: 	- Performing contact analysis
-2026-07-08 15:00:27: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
-2026-07-08 15:00:27: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
-2026-07-08 15:00:27: 		- Defining contacts
-2026-07-08 15:00:27: 		- Found 52 pairwise contacts
-2026-07-08 15:00:27: 		- Calculating contact distances
-2026-07-08 15:00:27: 	- Mapping residue indices between System and SLiM constructs
-2026-07-08 15:00:27: 	- Dropping 0 contacts outside the construct windows
-2026-07-08 15:00:27: 	- Excluding 0 contacts
-2026-07-08 15:00:27: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/erk2-mnk1/specific_interactions.txt'
-2026-07-08 15:00:27: 
+2026-07-08 15:50:29: ················································································
+2026-07-08 15:50:29: Parsing chains of 'erk2-mnk1' system to CALVADOS input
+2026-07-08 15:50:29: ················································································
+2026-07-08 15:50:29: Chain 'erk2' ('ERK2')
+2026-07-08 15:50:29: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/2Y9Q.cif' is specified
+2026-07-08 15:50:29: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/erk2-mnk1/erk2.pdb'
+2026-07-08 15:50:29: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:50:29: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/erk2-mnk1/erk2.yaml'
+2026-07-08 15:50:29: 
+2026-07-08 15:50:29: Chain 'mnk1' ('MNK1[D]')
+2026-07-08 15:50:29: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:50:29: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/erk2-mnk1/mnk1.fasta'
+2026-07-08 15:50:29: 
+2026-07-08 15:50:29: ················································································
+2026-07-08 15:50:29: Parsing SLiMs of 'erk2-mnk1' system to CALVADOS input
+2026-07-08 15:50:29: ················································································
+2026-07-08 15:50:29: SLiM 'erk2-mnk1' ('ERK2-MNK1[D]')
+2026-07-08 15:50:29: 	- Verifying that acceptor 'erk2' and donor 'mnk1' chains are found in system
+2026-07-08 15:50:29: 	- Performing contact analysis
+2026-07-08 15:50:29: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:50:30: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:50:30: 		- Defining contacts
+2026-07-08 15:50:30: 		- Found 52 pairwise contacts
+2026-07-08 15:50:30: 		- Calculating contact distances
+2026-07-08 15:50:30: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:50:30: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:50:30: 	- Excluding 0 contacts
+2026-07-08 15:50:30: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/erk2-mnk1/specific_interactions.txt'
+2026-07-08 15:50:30: 

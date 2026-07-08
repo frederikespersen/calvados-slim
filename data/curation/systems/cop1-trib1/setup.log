@@ -1,29 +1,29 @@
-2026-07-08 15:01:57: ················································································
-2026-07-08 15:01:57: Parsing chains of 'cop1-trib1' system to CALVADOS input
-2026-07-08 15:01:57: ················································································
-2026-07-08 15:01:57: Chain 'wd40' ('COP1[WD40]')
-2026-07-08 15:01:57: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/5IGQ.cif' is specified
-2026-07-08 15:01:57: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/cop1-trib1/wd40.pdb'
-2026-07-08 15:01:59: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
-2026-07-08 15:01:59: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/cop1-trib1/wd40.yaml'
-2026-07-08 15:01:59: 
-2026-07-08 15:01:59: Chain 'cend' ('TRIB1[Cend]')
-2026-07-08 15:01:59: 	- Parsing chain as an IDP, as no chain PDB is specified
-2026-07-08 15:01:59: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/cop1-trib1/cend.fasta'
-2026-07-08 15:01:59: 
-2026-07-08 15:01:59: ················································································
-2026-07-08 15:01:59: Parsing SLiMs of 'cop1-trib1' system to CALVADOS input
-2026-07-08 15:01:59: ················································································
-2026-07-08 15:01:59: SLiM 'wd40-cend' ('COP1[WD40]-TRIB1[Cend]')
-2026-07-08 15:01:59: 	- Verifying that acceptor 'wd40' and donor 'cend' chains are found in system
-2026-07-08 15:01:59: 	- Performing contact analysis
-2026-07-08 15:01:59: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
-2026-07-08 15:01:59: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
-2026-07-08 15:01:59: 		- Defining contacts
-2026-07-08 15:01:59: 		- Found 43 pairwise contacts
-2026-07-08 15:01:59: 		- Calculating contact distances
-2026-07-08 15:01:59: 	- Mapping residue indices between System and SLiM constructs
-2026-07-08 15:02:00: 	- Dropping 0 contacts outside the construct windows
-2026-07-08 15:02:00: 	- Excluding 0 contacts
-2026-07-08 15:02:00: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/cop1-trib1/specific_interactions.txt'
-2026-07-08 15:02:00: 
+2026-07-08 15:52:22: ················································································
+2026-07-08 15:52:22: Parsing chains of 'cop1-trib1' system to CALVADOS input
+2026-07-08 15:52:22: ················································································
+2026-07-08 15:52:22: Chain 'wd40' ('COP1[WD40]')
+2026-07-08 15:52:22: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/5IGQ.cif' is specified
+2026-07-08 15:52:22: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/cop1-trib1/wd40.pdb'
+2026-07-08 15:52:23: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:52:23: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/cop1-trib1/wd40.yaml'
+2026-07-08 15:52:23: 
+2026-07-08 15:52:23: Chain 'cend' ('TRIB1[Cend]')
+2026-07-08 15:52:23: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:52:23: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/cop1-trib1/cend.fasta'
+2026-07-08 15:52:23: 
+2026-07-08 15:52:23: ················································································
+2026-07-08 15:52:23: Parsing SLiMs of 'cop1-trib1' system to CALVADOS input
+2026-07-08 15:52:23: ················································································
+2026-07-08 15:52:23: SLiM 'wd40-cend' ('COP1[WD40]-TRIB1[Cend]')
+2026-07-08 15:52:23: 	- Verifying that acceptor 'wd40' and donor 'cend' chains are found in system
+2026-07-08 15:52:23: 	- Performing contact analysis
+2026-07-08 15:52:23: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:52:24: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:52:24: 		- Defining contacts
+2026-07-08 15:52:24: 		- Found 43 pairwise contacts
+2026-07-08 15:52:24: 		- Calculating contact distances
+2026-07-08 15:52:24: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:52:24: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:52:24: 	- Excluding 0 contacts
+2026-07-08 15:52:24: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/cop1-trib1/specific_interactions.txt'
+2026-07-08 15:52:24: 

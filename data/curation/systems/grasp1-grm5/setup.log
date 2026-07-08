@@ -1,29 +1,29 @@
-2026-07-08 15:03:29: ················································································
-2026-07-08 15:03:29: Parsing chains of 'grasp1-grm5' system to CALVADOS input
-2026-07-08 15:03:29: ················································································
-2026-07-08 15:03:29: Chain 'pdz' ('GRASP1[PDZ]')
-2026-07-08 15:03:29: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/2EGN.cif' is specified
-2026-07-08 15:03:29: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/grasp1-grm5/pdz.pdb'
-2026-07-08 15:03:29: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
-2026-07-08 15:03:29: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/grasp1-grm5/pdz.yaml'
-2026-07-08 15:03:29: 
-2026-07-08 15:03:29: Chain 'grm5' ('GRM5[peptide]')
-2026-07-08 15:03:29: 	- Parsing chain as an IDP, as no chain PDB is specified
-2026-07-08 15:03:29: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/grasp1-grm5/grm5.fasta'
-2026-07-08 15:03:29: 
-2026-07-08 15:03:29: ················································································
-2026-07-08 15:03:29: Parsing SLiMs of 'grasp1-grm5' system to CALVADOS input
-2026-07-08 15:03:29: ················································································
-2026-07-08 15:03:29: SLiM 'pdz-grm5' ('GRASP1[PDZ]-GRM5[peptide]')
-2026-07-08 15:03:29: 	- Verifying that acceptor 'pdz' and donor 'grm5' chains are found in system
-2026-07-08 15:03:29: 	- Performing contact analysis
-2026-07-08 15:03:29: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
-2026-07-08 15:03:29: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
-2026-07-08 15:03:29: 		- Defining contacts
-2026-07-08 15:03:29: 		- Found 3 pairwise contacts
-2026-07-08 15:03:29: 		- Calculating contact distances
-2026-07-08 15:03:29: 	- Mapping residue indices between System and SLiM constructs
-2026-07-08 15:03:29: 	- Dropping 0 contacts outside the construct windows
-2026-07-08 15:03:29: 	- Excluding 0 contacts
-2026-07-08 15:03:29: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/grasp1-grm5/specific_interactions.txt'
-2026-07-08 15:03:29: 
+2026-07-08 15:54:08: ················································································
+2026-07-08 15:54:08: Parsing chains of 'grasp1-grm5' system to CALVADOS input
+2026-07-08 15:54:08: ················································································
+2026-07-08 15:54:08: Chain 'pdz' ('GRASP1[PDZ]')
+2026-07-08 15:54:08: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/2EGN.cif' is specified
+2026-07-08 15:54:08: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/grasp1-grm5/pdz.pdb'
+2026-07-08 15:54:09: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:54:09: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/grasp1-grm5/pdz.yaml'
+2026-07-08 15:54:09: 
+2026-07-08 15:54:09: Chain 'grm5' ('GRM5[peptide]')
+2026-07-08 15:54:09: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:54:09: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/grasp1-grm5/grm5.fasta'
+2026-07-08 15:54:09: 
+2026-07-08 15:54:09: ················································································
+2026-07-08 15:54:09: Parsing SLiMs of 'grasp1-grm5' system to CALVADOS input
+2026-07-08 15:54:09: ················································································
+2026-07-08 15:54:09: SLiM 'pdz-grm5' ('GRASP1[PDZ]-GRM5[peptide]')
+2026-07-08 15:54:09: 	- Verifying that acceptor 'pdz' and donor 'grm5' chains are found in system
+2026-07-08 15:54:09: 	- Performing contact analysis
+2026-07-08 15:54:09: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:54:09: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:54:09: 		- Defining contacts
+2026-07-08 15:54:09: 		- Found 3 pairwise contacts
+2026-07-08 15:54:09: 		- Calculating contact distances
+2026-07-08 15:54:09: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:54:09: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:54:09: 	- Excluding 0 contacts
+2026-07-08 15:54:09: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/grasp1-grm5/specific_interactions.txt'
+2026-07-08 15:54:09: 

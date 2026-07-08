@@ -1,29 +1,29 @@
-2026-07-08 15:03:38: ················································································
-2026-07-08 15:03:38: Parsing chains of 'mlc1-myo2-iq3' system to CALVADOS input
-2026-07-08 15:03:38: ················································································
-2026-07-08 15:03:38: Chain 'mlc1' ('MLC1')
-2026-07-08 15:03:38: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/1N2D.cif' is specified
-2026-07-08 15:03:38: 	- Selecting chain 'B' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/mlc1-myo2-iq3/mlc1.pdb'
-2026-07-08 15:03:38: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
-2026-07-08 15:03:38: 	- Writing chain 'B' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/mlc1-myo2-iq3/mlc1.yaml'
-2026-07-08 15:03:38: 
-2026-07-08 15:03:38: Chain 'iq3' ('MYO2[IQ3]')
-2026-07-08 15:03:38: 	- Parsing chain as an IDP, as no chain PDB is specified
-2026-07-08 15:03:38: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/mlc1-myo2-iq3/iq3.fasta'
-2026-07-08 15:03:38: 
-2026-07-08 15:03:38: ················································································
-2026-07-08 15:03:38: Parsing SLiMs of 'mlc1-myo2-iq3' system to CALVADOS input
-2026-07-08 15:03:38: ················································································
-2026-07-08 15:03:38: SLiM 'mlc1-iq3' ('MLC1-MYO2[IQ3]')
-2026-07-08 15:03:38: 	- Verifying that acceptor 'mlc1' and donor 'iq3' chains are found in system
-2026-07-08 15:03:38: 	- Performing contact analysis
-2026-07-08 15:03:38: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
-2026-07-08 15:03:38: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
-2026-07-08 15:03:38: 		- Defining contacts
-2026-07-08 15:03:38: 		- Found 69 pairwise contacts
-2026-07-08 15:03:38: 		- Calculating contact distances
-2026-07-08 15:03:38: 	- Mapping residue indices between System and SLiM constructs
-2026-07-08 15:03:38: 	- Dropping 2 contacts outside the construct windows
-2026-07-08 15:03:38: 	- Excluding 0 contacts
-2026-07-08 15:03:38: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/mlc1-myo2-iq3/specific_interactions.txt'
-2026-07-08 15:03:38: 
+2026-07-08 15:54:18: ················································································
+2026-07-08 15:54:18: Parsing chains of 'mlc1-myo2-iq3' system to CALVADOS input
+2026-07-08 15:54:18: ················································································
+2026-07-08 15:54:18: Chain 'mlc1' ('MLC1')
+2026-07-08 15:54:18: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/1N2D.cif' is specified
+2026-07-08 15:54:18: 	- Selecting chain 'B' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/mlc1-myo2-iq3/mlc1.pdb'
+2026-07-08 15:54:19: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:54:19: 	- Writing chain 'B' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/mlc1-myo2-iq3/mlc1.yaml'
+2026-07-08 15:54:19: 
+2026-07-08 15:54:19: Chain 'iq3' ('MYO2[IQ3]')
+2026-07-08 15:54:19: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:54:19: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/mlc1-myo2-iq3/iq3.fasta'
+2026-07-08 15:54:19: 
+2026-07-08 15:54:19: ················································································
+2026-07-08 15:54:19: Parsing SLiMs of 'mlc1-myo2-iq3' system to CALVADOS input
+2026-07-08 15:54:19: ················································································
+2026-07-08 15:54:19: SLiM 'mlc1-iq3' ('MLC1-MYO2[IQ3]')
+2026-07-08 15:54:19: 	- Verifying that acceptor 'mlc1' and donor 'iq3' chains are found in system
+2026-07-08 15:54:19: 	- Performing contact analysis
+2026-07-08 15:54:19: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:54:19: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:54:19: 		- Defining contacts
+2026-07-08 15:54:19: 		- Found 69 pairwise contacts
+2026-07-08 15:54:19: 		- Calculating contact distances
+2026-07-08 15:54:19: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:54:19: 	- Dropping 2 contacts outside the construct windows
+2026-07-08 15:54:19: 	- Excluding 0 contacts
+2026-07-08 15:54:19: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/mlc1-myo2-iq3/specific_interactions.txt'
+2026-07-08 15:54:19: 

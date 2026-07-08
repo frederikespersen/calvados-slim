@@ -1,29 +1,29 @@
-2026-07-08 15:01:32: ················································································
-2026-07-08 15:01:32: Parsing chains of 'nrp2-vegfa' system to CALVADOS input
-2026-07-08 15:01:32: ················································································
-2026-07-08 15:01:32: Chain 'b1' ('NRP2[b1]')
-2026-07-08 15:01:32: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/5DN2.cif' is specified
-2026-07-08 15:01:32: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/nrp2-vegfa/b1.pdb'
-2026-07-08 15:01:32: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
-2026-07-08 15:01:32: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/nrp2-vegfa/b1.yaml'
-2026-07-08 15:01:32: 
-2026-07-08 15:01:32: Chain 'cendr' ('VEGFA[CendR]')
-2026-07-08 15:01:32: 	- Parsing chain as an IDP, as no chain PDB is specified
-2026-07-08 15:01:32: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/nrp2-vegfa/cendr.fasta'
-2026-07-08 15:01:32: 
-2026-07-08 15:01:32: ················································································
-2026-07-08 15:01:32: Parsing SLiMs of 'nrp2-vegfa' system to CALVADOS input
-2026-07-08 15:01:32: ················································································
-2026-07-08 15:01:32: SLiM 'b1-cendr' ('NRP2[b1]-VEGFA[CendR]')
-2026-07-08 15:01:32: 	- Verifying that acceptor 'b1' and donor 'cendr' chains are found in system
-2026-07-08 15:01:32: 	- Performing contact analysis
-2026-07-08 15:01:32: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
-2026-07-08 15:01:32: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
-2026-07-08 15:01:32: 		- Defining contacts
-2026-07-08 15:01:32: 		- Found 18 pairwise contacts
-2026-07-08 15:01:32: 		- Calculating contact distances
-2026-07-08 15:01:32: 	- Mapping residue indices between System and SLiM constructs
-2026-07-08 15:01:32: 	- Dropping 0 contacts outside the construct windows
-2026-07-08 15:01:32: 	- Excluding 0 contacts
-2026-07-08 15:01:32: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/nrp2-vegfa/specific_interactions.txt'
-2026-07-08 15:01:32: 
+2026-07-08 15:51:51: ················································································
+2026-07-08 15:51:51: Parsing chains of 'nrp2-vegfa' system to CALVADOS input
+2026-07-08 15:51:51: ················································································
+2026-07-08 15:51:51: Chain 'b1' ('NRP2[b1]')
+2026-07-08 15:51:51: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/5DN2.cif' is specified
+2026-07-08 15:51:51: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/nrp2-vegfa/b1.pdb'
+2026-07-08 15:51:51: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:51:51: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/nrp2-vegfa/b1.yaml'
+2026-07-08 15:51:51: 
+2026-07-08 15:51:51: Chain 'cendr' ('VEGFA[CendR]')
+2026-07-08 15:51:51: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:51:51: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/nrp2-vegfa/cendr.fasta'
+2026-07-08 15:51:51: 
+2026-07-08 15:51:51: ················································································
+2026-07-08 15:51:51: Parsing SLiMs of 'nrp2-vegfa' system to CALVADOS input
+2026-07-08 15:51:51: ················································································
+2026-07-08 15:51:51: SLiM 'b1-cendr' ('NRP2[b1]-VEGFA[CendR]')
+2026-07-08 15:51:51: 	- Verifying that acceptor 'b1' and donor 'cendr' chains are found in system
+2026-07-08 15:51:51: 	- Performing contact analysis
+2026-07-08 15:51:51: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:51:51: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:51:51: 		- Defining contacts
+2026-07-08 15:51:51: 		- Found 18 pairwise contacts
+2026-07-08 15:51:51: 		- Calculating contact distances
+2026-07-08 15:51:51: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:51:51: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:51:51: 	- Excluding 0 contacts
+2026-07-08 15:51:51: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/nrp2-vegfa/specific_interactions.txt'
+2026-07-08 15:51:51: 

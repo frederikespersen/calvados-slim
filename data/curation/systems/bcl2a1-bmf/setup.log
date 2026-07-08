@@ -1,29 +1,29 @@
-2026-07-08 15:03:11: ················································································
-2026-07-08 15:03:11: Parsing chains of 'bcl2a1-bmf' system to CALVADOS input
-2026-07-08 15:03:11: ················································································
-2026-07-08 15:03:11: Chain 'bcl2a1' ('BCL2A1')
-2026-07-08 15:03:11: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/2VOG.cif' is specified
-2026-07-08 15:03:11: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/bcl2a1-bmf/bcl2a1.pdb'
-2026-07-08 15:03:12: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
-2026-07-08 15:03:12: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/bcl2a1-bmf/bcl2a1.yaml'
-2026-07-08 15:03:12: 
-2026-07-08 15:03:12: Chain 'bmf' ('BMF[BH3]')
-2026-07-08 15:03:12: 	- Parsing chain as an IDP, as no chain PDB is specified
-2026-07-08 15:03:12: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/bcl2a1-bmf/bmf.fasta'
-2026-07-08 15:03:12: 
-2026-07-08 15:03:12: ················································································
-2026-07-08 15:03:12: Parsing SLiMs of 'bcl2a1-bmf' system to CALVADOS input
-2026-07-08 15:03:12: ················································································
-2026-07-08 15:03:12: SLiM 'bcl2a1-bmf' ('BCL2A1[BH3groove]-BMF[BH3]')
-2026-07-08 15:03:12: 	- Verifying that acceptor 'bcl2a1' and donor 'bmf' chains are found in system
-2026-07-08 15:03:12: 	- Performing contact analysis
-2026-07-08 15:03:12: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
-2026-07-08 15:03:12: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
-2026-07-08 15:03:12: 		- Defining contacts
-2026-07-08 15:03:12: 		- Found 54 pairwise contacts
-2026-07-08 15:03:12: 		- Calculating contact distances
-2026-07-08 15:03:12: 	- Mapping residue indices between System and SLiM constructs
-2026-07-08 15:03:12: 	- Dropping 0 contacts outside the construct windows
-2026-07-08 15:03:12: 	- Excluding 0 contacts
-2026-07-08 15:03:12: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/bcl2a1-bmf/specific_interactions.txt'
-2026-07-08 15:03:12: 
+2026-07-08 15:53:48: ················································································
+2026-07-08 15:53:48: Parsing chains of 'bcl2a1-bmf' system to CALVADOS input
+2026-07-08 15:53:48: ················································································
+2026-07-08 15:53:48: Chain 'bcl2a1' ('BCL2A1')
+2026-07-08 15:53:48: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/2VOG.cif' is specified
+2026-07-08 15:53:48: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/bcl2a1-bmf/bcl2a1.pdb'
+2026-07-08 15:53:48: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:53:48: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/bcl2a1-bmf/bcl2a1.yaml'
+2026-07-08 15:53:48: 
+2026-07-08 15:53:48: Chain 'bmf' ('BMF[BH3]')
+2026-07-08 15:53:48: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:53:48: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/bcl2a1-bmf/bmf.fasta'
+2026-07-08 15:53:48: 
+2026-07-08 15:53:48: ················································································
+2026-07-08 15:53:48: Parsing SLiMs of 'bcl2a1-bmf' system to CALVADOS input
+2026-07-08 15:53:48: ················································································
+2026-07-08 15:53:48: SLiM 'bcl2a1-bmf' ('BCL2A1[BH3groove]-BMF[BH3]')
+2026-07-08 15:53:48: 	- Verifying that acceptor 'bcl2a1' and donor 'bmf' chains are found in system
+2026-07-08 15:53:48: 	- Performing contact analysis
+2026-07-08 15:53:48: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:53:49: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:53:49: 		- Defining contacts
+2026-07-08 15:53:49: 		- Found 54 pairwise contacts
+2026-07-08 15:53:49: 		- Calculating contact distances
+2026-07-08 15:53:49: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:53:49: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:53:49: 	- Excluding 0 contacts
+2026-07-08 15:53:49: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/bcl2a1-bmf/specific_interactions.txt'
+2026-07-08 15:53:49: 

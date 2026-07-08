@@ -1,29 +1,29 @@
-2026-07-08 15:03:10: ················································································
-2026-07-08 15:03:10: Parsing chains of 'bcl2-bax' system to CALVADOS input
-2026-07-08 15:03:10: ················································································
-2026-07-08 15:03:10: Chain 'bcl2' ('BCL2')
-2026-07-08 15:03:10: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/2XA0.cif' is specified
-2026-07-08 15:03:10: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/bcl2-bax/bcl2.pdb'
-2026-07-08 15:03:11: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
-2026-07-08 15:03:11: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/bcl2-bax/bcl2.yaml'
-2026-07-08 15:03:11: 
-2026-07-08 15:03:11: Chain 'bax' ('BAX[BH3]')
-2026-07-08 15:03:11: 	- Parsing chain as an IDP, as no chain PDB is specified
-2026-07-08 15:03:11: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/bcl2-bax/bax.fasta'
-2026-07-08 15:03:11: 
-2026-07-08 15:03:11: ················································································
-2026-07-08 15:03:11: Parsing SLiMs of 'bcl2-bax' system to CALVADOS input
-2026-07-08 15:03:11: ················································································
-2026-07-08 15:03:11: SLiM 'bcl2-bax' ('BCL2[BH3groove]-BAX[BH3]')
-2026-07-08 15:03:11: 	- Verifying that acceptor 'bcl2' and donor 'bax' chains are found in system
-2026-07-08 15:03:11: 	- Performing contact analysis
-2026-07-08 15:03:11: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
-2026-07-08 15:03:11: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
-2026-07-08 15:03:11: 		- Defining contacts
-2026-07-08 15:03:11: 		- Found 70 pairwise contacts
-2026-07-08 15:03:11: 		- Calculating contact distances
-2026-07-08 15:03:11: 	- Mapping residue indices between System and SLiM constructs
-2026-07-08 15:03:11: 	- Dropping 0 contacts outside the construct windows
-2026-07-08 15:03:11: 	- Excluding 0 contacts
-2026-07-08 15:03:11: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/bcl2-bax/specific_interactions.txt'
-2026-07-08 15:03:11: 
+2026-07-08 15:53:46: ················································································
+2026-07-08 15:53:46: Parsing chains of 'bcl2-bax' system to CALVADOS input
+2026-07-08 15:53:46: ················································································
+2026-07-08 15:53:46: Chain 'bcl2' ('BCL2')
+2026-07-08 15:53:46: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/2XA0.cif' is specified
+2026-07-08 15:53:46: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/bcl2-bax/bcl2.pdb'
+2026-07-08 15:53:48: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:53:48: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/bcl2-bax/bcl2.yaml'
+2026-07-08 15:53:48: 
+2026-07-08 15:53:48: Chain 'bax' ('BAX[BH3]')
+2026-07-08 15:53:48: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:53:48: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/bcl2-bax/bax.fasta'
+2026-07-08 15:53:48: 
+2026-07-08 15:53:48: ················································································
+2026-07-08 15:53:48: Parsing SLiMs of 'bcl2-bax' system to CALVADOS input
+2026-07-08 15:53:48: ················································································
+2026-07-08 15:53:48: SLiM 'bcl2-bax' ('BCL2[BH3groove]-BAX[BH3]')
+2026-07-08 15:53:48: 	- Verifying that acceptor 'bcl2' and donor 'bax' chains are found in system
+2026-07-08 15:53:48: 	- Performing contact analysis
+2026-07-08 15:53:48: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:53:48: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:53:48: 		- Defining contacts
+2026-07-08 15:53:48: 		- Found 70 pairwise contacts
+2026-07-08 15:53:48: 		- Calculating contact distances
+2026-07-08 15:53:48: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:53:48: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:53:48: 	- Excluding 0 contacts
+2026-07-08 15:53:48: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/bcl2-bax/specific_interactions.txt'
+2026-07-08 15:53:48: 

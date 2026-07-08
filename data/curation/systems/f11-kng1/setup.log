@@ -1,29 +1,29 @@
-2026-07-08 15:01:42: ················································································
-2026-07-08 15:01:42: Parsing chains of 'f11-kng1' system to CALVADOS input
-2026-07-08 15:01:42: ················································································
-2026-07-08 15:01:42: Chain 'apple' ('F11[Apple]')
-2026-07-08 15:01:42: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/5I25.cif' is specified
-2026-07-08 15:01:42: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/f11-kng1/apple.pdb'
-2026-07-08 15:01:43: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
-2026-07-08 15:01:43: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/f11-kng1/apple.yaml'
-2026-07-08 15:01:43: 
-2026-07-08 15:01:43: Chain 'dfp' ('KNG1[DFP]')
-2026-07-08 15:01:43: 	- Parsing chain as an IDP, as no chain PDB is specified
-2026-07-08 15:01:43: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/f11-kng1/dfp.fasta'
-2026-07-08 15:01:43: 
-2026-07-08 15:01:43: ················································································
-2026-07-08 15:01:43: Parsing SLiMs of 'f11-kng1' system to CALVADOS input
-2026-07-08 15:01:43: ················································································
-2026-07-08 15:01:43: SLiM 'apple-dfp' ('F11[Apple2]-KNG1[DFP]')
-2026-07-08 15:01:43: 	- Verifying that acceptor 'apple' and donor 'dfp' chains are found in system
-2026-07-08 15:01:43: 	- Performing contact analysis
-2026-07-08 15:01:43: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
-2026-07-08 15:01:43: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
-2026-07-08 15:01:43: 		- Defining contacts
-2026-07-08 15:01:43: 		- Found 31 pairwise contacts
-2026-07-08 15:01:43: 		- Calculating contact distances
-2026-07-08 15:01:43: 	- Mapping residue indices between System and SLiM constructs
-2026-07-08 15:01:43: 	- Dropping 0 contacts outside the construct windows
-2026-07-08 15:01:43: 	- Excluding 0 contacts
-2026-07-08 15:01:43: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/f11-kng1/specific_interactions.txt'
-2026-07-08 15:01:43: 
+2026-07-08 15:52:03: ················································································
+2026-07-08 15:52:03: Parsing chains of 'f11-kng1' system to CALVADOS input
+2026-07-08 15:52:03: ················································································
+2026-07-08 15:52:03: Chain 'apple' ('F11[Apple]')
+2026-07-08 15:52:03: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/5I25.cif' is specified
+2026-07-08 15:52:03: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/f11-kng1/apple.pdb'
+2026-07-08 15:52:04: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:52:04: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/f11-kng1/apple.yaml'
+2026-07-08 15:52:04: 
+2026-07-08 15:52:04: Chain 'dfp' ('KNG1[DFP]')
+2026-07-08 15:52:04: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:52:04: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/f11-kng1/dfp.fasta'
+2026-07-08 15:52:04: 
+2026-07-08 15:52:04: ················································································
+2026-07-08 15:52:04: Parsing SLiMs of 'f11-kng1' system to CALVADOS input
+2026-07-08 15:52:04: ················································································
+2026-07-08 15:52:04: SLiM 'apple-dfp' ('F11[Apple2]-KNG1[DFP]')
+2026-07-08 15:52:04: 	- Verifying that acceptor 'apple' and donor 'dfp' chains are found in system
+2026-07-08 15:52:04: 	- Performing contact analysis
+2026-07-08 15:52:04: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:52:05: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:52:05: 		- Defining contacts
+2026-07-08 15:52:05: 		- Found 31 pairwise contacts
+2026-07-08 15:52:05: 		- Calculating contact distances
+2026-07-08 15:52:05: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:52:05: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:52:05: 	- Excluding 0 contacts
+2026-07-08 15:52:05: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/f11-kng1/specific_interactions.txt'
+2026-07-08 15:52:05: 

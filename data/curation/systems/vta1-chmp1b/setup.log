@@ -1,29 +1,29 @@
-2026-07-08 15:02:12: ················································································
-2026-07-08 15:02:12: Parsing chains of 'vta1-chmp1b' system to CALVADOS input
-2026-07-08 15:02:12: ················································································
-2026-07-08 15:02:12: Chain 'mit' ('VTA1[MIT]')
-2026-07-08 15:02:12: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/4TXR.cif' is specified
-2026-07-08 15:02:12: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/vta1-chmp1b/mit.pdb'
-2026-07-08 15:02:13: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
-2026-07-08 15:02:13: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/vta1-chmp1b/mit.yaml'
-2026-07-08 15:02:13: 
-2026-07-08 15:02:13: Chain 'mim' ('CHMP1B[MIM]')
-2026-07-08 15:02:13: 	- Parsing chain as an IDP, as no chain PDB is specified
-2026-07-08 15:02:13: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/vta1-chmp1b/mim.fasta'
-2026-07-08 15:02:13: 
-2026-07-08 15:02:13: ················································································
-2026-07-08 15:02:13: Parsing SLiMs of 'vta1-chmp1b' system to CALVADOS input
-2026-07-08 15:02:13: ················································································
-2026-07-08 15:02:13: SLiM 'mit-mim' ('VTA1[MIT]-CHMP1B[MIM]')
-2026-07-08 15:02:13: 	- Verifying that acceptor 'mit' and donor 'mim' chains are found in system
-2026-07-08 15:02:13: 	- Performing contact analysis
-2026-07-08 15:02:13: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
-2026-07-08 15:02:13: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
-2026-07-08 15:02:13: 		- Defining contacts
-2026-07-08 15:02:13: 		- Found 40 pairwise contacts
-2026-07-08 15:02:13: 		- Calculating contact distances
-2026-07-08 15:02:13: 	- Mapping residue indices between System and SLiM constructs
-2026-07-08 15:02:13: 	- Dropping 0 contacts outside the construct windows
-2026-07-08 15:02:13: 	- Excluding 0 contacts
-2026-07-08 15:02:13: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/vta1-chmp1b/specific_interactions.txt'
-2026-07-08 15:02:13: 
+2026-07-08 15:52:39: ················································································
+2026-07-08 15:52:39: Parsing chains of 'vta1-chmp1b' system to CALVADOS input
+2026-07-08 15:52:39: ················································································
+2026-07-08 15:52:39: Chain 'mit' ('VTA1[MIT]')
+2026-07-08 15:52:39: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/4TXR.cif' is specified
+2026-07-08 15:52:39: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/vta1-chmp1b/mit.pdb'
+2026-07-08 15:52:40: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:52:40: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/vta1-chmp1b/mit.yaml'
+2026-07-08 15:52:40: 
+2026-07-08 15:52:40: Chain 'mim' ('CHMP1B[MIM]')
+2026-07-08 15:52:40: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:52:40: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/vta1-chmp1b/mim.fasta'
+2026-07-08 15:52:40: 
+2026-07-08 15:52:40: ················································································
+2026-07-08 15:52:40: Parsing SLiMs of 'vta1-chmp1b' system to CALVADOS input
+2026-07-08 15:52:40: ················································································
+2026-07-08 15:52:40: SLiM 'mit-mim' ('VTA1[MIT]-CHMP1B[MIM]')
+2026-07-08 15:52:40: 	- Verifying that acceptor 'mit' and donor 'mim' chains are found in system
+2026-07-08 15:52:40: 	- Performing contact analysis
+2026-07-08 15:52:40: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:52:40: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:52:40: 		- Defining contacts
+2026-07-08 15:52:40: 		- Found 40 pairwise contacts
+2026-07-08 15:52:40: 		- Calculating contact distances
+2026-07-08 15:52:40: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:52:40: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:52:40: 	- Excluding 0 contacts
+2026-07-08 15:52:40: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/vta1-chmp1b/specific_interactions.txt'
+2026-07-08 15:52:40: 

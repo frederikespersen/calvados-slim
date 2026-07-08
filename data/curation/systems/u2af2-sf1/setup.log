@@ -1,29 +1,29 @@
-2026-07-08 15:00:50: ················································································
-2026-07-08 15:00:50: Parsing chains of 'u2af2-sf1' system to CALVADOS input
-2026-07-08 15:00:50: ················································································
-2026-07-08 15:00:50: Chain 'rrm3' ('U2AF2[RRM3]')
-2026-07-08 15:00:50: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/1O0P.cif' is specified
-2026-07-08 15:00:50: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/u2af2-sf1/rrm3.pdb'
-2026-07-08 15:00:51: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
-2026-07-08 15:00:51: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/u2af2-sf1/rrm3.yaml'
-2026-07-08 15:00:51: 
-2026-07-08 15:00:51: Chain 'nterm' ('SF1[Nterm]')
-2026-07-08 15:00:51: 	- Parsing chain as an IDP, as no chain PDB is specified
-2026-07-08 15:00:51: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/u2af2-sf1/nterm.fasta'
-2026-07-08 15:00:51: 
-2026-07-08 15:00:51: ················································································
-2026-07-08 15:00:51: Parsing SLiMs of 'u2af2-sf1' system to CALVADOS input
-2026-07-08 15:00:51: ················································································
-2026-07-08 15:00:51: SLiM 'rrm3-nterm' ('U2AF2[RRM3]-SF1[Nterm]')
-2026-07-08 15:00:51: 	- Verifying that acceptor 'rrm3' and donor 'nterm' chains are found in system
-2026-07-08 15:00:51: 	- Performing contact analysis
-2026-07-08 15:00:51: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
-2026-07-08 15:00:51: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
-2026-07-08 15:00:51: 		- Defining contacts
-2026-07-08 15:00:51: 		- Found 34 pairwise contacts
-2026-07-08 15:00:51: 		- Calculating contact distances
-2026-07-08 15:00:51: 	- Mapping residue indices between System and SLiM constructs
-2026-07-08 15:00:51: 	- Dropping 0 contacts outside the construct windows
-2026-07-08 15:00:51: 	- Excluding 13 contacts
-2026-07-08 15:00:51: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/u2af2-sf1/specific_interactions.txt'
-2026-07-08 15:00:51: 
+2026-07-08 15:50:59: ················································································
+2026-07-08 15:50:59: Parsing chains of 'u2af2-sf1' system to CALVADOS input
+2026-07-08 15:50:59: ················································································
+2026-07-08 15:50:59: Chain 'rrm3' ('U2AF2[RRM3]')
+2026-07-08 15:50:59: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/1O0P.cif' is specified
+2026-07-08 15:50:59: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/u2af2-sf1/rrm3.pdb'
+2026-07-08 15:50:59: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:50:59: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/u2af2-sf1/rrm3.yaml'
+2026-07-08 15:50:59: 
+2026-07-08 15:50:59: Chain 'nterm' ('SF1[Nterm]')
+2026-07-08 15:50:59: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:50:59: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/u2af2-sf1/nterm.fasta'
+2026-07-08 15:50:59: 
+2026-07-08 15:50:59: ················································································
+2026-07-08 15:50:59: Parsing SLiMs of 'u2af2-sf1' system to CALVADOS input
+2026-07-08 15:50:59: ················································································
+2026-07-08 15:50:59: SLiM 'rrm3-nterm' ('U2AF2[RRM3]-SF1[Nterm]')
+2026-07-08 15:50:59: 	- Verifying that acceptor 'rrm3' and donor 'nterm' chains are found in system
+2026-07-08 15:50:59: 	- Performing contact analysis
+2026-07-08 15:50:59: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:50:59: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:50:59: 		- Defining contacts
+2026-07-08 15:50:59: 		- Found 34 pairwise contacts
+2026-07-08 15:50:59: 		- Calculating contact distances
+2026-07-08 15:50:59: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:50:59: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:50:59: 	- Excluding 13 contacts
+2026-07-08 15:50:59: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/u2af2-sf1/specific_interactions.txt'
+2026-07-08 15:50:59: 

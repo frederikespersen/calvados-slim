@@ -1,29 +1,29 @@
-2026-07-08 15:01:12: ················································································
-2026-07-08 15:01:12: Parsing chains of 'eps8l1-cd3e' system to CALVADOS input
-2026-07-08 15:01:12: ················································································
-2026-07-08 15:01:12: Chain 'sh3' ('EPS8L1[SH3]')
-2026-07-08 15:01:12: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/2ROL.cif' is specified
-2026-07-08 15:01:12: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/eps8l1-cd3e/sh3.pdb'
-2026-07-08 15:01:13: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
-2026-07-08 15:01:13: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/eps8l1-cd3e/sh3.yaml'
-2026-07-08 15:01:13: 
-2026-07-08 15:01:13: Chain 'pxxdy' ('CD3E[PxxDY]')
-2026-07-08 15:01:13: 	- Parsing chain as an IDP, as no chain PDB is specified
-2026-07-08 15:01:13: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/eps8l1-cd3e/pxxdy.fasta'
-2026-07-08 15:01:13: 
-2026-07-08 15:01:13: ················································································
-2026-07-08 15:01:13: Parsing SLiMs of 'eps8l1-cd3e' system to CALVADOS input
-2026-07-08 15:01:13: ················································································
-2026-07-08 15:01:13: SLiM 'sh3-pxxdy' ('EPS8L1[SH3]-CD3E[PxxDY]')
-2026-07-08 15:01:13: 	- Verifying that acceptor 'sh3' and donor 'pxxdy' chains are found in system
-2026-07-08 15:01:13: 	- Performing contact analysis
-2026-07-08 15:01:13: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
-2026-07-08 15:01:13: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
-2026-07-08 15:01:13: 		- Defining contacts
-2026-07-08 15:01:13: 		- Found 27 pairwise contacts
-2026-07-08 15:01:13: 		- Calculating contact distances
-2026-07-08 15:01:13: 	- Mapping residue indices between System and SLiM constructs
-2026-07-08 15:01:13: 	- Dropping 0 contacts outside the construct windows
-2026-07-08 15:01:13: 	- Excluding 1 contacts
-2026-07-08 15:01:13: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/eps8l1-cd3e/specific_interactions.txt'
-2026-07-08 15:01:13: 
+2026-07-08 15:51:26: ················································································
+2026-07-08 15:51:26: Parsing chains of 'eps8l1-cd3e' system to CALVADOS input
+2026-07-08 15:51:26: ················································································
+2026-07-08 15:51:26: Chain 'sh3' ('EPS8L1[SH3]')
+2026-07-08 15:51:26: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/2ROL.cif' is specified
+2026-07-08 15:51:26: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/eps8l1-cd3e/sh3.pdb'
+2026-07-08 15:51:27: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:51:27: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/eps8l1-cd3e/sh3.yaml'
+2026-07-08 15:51:27: 
+2026-07-08 15:51:27: Chain 'pxxdy' ('CD3E[PxxDY]')
+2026-07-08 15:51:27: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:51:27: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/eps8l1-cd3e/pxxdy.fasta'
+2026-07-08 15:51:27: 
+2026-07-08 15:51:27: ················································································
+2026-07-08 15:51:27: Parsing SLiMs of 'eps8l1-cd3e' system to CALVADOS input
+2026-07-08 15:51:27: ················································································
+2026-07-08 15:51:27: SLiM 'sh3-pxxdy' ('EPS8L1[SH3]-CD3E[PxxDY]')
+2026-07-08 15:51:27: 	- Verifying that acceptor 'sh3' and donor 'pxxdy' chains are found in system
+2026-07-08 15:51:27: 	- Performing contact analysis
+2026-07-08 15:51:27: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:51:27: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:51:27: 		- Defining contacts
+2026-07-08 15:51:27: 		- Found 27 pairwise contacts
+2026-07-08 15:51:27: 		- Calculating contact distances
+2026-07-08 15:51:27: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:51:27: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:51:27: 	- Excluding 1 contacts
+2026-07-08 15:51:27: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/eps8l1-cd3e/specific_interactions.txt'
+2026-07-08 15:51:27: 

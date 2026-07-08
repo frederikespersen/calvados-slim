@@ -1,29 +1,29 @@
-2026-07-08 15:00:36: ················································································
-2026-07-08 15:00:36: Parsing chains of 'ap2b-arrb1' system to CALVADOS input
-2026-07-08 15:00:36: ················································································
-2026-07-08 15:00:36: Chain 'ap2b' ('AP2B1[Appendage]')
-2026-07-08 15:00:36: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/2IV8.cif' is specified
-2026-07-08 15:00:36: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/ap2b-arrb1/ap2b.pdb'
-2026-07-08 15:00:37: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
-2026-07-08 15:00:37: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/ap2b-arrb1/ap2b.yaml'
-2026-07-08 15:00:37: 
-2026-07-08 15:00:37: Chain 'cargo' ('ARRB1[Cargo]')
-2026-07-08 15:00:37: 	- Parsing chain as an IDP, as no chain PDB is specified
-2026-07-08 15:00:37: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/ap2b-arrb1/cargo.fasta'
-2026-07-08 15:00:37: 
-2026-07-08 15:00:37: ················································································
-2026-07-08 15:00:37: Parsing SLiMs of 'ap2b-arrb1' system to CALVADOS input
-2026-07-08 15:00:37: ················································································
-2026-07-08 15:00:37: SLiM 'ap2b-cargo' ('AP2B1[Appendage]-ARRB1[Cargo]')
-2026-07-08 15:00:37: 	- Verifying that acceptor 'ap2b' and donor 'cargo' chains are found in system
-2026-07-08 15:00:37: 	- Performing contact analysis
-2026-07-08 15:00:37: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
-2026-07-08 15:00:37: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
-2026-07-08 15:00:37: 		- Defining contacts
-2026-07-08 15:00:37: 		- Found 37 pairwise contacts
-2026-07-08 15:00:37: 		- Calculating contact distances
-2026-07-08 15:00:37: 	- Mapping residue indices between System and SLiM constructs
-2026-07-08 15:00:37: 	- Dropping 0 contacts outside the construct windows
-2026-07-08 15:00:37: 	- Excluding 0 contacts
-2026-07-08 15:00:37: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/ap2b-arrb1/specific_interactions.txt'
-2026-07-08 15:00:37: 
+2026-07-08 15:50:42: ················································································
+2026-07-08 15:50:42: Parsing chains of 'ap2b-arrb1' system to CALVADOS input
+2026-07-08 15:50:42: ················································································
+2026-07-08 15:50:42: Chain 'ap2b' ('AP2B1[Appendage]')
+2026-07-08 15:50:42: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/2IV8.cif' is specified
+2026-07-08 15:50:42: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/ap2b-arrb1/ap2b.pdb'
+2026-07-08 15:50:42: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:50:42: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/ap2b-arrb1/ap2b.yaml'
+2026-07-08 15:50:42: 
+2026-07-08 15:50:42: Chain 'cargo' ('ARRB1[Cargo]')
+2026-07-08 15:50:42: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:50:42: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/ap2b-arrb1/cargo.fasta'
+2026-07-08 15:50:42: 
+2026-07-08 15:50:42: ················································································
+2026-07-08 15:50:42: Parsing SLiMs of 'ap2b-arrb1' system to CALVADOS input
+2026-07-08 15:50:42: ················································································
+2026-07-08 15:50:42: SLiM 'ap2b-cargo' ('AP2B1[Appendage]-ARRB1[Cargo]')
+2026-07-08 15:50:42: 	- Verifying that acceptor 'ap2b' and donor 'cargo' chains are found in system
+2026-07-08 15:50:42: 	- Performing contact analysis
+2026-07-08 15:50:42: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:50:43: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:50:43: 		- Defining contacts
+2026-07-08 15:50:43: 		- Found 37 pairwise contacts
+2026-07-08 15:50:43: 		- Calculating contact distances
+2026-07-08 15:50:43: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:50:43: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:50:43: 	- Excluding 0 contacts
+2026-07-08 15:50:43: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/ap2b-arrb1/specific_interactions.txt'
+2026-07-08 15:50:43: 

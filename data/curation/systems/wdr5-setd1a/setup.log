@@ -1,29 +1,29 @@
-2026-07-08 15:01:57: ················································································
-2026-07-08 15:01:57: Parsing chains of 'wdr5-setd1a' system to CALVADOS input
-2026-07-08 15:01:57: ················································································
-2026-07-08 15:01:57: Chain 'wdr5' ('WDR5')
-2026-07-08 15:01:57: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/3UVN.cif' is specified
-2026-07-08 15:01:57: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/wdr5-setd1a/wdr5.pdb'
-2026-07-08 15:01:57: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
-2026-07-08 15:01:57: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/wdr5-setd1a/wdr5.yaml'
-2026-07-08 15:01:57: 
-2026-07-08 15:01:57: Chain 'win' ('SETD1A[WIN]')
-2026-07-08 15:01:57: 	- Parsing chain as an IDP, as no chain PDB is specified
-2026-07-08 15:01:57: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/wdr5-setd1a/win.fasta'
-2026-07-08 15:01:57: 
-2026-07-08 15:01:57: ················································································
-2026-07-08 15:01:57: Parsing SLiMs of 'wdr5-setd1a' system to CALVADOS input
-2026-07-08 15:01:57: ················································································
-2026-07-08 15:01:57: SLiM 'wdr5-win' ('WDR5-SETD1A[WIN]')
-2026-07-08 15:01:57: 	- Verifying that acceptor 'wdr5' and donor 'win' chains are found in system
-2026-07-08 15:01:57: 	- Performing contact analysis
-2026-07-08 15:01:57: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
-2026-07-08 15:01:57: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
-2026-07-08 15:01:57: 		- Defining contacts
-2026-07-08 15:01:57: 		- Found 40 pairwise contacts
-2026-07-08 15:01:57: 		- Calculating contact distances
-2026-07-08 15:01:57: 	- Mapping residue indices between System and SLiM constructs
-2026-07-08 15:01:57: 	- Dropping 0 contacts outside the construct windows
-2026-07-08 15:01:57: 	- Excluding 0 contacts
-2026-07-08 15:01:57: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/wdr5-setd1a/specific_interactions.txt'
-2026-07-08 15:01:57: 
+2026-07-08 15:52:21: ················································································
+2026-07-08 15:52:21: Parsing chains of 'wdr5-setd1a' system to CALVADOS input
+2026-07-08 15:52:21: ················································································
+2026-07-08 15:52:21: Chain 'wdr5' ('WDR5')
+2026-07-08 15:52:21: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/3UVN.cif' is specified
+2026-07-08 15:52:21: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/wdr5-setd1a/wdr5.pdb'
+2026-07-08 15:52:21: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:52:21: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/wdr5-setd1a/wdr5.yaml'
+2026-07-08 15:52:21: 
+2026-07-08 15:52:21: Chain 'win' ('SETD1A[WIN]')
+2026-07-08 15:52:21: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:52:21: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/wdr5-setd1a/win.fasta'
+2026-07-08 15:52:21: 
+2026-07-08 15:52:21: ················································································
+2026-07-08 15:52:21: Parsing SLiMs of 'wdr5-setd1a' system to CALVADOS input
+2026-07-08 15:52:21: ················································································
+2026-07-08 15:52:21: SLiM 'wdr5-win' ('WDR5-SETD1A[WIN]')
+2026-07-08 15:52:21: 	- Verifying that acceptor 'wdr5' and donor 'win' chains are found in system
+2026-07-08 15:52:21: 	- Performing contact analysis
+2026-07-08 15:52:21: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:52:21: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:52:21: 		- Defining contacts
+2026-07-08 15:52:21: 		- Found 40 pairwise contacts
+2026-07-08 15:52:21: 		- Calculating contact distances
+2026-07-08 15:52:21: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:52:22: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:52:22: 	- Excluding 0 contacts
+2026-07-08 15:52:22: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/wdr5-setd1a/specific_interactions.txt'
+2026-07-08 15:52:22: 

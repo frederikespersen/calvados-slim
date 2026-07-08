@@ -1,29 +1,29 @@
-2026-07-08 15:03:51: ················································································
-2026-07-08 15:03:51: Parsing chains of 'pir2-red1' system to CALVADOS input
-2026-07-08 15:03:51: ················································································
-2026-07-08 15:03:51: Chain 'ars2c' ('PIR2[ARS2Cterm]')
-2026-07-08 15:03:51: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/7QY5.cif' is specified
-2026-07-08 15:03:51: 	- Selecting chain 'B' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pir2-red1/ars2c.pdb'
-2026-07-08 15:03:52: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
-2026-07-08 15:03:52: 	- Writing chain 'B' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pir2-red1/ars2c.yaml'
-2026-07-08 15:03:52: 
-2026-07-08 15:03:52: Chain 'red1' ('RED1[EDGEI]')
-2026-07-08 15:03:52: 	- Parsing chain as an IDP, as no chain PDB is specified
-2026-07-08 15:03:52: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pir2-red1/red1.fasta'
-2026-07-08 15:03:52: 
-2026-07-08 15:03:52: ················································································
-2026-07-08 15:03:52: Parsing SLiMs of 'pir2-red1' system to CALVADOS input
-2026-07-08 15:03:52: ················································································
-2026-07-08 15:03:52: SLiM 'ars2c-red1' ('PIR2[ARS2Cterm]-RED1[EDGEI]')
-2026-07-08 15:03:52: 	- Verifying that acceptor 'ars2c' and donor 'red1' chains are found in system
-2026-07-08 15:03:52: 	- Performing contact analysis
-2026-07-08 15:03:52: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
-2026-07-08 15:03:52: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
-2026-07-08 15:03:52: 		- Defining contacts
-2026-07-08 15:03:52: 		- Found 20 pairwise contacts
-2026-07-08 15:03:52: 		- Calculating contact distances
-2026-07-08 15:03:52: 	- Mapping residue indices between System and SLiM constructs
-2026-07-08 15:03:52: 	- Dropping 0 contacts outside the construct windows
-2026-07-08 15:03:52: 	- Excluding 0 contacts
-2026-07-08 15:03:52: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pir2-red1/specific_interactions.txt'
-2026-07-08 15:03:52: 
+2026-07-08 15:54:34: ················································································
+2026-07-08 15:54:34: Parsing chains of 'pir2-red1' system to CALVADOS input
+2026-07-08 15:54:34: ················································································
+2026-07-08 15:54:34: Chain 'ars2c' ('PIR2[ARS2Cterm]')
+2026-07-08 15:54:34: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/7QY5.cif' is specified
+2026-07-08 15:54:34: 	- Selecting chain 'B' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pir2-red1/ars2c.pdb'
+2026-07-08 15:54:35: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:54:35: 	- Writing chain 'B' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pir2-red1/ars2c.yaml'
+2026-07-08 15:54:35: 
+2026-07-08 15:54:35: Chain 'red1' ('RED1[EDGEI]')
+2026-07-08 15:54:35: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:54:35: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pir2-red1/red1.fasta'
+2026-07-08 15:54:35: 
+2026-07-08 15:54:35: ················································································
+2026-07-08 15:54:35: Parsing SLiMs of 'pir2-red1' system to CALVADOS input
+2026-07-08 15:54:35: ················································································
+2026-07-08 15:54:35: SLiM 'ars2c-red1' ('PIR2[ARS2Cterm]-RED1[EDGEI]')
+2026-07-08 15:54:35: 	- Verifying that acceptor 'ars2c' and donor 'red1' chains are found in system
+2026-07-08 15:54:35: 	- Performing contact analysis
+2026-07-08 15:54:35: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:54:35: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:54:35: 		- Defining contacts
+2026-07-08 15:54:35: 		- Found 20 pairwise contacts
+2026-07-08 15:54:35: 		- Calculating contact distances
+2026-07-08 15:54:35: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:54:35: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:54:35: 	- Excluding 0 contacts
+2026-07-08 15:54:35: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pir2-red1/specific_interactions.txt'
+2026-07-08 15:54:35: 

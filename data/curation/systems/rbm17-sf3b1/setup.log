@@ -1,29 +1,29 @@
-2026-07-08 15:01:20: ················································································
-2026-07-08 15:01:20: Parsing chains of 'rbm17-sf3b1' system to CALVADOS input
-2026-07-08 15:01:20: ················································································
-2026-07-08 15:01:20: Chain 'uhm' ('RBM17[UHM]')
-2026-07-08 15:01:20: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/2PEH.cif' is specified
-2026-07-08 15:01:20: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/rbm17-sf3b1/uhm.pdb'
-2026-07-08 15:01:20: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
-2026-07-08 15:01:20: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/rbm17-sf3b1/uhm.yaml'
-2026-07-08 15:01:20: 
-2026-07-08 15:01:20: Chain 'ulm' ('SF3B1[ULM]')
-2026-07-08 15:01:20: 	- Parsing chain as an IDP, as no chain PDB is specified
-2026-07-08 15:01:20: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/rbm17-sf3b1/ulm.fasta'
-2026-07-08 15:01:20: 
-2026-07-08 15:01:20: ················································································
-2026-07-08 15:01:20: Parsing SLiMs of 'rbm17-sf3b1' system to CALVADOS input
-2026-07-08 15:01:20: ················································································
-2026-07-08 15:01:20: SLiM 'uhm-ulm' ('RBM17[UHM]-SF3B1[ULM]')
-2026-07-08 15:01:20: 	- Verifying that acceptor 'uhm' and donor 'ulm' chains are found in system
-2026-07-08 15:01:20: 	- Performing contact analysis
-2026-07-08 15:01:20: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
-2026-07-08 15:01:20: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
-2026-07-08 15:01:20: 		- Defining contacts
-2026-07-08 15:01:20: 		- Found 28 pairwise contacts
-2026-07-08 15:01:20: 		- Calculating contact distances
-2026-07-08 15:01:20: 	- Mapping residue indices between System and SLiM constructs
-2026-07-08 15:01:20: 	- Dropping 0 contacts outside the construct windows
-2026-07-08 15:01:20: 	- Excluding 0 contacts
-2026-07-08 15:01:20: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/rbm17-sf3b1/specific_interactions.txt'
-2026-07-08 15:01:20: 
+2026-07-08 15:51:36: ················································································
+2026-07-08 15:51:36: Parsing chains of 'rbm17-sf3b1' system to CALVADOS input
+2026-07-08 15:51:36: ················································································
+2026-07-08 15:51:36: Chain 'uhm' ('RBM17[UHM]')
+2026-07-08 15:51:36: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/2PEH.cif' is specified
+2026-07-08 15:51:36: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/rbm17-sf3b1/uhm.pdb'
+2026-07-08 15:51:37: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:51:37: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/rbm17-sf3b1/uhm.yaml'
+2026-07-08 15:51:37: 
+2026-07-08 15:51:37: Chain 'ulm' ('SF3B1[ULM]')
+2026-07-08 15:51:37: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:51:37: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/rbm17-sf3b1/ulm.fasta'
+2026-07-08 15:51:37: 
+2026-07-08 15:51:37: ················································································
+2026-07-08 15:51:37: Parsing SLiMs of 'rbm17-sf3b1' system to CALVADOS input
+2026-07-08 15:51:37: ················································································
+2026-07-08 15:51:37: SLiM 'uhm-ulm' ('RBM17[UHM]-SF3B1[ULM]')
+2026-07-08 15:51:37: 	- Verifying that acceptor 'uhm' and donor 'ulm' chains are found in system
+2026-07-08 15:51:37: 	- Performing contact analysis
+2026-07-08 15:51:37: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:51:37: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:51:37: 		- Defining contacts
+2026-07-08 15:51:37: 		- Found 28 pairwise contacts
+2026-07-08 15:51:37: 		- Calculating contact distances
+2026-07-08 15:51:37: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:51:37: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:51:37: 	- Excluding 0 contacts
+2026-07-08 15:51:37: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/rbm17-sf3b1/specific_interactions.txt'
+2026-07-08 15:51:37: 

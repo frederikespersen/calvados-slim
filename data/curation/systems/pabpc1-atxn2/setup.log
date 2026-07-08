@@ -1,29 +1,29 @@
-2026-07-08 15:02:02: ················································································
-2026-07-08 15:02:02: Parsing chains of 'pabpc1-atxn2' system to CALVADOS input
-2026-07-08 15:02:02: ················································································
-2026-07-08 15:02:02: Chain 'mlle' ('PABPC1[MLLE]')
-2026-07-08 15:02:02: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/3KTR.cif' is specified
-2026-07-08 15:02:02: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pabpc1-atxn2/mlle.pdb'
-2026-07-08 15:02:02: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
-2026-07-08 15:02:02: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pabpc1-atxn2/mlle.yaml'
-2026-07-08 15:02:02: 
-2026-07-08 15:02:02: Chain 'pam2' ('ATXN2[PAM2]')
-2026-07-08 15:02:02: 	- Parsing chain as an IDP, as no chain PDB is specified
-2026-07-08 15:02:02: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pabpc1-atxn2/pam2.fasta'
-2026-07-08 15:02:02: 
-2026-07-08 15:02:02: ················································································
-2026-07-08 15:02:02: Parsing SLiMs of 'pabpc1-atxn2' system to CALVADOS input
-2026-07-08 15:02:02: ················································································
-2026-07-08 15:02:02: SLiM 'mlle-pam2' ('PABPC1[MLLE]-ATXN2[PAM2]')
-2026-07-08 15:02:02: 	- Verifying that acceptor 'mlle' and donor 'pam2' chains are found in system
-2026-07-08 15:02:02: 	- Performing contact analysis
-2026-07-08 15:02:02: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
-2026-07-08 15:02:03: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
-2026-07-08 15:02:03: 		- Defining contacts
-2026-07-08 15:02:03: 		- Found 44 pairwise contacts
-2026-07-08 15:02:03: 		- Calculating contact distances
-2026-07-08 15:02:03: 	- Mapping residue indices between System and SLiM constructs
-2026-07-08 15:02:03: 	- Dropping 0 contacts outside the construct windows
-2026-07-08 15:02:03: 	- Excluding 0 contacts
-2026-07-08 15:02:03: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pabpc1-atxn2/specific_interactions.txt'
-2026-07-08 15:02:03: 
+2026-07-08 15:52:27: ················································································
+2026-07-08 15:52:27: Parsing chains of 'pabpc1-atxn2' system to CALVADOS input
+2026-07-08 15:52:27: ················································································
+2026-07-08 15:52:27: Chain 'mlle' ('PABPC1[MLLE]')
+2026-07-08 15:52:27: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/3KTR.cif' is specified
+2026-07-08 15:52:27: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pabpc1-atxn2/mlle.pdb'
+2026-07-08 15:52:27: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:52:27: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pabpc1-atxn2/mlle.yaml'
+2026-07-08 15:52:27: 
+2026-07-08 15:52:27: Chain 'pam2' ('ATXN2[PAM2]')
+2026-07-08 15:52:27: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:52:27: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pabpc1-atxn2/pam2.fasta'
+2026-07-08 15:52:27: 
+2026-07-08 15:52:27: ················································································
+2026-07-08 15:52:27: Parsing SLiMs of 'pabpc1-atxn2' system to CALVADOS input
+2026-07-08 15:52:27: ················································································
+2026-07-08 15:52:27: SLiM 'mlle-pam2' ('PABPC1[MLLE]-ATXN2[PAM2]')
+2026-07-08 15:52:27: 	- Verifying that acceptor 'mlle' and donor 'pam2' chains are found in system
+2026-07-08 15:52:27: 	- Performing contact analysis
+2026-07-08 15:52:27: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:52:27: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:52:27: 		- Defining contacts
+2026-07-08 15:52:27: 		- Found 44 pairwise contacts
+2026-07-08 15:52:27: 		- Calculating contact distances
+2026-07-08 15:52:27: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:52:27: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:52:27: 	- Excluding 0 contacts
+2026-07-08 15:52:27: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pabpc1-atxn2/specific_interactions.txt'
+2026-07-08 15:52:27: 

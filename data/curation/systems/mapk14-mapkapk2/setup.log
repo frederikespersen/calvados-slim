@@ -1,29 +1,29 @@
-2026-07-08 15:02:00: ················································································
-2026-07-08 15:02:00: Parsing chains of 'mapk14-mapkapk2' system to CALVADOS input
-2026-07-08 15:02:00: ················································································
-2026-07-08 15:02:00: Chain 'p38a' ('MAPK14')
-2026-07-08 15:02:00: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/2OKR.cif' is specified
-2026-07-08 15:02:00: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/mapk14-mapkapk2/p38a.pdb'
-2026-07-08 15:02:01: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
-2026-07-08 15:02:01: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/mapk14-mapkapk2/p38a.yaml'
-2026-07-08 15:02:01: 
-2026-07-08 15:02:01: Chain 'def' ('MAPKAPK2[DEF]')
-2026-07-08 15:02:01: 	- Parsing chain as an IDP, as no chain PDB is specified
-2026-07-08 15:02:01: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/mapk14-mapkapk2/def.fasta'
-2026-07-08 15:02:01: 
-2026-07-08 15:02:01: ················································································
-2026-07-08 15:02:01: Parsing SLiMs of 'mapk14-mapkapk2' system to CALVADOS input
-2026-07-08 15:02:01: ················································································
-2026-07-08 15:02:01: SLiM 'p38a-def' ('MAPK14-MAPKAPK2[DEF]')
-2026-07-08 15:02:01: 	- Verifying that acceptor 'p38a' and donor 'def' chains are found in system
-2026-07-08 15:02:01: 	- Performing contact analysis
-2026-07-08 15:02:01: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
-2026-07-08 15:02:01: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
-2026-07-08 15:02:01: 		- Defining contacts
-2026-07-08 15:02:01: 		- Found 58 pairwise contacts
-2026-07-08 15:02:01: 		- Calculating contact distances
-2026-07-08 15:02:01: 	- Mapping residue indices between System and SLiM constructs
-2026-07-08 15:02:01: 	- Dropping 0 contacts outside the construct windows
-2026-07-08 15:02:01: 	- Excluding 0 contacts
-2026-07-08 15:02:01: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/mapk14-mapkapk2/specific_interactions.txt'
-2026-07-08 15:02:01: 
+2026-07-08 15:52:24: ················································································
+2026-07-08 15:52:24: Parsing chains of 'mapk14-mapkapk2' system to CALVADOS input
+2026-07-08 15:52:24: ················································································
+2026-07-08 15:52:24: Chain 'p38a' ('MAPK14')
+2026-07-08 15:52:24: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/2OKR.cif' is specified
+2026-07-08 15:52:24: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/mapk14-mapkapk2/p38a.pdb'
+2026-07-08 15:52:26: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:52:26: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/mapk14-mapkapk2/p38a.yaml'
+2026-07-08 15:52:26: 
+2026-07-08 15:52:26: Chain 'def' ('MAPKAPK2[DEF]')
+2026-07-08 15:52:26: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:52:26: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/mapk14-mapkapk2/def.fasta'
+2026-07-08 15:52:26: 
+2026-07-08 15:52:26: ················································································
+2026-07-08 15:52:26: Parsing SLiMs of 'mapk14-mapkapk2' system to CALVADOS input
+2026-07-08 15:52:26: ················································································
+2026-07-08 15:52:26: SLiM 'p38a-def' ('MAPK14-MAPKAPK2[DEF]')
+2026-07-08 15:52:26: 	- Verifying that acceptor 'p38a' and donor 'def' chains are found in system
+2026-07-08 15:52:26: 	- Performing contact analysis
+2026-07-08 15:52:26: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:52:26: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:52:26: 		- Defining contacts
+2026-07-08 15:52:26: 		- Found 58 pairwise contacts
+2026-07-08 15:52:26: 		- Calculating contact distances
+2026-07-08 15:52:26: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:52:26: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:52:26: 	- Excluding 0 contacts
+2026-07-08 15:52:26: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/mapk14-mapkapk2/specific_interactions.txt'
+2026-07-08 15:52:26: 

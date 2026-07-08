@@ -1,29 +1,29 @@
-2026-07-08 15:02:52: ················································································
-2026-07-08 15:02:52: Parsing chains of 'usp7-icp0' system to CALVADOS input
-2026-07-08 15:02:52: ················································································
-2026-07-08 15:02:52: Chain 'ubl123' ('USP7[Ubl123]')
-2026-07-08 15:02:52: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/4WPH.cif' is specified
-2026-07-08 15:02:52: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/usp7-icp0/ubl123.pdb'
-2026-07-08 15:02:54: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
-2026-07-08 15:02:54: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/usp7-icp0/ubl123.yaml'
-2026-07-08 15:02:54: 
-2026-07-08 15:02:54: Chain 'peptide' ('ICP0[peptide]')
-2026-07-08 15:02:54: 	- Parsing chain as an IDP, as no chain PDB is specified
-2026-07-08 15:02:54: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/usp7-icp0/peptide.fasta'
-2026-07-08 15:02:54: 
-2026-07-08 15:02:54: ················································································
-2026-07-08 15:02:54: Parsing SLiMs of 'usp7-icp0' system to CALVADOS input
-2026-07-08 15:02:54: ················································································
-2026-07-08 15:02:54: SLiM 'ubl123-peptide' ('USP7[Ubl123]-ICP0[peptide]')
-2026-07-08 15:02:54: 	- Verifying that acceptor 'ubl123' and donor 'peptide' chains are found in system
-2026-07-08 15:02:54: 	- Performing contact analysis
-2026-07-08 15:02:54: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
-2026-07-08 15:02:54: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
-2026-07-08 15:02:54: 		- Defining contacts
-2026-07-08 15:02:54: 		- Found 36 pairwise contacts
-2026-07-08 15:02:54: 		- Calculating contact distances
-2026-07-08 15:02:54: 	- Mapping residue indices between System and SLiM constructs
-2026-07-08 15:02:54: 	- Dropping 0 contacts outside the construct windows
-2026-07-08 15:02:54: 	- Excluding 0 contacts
-2026-07-08 15:02:54: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/usp7-icp0/specific_interactions.txt'
-2026-07-08 15:02:54: 
+2026-07-08 15:53:26: ················································································
+2026-07-08 15:53:26: Parsing chains of 'usp7-icp0' system to CALVADOS input
+2026-07-08 15:53:26: ················································································
+2026-07-08 15:53:26: Chain 'ubl123' ('USP7[Ubl123]')
+2026-07-08 15:53:26: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/4WPH.cif' is specified
+2026-07-08 15:53:26: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/usp7-icp0/ubl123.pdb'
+2026-07-08 15:53:28: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:53:28: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/usp7-icp0/ubl123.yaml'
+2026-07-08 15:53:28: 
+2026-07-08 15:53:28: Chain 'peptide' ('ICP0[peptide]')
+2026-07-08 15:53:28: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:53:28: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/usp7-icp0/peptide.fasta'
+2026-07-08 15:53:28: 
+2026-07-08 15:53:28: ················································································
+2026-07-08 15:53:28: Parsing SLiMs of 'usp7-icp0' system to CALVADOS input
+2026-07-08 15:53:28: ················································································
+2026-07-08 15:53:28: SLiM 'ubl123-peptide' ('USP7[Ubl123]-ICP0[peptide]')
+2026-07-08 15:53:28: 	- Verifying that acceptor 'ubl123' and donor 'peptide' chains are found in system
+2026-07-08 15:53:28: 	- Performing contact analysis
+2026-07-08 15:53:28: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:53:28: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:53:28: 		- Defining contacts
+2026-07-08 15:53:28: 		- Found 36 pairwise contacts
+2026-07-08 15:53:28: 		- Calculating contact distances
+2026-07-08 15:53:28: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:53:28: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:53:28: 	- Excluding 0 contacts
+2026-07-08 15:53:28: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/usp7-icp0/specific_interactions.txt'
+2026-07-08 15:53:28: 

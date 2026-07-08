@@ -1,29 +1,29 @@
-2026-07-08 15:01:06: ················································································
-2026-07-08 15:01:06: Parsing chains of 'traf3-ltbr' system to CALVADOS input
-2026-07-08 15:01:06: ················································································
-2026-07-08 15:01:06: Chain 'math' ('TRAF3[MATH]')
-2026-07-08 15:01:06: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/1RF3.cif' is specified
-2026-07-08 15:01:06: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/traf3-ltbr/math.pdb'
-2026-07-08 15:01:06: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
-2026-07-08 15:01:06: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/traf3-ltbr/math.yaml'
-2026-07-08 15:01:06: 
-2026-07-08 15:01:06: Chain 'pxp' ('LTBR[PxP]')
-2026-07-08 15:01:06: 	- Parsing chain as an IDP, as no chain PDB is specified
-2026-07-08 15:01:06: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/traf3-ltbr/pxp.fasta'
-2026-07-08 15:01:06: 
-2026-07-08 15:01:06: ················································································
-2026-07-08 15:01:06: Parsing SLiMs of 'traf3-ltbr' system to CALVADOS input
-2026-07-08 15:01:06: ················································································
-2026-07-08 15:01:06: SLiM 'math-pxp' ('TRAF3[MATH]-LTBR[PxP]')
-2026-07-08 15:01:06: 	- Verifying that acceptor 'math' and donor 'pxp' chains are found in system
-2026-07-08 15:01:06: 	- Performing contact analysis
-2026-07-08 15:01:06: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
-2026-07-08 15:01:06: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
-2026-07-08 15:01:06: 		- Defining contacts
-2026-07-08 15:01:06: 		- Found 42 pairwise contacts
-2026-07-08 15:01:06: 		- Calculating contact distances
-2026-07-08 15:01:06: 	- Mapping residue indices between System and SLiM constructs
-2026-07-08 15:01:06: 	- Dropping 0 contacts outside the construct windows
-2026-07-08 15:01:06: 	- Excluding 0 contacts
-2026-07-08 15:01:06: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/traf3-ltbr/specific_interactions.txt'
-2026-07-08 15:01:06: 
+2026-07-08 15:51:18: ················································································
+2026-07-08 15:51:18: Parsing chains of 'traf3-ltbr' system to CALVADOS input
+2026-07-08 15:51:18: ················································································
+2026-07-08 15:51:18: Chain 'math' ('TRAF3[MATH]')
+2026-07-08 15:51:18: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/1RF3.cif' is specified
+2026-07-08 15:51:18: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/traf3-ltbr/math.pdb'
+2026-07-08 15:51:18: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:51:18: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/traf3-ltbr/math.yaml'
+2026-07-08 15:51:18: 
+2026-07-08 15:51:18: Chain 'pxp' ('LTBR[PxP]')
+2026-07-08 15:51:18: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:51:18: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/traf3-ltbr/pxp.fasta'
+2026-07-08 15:51:18: 
+2026-07-08 15:51:18: ················································································
+2026-07-08 15:51:18: Parsing SLiMs of 'traf3-ltbr' system to CALVADOS input
+2026-07-08 15:51:18: ················································································
+2026-07-08 15:51:18: SLiM 'math-pxp' ('TRAF3[MATH]-LTBR[PxP]')
+2026-07-08 15:51:18: 	- Verifying that acceptor 'math' and donor 'pxp' chains are found in system
+2026-07-08 15:51:18: 	- Performing contact analysis
+2026-07-08 15:51:18: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:51:19: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:51:19: 		- Defining contacts
+2026-07-08 15:51:19: 		- Found 42 pairwise contacts
+2026-07-08 15:51:19: 		- Calculating contact distances
+2026-07-08 15:51:19: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:51:19: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:51:19: 	- Excluding 0 contacts
+2026-07-08 15:51:19: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/traf3-ltbr/specific_interactions.txt'
+2026-07-08 15:51:19: 

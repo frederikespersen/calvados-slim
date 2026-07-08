@@ -1,29 +1,29 @@
-2026-07-08 15:01:02: ················································································
-2026-07-08 15:01:02: Parsing chains of 'ap2a-amph' system to CALVADOS input
-2026-07-08 15:01:02: ················································································
-2026-07-08 15:01:02: Chain 'ear' ('AP2A[ear]')
-2026-07-08 15:01:02: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/1KY7.cif' is specified
-2026-07-08 15:01:02: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/ap2a-amph/ear.pdb'
-2026-07-08 15:01:02: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
-2026-07-08 15:01:02: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/ap2a-amph/ear.yaml'
-2026-07-08 15:01:02: 
-2026-07-08 15:01:02: Chain 'fxdxf' ('AMPH[FxDxF]')
-2026-07-08 15:01:02: 	- Parsing chain as an IDP, as no chain PDB is specified
-2026-07-08 15:01:02: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/ap2a-amph/fxdxf.fasta'
-2026-07-08 15:01:02: 
-2026-07-08 15:01:02: ················································································
-2026-07-08 15:01:02: Parsing SLiMs of 'ap2a-amph' system to CALVADOS input
-2026-07-08 15:01:02: ················································································
-2026-07-08 15:01:02: SLiM 'ear-fxdxf' ('AP2A[ear]-AMPH[FxDxF]')
-2026-07-08 15:01:02: 	- Verifying that acceptor 'ear' and donor 'fxdxf' chains are found in system
-2026-07-08 15:01:02: 	- Performing contact analysis
-2026-07-08 15:01:02: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
-2026-07-08 15:01:02: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
-2026-07-08 15:01:02: 		- Defining contacts
-2026-07-08 15:01:02: 		- Found 34 pairwise contacts
-2026-07-08 15:01:02: 		- Calculating contact distances
-2026-07-08 15:01:02: 	- Mapping residue indices between System and SLiM constructs
-2026-07-08 15:01:02: 	- Dropping 0 contacts outside the construct windows
-2026-07-08 15:01:02: 	- Excluding 0 contacts
-2026-07-08 15:01:02: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/ap2a-amph/specific_interactions.txt'
-2026-07-08 15:01:02: 
+2026-07-08 15:51:13: ················································································
+2026-07-08 15:51:13: Parsing chains of 'ap2a-amph' system to CALVADOS input
+2026-07-08 15:51:13: ················································································
+2026-07-08 15:51:13: Chain 'ear' ('AP2A[ear]')
+2026-07-08 15:51:13: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/1KY7.cif' is specified
+2026-07-08 15:51:13: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/ap2a-amph/ear.pdb'
+2026-07-08 15:51:13: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:51:13: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/ap2a-amph/ear.yaml'
+2026-07-08 15:51:13: 
+2026-07-08 15:51:13: Chain 'fxdxf' ('AMPH[FxDxF]')
+2026-07-08 15:51:13: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:51:13: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/ap2a-amph/fxdxf.fasta'
+2026-07-08 15:51:13: 
+2026-07-08 15:51:13: ················································································
+2026-07-08 15:51:13: Parsing SLiMs of 'ap2a-amph' system to CALVADOS input
+2026-07-08 15:51:13: ················································································
+2026-07-08 15:51:13: SLiM 'ear-fxdxf' ('AP2A[ear]-AMPH[FxDxF]')
+2026-07-08 15:51:13: 	- Verifying that acceptor 'ear' and donor 'fxdxf' chains are found in system
+2026-07-08 15:51:13: 	- Performing contact analysis
+2026-07-08 15:51:13: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:51:13: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:51:13: 		- Defining contacts
+2026-07-08 15:51:13: 		- Found 34 pairwise contacts
+2026-07-08 15:51:13: 		- Calculating contact distances
+2026-07-08 15:51:13: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:51:13: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:51:13: 	- Excluding 0 contacts
+2026-07-08 15:51:13: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/ap2a-amph/specific_interactions.txt'
+2026-07-08 15:51:13: 

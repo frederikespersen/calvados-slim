@@ -1,29 +1,29 @@
-2026-07-08 15:00:43: ················································································
-2026-07-08 15:00:43: Parsing chains of 'ccna2-cdc6' system to CALVADOS input
-2026-07-08 15:00:43: ················································································
-2026-07-08 15:00:43: Chain 'cyclin' ('CCNA2[Cyclin]')
-2026-07-08 15:00:43: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/2CCH.cif' is specified
-2026-07-08 15:00:43: 	- Selecting chain 'B' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/ccna2-cdc6/cyclin.pdb'
-2026-07-08 15:00:43: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
-2026-07-08 15:00:43: 	- Writing chain 'B' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/ccna2-cdc6/cyclin.yaml'
-2026-07-08 15:00:43: 
-2026-07-08 15:00:43: Chain 'rxl' ('CDC6[RxL]')
-2026-07-08 15:00:43: 	- Parsing chain as an IDP, as no chain PDB is specified
-2026-07-08 15:00:43: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/ccna2-cdc6/rxl.fasta'
-2026-07-08 15:00:43: 
-2026-07-08 15:00:43: ················································································
-2026-07-08 15:00:43: Parsing SLiMs of 'ccna2-cdc6' system to CALVADOS input
-2026-07-08 15:00:43: ················································································
-2026-07-08 15:00:43: SLiM 'cyclin-rxl' ('CCNA2[Cyclin]-CDC6[RxL]')
-2026-07-08 15:00:43: 	- Verifying that acceptor 'cyclin' and donor 'rxl' chains are found in system
-2026-07-08 15:00:43: 	- Performing contact analysis
-2026-07-08 15:00:43: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
-2026-07-08 15:00:43: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
-2026-07-08 15:00:43: 		- Defining contacts
-2026-07-08 15:00:43: 		- Found 37 pairwise contacts
-2026-07-08 15:00:43: 		- Calculating contact distances
-2026-07-08 15:00:44: 	- Mapping residue indices between System and SLiM constructs
-2026-07-08 15:00:44: 	- Dropping 0 contacts outside the construct windows
-2026-07-08 15:00:44: 	- Excluding 0 contacts
-2026-07-08 15:00:44: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/ccna2-cdc6/specific_interactions.txt'
-2026-07-08 15:00:44: 
+2026-07-08 15:50:50: ················································································
+2026-07-08 15:50:50: Parsing chains of 'ccna2-cdc6' system to CALVADOS input
+2026-07-08 15:50:50: ················································································
+2026-07-08 15:50:50: Chain 'cyclin' ('CCNA2[Cyclin]')
+2026-07-08 15:50:50: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/2CCH.cif' is specified
+2026-07-08 15:50:50: 	- Selecting chain 'B' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/ccna2-cdc6/cyclin.pdb'
+2026-07-08 15:50:51: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:50:51: 	- Writing chain 'B' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/ccna2-cdc6/cyclin.yaml'
+2026-07-08 15:50:51: 
+2026-07-08 15:50:51: Chain 'rxl' ('CDC6[RxL]')
+2026-07-08 15:50:51: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:50:51: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/ccna2-cdc6/rxl.fasta'
+2026-07-08 15:50:51: 
+2026-07-08 15:50:51: ················································································
+2026-07-08 15:50:51: Parsing SLiMs of 'ccna2-cdc6' system to CALVADOS input
+2026-07-08 15:50:51: ················································································
+2026-07-08 15:50:51: SLiM 'cyclin-rxl' ('CCNA2[Cyclin]-CDC6[RxL]')
+2026-07-08 15:50:51: 	- Verifying that acceptor 'cyclin' and donor 'rxl' chains are found in system
+2026-07-08 15:50:51: 	- Performing contact analysis
+2026-07-08 15:50:51: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:50:51: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:50:51: 		- Defining contacts
+2026-07-08 15:50:51: 		- Found 37 pairwise contacts
+2026-07-08 15:50:51: 		- Calculating contact distances
+2026-07-08 15:50:51: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:50:51: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:50:51: 	- Excluding 0 contacts
+2026-07-08 15:50:51: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/ccna2-cdc6/specific_interactions.txt'
+2026-07-08 15:50:51: 

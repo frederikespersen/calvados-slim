@@ -1,29 +1,29 @@
-2026-07-08 15:01:51: ················································································
-2026-07-08 15:01:51: Parsing chains of 'gads-slp76' system to CALVADOS input
-2026-07-08 15:01:51: ················································································
-2026-07-08 15:01:51: Chain 'sh3' ('GADS[SH3]')
-2026-07-08 15:01:51: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/1H3H.cif' is specified
-2026-07-08 15:01:51: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/gads-slp76/sh3.pdb'
-2026-07-08 15:01:52: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
-2026-07-08 15:01:52: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/gads-slp76/sh3.yaml'
-2026-07-08 15:01:52: 
-2026-07-08 15:01:52: Chain 'rxxk' ('SLP76[RxxK]')
-2026-07-08 15:01:52: 	- Parsing chain as an IDP, as no chain PDB is specified
-2026-07-08 15:01:52: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/gads-slp76/rxxk.fasta'
-2026-07-08 15:01:52: 
-2026-07-08 15:01:52: ················································································
-2026-07-08 15:01:52: Parsing SLiMs of 'gads-slp76' system to CALVADOS input
-2026-07-08 15:01:52: ················································································
-2026-07-08 15:01:52: SLiM 'sh3-rxxk' ('GADS[SH3]-SLP76[RxxK]')
-2026-07-08 15:01:52: 	- Verifying that acceptor 'sh3' and donor 'rxxk' chains are found in system
-2026-07-08 15:01:52: 	- Performing contact analysis
-2026-07-08 15:01:52: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
-2026-07-08 15:01:52: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
-2026-07-08 15:01:52: 		- Defining contacts
-2026-07-08 15:01:52: 		- Found 31 pairwise contacts
-2026-07-08 15:01:52: 		- Calculating contact distances
-2026-07-08 15:01:52: 	- Mapping residue indices between System and SLiM constructs
-2026-07-08 15:01:52: 	- Dropping 0 contacts outside the construct windows
-2026-07-08 15:01:52: 	- Excluding 0 contacts
-2026-07-08 15:01:52: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/gads-slp76/specific_interactions.txt'
-2026-07-08 15:01:52: 
+2026-07-08 15:52:14: ················································································
+2026-07-08 15:52:14: Parsing chains of 'gads-slp76' system to CALVADOS input
+2026-07-08 15:52:14: ················································································
+2026-07-08 15:52:14: Chain 'sh3' ('GADS[SH3]')
+2026-07-08 15:52:14: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/1H3H.cif' is specified
+2026-07-08 15:52:14: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/gads-slp76/sh3.pdb'
+2026-07-08 15:52:15: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:52:15: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/gads-slp76/sh3.yaml'
+2026-07-08 15:52:15: 
+2026-07-08 15:52:15: Chain 'rxxk' ('SLP76[RxxK]')
+2026-07-08 15:52:15: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:52:15: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/gads-slp76/rxxk.fasta'
+2026-07-08 15:52:15: 
+2026-07-08 15:52:15: ················································································
+2026-07-08 15:52:15: Parsing SLiMs of 'gads-slp76' system to CALVADOS input
+2026-07-08 15:52:15: ················································································
+2026-07-08 15:52:15: SLiM 'sh3-rxxk' ('GADS[SH3]-SLP76[RxxK]')
+2026-07-08 15:52:15: 	- Verifying that acceptor 'sh3' and donor 'rxxk' chains are found in system
+2026-07-08 15:52:15: 	- Performing contact analysis
+2026-07-08 15:52:15: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:52:15: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:52:15: 		- Defining contacts
+2026-07-08 15:52:15: 		- Found 31 pairwise contacts
+2026-07-08 15:52:15: 		- Calculating contact distances
+2026-07-08 15:52:15: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:52:15: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:52:15: 	- Excluding 0 contacts
+2026-07-08 15:52:15: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/gads-slp76/specific_interactions.txt'
+2026-07-08 15:52:15: 

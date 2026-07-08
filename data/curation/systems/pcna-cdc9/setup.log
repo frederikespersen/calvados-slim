@@ -1,29 +1,29 @@
-2026-07-08 15:03:49: ················································································
-2026-07-08 15:03:49: Parsing chains of 'pcna-cdc9' system to CALVADOS input
-2026-07-08 15:03:49: ················································································
-2026-07-08 15:03:49: Chain 'pcna' ('PCNA')
-2026-07-08 15:03:49: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/2OD8.cif' is specified
-2026-07-08 15:03:49: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pcna-cdc9/pcna.pdb'
-2026-07-08 15:03:49: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
-2026-07-08 15:03:49: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pcna-cdc9/pcna.yaml'
-2026-07-08 15:03:49: 
-2026-07-08 15:03:49: Chain 'cdc9' ('CDC9[PIP]')
-2026-07-08 15:03:49: 	- Parsing chain as an IDP, as no chain PDB is specified
-2026-07-08 15:03:49: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pcna-cdc9/cdc9.fasta'
-2026-07-08 15:03:49: 
-2026-07-08 15:03:49: ················································································
-2026-07-08 15:03:49: Parsing SLiMs of 'pcna-cdc9' system to CALVADOS input
-2026-07-08 15:03:49: ················································································
-2026-07-08 15:03:49: SLiM 'pcna-cdc9' ('PCNA-CDC9[PIP]')
-2026-07-08 15:03:49: 	- Verifying that acceptor 'pcna' and donor 'cdc9' chains are found in system
-2026-07-08 15:03:49: 	- Performing contact analysis
-2026-07-08 15:03:49: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
-2026-07-08 15:03:49: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
-2026-07-08 15:03:49: 		- Defining contacts
-2026-07-08 15:03:49: 		- Found 42 pairwise contacts
-2026-07-08 15:03:49: 		- Calculating contact distances
-2026-07-08 15:03:49: 	- Mapping residue indices between System and SLiM constructs
-2026-07-08 15:03:49: 	- Dropping 0 contacts outside the construct windows
-2026-07-08 15:03:49: 	- Excluding 0 contacts
-2026-07-08 15:03:49: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pcna-cdc9/specific_interactions.txt'
-2026-07-08 15:03:49: 
+2026-07-08 15:54:31: ················································································
+2026-07-08 15:54:31: Parsing chains of 'pcna-cdc9' system to CALVADOS input
+2026-07-08 15:54:31: ················································································
+2026-07-08 15:54:31: Chain 'pcna' ('PCNA')
+2026-07-08 15:54:31: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/2OD8.cif' is specified
+2026-07-08 15:54:31: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pcna-cdc9/pcna.pdb'
+2026-07-08 15:54:31: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:54:31: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pcna-cdc9/pcna.yaml'
+2026-07-08 15:54:31: 
+2026-07-08 15:54:31: Chain 'cdc9' ('CDC9[PIP]')
+2026-07-08 15:54:31: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:54:31: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pcna-cdc9/cdc9.fasta'
+2026-07-08 15:54:31: 
+2026-07-08 15:54:31: ················································································
+2026-07-08 15:54:31: Parsing SLiMs of 'pcna-cdc9' system to CALVADOS input
+2026-07-08 15:54:31: ················································································
+2026-07-08 15:54:31: SLiM 'pcna-cdc9' ('PCNA-CDC9[PIP]')
+2026-07-08 15:54:31: 	- Verifying that acceptor 'pcna' and donor 'cdc9' chains are found in system
+2026-07-08 15:54:31: 	- Performing contact analysis
+2026-07-08 15:54:31: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:54:31: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:54:31: 		- Defining contacts
+2026-07-08 15:54:31: 		- Found 42 pairwise contacts
+2026-07-08 15:54:31: 		- Calculating contact distances
+2026-07-08 15:54:31: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:54:31: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:54:31: 	- Excluding 0 contacts
+2026-07-08 15:54:31: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pcna-cdc9/specific_interactions.txt'
+2026-07-08 15:54:31: 

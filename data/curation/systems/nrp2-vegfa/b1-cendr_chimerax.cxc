@@ -8,3 +8,4 @@ hide ~/A,G cartoons
 sel /A:299,300,301,304,319,323,349,351,352,354,356,417,418 | /G:229,230,231,232
 show sel surfaces
 view sel
+scale 200

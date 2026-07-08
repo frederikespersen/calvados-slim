@@ -1,29 +1,29 @@
-2026-07-08 15:03:32: ················································································
-2026-07-08 15:03:32: Parsing chains of 'kpna2-npm2' system to CALVADOS input
-2026-07-08 15:03:32: ················································································
-2026-07-08 15:03:32: Chain 'arm' ('KPNA2[ARM]')
-2026-07-08 15:03:32: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/1EJY.cif' is specified
-2026-07-08 15:03:32: 	- Selecting chain 'I' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/kpna2-npm2/arm.pdb'
-2026-07-08 15:03:33: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
-2026-07-08 15:03:33: 	- Writing chain 'I' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/kpna2-npm2/arm.yaml'
-2026-07-08 15:03:33: 
-2026-07-08 15:03:33: Chain 'npm2' ('NPM2[NLS]')
-2026-07-08 15:03:33: 	- Parsing chain as an IDP, as no chain PDB is specified
-2026-07-08 15:03:33: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/kpna2-npm2/npm2.fasta'
-2026-07-08 15:03:33: 
-2026-07-08 15:03:33: ················································································
-2026-07-08 15:03:33: Parsing SLiMs of 'kpna2-npm2' system to CALVADOS input
-2026-07-08 15:03:33: ················································································
-2026-07-08 15:03:33: SLiM 'arm-npm2' ('KPNA2-NPM2[NLS]')
-2026-07-08 15:03:33: 	- Verifying that acceptor 'arm' and donor 'npm2' chains are found in system
-2026-07-08 15:03:33: 	- Performing contact analysis
-2026-07-08 15:03:33: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
-2026-07-08 15:03:34: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
-2026-07-08 15:03:34: 		- Defining contacts
-2026-07-08 15:03:34: 		- Found 64 pairwise contacts
-2026-07-08 15:03:34: 		- Calculating contact distances
-2026-07-08 15:03:34: 	- Mapping residue indices between System and SLiM constructs
-2026-07-08 15:03:34: 	- Dropping 0 contacts outside the construct windows
-2026-07-08 15:03:34: 	- Excluding 0 contacts
-2026-07-08 15:03:34: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/kpna2-npm2/specific_interactions.txt'
-2026-07-08 15:03:34: 
+2026-07-08 15:54:12: ················································································
+2026-07-08 15:54:12: Parsing chains of 'kpna2-npm2' system to CALVADOS input
+2026-07-08 15:54:12: ················································································
+2026-07-08 15:54:12: Chain 'arm' ('KPNA2[ARM]')
+2026-07-08 15:54:12: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/1EJY.cif' is specified
+2026-07-08 15:54:12: 	- Selecting chain 'I' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/kpna2-npm2/arm.pdb'
+2026-07-08 15:54:13: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:54:13: 	- Writing chain 'I' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/kpna2-npm2/arm.yaml'
+2026-07-08 15:54:13: 
+2026-07-08 15:54:13: Chain 'npm2' ('NPM2[NLS]')
+2026-07-08 15:54:13: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:54:13: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/kpna2-npm2/npm2.fasta'
+2026-07-08 15:54:13: 
+2026-07-08 15:54:13: ················································································
+2026-07-08 15:54:13: Parsing SLiMs of 'kpna2-npm2' system to CALVADOS input
+2026-07-08 15:54:13: ················································································
+2026-07-08 15:54:13: SLiM 'arm-npm2' ('KPNA2-NPM2[NLS]')
+2026-07-08 15:54:13: 	- Verifying that acceptor 'arm' and donor 'npm2' chains are found in system
+2026-07-08 15:54:13: 	- Performing contact analysis
+2026-07-08 15:54:13: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:54:14: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:54:14: 		- Defining contacts
+2026-07-08 15:54:14: 		- Found 64 pairwise contacts
+2026-07-08 15:54:14: 		- Calculating contact distances
+2026-07-08 15:54:14: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:54:14: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:54:14: 	- Excluding 0 contacts
+2026-07-08 15:54:14: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/kpna2-npm2/specific_interactions.txt'
+2026-07-08 15:54:14: 

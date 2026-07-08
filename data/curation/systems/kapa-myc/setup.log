@@ -1,29 +1,29 @@
-2026-07-08 15:00:30: ················································································
-2026-07-08 15:00:30: Parsing chains of 'kapa-myc' system to CALVADOS input
-2026-07-08 15:00:30: ················································································
-2026-07-08 15:00:30: Chain 'kapa' ('KAPA[ARM]')
-2026-07-08 15:00:30: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/1EE4.cif' is specified
-2026-07-08 15:00:30: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/kapa-myc/kapa.pdb'
-2026-07-08 15:00:30: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
-2026-07-08 15:00:30: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/kapa-myc/kapa.yaml'
-2026-07-08 15:00:30: 
-2026-07-08 15:00:30: Chain 'nls' ('Myc[NLS]')
-2026-07-08 15:00:30: 	- Parsing chain as an IDP, as no chain PDB is specified
-2026-07-08 15:00:30: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/kapa-myc/nls.fasta'
-2026-07-08 15:00:30: 
-2026-07-08 15:00:30: ················································································
-2026-07-08 15:00:30: Parsing SLiMs of 'kapa-myc' system to CALVADOS input
-2026-07-08 15:00:30: ················································································
-2026-07-08 15:00:30: SLiM 'kapa-nls' ('KAPA[ARM]-Myc[NLS]')
-2026-07-08 15:00:30: 	- Verifying that acceptor 'kapa' and donor 'nls' chains are found in system
-2026-07-08 15:00:30: 	- Performing contact analysis
-2026-07-08 15:00:30: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
-2026-07-08 15:00:31: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
-2026-07-08 15:00:31: 		- Defining contacts
-2026-07-08 15:00:31: 		- Found 43 pairwise contacts
-2026-07-08 15:00:31: 		- Calculating contact distances
-2026-07-08 15:00:31: 	- Mapping residue indices between System and SLiM constructs
-2026-07-08 15:00:31: 	- Dropping 0 contacts outside the construct windows
-2026-07-08 15:00:31: 	- Excluding 0 contacts
-2026-07-08 15:00:31: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/kapa-myc/specific_interactions.txt'
-2026-07-08 15:00:31: 
+2026-07-08 15:50:34: ················································································
+2026-07-08 15:50:34: Parsing chains of 'kapa-myc' system to CALVADOS input
+2026-07-08 15:50:34: ················································································
+2026-07-08 15:50:34: Chain 'kapa' ('KAPA[ARM]')
+2026-07-08 15:50:34: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/1EE4.cif' is specified
+2026-07-08 15:50:34: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/kapa-myc/kapa.pdb'
+2026-07-08 15:50:35: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:50:35: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/kapa-myc/kapa.yaml'
+2026-07-08 15:50:35: 
+2026-07-08 15:50:35: Chain 'nls' ('Myc[NLS]')
+2026-07-08 15:50:35: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:50:35: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/kapa-myc/nls.fasta'
+2026-07-08 15:50:35: 
+2026-07-08 15:50:35: ················································································
+2026-07-08 15:50:35: Parsing SLiMs of 'kapa-myc' system to CALVADOS input
+2026-07-08 15:50:35: ················································································
+2026-07-08 15:50:35: SLiM 'kapa-nls' ('KAPA[ARM]-Myc[NLS]')
+2026-07-08 15:50:35: 	- Verifying that acceptor 'kapa' and donor 'nls' chains are found in system
+2026-07-08 15:50:35: 	- Performing contact analysis
+2026-07-08 15:50:35: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:50:35: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:50:35: 		- Defining contacts
+2026-07-08 15:50:35: 		- Found 43 pairwise contacts
+2026-07-08 15:50:35: 		- Calculating contact distances
+2026-07-08 15:50:35: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:50:35: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:50:35: 	- Excluding 0 contacts
+2026-07-08 15:50:35: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/kapa-myc/specific_interactions.txt'
+2026-07-08 15:50:35: 

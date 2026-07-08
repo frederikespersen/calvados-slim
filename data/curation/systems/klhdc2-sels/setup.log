@@ -1,29 +1,29 @@
-2026-07-08 15:02:28: ················································································
-2026-07-08 15:02:28: Parsing chains of 'klhdc2-sels' system to CALVADOS input
-2026-07-08 15:02:28: ················································································
-2026-07-08 15:02:28: Chain 'kelch' ('KLHDC2')
-2026-07-08 15:02:28: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/6DO4.cif' is specified
-2026-07-08 15:02:28: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/klhdc2-sels/kelch.pdb'
-2026-07-08 15:02:29: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
-2026-07-08 15:02:29: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/klhdc2-sels/kelch.yaml'
-2026-07-08 15:02:29: 
-2026-07-08 15:02:29: Chain 'cend' ('SELENOS[Cend]')
-2026-07-08 15:02:29: 	- Parsing chain as an IDP, as no chain PDB is specified
-2026-07-08 15:02:29: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/klhdc2-sels/cend.fasta'
-2026-07-08 15:02:29: 
-2026-07-08 15:02:29: ················································································
-2026-07-08 15:02:29: Parsing SLiMs of 'klhdc2-sels' system to CALVADOS input
-2026-07-08 15:02:29: ················································································
-2026-07-08 15:02:29: SLiM 'kelch-cend' ('KLHDC2-SELENOS[Cend]')
-2026-07-08 15:02:29: 	- Verifying that acceptor 'kelch' and donor 'cend' chains are found in system
-2026-07-08 15:02:29: 	- Performing contact analysis
-2026-07-08 15:02:29: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
-2026-07-08 15:02:29: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
-2026-07-08 15:02:29: 		- Defining contacts
-2026-07-08 15:02:29: 		- Found 33 pairwise contacts
-2026-07-08 15:02:29: 		- Calculating contact distances
-2026-07-08 15:02:29: 	- Mapping residue indices between System and SLiM constructs
-2026-07-08 15:02:29: 	- Dropping 0 contacts outside the construct windows
-2026-07-08 15:02:29: 	- Excluding 0 contacts
-2026-07-08 15:02:29: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/klhdc2-sels/specific_interactions.txt'
-2026-07-08 15:02:29: 
+2026-07-08 15:52:58: ················································································
+2026-07-08 15:52:58: Parsing chains of 'klhdc2-sels' system to CALVADOS input
+2026-07-08 15:52:58: ················································································
+2026-07-08 15:52:58: Chain 'kelch' ('KLHDC2')
+2026-07-08 15:52:58: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/6DO4.cif' is specified
+2026-07-08 15:52:58: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/klhdc2-sels/kelch.pdb'
+2026-07-08 15:52:59: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:52:59: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/klhdc2-sels/kelch.yaml'
+2026-07-08 15:52:59: 
+2026-07-08 15:52:59: Chain 'cend' ('SELENOS[Cend]')
+2026-07-08 15:52:59: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:52:59: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/klhdc2-sels/cend.fasta'
+2026-07-08 15:52:59: 
+2026-07-08 15:52:59: ················································································
+2026-07-08 15:52:59: Parsing SLiMs of 'klhdc2-sels' system to CALVADOS input
+2026-07-08 15:52:59: ················································································
+2026-07-08 15:52:59: SLiM 'kelch-cend' ('KLHDC2-SELENOS[Cend]')
+2026-07-08 15:52:59: 	- Verifying that acceptor 'kelch' and donor 'cend' chains are found in system
+2026-07-08 15:52:59: 	- Performing contact analysis
+2026-07-08 15:52:59: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:52:59: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:52:59: 		- Defining contacts
+2026-07-08 15:52:59: 		- Found 33 pairwise contacts
+2026-07-08 15:52:59: 		- Calculating contact distances
+2026-07-08 15:52:59: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:53:00: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:53:00: 	- Excluding 0 contacts
+2026-07-08 15:53:00: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/klhdc2-sels/specific_interactions.txt'
+2026-07-08 15:53:00: 

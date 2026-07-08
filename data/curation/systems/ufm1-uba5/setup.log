@@ -1,29 +1,29 @@
-2026-07-08 15:00:55: ················································································
-2026-07-08 15:00:55: Parsing chains of 'ufm1-uba5' system to CALVADOS input
-2026-07-08 15:00:55: ················································································
-2026-07-08 15:00:55: Chain 'ufm1' ('UFM1')
-2026-07-08 15:00:55: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/5HKH.cif' is specified
-2026-07-08 15:00:55: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/ufm1-uba5/ufm1.pdb'
-2026-07-08 15:00:56: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
-2026-07-08 15:00:56: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/ufm1-uba5/ufm1.yaml'
-2026-07-08 15:00:56: 
-2026-07-08 15:00:56: Chain 'ufim' ('UBA5[UFIM]')
-2026-07-08 15:00:56: 	- Parsing chain as an IDP, as no chain PDB is specified
-2026-07-08 15:00:56: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/ufm1-uba5/ufim.fasta'
-2026-07-08 15:00:56: 
-2026-07-08 15:00:56: ················································································
-2026-07-08 15:00:56: Parsing SLiMs of 'ufm1-uba5' system to CALVADOS input
-2026-07-08 15:00:56: ················································································
-2026-07-08 15:00:56: SLiM 'ufm1-ufim' ('UFM1-UBA5[UFIM]')
-2026-07-08 15:00:56: 	- Verifying that acceptor 'ufm1' and donor 'ufim' chains are found in system
-2026-07-08 15:00:56: 	- Performing contact analysis
-2026-07-08 15:00:56: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
-2026-07-08 15:00:56: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
-2026-07-08 15:00:56: 		- Defining contacts
-2026-07-08 15:00:56: 		- Found 27 pairwise contacts
-2026-07-08 15:00:56: 		- Calculating contact distances
-2026-07-08 15:00:56: 	- Mapping residue indices between System and SLiM constructs
-2026-07-08 15:00:56: 	- Dropping 0 contacts outside the construct windows
-2026-07-08 15:00:56: 	- Excluding 0 contacts
-2026-07-08 15:00:56: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/ufm1-uba5/specific_interactions.txt'
-2026-07-08 15:00:56: 
+2026-07-08 15:51:05: ················································································
+2026-07-08 15:51:05: Parsing chains of 'ufm1-uba5' system to CALVADOS input
+2026-07-08 15:51:05: ················································································
+2026-07-08 15:51:05: Chain 'ufm1' ('UFM1')
+2026-07-08 15:51:05: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/5HKH.cif' is specified
+2026-07-08 15:51:05: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/ufm1-uba5/ufm1.pdb'
+2026-07-08 15:51:05: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:51:05: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/ufm1-uba5/ufm1.yaml'
+2026-07-08 15:51:05: 
+2026-07-08 15:51:05: Chain 'ufim' ('UBA5[UFIM]')
+2026-07-08 15:51:05: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:51:05: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/ufm1-uba5/ufim.fasta'
+2026-07-08 15:51:05: 
+2026-07-08 15:51:05: ················································································
+2026-07-08 15:51:05: Parsing SLiMs of 'ufm1-uba5' system to CALVADOS input
+2026-07-08 15:51:05: ················································································
+2026-07-08 15:51:05: SLiM 'ufm1-ufim' ('UFM1-UBA5[UFIM]')
+2026-07-08 15:51:05: 	- Verifying that acceptor 'ufm1' and donor 'ufim' chains are found in system
+2026-07-08 15:51:05: 	- Performing contact analysis
+2026-07-08 15:51:05: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:51:06: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:51:06: 		- Defining contacts
+2026-07-08 15:51:06: 		- Found 27 pairwise contacts
+2026-07-08 15:51:06: 		- Calculating contact distances
+2026-07-08 15:51:06: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:51:06: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:51:06: 	- Excluding 0 contacts
+2026-07-08 15:51:06: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/ufm1-uba5/specific_interactions.txt'
+2026-07-08 15:51:06: 

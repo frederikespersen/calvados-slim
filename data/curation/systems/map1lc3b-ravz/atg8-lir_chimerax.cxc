@@ -8,3 +8,4 @@ hide ~/A,C cartoons
 sel /A:2,3,10 | /C:11,12,13,34
 show sel surfaces
 view sel
+scale 200

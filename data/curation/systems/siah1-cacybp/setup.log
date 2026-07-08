@@ -1,29 +1,29 @@
-2026-07-08 15:00:45: ················································································
-2026-07-08 15:00:45: Parsing chains of 'siah1-cacybp' system to CALVADOS input
-2026-07-08 15:00:45: ················································································
-2026-07-08 15:00:45: Chain 'sbd' ('SIAH1[SBD]')
-2026-07-08 15:00:45: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/2A25.cif' is specified
-2026-07-08 15:00:45: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/siah1-cacybp/sbd.pdb'
-2026-07-08 15:00:46: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
-2026-07-08 15:00:46: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/siah1-cacybp/sbd.yaml'
-2026-07-08 15:00:46: 
-2026-07-08 15:00:46: Chain 'deg' ('CACYBP[Deg]')
-2026-07-08 15:00:46: 	- Parsing chain as an IDP, as no chain PDB is specified
-2026-07-08 15:00:46: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/siah1-cacybp/deg.fasta'
-2026-07-08 15:00:46: 
-2026-07-08 15:00:46: ················································································
-2026-07-08 15:00:46: Parsing SLiMs of 'siah1-cacybp' system to CALVADOS input
-2026-07-08 15:00:46: ················································································
-2026-07-08 15:00:46: SLiM 'sbd-deg' ('SIAH1[SBD]-CACYBP[Deg]')
-2026-07-08 15:00:46: 	- Verifying that acceptor 'sbd' and donor 'deg' chains are found in system
-2026-07-08 15:00:46: 	- Performing contact analysis
-2026-07-08 15:00:46: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
-2026-07-08 15:00:47: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
-2026-07-08 15:00:47: 		- Defining contacts
-2026-07-08 15:00:47: 		- Found 38 pairwise contacts
-2026-07-08 15:00:47: 		- Calculating contact distances
-2026-07-08 15:00:47: 	- Mapping residue indices between System and SLiM constructs
-2026-07-08 15:00:47: 	- Dropping 0 contacts outside the construct windows
-2026-07-08 15:00:47: 	- Excluding 0 contacts
-2026-07-08 15:00:47: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/siah1-cacybp/specific_interactions.txt'
-2026-07-08 15:00:47: 
+2026-07-08 15:50:53: ················································································
+2026-07-08 15:50:53: Parsing chains of 'siah1-cacybp' system to CALVADOS input
+2026-07-08 15:50:53: ················································································
+2026-07-08 15:50:53: Chain 'sbd' ('SIAH1[SBD]')
+2026-07-08 15:50:53: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/2A25.cif' is specified
+2026-07-08 15:50:53: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/siah1-cacybp/sbd.pdb'
+2026-07-08 15:50:54: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:50:54: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/siah1-cacybp/sbd.yaml'
+2026-07-08 15:50:54: 
+2026-07-08 15:50:54: Chain 'deg' ('CACYBP[Deg]')
+2026-07-08 15:50:54: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:50:54: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/siah1-cacybp/deg.fasta'
+2026-07-08 15:50:54: 
+2026-07-08 15:50:54: ················································································
+2026-07-08 15:50:54: Parsing SLiMs of 'siah1-cacybp' system to CALVADOS input
+2026-07-08 15:50:54: ················································································
+2026-07-08 15:50:54: SLiM 'sbd-deg' ('SIAH1[SBD]-CACYBP[Deg]')
+2026-07-08 15:50:54: 	- Verifying that acceptor 'sbd' and donor 'deg' chains are found in system
+2026-07-08 15:50:54: 	- Performing contact analysis
+2026-07-08 15:50:54: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:50:54: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:50:54: 		- Defining contacts
+2026-07-08 15:50:54: 		- Found 38 pairwise contacts
+2026-07-08 15:50:54: 		- Calculating contact distances
+2026-07-08 15:50:54: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:50:54: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:50:54: 	- Excluding 0 contacts
+2026-07-08 15:50:54: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/siah1-cacybp/specific_interactions.txt'
+2026-07-08 15:50:54: 

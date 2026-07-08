@@ -1,29 +1,29 @@
-2026-07-08 15:02:44: ················································································
-2026-07-08 15:02:44: Parsing chains of 'numb-nak' system to CALVADOS input
-2026-07-08 15:02:44: ················································································
-2026-07-08 15:02:44: Chain 'ptb' ('Numb[PTB]')
-2026-07-08 15:02:44: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/1DDM.cif' is specified
-2026-07-08 15:02:44: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/numb-nak/ptb.pdb'
-2026-07-08 15:02:45: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
-2026-07-08 15:02:45: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/numb-nak/ptb.yaml'
-2026-07-08 15:02:45: 
-2026-07-08 15:02:45: Chain 'pep' ('NAK[Pep]')
-2026-07-08 15:02:45: 	- Parsing chain as an IDP, as no chain PDB is specified
-2026-07-08 15:02:45: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/numb-nak/pep.fasta'
-2026-07-08 15:02:45: 
-2026-07-08 15:02:45: ················································································
-2026-07-08 15:02:45: Parsing SLiMs of 'numb-nak' system to CALVADOS input
-2026-07-08 15:02:45: ················································································
-2026-07-08 15:02:45: SLiM 'ptb-pep' ('Numb[PTB]-NAK[Pep]')
-2026-07-08 15:02:45: 	- Verifying that acceptor 'ptb' and donor 'pep' chains are found in system
-2026-07-08 15:02:45: 	- Performing contact analysis
-2026-07-08 15:02:45: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
-2026-07-08 15:02:45: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
-2026-07-08 15:02:45: 		- Defining contacts
-2026-07-08 15:02:45: 		- Found 37 pairwise contacts
-2026-07-08 15:02:45: 		- Calculating contact distances
-2026-07-08 15:02:45: 	- Mapping residue indices between System and SLiM constructs
-2026-07-08 15:02:45: 	- Dropping 0 contacts outside the construct windows
-2026-07-08 15:02:45: 	- Excluding 11 contacts
-2026-07-08 15:02:45: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/numb-nak/specific_interactions.txt'
-2026-07-08 15:02:45: 
+2026-07-08 15:53:16: ················································································
+2026-07-08 15:53:16: Parsing chains of 'numb-nak' system to CALVADOS input
+2026-07-08 15:53:16: ················································································
+2026-07-08 15:53:16: Chain 'ptb' ('Numb[PTB]')
+2026-07-08 15:53:16: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/1DDM.cif' is specified
+2026-07-08 15:53:16: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/numb-nak/ptb.pdb'
+2026-07-08 15:53:17: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:53:17: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/numb-nak/ptb.yaml'
+2026-07-08 15:53:17: 
+2026-07-08 15:53:17: Chain 'pep' ('NAK[Pep]')
+2026-07-08 15:53:17: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:53:17: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/numb-nak/pep.fasta'
+2026-07-08 15:53:17: 
+2026-07-08 15:53:17: ················································································
+2026-07-08 15:53:17: Parsing SLiMs of 'numb-nak' system to CALVADOS input
+2026-07-08 15:53:17: ················································································
+2026-07-08 15:53:17: SLiM 'ptb-pep' ('Numb[PTB]-NAK[Pep]')
+2026-07-08 15:53:17: 	- Verifying that acceptor 'ptb' and donor 'pep' chains are found in system
+2026-07-08 15:53:17: 	- Performing contact analysis
+2026-07-08 15:53:17: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:53:17: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:53:17: 		- Defining contacts
+2026-07-08 15:53:17: 		- Found 37 pairwise contacts
+2026-07-08 15:53:17: 		- Calculating contact distances
+2026-07-08 15:53:17: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:53:17: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:53:17: 	- Excluding 11 contacts
+2026-07-08 15:53:17: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/numb-nak/specific_interactions.txt'
+2026-07-08 15:53:17: 

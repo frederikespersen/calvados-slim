@@ -1,29 +1,29 @@
-2026-07-08 15:03:00: ················································································
-2026-07-08 15:03:00: Parsing chains of 'map1lc3b-ravz' system to CALVADOS input
-2026-07-08 15:03:00: ················································································
-2026-07-08 15:03:00: Chain 'atg8' ('MAP1LC3B[Atg8]')
-2026-07-08 15:03:00: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/5XAD.cif' is specified
-2026-07-08 15:03:00: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/map1lc3b-ravz/atg8.pdb'
-2026-07-08 15:03:00: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
-2026-07-08 15:03:00: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/map1lc3b-ravz/atg8.yaml'
-2026-07-08 15:03:00: 
-2026-07-08 15:03:00: Chain 'lir' ('RavZ[cLIR]')
-2026-07-08 15:03:00: 	- Parsing chain as an IDP, as no chain PDB is specified
-2026-07-08 15:03:00: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/map1lc3b-ravz/lir.fasta'
-2026-07-08 15:03:00: 
-2026-07-08 15:03:00: ················································································
-2026-07-08 15:03:00: Parsing SLiMs of 'map1lc3b-ravz' system to CALVADOS input
-2026-07-08 15:03:00: ················································································
-2026-07-08 15:03:00: SLiM 'atg8-lir' ('MAP1LC3B[Atg8]-RavZ[cLIR]')
-2026-07-08 15:03:00: 	- Verifying that acceptor 'atg8' and donor 'lir' chains are found in system
-2026-07-08 15:03:00: 	- Performing contact analysis
-2026-07-08 15:03:00: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
-2026-07-08 15:03:00: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
-2026-07-08 15:03:00: 		- Defining contacts
-2026-07-08 15:03:00: 		- Found 6 pairwise contacts
-2026-07-08 15:03:00: 		- Calculating contact distances
-2026-07-08 15:03:00: 	- Mapping residue indices between System and SLiM constructs
-2026-07-08 15:03:00: 	- Dropping 0 contacts outside the construct windows
-2026-07-08 15:03:00: 	- Excluding 0 contacts
-2026-07-08 15:03:00: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/map1lc3b-ravz/specific_interactions.txt'
-2026-07-08 15:03:00: 
+2026-07-08 15:53:34: ················································································
+2026-07-08 15:53:34: Parsing chains of 'map1lc3b-ravz' system to CALVADOS input
+2026-07-08 15:53:34: ················································································
+2026-07-08 15:53:34: Chain 'atg8' ('MAP1LC3B[Atg8]')
+2026-07-08 15:53:34: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/5XAD.cif' is specified
+2026-07-08 15:53:34: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/map1lc3b-ravz/atg8.pdb'
+2026-07-08 15:53:35: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:53:35: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/map1lc3b-ravz/atg8.yaml'
+2026-07-08 15:53:35: 
+2026-07-08 15:53:35: Chain 'lir' ('RavZ[cLIR]')
+2026-07-08 15:53:35: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:53:35: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/map1lc3b-ravz/lir.fasta'
+2026-07-08 15:53:35: 
+2026-07-08 15:53:35: ················································································
+2026-07-08 15:53:35: Parsing SLiMs of 'map1lc3b-ravz' system to CALVADOS input
+2026-07-08 15:53:35: ················································································
+2026-07-08 15:53:35: SLiM 'atg8-lir' ('MAP1LC3B[Atg8]-RavZ[cLIR]')
+2026-07-08 15:53:35: 	- Verifying that acceptor 'atg8' and donor 'lir' chains are found in system
+2026-07-08 15:53:35: 	- Performing contact analysis
+2026-07-08 15:53:35: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:53:35: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:53:35: 		- Defining contacts
+2026-07-08 15:53:35: 		- Found 6 pairwise contacts
+2026-07-08 15:53:35: 		- Calculating contact distances
+2026-07-08 15:53:35: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:53:35: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:53:35: 	- Excluding 0 contacts
+2026-07-08 15:53:35: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/map1lc3b-ravz/specific_interactions.txt'
+2026-07-08 15:53:35: 

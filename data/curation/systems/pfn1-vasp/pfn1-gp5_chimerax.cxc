@@ -8,3 +8,4 @@ hide ~/P,V cartoons
 sel /P:1,2,3,5,6,9,31,130,133,134,137,139 | /V:203,204,205,206,207,208,209,210
 show sel surfaces
 view sel
+scale 200

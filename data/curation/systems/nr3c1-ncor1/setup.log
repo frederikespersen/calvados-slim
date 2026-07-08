@@ -1,29 +1,29 @@
-2026-07-08 15:01:53: ················································································
-2026-07-08 15:01:53: Parsing chains of 'nr3c1-ncor1' system to CALVADOS input
-2026-07-08 15:01:53: ················································································
-2026-07-08 15:01:53: Chain 'lbd' ('NR3C1[LBD]')
-2026-07-08 15:01:53: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/3H52.cif' is specified
-2026-07-08 15:01:53: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/nr3c1-ncor1/lbd.pdb'
-2026-07-08 15:01:54: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
-2026-07-08 15:01:54: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/nr3c1-ncor1/lbd.yaml'
-2026-07-08 15:01:54: 
-2026-07-08 15:01:54: Chain 'cornr' ('NCOR1[CoRNR]')
-2026-07-08 15:01:54: 	- Parsing chain as an IDP, as no chain PDB is specified
-2026-07-08 15:01:54: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/nr3c1-ncor1/cornr.fasta'
-2026-07-08 15:01:54: 
-2026-07-08 15:01:54: ················································································
-2026-07-08 15:01:54: Parsing SLiMs of 'nr3c1-ncor1' system to CALVADOS input
-2026-07-08 15:01:54: ················································································
-2026-07-08 15:01:54: SLiM 'lbd-cornr' ('NR3C1[LBD]-NCOR1[CoRNR]')
-2026-07-08 15:01:54: 	- Verifying that acceptor 'lbd' and donor 'cornr' chains are found in system
-2026-07-08 15:01:54: 	- Performing contact analysis
-2026-07-08 15:01:54: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
-2026-07-08 15:01:54: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
-2026-07-08 15:01:54: 		- Defining contacts
-2026-07-08 15:01:54: 		- Found 32 pairwise contacts
-2026-07-08 15:01:54: 		- Calculating contact distances
-2026-07-08 15:01:54: 	- Mapping residue indices between System and SLiM constructs
-2026-07-08 15:01:54: 	- Dropping 0 contacts outside the construct windows
-2026-07-08 15:01:54: 	- Excluding 0 contacts
-2026-07-08 15:01:54: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/nr3c1-ncor1/specific_interactions.txt'
-2026-07-08 15:01:54: 
+2026-07-08 15:52:17: ················································································
+2026-07-08 15:52:17: Parsing chains of 'nr3c1-ncor1' system to CALVADOS input
+2026-07-08 15:52:17: ················································································
+2026-07-08 15:52:17: Chain 'lbd' ('NR3C1[LBD]')
+2026-07-08 15:52:17: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/3H52.cif' is specified
+2026-07-08 15:52:17: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/nr3c1-ncor1/lbd.pdb'
+2026-07-08 15:52:18: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:52:18: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/nr3c1-ncor1/lbd.yaml'
+2026-07-08 15:52:18: 
+2026-07-08 15:52:18: Chain 'cornr' ('NCOR1[CoRNR]')
+2026-07-08 15:52:18: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:52:18: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/nr3c1-ncor1/cornr.fasta'
+2026-07-08 15:52:18: 
+2026-07-08 15:52:18: ················································································
+2026-07-08 15:52:18: Parsing SLiMs of 'nr3c1-ncor1' system to CALVADOS input
+2026-07-08 15:52:18: ················································································
+2026-07-08 15:52:18: SLiM 'lbd-cornr' ('NR3C1[LBD]-NCOR1[CoRNR]')
+2026-07-08 15:52:18: 	- Verifying that acceptor 'lbd' and donor 'cornr' chains are found in system
+2026-07-08 15:52:18: 	- Performing contact analysis
+2026-07-08 15:52:18: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:52:18: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:52:18: 		- Defining contacts
+2026-07-08 15:52:18: 		- Found 32 pairwise contacts
+2026-07-08 15:52:18: 		- Calculating contact distances
+2026-07-08 15:52:18: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:52:18: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:52:18: 	- Excluding 0 contacts
+2026-07-08 15:52:18: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/nr3c1-ncor1/specific_interactions.txt'
+2026-07-08 15:52:18: 

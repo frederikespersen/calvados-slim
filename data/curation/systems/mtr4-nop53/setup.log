@@ -1,29 +1,29 @@
-2026-07-08 15:03:39: ················································································
-2026-07-08 15:03:39: Parsing chains of 'mtr4-nop53' system to CALVADOS input
-2026-07-08 15:03:39: ················································································
-2026-07-08 15:03:39: Chain 'mtr4' ('MTR4')
-2026-07-08 15:03:39: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/5OOQ.cif' is specified
-2026-07-08 15:03:39: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/mtr4-nop53/mtr4.pdb'
-2026-07-08 15:03:42: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
-2026-07-08 15:03:42: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/mtr4-nop53/mtr4.yaml'
-2026-07-08 15:03:42: 
-2026-07-08 15:03:42: Chain 'nop53' ('NOP53[AIM]')
-2026-07-08 15:03:42: 	- Parsing chain as an IDP, as no chain PDB is specified
-2026-07-08 15:03:42: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/mtr4-nop53/nop53.fasta'
-2026-07-08 15:03:42: 
-2026-07-08 15:03:42: ················································································
-2026-07-08 15:03:42: Parsing SLiMs of 'mtr4-nop53' system to CALVADOS input
-2026-07-08 15:03:42: ················································································
-2026-07-08 15:03:42: SLiM 'mtr4-nop53' ('MTR4-NOP53[AIM]')
-2026-07-08 15:03:42: 	- Verifying that acceptor 'mtr4' and donor 'nop53' chains are found in system
-2026-07-08 15:03:42: 	- Performing contact analysis
-2026-07-08 15:03:42: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
-2026-07-08 15:03:43: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
-2026-07-08 15:03:43: 		- Defining contacts
-2026-07-08 15:03:43: 		- Found 35 pairwise contacts
-2026-07-08 15:03:43: 		- Calculating contact distances
-2026-07-08 15:03:43: 	- Mapping residue indices between System and SLiM constructs
-2026-07-08 15:03:43: 	- Dropping 0 contacts outside the construct windows
-2026-07-08 15:03:43: 	- Excluding 0 contacts
-2026-07-08 15:03:43: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/mtr4-nop53/specific_interactions.txt'
-2026-07-08 15:03:43: 
+2026-07-08 15:54:20: ················································································
+2026-07-08 15:54:20: Parsing chains of 'mtr4-nop53' system to CALVADOS input
+2026-07-08 15:54:20: ················································································
+2026-07-08 15:54:20: Chain 'mtr4' ('MTR4')
+2026-07-08 15:54:20: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/5OOQ.cif' is specified
+2026-07-08 15:54:20: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/mtr4-nop53/mtr4.pdb'
+2026-07-08 15:54:23: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:54:23: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/mtr4-nop53/mtr4.yaml'
+2026-07-08 15:54:23: 
+2026-07-08 15:54:23: Chain 'nop53' ('NOP53[AIM]')
+2026-07-08 15:54:23: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:54:23: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/mtr4-nop53/nop53.fasta'
+2026-07-08 15:54:23: 
+2026-07-08 15:54:23: ················································································
+2026-07-08 15:54:23: Parsing SLiMs of 'mtr4-nop53' system to CALVADOS input
+2026-07-08 15:54:23: ················································································
+2026-07-08 15:54:23: SLiM 'mtr4-nop53' ('MTR4-NOP53[AIM]')
+2026-07-08 15:54:23: 	- Verifying that acceptor 'mtr4' and donor 'nop53' chains are found in system
+2026-07-08 15:54:23: 	- Performing contact analysis
+2026-07-08 15:54:23: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:54:24: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:54:24: 		- Defining contacts
+2026-07-08 15:54:24: 		- Found 35 pairwise contacts
+2026-07-08 15:54:24: 		- Calculating contact distances
+2026-07-08 15:54:24: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:54:24: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:54:24: 	- Excluding 0 contacts
+2026-07-08 15:54:24: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/mtr4-nop53/specific_interactions.txt'
+2026-07-08 15:54:24: 

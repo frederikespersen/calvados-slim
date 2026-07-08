@@ -1,29 +1,29 @@
-2026-07-08 15:01:43: ················································································
-2026-07-08 15:01:43: Parsing chains of 'crk-c3g' system to CALVADOS input
-2026-07-08 15:01:43: ················································································
-2026-07-08 15:01:43: Chain 'sh3' ('CRK[SH3]')
-2026-07-08 15:01:43: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/1CKA.cif' is specified
-2026-07-08 15:01:43: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/crk-c3g/sh3.pdb'
-2026-07-08 15:01:44: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
-2026-07-08 15:01:44: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/crk-c3g/sh3.yaml'
-2026-07-08 15:01:44: 
-2026-07-08 15:01:44: Chain 'pxxpxk' ('C3G[PxxPxK]')
-2026-07-08 15:01:44: 	- Parsing chain as an IDP, as no chain PDB is specified
-2026-07-08 15:01:44: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/crk-c3g/pxxpxk.fasta'
-2026-07-08 15:01:44: 
-2026-07-08 15:01:44: ················································································
-2026-07-08 15:01:44: Parsing SLiMs of 'crk-c3g' system to CALVADOS input
-2026-07-08 15:01:44: ················································································
-2026-07-08 15:01:44: SLiM 'sh3-pxxpxk' ('CRK[SH3]-C3G[PxxPxK]')
-2026-07-08 15:01:44: 	- Verifying that acceptor 'sh3' and donor 'pxxpxk' chains are found in system
-2026-07-08 15:01:44: 	- Performing contact analysis
-2026-07-08 15:01:44: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
-2026-07-08 15:01:44: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
-2026-07-08 15:01:44: 		- Defining contacts
-2026-07-08 15:01:44: 		- Found 25 pairwise contacts
-2026-07-08 15:01:44: 		- Calculating contact distances
-2026-07-08 15:01:44: 	- Mapping residue indices between System and SLiM constructs
-2026-07-08 15:01:44: 	- Dropping 0 contacts outside the construct windows
-2026-07-08 15:01:44: 	- Excluding 0 contacts
-2026-07-08 15:01:44: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/crk-c3g/specific_interactions.txt'
-2026-07-08 15:01:44: 
+2026-07-08 15:52:05: ················································································
+2026-07-08 15:52:05: Parsing chains of 'crk-c3g' system to CALVADOS input
+2026-07-08 15:52:05: ················································································
+2026-07-08 15:52:05: Chain 'sh3' ('CRK[SH3]')
+2026-07-08 15:52:05: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/1CKA.cif' is specified
+2026-07-08 15:52:05: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/crk-c3g/sh3.pdb'
+2026-07-08 15:52:05: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:52:05: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/crk-c3g/sh3.yaml'
+2026-07-08 15:52:05: 
+2026-07-08 15:52:05: Chain 'pxxpxk' ('C3G[PxxPxK]')
+2026-07-08 15:52:05: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:52:05: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/crk-c3g/pxxpxk.fasta'
+2026-07-08 15:52:05: 
+2026-07-08 15:52:05: ················································································
+2026-07-08 15:52:05: Parsing SLiMs of 'crk-c3g' system to CALVADOS input
+2026-07-08 15:52:05: ················································································
+2026-07-08 15:52:05: SLiM 'sh3-pxxpxk' ('CRK[SH3]-C3G[PxxPxK]')
+2026-07-08 15:52:05: 	- Verifying that acceptor 'sh3' and donor 'pxxpxk' chains are found in system
+2026-07-08 15:52:05: 	- Performing contact analysis
+2026-07-08 15:52:05: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:52:05: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:52:05: 		- Defining contacts
+2026-07-08 15:52:05: 		- Found 25 pairwise contacts
+2026-07-08 15:52:05: 		- Calculating contact distances
+2026-07-08 15:52:05: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:52:05: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:52:05: 	- Excluding 0 contacts
+2026-07-08 15:52:05: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/crk-c3g/specific_interactions.txt'
+2026-07-08 15:52:05: 

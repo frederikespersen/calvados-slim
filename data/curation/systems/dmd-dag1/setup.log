@@ -1,29 +1,29 @@
-2026-07-08 15:01:17: ················································································
-2026-07-08 15:01:17: Parsing chains of 'dmd-dag1' system to CALVADOS input
-2026-07-08 15:01:17: ················································································
-2026-07-08 15:01:17: Chain 'wwefef' ('DMD[WW-EF-EF]')
-2026-07-08 15:01:17: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/1EG4.cif' is specified
-2026-07-08 15:01:17: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/dmd-dag1/wwefef.pdb'
-2026-07-08 15:01:18: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
-2026-07-08 15:01:18: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/dmd-dag1/wwefef.yaml'
-2026-07-08 15:01:18: 
-2026-07-08 15:01:18: Chain 'ppxy' ('DAG1[PPxY]')
-2026-07-08 15:01:18: 	- Parsing chain as an IDP, as no chain PDB is specified
-2026-07-08 15:01:18: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/dmd-dag1/ppxy.fasta'
-2026-07-08 15:01:18: 
-2026-07-08 15:01:18: ················································································
-2026-07-08 15:01:18: Parsing SLiMs of 'dmd-dag1' system to CALVADOS input
-2026-07-08 15:01:18: ················································································
-2026-07-08 15:01:18: SLiM 'wwefef-ppxy' ('DMD[WW-EF-EF]-DAG1[PPxY]')
-2026-07-08 15:01:18: 	- Verifying that acceptor 'wwefef' and donor 'ppxy' chains are found in system
-2026-07-08 15:01:18: 	- Performing contact analysis
-2026-07-08 15:01:18: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
-2026-07-08 15:01:18: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
-2026-07-08 15:01:18: 		- Defining contacts
-2026-07-08 15:01:18: 		- Found 29 pairwise contacts
-2026-07-08 15:01:18: 		- Calculating contact distances
-2026-07-08 15:01:18: 	- Mapping residue indices between System and SLiM constructs
-2026-07-08 15:01:18: 	- Dropping 0 contacts outside the construct windows
-2026-07-08 15:01:18: 	- Excluding 0 contacts
-2026-07-08 15:01:18: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/dmd-dag1/specific_interactions.txt'
-2026-07-08 15:01:18: 
+2026-07-08 15:51:33: ················································································
+2026-07-08 15:51:33: Parsing chains of 'dmd-dag1' system to CALVADOS input
+2026-07-08 15:51:33: ················································································
+2026-07-08 15:51:33: Chain 'wwefef' ('DMD[WW-EF-EF]')
+2026-07-08 15:51:33: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/1EG4.cif' is specified
+2026-07-08 15:51:33: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/dmd-dag1/wwefef.pdb'
+2026-07-08 15:51:33: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:51:33: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/dmd-dag1/wwefef.yaml'
+2026-07-08 15:51:33: 
+2026-07-08 15:51:33: Chain 'ppxy' ('DAG1[PPxY]')
+2026-07-08 15:51:33: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:51:33: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/dmd-dag1/ppxy.fasta'
+2026-07-08 15:51:33: 
+2026-07-08 15:51:33: ················································································
+2026-07-08 15:51:33: Parsing SLiMs of 'dmd-dag1' system to CALVADOS input
+2026-07-08 15:51:33: ················································································
+2026-07-08 15:51:33: SLiM 'wwefef-ppxy' ('DMD[WW-EF-EF]-DAG1[PPxY]')
+2026-07-08 15:51:33: 	- Verifying that acceptor 'wwefef' and donor 'ppxy' chains are found in system
+2026-07-08 15:51:33: 	- Performing contact analysis
+2026-07-08 15:51:33: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:51:33: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:51:33: 		- Defining contacts
+2026-07-08 15:51:33: 		- Found 29 pairwise contacts
+2026-07-08 15:51:33: 		- Calculating contact distances
+2026-07-08 15:51:33: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:51:33: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:51:33: 	- Excluding 0 contacts
+2026-07-08 15:51:33: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/dmd-dag1/specific_interactions.txt'
+2026-07-08 15:51:33: 

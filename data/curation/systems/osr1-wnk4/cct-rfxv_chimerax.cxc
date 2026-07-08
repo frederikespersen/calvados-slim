@@ -8,3 +8,4 @@ hide ~/A,D cartoons
 sel /A:448,449,450,451,452,453,454,455,459,464,467,468,471,473 | /D:1004,1005,1006,1007
 show sel surfaces
 view sel
+scale 200

@@ -1,29 +1,29 @@
-2026-07-08 15:03:34: ················································································
-2026-07-08 15:03:34: Parsing chains of 'kpna2-sv40tag' system to CALVADOS input
-2026-07-08 15:03:34: ················································································
-2026-07-08 15:03:34: Chain 'arm' ('KPNA2[ARM]')
-2026-07-08 15:03:34: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/1Q1T.cif' is specified
-2026-07-08 15:03:34: 	- Selecting chain 'C' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/kpna2-sv40tag/arm.pdb'
-2026-07-08 15:03:34: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
-2026-07-08 15:03:34: 	- Writing chain 'C' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/kpna2-sv40tag/arm.yaml'
-2026-07-08 15:03:34: 
-2026-07-08 15:03:34: Chain 'sv40tag' ('SV40TAG[NLS]')
-2026-07-08 15:03:34: 	- Parsing chain as an IDP, as no chain PDB is specified
-2026-07-08 15:03:34: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/kpna2-sv40tag/sv40tag.fasta'
-2026-07-08 15:03:34: 
-2026-07-08 15:03:34: ················································································
-2026-07-08 15:03:34: Parsing SLiMs of 'kpna2-sv40tag' system to CALVADOS input
-2026-07-08 15:03:34: ················································································
-2026-07-08 15:03:34: SLiM 'arm-sv40tag' ('KPNA2-SV40TAG[NLS]')
-2026-07-08 15:03:34: 	- Verifying that acceptor 'arm' and donor 'sv40tag' chains are found in system
-2026-07-08 15:03:34: 	- Performing contact analysis
-2026-07-08 15:03:34: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
-2026-07-08 15:03:35: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
-2026-07-08 15:03:35: 		- Defining contacts
-2026-07-08 15:03:35: 		- Found 54 pairwise contacts
-2026-07-08 15:03:35: 		- Calculating contact distances
-2026-07-08 15:03:35: 	- Mapping residue indices between System and SLiM constructs
-2026-07-08 15:03:35: 	- Dropping 0 contacts outside the construct windows
-2026-07-08 15:03:35: 	- Excluding 0 contacts
-2026-07-08 15:03:35: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/kpna2-sv40tag/specific_interactions.txt'
-2026-07-08 15:03:35: 
+2026-07-08 15:54:14: ················································································
+2026-07-08 15:54:14: Parsing chains of 'kpna2-sv40tag' system to CALVADOS input
+2026-07-08 15:54:14: ················································································
+2026-07-08 15:54:14: Chain 'arm' ('KPNA2[ARM]')
+2026-07-08 15:54:14: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/1Q1T.cif' is specified
+2026-07-08 15:54:14: 	- Selecting chain 'C' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/kpna2-sv40tag/arm.pdb'
+2026-07-08 15:54:15: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:54:15: 	- Writing chain 'C' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/kpna2-sv40tag/arm.yaml'
+2026-07-08 15:54:15: 
+2026-07-08 15:54:15: Chain 'sv40tag' ('SV40TAG[NLS]')
+2026-07-08 15:54:15: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:54:15: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/kpna2-sv40tag/sv40tag.fasta'
+2026-07-08 15:54:15: 
+2026-07-08 15:54:15: ················································································
+2026-07-08 15:54:15: Parsing SLiMs of 'kpna2-sv40tag' system to CALVADOS input
+2026-07-08 15:54:15: ················································································
+2026-07-08 15:54:15: SLiM 'arm-sv40tag' ('KPNA2-SV40TAG[NLS]')
+2026-07-08 15:54:15: 	- Verifying that acceptor 'arm' and donor 'sv40tag' chains are found in system
+2026-07-08 15:54:15: 	- Performing contact analysis
+2026-07-08 15:54:15: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:54:15: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:54:15: 		- Defining contacts
+2026-07-08 15:54:15: 		- Found 54 pairwise contacts
+2026-07-08 15:54:15: 		- Calculating contact distances
+2026-07-08 15:54:15: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:54:15: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:54:15: 	- Excluding 0 contacts
+2026-07-08 15:54:15: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/kpna2-sv40tag/specific_interactions.txt'
+2026-07-08 15:54:15: 

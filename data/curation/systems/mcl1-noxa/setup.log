@@ -1,29 +1,29 @@
-2026-07-08 15:03:12: ················································································
-2026-07-08 15:03:12: Parsing chains of 'mcl1-noxa' system to CALVADOS input
-2026-07-08 15:03:12: ················································································
-2026-07-08 15:03:12: Chain 'mcl1' ('MCL1')
-2026-07-08 15:03:12: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/2ROD.cif' is specified
-2026-07-08 15:03:12: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/mcl1-noxa/mcl1.pdb'
-2026-07-08 15:03:13: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
-2026-07-08 15:03:13: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/mcl1-noxa/mcl1.yaml'
-2026-07-08 15:03:13: 
-2026-07-08 15:03:13: Chain 'noxa' ('PMAIP1[BH3]')
-2026-07-08 15:03:13: 	- Parsing chain as an IDP, as no chain PDB is specified
-2026-07-08 15:03:13: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/mcl1-noxa/noxa.fasta'
-2026-07-08 15:03:13: 
-2026-07-08 15:03:13: ················································································
-2026-07-08 15:03:13: Parsing SLiMs of 'mcl1-noxa' system to CALVADOS input
-2026-07-08 15:03:13: ················································································
-2026-07-08 15:03:13: SLiM 'mcl1-noxa' ('MCL1[BH3groove]-PMAIP1[BH3]')
-2026-07-08 15:03:13: 	- Verifying that acceptor 'mcl1' and donor 'noxa' chains are found in system
-2026-07-08 15:03:13: 	- Performing contact analysis
-2026-07-08 15:03:13: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
-2026-07-08 15:03:13: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
-2026-07-08 15:03:13: 		- Defining contacts
-2026-07-08 15:03:13: 		- Found 61 pairwise contacts
-2026-07-08 15:03:13: 		- Calculating contact distances
-2026-07-08 15:03:13: 	- Mapping residue indices between System and SLiM constructs
-2026-07-08 15:03:13: 	- Dropping 0 contacts outside the construct windows
-2026-07-08 15:03:13: 	- Excluding 13 contacts
-2026-07-08 15:03:13: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/mcl1-noxa/specific_interactions.txt'
-2026-07-08 15:03:13: 
+2026-07-08 15:53:49: ················································································
+2026-07-08 15:53:49: Parsing chains of 'mcl1-noxa' system to CALVADOS input
+2026-07-08 15:53:49: ················································································
+2026-07-08 15:53:49: Chain 'mcl1' ('MCL1')
+2026-07-08 15:53:49: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/2ROD.cif' is specified
+2026-07-08 15:53:49: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/mcl1-noxa/mcl1.pdb'
+2026-07-08 15:53:50: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:53:50: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/mcl1-noxa/mcl1.yaml'
+2026-07-08 15:53:50: 
+2026-07-08 15:53:50: Chain 'noxa' ('PMAIP1[BH3]')
+2026-07-08 15:53:50: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:53:50: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/mcl1-noxa/noxa.fasta'
+2026-07-08 15:53:50: 
+2026-07-08 15:53:50: ················································································
+2026-07-08 15:53:50: Parsing SLiMs of 'mcl1-noxa' system to CALVADOS input
+2026-07-08 15:53:50: ················································································
+2026-07-08 15:53:50: SLiM 'mcl1-noxa' ('MCL1[BH3groove]-PMAIP1[BH3]')
+2026-07-08 15:53:50: 	- Verifying that acceptor 'mcl1' and donor 'noxa' chains are found in system
+2026-07-08 15:53:50: 	- Performing contact analysis
+2026-07-08 15:53:50: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:53:50: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:53:50: 		- Defining contacts
+2026-07-08 15:53:50: 		- Found 61 pairwise contacts
+2026-07-08 15:53:50: 		- Calculating contact distances
+2026-07-08 15:53:50: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:53:50: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:53:50: 	- Excluding 13 contacts
+2026-07-08 15:53:50: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/mcl1-noxa/specific_interactions.txt'
+2026-07-08 15:53:50: 

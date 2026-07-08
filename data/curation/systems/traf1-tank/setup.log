@@ -1,29 +1,29 @@
-2026-07-08 15:01:37: ················································································
-2026-07-08 15:01:37: Parsing chains of 'traf1-tank' system to CALVADOS input
-2026-07-08 15:01:37: ················································································
-2026-07-08 15:01:37: Chain 'math' ('TRAF1[MATH]')
-2026-07-08 15:01:37: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/5H10.cif' is specified
-2026-07-08 15:01:37: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/traf1-tank/math.pdb'
-2026-07-08 15:01:37: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
-2026-07-08 15:01:37: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/traf1-tank/math.yaml'
-2026-07-08 15:01:37: 
-2026-07-08 15:01:37: Chain 'peptide' ('TANK[peptide]')
-2026-07-08 15:01:37: 	- Parsing chain as an IDP, as no chain PDB is specified
-2026-07-08 15:01:37: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/traf1-tank/peptide.fasta'
-2026-07-08 15:01:37: 
-2026-07-08 15:01:37: ················································································
-2026-07-08 15:01:37: Parsing SLiMs of 'traf1-tank' system to CALVADOS input
-2026-07-08 15:01:37: ················································································
-2026-07-08 15:01:37: SLiM 'math-peptide' ('TRAF1[MATH]-TANK[peptide]')
-2026-07-08 15:01:37: 	- Verifying that acceptor 'math' and donor 'peptide' chains are found in system
-2026-07-08 15:01:37: 	- Performing contact analysis
-2026-07-08 15:01:37: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
-2026-07-08 15:01:37: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
-2026-07-08 15:01:37: 		- Defining contacts
-2026-07-08 15:01:37: 		- Found 28 pairwise contacts
-2026-07-08 15:01:37: 		- Calculating contact distances
-2026-07-08 15:01:37: 	- Mapping residue indices between System and SLiM constructs
-2026-07-08 15:01:37: 	- Dropping 0 contacts outside the construct windows
-2026-07-08 15:01:37: 	- Excluding 0 contacts
-2026-07-08 15:01:37: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/traf1-tank/specific_interactions.txt'
-2026-07-08 15:01:37: 
+2026-07-08 15:51:56: ················································································
+2026-07-08 15:51:56: Parsing chains of 'traf1-tank' system to CALVADOS input
+2026-07-08 15:51:56: ················································································
+2026-07-08 15:51:56: Chain 'math' ('TRAF1[MATH]')
+2026-07-08 15:51:56: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/5H10.cif' is specified
+2026-07-08 15:51:56: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/traf1-tank/math.pdb'
+2026-07-08 15:51:57: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:51:57: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/traf1-tank/math.yaml'
+2026-07-08 15:51:57: 
+2026-07-08 15:51:57: Chain 'peptide' ('TANK[peptide]')
+2026-07-08 15:51:57: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:51:57: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/traf1-tank/peptide.fasta'
+2026-07-08 15:51:57: 
+2026-07-08 15:51:57: ················································································
+2026-07-08 15:51:57: Parsing SLiMs of 'traf1-tank' system to CALVADOS input
+2026-07-08 15:51:57: ················································································
+2026-07-08 15:51:57: SLiM 'math-peptide' ('TRAF1[MATH]-TANK[peptide]')
+2026-07-08 15:51:57: 	- Verifying that acceptor 'math' and donor 'peptide' chains are found in system
+2026-07-08 15:51:57: 	- Performing contact analysis
+2026-07-08 15:51:57: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:51:57: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:51:57: 		- Defining contacts
+2026-07-08 15:51:57: 		- Found 28 pairwise contacts
+2026-07-08 15:51:57: 		- Calculating contact distances
+2026-07-08 15:51:57: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:51:57: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:51:57: 	- Excluding 0 contacts
+2026-07-08 15:51:57: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/traf1-tank/specific_interactions.txt'
+2026-07-08 15:51:57: 

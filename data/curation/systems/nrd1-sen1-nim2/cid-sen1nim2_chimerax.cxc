@@ -8,3 +8,4 @@ hide ~/A,C cartoons
 sel /A:24,25,26,27,29,67,70,71,74,81,127,130,133,134 | /C:1885,1886,1887,1889,1890,1893,1894
 show sel surfaces
 view sel
+scale 200

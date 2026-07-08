@@ -1,29 +1,29 @@
-2026-07-08 15:02:09: ················································································
-2026-07-08 15:02:09: Parsing chains of 'rnf31-spata2' system to CALVADOS input
-2026-07-08 15:02:09: ················································································
-2026-07-08 15:02:09: Chain 'pub' ('RNF31[PUB]')
-2026-07-08 15:02:09: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/5LJN.cif' is specified
-2026-07-08 15:02:09: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/rnf31-spata2/pub.pdb'
-2026-07-08 15:02:09: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
-2026-07-08 15:02:09: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/rnf31-spata2/pub.yaml'
-2026-07-08 15:02:09: 
-2026-07-08 15:02:09: Chain 'pim' ('SPATA2[PIM]')
-2026-07-08 15:02:09: 	- Parsing chain as an IDP, as no chain PDB is specified
-2026-07-08 15:02:09: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/rnf31-spata2/pim.fasta'
-2026-07-08 15:02:09: 
-2026-07-08 15:02:09: ················································································
-2026-07-08 15:02:09: Parsing SLiMs of 'rnf31-spata2' system to CALVADOS input
-2026-07-08 15:02:09: ················································································
-2026-07-08 15:02:09: SLiM 'pub-pim' ('RNF31[PUB]-SPATA2[PIM]')
-2026-07-08 15:02:09: 	- Verifying that acceptor 'pub' and donor 'pim' chains are found in system
-2026-07-08 15:02:09: 	- Performing contact analysis
-2026-07-08 15:02:09: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
-2026-07-08 15:02:09: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
-2026-07-08 15:02:09: 		- Defining contacts
-2026-07-08 15:02:09: 		- Found 30 pairwise contacts
-2026-07-08 15:02:09: 		- Calculating contact distances
-2026-07-08 15:02:09: 	- Mapping residue indices between System and SLiM constructs
-2026-07-08 15:02:09: 	- Dropping 0 contacts outside the construct windows
-2026-07-08 15:02:09: 	- Excluding 0 contacts
-2026-07-08 15:02:09: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/rnf31-spata2/specific_interactions.txt'
-2026-07-08 15:02:09: 
+2026-07-08 15:52:35: ················································································
+2026-07-08 15:52:35: Parsing chains of 'rnf31-spata2' system to CALVADOS input
+2026-07-08 15:52:35: ················································································
+2026-07-08 15:52:35: Chain 'pub' ('RNF31[PUB]')
+2026-07-08 15:52:35: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/5LJN.cif' is specified
+2026-07-08 15:52:35: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/rnf31-spata2/pub.pdb'
+2026-07-08 15:52:35: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:52:35: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/rnf31-spata2/pub.yaml'
+2026-07-08 15:52:35: 
+2026-07-08 15:52:35: Chain 'pim' ('SPATA2[PIM]')
+2026-07-08 15:52:35: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:52:35: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/rnf31-spata2/pim.fasta'
+2026-07-08 15:52:35: 
+2026-07-08 15:52:35: ················································································
+2026-07-08 15:52:35: Parsing SLiMs of 'rnf31-spata2' system to CALVADOS input
+2026-07-08 15:52:35: ················································································
+2026-07-08 15:52:35: SLiM 'pub-pim' ('RNF31[PUB]-SPATA2[PIM]')
+2026-07-08 15:52:35: 	- Verifying that acceptor 'pub' and donor 'pim' chains are found in system
+2026-07-08 15:52:35: 	- Performing contact analysis
+2026-07-08 15:52:35: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:52:36: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:52:36: 		- Defining contacts
+2026-07-08 15:52:36: 		- Found 30 pairwise contacts
+2026-07-08 15:52:36: 		- Calculating contact distances
+2026-07-08 15:52:36: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:52:36: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:52:36: 	- Excluding 0 contacts
+2026-07-08 15:52:36: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/rnf31-spata2/specific_interactions.txt'
+2026-07-08 15:52:36: 

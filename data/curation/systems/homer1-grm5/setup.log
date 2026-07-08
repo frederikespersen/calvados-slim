@@ -1,29 +1,29 @@
-2026-07-08 15:03:29: ················································································
-2026-07-08 15:03:29: Parsing chains of 'homer1-grm5' system to CALVADOS input
-2026-07-08 15:03:29: ················································································
-2026-07-08 15:03:29: Chain 'evh1' ('HOMER1[EVH1]')
-2026-07-08 15:03:29: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/1DDV.cif' is specified
-2026-07-08 15:03:29: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/homer1-grm5/evh1.pdb'
-2026-07-08 15:03:30: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
-2026-07-08 15:03:30: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/homer1-grm5/evh1.yaml'
-2026-07-08 15:03:30: 
-2026-07-08 15:03:30: Chain 'grm5' ('GRM5[peptide]')
-2026-07-08 15:03:30: 	- Parsing chain as an IDP, as no chain PDB is specified
-2026-07-08 15:03:30: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/homer1-grm5/grm5.fasta'
-2026-07-08 15:03:30: 
-2026-07-08 15:03:30: ················································································
-2026-07-08 15:03:30: Parsing SLiMs of 'homer1-grm5' system to CALVADOS input
-2026-07-08 15:03:30: ················································································
-2026-07-08 15:03:30: SLiM 'evh1-grm5' ('HOMER1[EVH1]-GRM5[peptide]')
-2026-07-08 15:03:30: 	- Verifying that acceptor 'evh1' and donor 'grm5' chains are found in system
-2026-07-08 15:03:30: 	- Performing contact analysis
-2026-07-08 15:03:30: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
-2026-07-08 15:03:30: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
-2026-07-08 15:03:30: 		- Defining contacts
-2026-07-08 15:03:30: 		- Found 15 pairwise contacts
-2026-07-08 15:03:30: 		- Calculating contact distances
-2026-07-08 15:03:30: 	- Mapping residue indices between System and SLiM constructs
-2026-07-08 15:03:30: 	- Dropping 0 contacts outside the construct windows
-2026-07-08 15:03:30: 	- Excluding 0 contacts
-2026-07-08 15:03:30: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/homer1-grm5/specific_interactions.txt'
-2026-07-08 15:03:30: 
+2026-07-08 15:54:09: ················································································
+2026-07-08 15:54:09: Parsing chains of 'homer1-grm5' system to CALVADOS input
+2026-07-08 15:54:09: ················································································
+2026-07-08 15:54:09: Chain 'evh1' ('HOMER1[EVH1]')
+2026-07-08 15:54:09: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/1DDV.cif' is specified
+2026-07-08 15:54:09: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/homer1-grm5/evh1.pdb'
+2026-07-08 15:54:09: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:54:09: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/homer1-grm5/evh1.yaml'
+2026-07-08 15:54:09: 
+2026-07-08 15:54:09: Chain 'grm5' ('GRM5[peptide]')
+2026-07-08 15:54:09: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:54:09: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/homer1-grm5/grm5.fasta'
+2026-07-08 15:54:09: 
+2026-07-08 15:54:09: ················································································
+2026-07-08 15:54:09: Parsing SLiMs of 'homer1-grm5' system to CALVADOS input
+2026-07-08 15:54:09: ················································································
+2026-07-08 15:54:09: SLiM 'evh1-grm5' ('HOMER1[EVH1]-GRM5[peptide]')
+2026-07-08 15:54:09: 	- Verifying that acceptor 'evh1' and donor 'grm5' chains are found in system
+2026-07-08 15:54:09: 	- Performing contact analysis
+2026-07-08 15:54:09: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:54:09: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:54:09: 		- Defining contacts
+2026-07-08 15:54:09: 		- Found 15 pairwise contacts
+2026-07-08 15:54:09: 		- Calculating contact distances
+2026-07-08 15:54:09: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:54:09: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:54:09: 	- Excluding 0 contacts
+2026-07-08 15:54:09: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/homer1-grm5/specific_interactions.txt'
+2026-07-08 15:54:09: 

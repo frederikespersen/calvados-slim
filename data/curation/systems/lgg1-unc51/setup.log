@@ -1,29 +1,29 @@
-2026-07-08 15:02:31: ················································································
-2026-07-08 15:02:31: Parsing chains of 'lgg1-unc51' system to CALVADOS input
-2026-07-08 15:02:31: ················································································
-2026-07-08 15:02:31: Chain 'lgg1' ('LGG-1')
-2026-07-08 15:02:31: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/5AZG.cif' is specified
-2026-07-08 15:02:31: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/lgg1-unc51/lgg1.pdb'
-2026-07-08 15:02:32: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
-2026-07-08 15:02:32: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/lgg1-unc51/lgg1.yaml'
-2026-07-08 15:02:32: 
-2026-07-08 15:02:32: Chain 'lir' ('UNC-51[LIR]')
-2026-07-08 15:02:32: 	- Parsing chain as an IDP, as no chain PDB is specified
-2026-07-08 15:02:32: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/lgg1-unc51/lir.fasta'
-2026-07-08 15:02:32: 
-2026-07-08 15:02:32: ················································································
-2026-07-08 15:02:32: Parsing SLiMs of 'lgg1-unc51' system to CALVADOS input
-2026-07-08 15:02:32: ················································································
-2026-07-08 15:02:32: SLiM 'lgg1-lir' ('LGG-1-UNC-51[LIR]')
-2026-07-08 15:02:32: 	- Verifying that acceptor 'lgg1' and donor 'lir' chains are found in system
-2026-07-08 15:02:32: 	- Performing contact analysis
-2026-07-08 15:02:32: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
-2026-07-08 15:02:32: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
-2026-07-08 15:02:32: 		- Defining contacts
-2026-07-08 15:02:32: 		- Found 25 pairwise contacts
-2026-07-08 15:02:32: 		- Calculating contact distances
-2026-07-08 15:02:32: 	- Mapping residue indices between System and SLiM constructs
-2026-07-08 15:02:32: 	- Dropping 0 contacts outside the construct windows
-2026-07-08 15:02:32: 	- Excluding 0 contacts
-2026-07-08 15:02:32: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/lgg1-unc51/specific_interactions.txt'
-2026-07-08 15:02:32: 
+2026-07-08 15:53:02: ················································································
+2026-07-08 15:53:02: Parsing chains of 'lgg1-unc51' system to CALVADOS input
+2026-07-08 15:53:02: ················································································
+2026-07-08 15:53:02: Chain 'lgg1' ('LGG-1')
+2026-07-08 15:53:02: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/5AZG.cif' is specified
+2026-07-08 15:53:02: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/lgg1-unc51/lgg1.pdb'
+2026-07-08 15:53:02: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:53:02: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/lgg1-unc51/lgg1.yaml'
+2026-07-08 15:53:02: 
+2026-07-08 15:53:02: Chain 'lir' ('UNC-51[LIR]')
+2026-07-08 15:53:02: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:53:02: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/lgg1-unc51/lir.fasta'
+2026-07-08 15:53:02: 
+2026-07-08 15:53:02: ················································································
+2026-07-08 15:53:02: Parsing SLiMs of 'lgg1-unc51' system to CALVADOS input
+2026-07-08 15:53:02: ················································································
+2026-07-08 15:53:02: SLiM 'lgg1-lir' ('LGG-1-UNC-51[LIR]')
+2026-07-08 15:53:02: 	- Verifying that acceptor 'lgg1' and donor 'lir' chains are found in system
+2026-07-08 15:53:02: 	- Performing contact analysis
+2026-07-08 15:53:02: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:53:02: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:53:02: 		- Defining contacts
+2026-07-08 15:53:02: 		- Found 25 pairwise contacts
+2026-07-08 15:53:02: 		- Calculating contact distances
+2026-07-08 15:53:02: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:53:02: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:53:02: 	- Excluding 0 contacts
+2026-07-08 15:53:02: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/lgg1-unc51/specific_interactions.txt'
+2026-07-08 15:53:02: 

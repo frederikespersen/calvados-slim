@@ -1,29 +1,29 @@
-2026-07-08 15:01:44: ················································································
-2026-07-08 15:01:44: Parsing chains of 'terf2-tinf2' system to CALVADOS input
-2026-07-08 15:01:44: ················································································
-2026-07-08 15:01:44: Chain 'trfh' ('TERF2[TRFH]')
-2026-07-08 15:01:44: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/3BU8.cif' is specified
-2026-07-08 15:01:44: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/terf2-tinf2/trfh.pdb'
-2026-07-08 15:01:45: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
-2026-07-08 15:01:45: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/terf2-tinf2/trfh.yaml'
-2026-07-08 15:01:45: 
-2026-07-08 15:01:45: Chain 'tbm' ('TINF2[TBM]')
-2026-07-08 15:01:45: 	- Parsing chain as an IDP, as no chain PDB is specified
-2026-07-08 15:01:45: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/terf2-tinf2/tbm.fasta'
-2026-07-08 15:01:45: 
-2026-07-08 15:01:45: ················································································
-2026-07-08 15:01:45: Parsing SLiMs of 'terf2-tinf2' system to CALVADOS input
-2026-07-08 15:01:45: ················································································
-2026-07-08 15:01:45: SLiM 'trfh-tbm' ('TERF2[TRFH]-TINF2[TBM]')
-2026-07-08 15:01:45: 	- Verifying that acceptor 'trfh' and donor 'tbm' chains are found in system
-2026-07-08 15:01:45: 	- Performing contact analysis
-2026-07-08 15:01:45: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
-2026-07-08 15:01:45: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
-2026-07-08 15:01:45: 		- Defining contacts
-2026-07-08 15:01:45: 		- Found 59 pairwise contacts
-2026-07-08 15:01:45: 		- Calculating contact distances
-2026-07-08 15:01:45: 	- Mapping residue indices between System and SLiM constructs
-2026-07-08 15:01:45: 	- Dropping 0 contacts outside the construct windows
-2026-07-08 15:01:45: 	- Excluding 0 contacts
-2026-07-08 15:01:45: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/terf2-tinf2/specific_interactions.txt'
-2026-07-08 15:01:45: 
+2026-07-08 15:52:06: ················································································
+2026-07-08 15:52:06: Parsing chains of 'terf2-tinf2' system to CALVADOS input
+2026-07-08 15:52:06: ················································································
+2026-07-08 15:52:06: Chain 'trfh' ('TERF2[TRFH]')
+2026-07-08 15:52:06: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/3BU8.cif' is specified
+2026-07-08 15:52:06: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/terf2-tinf2/trfh.pdb'
+2026-07-08 15:52:07: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:52:07: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/terf2-tinf2/trfh.yaml'
+2026-07-08 15:52:07: 
+2026-07-08 15:52:07: Chain 'tbm' ('TINF2[TBM]')
+2026-07-08 15:52:07: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:52:07: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/terf2-tinf2/tbm.fasta'
+2026-07-08 15:52:07: 
+2026-07-08 15:52:07: ················································································
+2026-07-08 15:52:07: Parsing SLiMs of 'terf2-tinf2' system to CALVADOS input
+2026-07-08 15:52:07: ················································································
+2026-07-08 15:52:07: SLiM 'trfh-tbm' ('TERF2[TRFH]-TINF2[TBM]')
+2026-07-08 15:52:07: 	- Verifying that acceptor 'trfh' and donor 'tbm' chains are found in system
+2026-07-08 15:52:07: 	- Performing contact analysis
+2026-07-08 15:52:07: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:52:07: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:52:07: 		- Defining contacts
+2026-07-08 15:52:07: 		- Found 59 pairwise contacts
+2026-07-08 15:52:07: 		- Calculating contact distances
+2026-07-08 15:52:07: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:52:07: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:52:07: 	- Excluding 0 contacts
+2026-07-08 15:52:07: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/terf2-tinf2/specific_interactions.txt'
+2026-07-08 15:52:07: 

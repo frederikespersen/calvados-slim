@@ -1,29 +1,29 @@
-2026-07-08 15:01:10: ················································································
-2026-07-08 15:01:10: Parsing chains of 'clip1-tuba4a' system to CALVADOS input
-2026-07-08 15:01:10: ················································································
-2026-07-08 15:01:10: Chain 'capgly' ('CLIP1[CAP-Gly]')
-2026-07-08 15:01:10: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/2E4H.cif' is specified
-2026-07-08 15:01:10: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/clip1-tuba4a/capgly.pdb'
-2026-07-08 15:01:10: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
-2026-07-08 15:01:10: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/clip1-tuba4a/capgly.yaml'
-2026-07-08 15:01:10: 
-2026-07-08 15:01:10: Chain 'eey' ('TUBA4A[EEY]')
-2026-07-08 15:01:10: 	- Parsing chain as an IDP, as no chain PDB is specified
-2026-07-08 15:01:10: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/clip1-tuba4a/eey.fasta'
-2026-07-08 15:01:10: 
-2026-07-08 15:01:10: ················································································
-2026-07-08 15:01:10: Parsing SLiMs of 'clip1-tuba4a' system to CALVADOS input
-2026-07-08 15:01:10: ················································································
-2026-07-08 15:01:10: SLiM 'capgly-eey' ('CLIP1[CAP-Gly]-TUBA4A[EEY]')
-2026-07-08 15:01:10: 	- Verifying that acceptor 'capgly' and donor 'eey' chains are found in system
-2026-07-08 15:01:10: 	- Performing contact analysis
-2026-07-08 15:01:10: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
-2026-07-08 15:01:10: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
-2026-07-08 15:01:10: 		- Defining contacts
-2026-07-08 15:01:10: 		- Found 19 pairwise contacts
-2026-07-08 15:01:10: 		- Calculating contact distances
-2026-07-08 15:01:10: 	- Mapping residue indices between System and SLiM constructs
-2026-07-08 15:01:10: 	- Dropping 0 contacts outside the construct windows
-2026-07-08 15:01:10: 	- Excluding 2 contacts
-2026-07-08 15:01:10: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/clip1-tuba4a/specific_interactions.txt'
-2026-07-08 15:01:10: 
+2026-07-08 15:51:23: ················································································
+2026-07-08 15:51:23: Parsing chains of 'clip1-tuba4a' system to CALVADOS input
+2026-07-08 15:51:23: ················································································
+2026-07-08 15:51:23: Chain 'capgly' ('CLIP1[CAP-Gly]')
+2026-07-08 15:51:23: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/2E4H.cif' is specified
+2026-07-08 15:51:23: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/clip1-tuba4a/capgly.pdb'
+2026-07-08 15:51:24: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:51:24: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/clip1-tuba4a/capgly.yaml'
+2026-07-08 15:51:24: 
+2026-07-08 15:51:24: Chain 'eey' ('TUBA4A[EEY]')
+2026-07-08 15:51:24: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:51:24: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/clip1-tuba4a/eey.fasta'
+2026-07-08 15:51:24: 
+2026-07-08 15:51:24: ················································································
+2026-07-08 15:51:24: Parsing SLiMs of 'clip1-tuba4a' system to CALVADOS input
+2026-07-08 15:51:24: ················································································
+2026-07-08 15:51:24: SLiM 'capgly-eey' ('CLIP1[CAP-Gly]-TUBA4A[EEY]')
+2026-07-08 15:51:24: 	- Verifying that acceptor 'capgly' and donor 'eey' chains are found in system
+2026-07-08 15:51:24: 	- Performing contact analysis
+2026-07-08 15:51:24: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:51:24: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:51:24: 		- Defining contacts
+2026-07-08 15:51:24: 		- Found 19 pairwise contacts
+2026-07-08 15:51:24: 		- Calculating contact distances
+2026-07-08 15:51:24: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:51:24: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:51:24: 	- Excluding 2 contacts
+2026-07-08 15:51:24: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/clip1-tuba4a/specific_interactions.txt'
+2026-07-08 15:51:24: 

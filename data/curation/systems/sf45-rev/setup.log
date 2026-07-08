@@ -1,29 +1,29 @@
-2026-07-08 15:02:52: ················································································
-2026-07-08 15:02:52: Parsing chains of 'sf45-rev' system to CALVADOS input
-2026-07-08 15:02:52: ················································································
-2026-07-08 15:02:52: Chain 'rrm' ('RBM17[RRM]')
-2026-07-08 15:02:52: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/6HIP.cif' is specified
-2026-07-08 15:02:52: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/sf45-rev/rrm.pdb'
-2026-07-08 15:02:52: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
-2026-07-08 15:02:52: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/sf45-rev/rrm.yaml'
-2026-07-08 15:02:52: 
-2026-07-08 15:02:52: Chain 'arm' ('Rev[ARM]')
-2026-07-08 15:02:52: 	- Parsing chain as an IDP, as no chain PDB is specified
-2026-07-08 15:02:52: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/sf45-rev/arm.fasta'
-2026-07-08 15:02:52: 
-2026-07-08 15:02:52: ················································································
-2026-07-08 15:02:52: Parsing SLiMs of 'sf45-rev' system to CALVADOS input
-2026-07-08 15:02:52: ················································································
-2026-07-08 15:02:52: SLiM 'rrm-arm' ('RBM17[RRM]-Rev[ARM]')
-2026-07-08 15:02:52: 	- Verifying that acceptor 'rrm' and donor 'arm' chains are found in system
-2026-07-08 15:02:52: 	- Performing contact analysis
-2026-07-08 15:02:52: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
-2026-07-08 15:02:52: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
-2026-07-08 15:02:52: 		- Defining contacts
-2026-07-08 15:02:52: 		- Found 39 pairwise contacts
-2026-07-08 15:02:52: 		- Calculating contact distances
-2026-07-08 15:02:52: 	- Mapping residue indices between System and SLiM constructs
-2026-07-08 15:02:52: 	- Dropping 0 contacts outside the construct windows
-2026-07-08 15:02:52: 	- Excluding 0 contacts
-2026-07-08 15:02:52: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/sf45-rev/specific_interactions.txt'
-2026-07-08 15:02:52: 
+2026-07-08 15:53:25: ················································································
+2026-07-08 15:53:25: Parsing chains of 'sf45-rev' system to CALVADOS input
+2026-07-08 15:53:25: ················································································
+2026-07-08 15:53:25: Chain 'rrm' ('RBM17[RRM]')
+2026-07-08 15:53:25: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/6HIP.cif' is specified
+2026-07-08 15:53:25: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/sf45-rev/rrm.pdb'
+2026-07-08 15:53:26: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:53:26: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/sf45-rev/rrm.yaml'
+2026-07-08 15:53:26: 
+2026-07-08 15:53:26: Chain 'arm' ('Rev[ARM]')
+2026-07-08 15:53:26: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:53:26: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/sf45-rev/arm.fasta'
+2026-07-08 15:53:26: 
+2026-07-08 15:53:26: ················································································
+2026-07-08 15:53:26: Parsing SLiMs of 'sf45-rev' system to CALVADOS input
+2026-07-08 15:53:26: ················································································
+2026-07-08 15:53:26: SLiM 'rrm-arm' ('RBM17[RRM]-Rev[ARM]')
+2026-07-08 15:53:26: 	- Verifying that acceptor 'rrm' and donor 'arm' chains are found in system
+2026-07-08 15:53:26: 	- Performing contact analysis
+2026-07-08 15:53:26: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:53:26: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:53:26: 		- Defining contacts
+2026-07-08 15:53:26: 		- Found 39 pairwise contacts
+2026-07-08 15:53:26: 		- Calculating contact distances
+2026-07-08 15:53:26: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:53:26: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:53:26: 	- Excluding 0 contacts
+2026-07-08 15:53:26: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/sf45-rev/specific_interactions.txt'
+2026-07-08 15:53:26: 

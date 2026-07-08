@@ -1,29 +1,29 @@
-2026-07-08 15:00:35: ················································································
-2026-07-08 15:00:35: Parsing chains of 'sumo1-pml' system to CALVADOS input
-2026-07-08 15:00:35: ················································································
-2026-07-08 15:00:35: Chain 'sumo1' ('SUMO1')
-2026-07-08 15:00:35: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/4WJO.cif' is specified
-2026-07-08 15:00:35: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/sumo1-pml/sumo1.pdb'
-2026-07-08 15:00:35: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
-2026-07-08 15:00:35: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/sumo1-pml/sumo1.yaml'
-2026-07-08 15:00:35: 
-2026-07-08 15:00:35: Chain 'sim' ('PML[SIM]')
-2026-07-08 15:00:35: 	- Parsing chain as an IDP, as no chain PDB is specified
-2026-07-08 15:00:35: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/sumo1-pml/sim.fasta'
-2026-07-08 15:00:35: 
-2026-07-08 15:00:35: ················································································
-2026-07-08 15:00:35: Parsing SLiMs of 'sumo1-pml' system to CALVADOS input
-2026-07-08 15:00:35: ················································································
-2026-07-08 15:00:35: SLiM 'sumo1-sim' ('SUMO1-PML[SIM]')
-2026-07-08 15:00:35: 	- Verifying that acceptor 'sumo1' and donor 'sim' chains are found in system
-2026-07-08 15:00:35: 	- Performing contact analysis
-2026-07-08 15:00:35: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
-2026-07-08 15:00:35: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
-2026-07-08 15:00:35: 		- Defining contacts
-2026-07-08 15:00:35: 		- Found 27 pairwise contacts
-2026-07-08 15:00:35: 		- Calculating contact distances
-2026-07-08 15:00:35: 	- Mapping residue indices between System and SLiM constructs
-2026-07-08 15:00:35: 	- Dropping 0 contacts outside the construct windows
-2026-07-08 15:00:35: 	- Excluding 0 contacts
-2026-07-08 15:00:35: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/sumo1-pml/specific_interactions.txt'
-2026-07-08 15:00:35: 
+2026-07-08 15:50:40: ················································································
+2026-07-08 15:50:40: Parsing chains of 'sumo1-pml' system to CALVADOS input
+2026-07-08 15:50:40: ················································································
+2026-07-08 15:50:40: Chain 'sumo1' ('SUMO1')
+2026-07-08 15:50:40: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/4WJO.cif' is specified
+2026-07-08 15:50:40: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/sumo1-pml/sumo1.pdb'
+2026-07-08 15:50:41: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:50:41: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/sumo1-pml/sumo1.yaml'
+2026-07-08 15:50:41: 
+2026-07-08 15:50:41: Chain 'sim' ('PML[SIM]')
+2026-07-08 15:50:41: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:50:41: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/sumo1-pml/sim.fasta'
+2026-07-08 15:50:41: 
+2026-07-08 15:50:41: ················································································
+2026-07-08 15:50:41: Parsing SLiMs of 'sumo1-pml' system to CALVADOS input
+2026-07-08 15:50:41: ················································································
+2026-07-08 15:50:41: SLiM 'sumo1-sim' ('SUMO1-PML[SIM]')
+2026-07-08 15:50:41: 	- Verifying that acceptor 'sumo1' and donor 'sim' chains are found in system
+2026-07-08 15:50:41: 	- Performing contact analysis
+2026-07-08 15:50:41: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:50:41: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:50:41: 		- Defining contacts
+2026-07-08 15:50:41: 		- Found 27 pairwise contacts
+2026-07-08 15:50:41: 		- Calculating contact distances
+2026-07-08 15:50:41: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:50:41: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:50:41: 	- Excluding 0 contacts
+2026-07-08 15:50:41: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/sumo1-pml/specific_interactions.txt'
+2026-07-08 15:50:41: 

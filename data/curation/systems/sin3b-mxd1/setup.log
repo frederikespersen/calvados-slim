@@ -1,29 +1,29 @@
-2026-07-08 15:01:00: ················································································
-2026-07-08 15:01:00: Parsing chains of 'sin3b-mxd1' system to CALVADOS input
-2026-07-08 15:01:00: ················································································
-2026-07-08 15:01:00: Chain 'pah2' ('SIN3B[PAH2]')
-2026-07-08 15:01:00: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/1PD7.cif' is specified
-2026-07-08 15:01:00: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/sin3b-mxd1/pah2.pdb'
-2026-07-08 15:01:01: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
-2026-07-08 15:01:01: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/sin3b-mxd1/pah2.yaml'
-2026-07-08 15:01:01: 
-2026-07-08 15:01:01: Chain 'sid' ('MXD1[SID]')
-2026-07-08 15:01:01: 	- Parsing chain as an IDP, as no chain PDB is specified
-2026-07-08 15:01:01: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/sin3b-mxd1/sid.fasta'
-2026-07-08 15:01:01: 
-2026-07-08 15:01:01: ················································································
-2026-07-08 15:01:01: Parsing SLiMs of 'sin3b-mxd1' system to CALVADOS input
-2026-07-08 15:01:01: ················································································
-2026-07-08 15:01:01: SLiM 'pah2-sid' ('SIN3B[PAH2]-MXD1[SID]')
-2026-07-08 15:01:01: 	- Verifying that acceptor 'pah2' and donor 'sid' chains are found in system
-2026-07-08 15:01:01: 	- Performing contact analysis
-2026-07-08 15:01:01: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
-2026-07-08 15:01:02: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
-2026-07-08 15:01:02: 		- Defining contacts
-2026-07-08 15:01:02: 		- Found 53 pairwise contacts
-2026-07-08 15:01:02: 		- Calculating contact distances
-2026-07-08 15:01:02: 	- Mapping residue indices between System and SLiM constructs
-2026-07-08 15:01:02: 	- Dropping 0 contacts outside the construct windows
-2026-07-08 15:01:02: 	- Excluding 12 contacts
-2026-07-08 15:01:02: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/sin3b-mxd1/specific_interactions.txt'
-2026-07-08 15:01:02: 
+2026-07-08 15:51:12: ················································································
+2026-07-08 15:51:12: Parsing chains of 'sin3b-mxd1' system to CALVADOS input
+2026-07-08 15:51:12: ················································································
+2026-07-08 15:51:12: Chain 'pah2' ('SIN3B[PAH2]')
+2026-07-08 15:51:12: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/1PD7.cif' is specified
+2026-07-08 15:51:12: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/sin3b-mxd1/pah2.pdb'
+2026-07-08 15:51:13: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:51:13: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/sin3b-mxd1/pah2.yaml'
+2026-07-08 15:51:13: 
+2026-07-08 15:51:13: Chain 'sid' ('MXD1[SID]')
+2026-07-08 15:51:13: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:51:13: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/sin3b-mxd1/sid.fasta'
+2026-07-08 15:51:13: 
+2026-07-08 15:51:13: ················································································
+2026-07-08 15:51:13: Parsing SLiMs of 'sin3b-mxd1' system to CALVADOS input
+2026-07-08 15:51:13: ················································································
+2026-07-08 15:51:13: SLiM 'pah2-sid' ('SIN3B[PAH2]-MXD1[SID]')
+2026-07-08 15:51:13: 	- Verifying that acceptor 'pah2' and donor 'sid' chains are found in system
+2026-07-08 15:51:13: 	- Performing contact analysis
+2026-07-08 15:51:13: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:51:13: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:51:13: 		- Defining contacts
+2026-07-08 15:51:13: 		- Found 53 pairwise contacts
+2026-07-08 15:51:13: 		- Calculating contact distances
+2026-07-08 15:51:13: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:51:13: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:51:13: 	- Excluding 12 contacts
+2026-07-08 15:51:13: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/sin3b-mxd1/specific_interactions.txt'
+2026-07-08 15:51:13: 

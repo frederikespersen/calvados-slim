@@ -1,29 +1,29 @@
-2026-07-08 15:03:01: ················································································
-2026-07-08 15:03:01: Parsing chains of 'keap1-ptma' system to CALVADOS input
-2026-07-08 15:03:01: ················································································
-2026-07-08 15:03:01: Chain 'kelch' ('KEAP1[Kelch]')
-2026-07-08 15:03:01: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/2Z32.cif' is specified
-2026-07-08 15:03:01: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/keap1-ptma/kelch.pdb'
-2026-07-08 15:03:02: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
-2026-07-08 15:03:02: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/keap1-ptma/kelch.yaml'
-2026-07-08 15:03:02: 
-2026-07-08 15:03:02: Chain 'ptma' ('PTMA[peptide]')
-2026-07-08 15:03:02: 	- Parsing chain as an IDP, as no chain PDB is specified
-2026-07-08 15:03:02: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/keap1-ptma/ptma.fasta'
-2026-07-08 15:03:02: 
-2026-07-08 15:03:02: ················································································
-2026-07-08 15:03:02: Parsing SLiMs of 'keap1-ptma' system to CALVADOS input
-2026-07-08 15:03:02: ················································································
-2026-07-08 15:03:02: SLiM 'kelch-ptma' ('KEAP1[Kelch]-PTMA[peptide]')
-2026-07-08 15:03:02: 	- Verifying that acceptor 'kelch' and donor 'ptma' chains are found in system
-2026-07-08 15:03:02: 	- Performing contact analysis
-2026-07-08 15:03:02: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
-2026-07-08 15:03:02: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
-2026-07-08 15:03:02: 		- Defining contacts
-2026-07-08 15:03:02: 		- Found 35 pairwise contacts
-2026-07-08 15:03:02: 		- Calculating contact distances
-2026-07-08 15:03:02: 	- Mapping residue indices between System and SLiM constructs
-2026-07-08 15:03:02: 	- Dropping 0 contacts outside the construct windows
-2026-07-08 15:03:02: 	- Excluding 0 contacts
-2026-07-08 15:03:02: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/keap1-ptma/specific_interactions.txt'
-2026-07-08 15:03:02: 
+2026-07-08 15:53:35: ················································································
+2026-07-08 15:53:35: Parsing chains of 'keap1-ptma' system to CALVADOS input
+2026-07-08 15:53:35: ················································································
+2026-07-08 15:53:35: Chain 'kelch' ('KEAP1[Kelch]')
+2026-07-08 15:53:35: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/2Z32.cif' is specified
+2026-07-08 15:53:35: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/keap1-ptma/kelch.pdb'
+2026-07-08 15:53:36: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:53:36: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/keap1-ptma/kelch.yaml'
+2026-07-08 15:53:36: 
+2026-07-08 15:53:36: Chain 'ptma' ('PTMA[peptide]')
+2026-07-08 15:53:36: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:53:36: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/keap1-ptma/ptma.fasta'
+2026-07-08 15:53:36: 
+2026-07-08 15:53:36: ················································································
+2026-07-08 15:53:36: Parsing SLiMs of 'keap1-ptma' system to CALVADOS input
+2026-07-08 15:53:36: ················································································
+2026-07-08 15:53:36: SLiM 'kelch-ptma' ('KEAP1[Kelch]-PTMA[peptide]')
+2026-07-08 15:53:36: 	- Verifying that acceptor 'kelch' and donor 'ptma' chains are found in system
+2026-07-08 15:53:36: 	- Performing contact analysis
+2026-07-08 15:53:36: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:53:37: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:53:37: 		- Defining contacts
+2026-07-08 15:53:37: 		- Found 35 pairwise contacts
+2026-07-08 15:53:37: 		- Calculating contact distances
+2026-07-08 15:53:37: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:53:37: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:53:37: 	- Excluding 0 contacts
+2026-07-08 15:53:37: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/keap1-ptma/specific_interactions.txt'
+2026-07-08 15:53:37: 

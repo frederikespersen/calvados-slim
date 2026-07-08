@@ -523,7 +523,7 @@ class System:
     #··································································#
     
     @staticmethod
-    def _write_chimerax_script(slim: dict, authres_ids: np.ndarray, system_dir: str) -> None:
+    def _write_chimerax_script(slim: dict, authres_ids: np.ndarray, system_dir: str, scale: float=20) -> None:
         """Write a ChimeraX script selecting a SLiM's contacting residues."""
         acc_resids = ",".join(np.unique(authres_ids[:, 0]).astype(str))
         don_resids = ",".join(np.unique(authres_ids[:, 1]).astype(str))
@@ -539,6 +539,7 @@ class System:
             file.write(f"/{slim['PDB Donor chain ID']}:{don_resids}")
             file.write("\nshow sel surfaces")
             file.write("\nview sel")
+            file.write(f"\nscale {scale*10:.0f}")
 
 
     #··································································#
@@ -607,7 +608,7 @@ class System:
                 file.write(f"{acceptor_chain['ID']} {acceptor_resid} | {donor_chain['ID']} {donor_resid} | {eqdist:.4f} <eps_go>\n")
 
         # ChimeraX script for visual inspection of the contacts
-        System._write_chimerax_script(slim, authres_ids, system_dir)
+        System._write_chimerax_script(slim, authres_ids, system_dir, system['Box sides'][0])
 
         log.info("")
 

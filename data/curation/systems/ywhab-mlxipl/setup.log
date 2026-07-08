@@ -1,29 +1,29 @@
-2026-07-08 15:04:18: ················································································
-2026-07-08 15:04:18: Parsing chains of 'ywhab-mlxipl' system to CALVADOS input
-2026-07-08 15:04:18: ················································································
-2026-07-08 15:04:18: Chain '1433' ('YWHAB')
-2026-07-08 15:04:18: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/5F74.cif' is specified
-2026-07-08 15:04:18: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/ywhab-mlxipl/1433.pdb'
-2026-07-08 15:04:19: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
-2026-07-08 15:04:19: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/ywhab-mlxipl/1433.yaml'
-2026-07-08 15:04:19: 
-2026-07-08 15:04:19: Chain 'chrebp' ('MLXIPL[peptide]')
-2026-07-08 15:04:19: 	- Parsing chain as an IDP, as no chain PDB is specified
-2026-07-08 15:04:19: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/ywhab-mlxipl/chrebp.fasta'
-2026-07-08 15:04:19: 
-2026-07-08 15:04:19: ················································································
-2026-07-08 15:04:19: Parsing SLiMs of 'ywhab-mlxipl' system to CALVADOS input
-2026-07-08 15:04:19: ················································································
-2026-07-08 15:04:19: SLiM '1433-chrebp' ('YWHAB-MLXIPL[peptide]')
-2026-07-08 15:04:19: 	- Verifying that acceptor '1433' and donor 'chrebp' chains are found in system
-2026-07-08 15:04:19: 	- Performing contact analysis
-2026-07-08 15:04:19: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
-2026-07-08 15:04:19: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
-2026-07-08 15:04:19: 		- Defining contacts
-2026-07-08 15:04:19: 		- Found 39 pairwise contacts
-2026-07-08 15:04:19: 		- Calculating contact distances
-2026-07-08 15:04:19: 	- Mapping residue indices between System and SLiM constructs
-2026-07-08 15:04:19: 	- Dropping 0 contacts outside the construct windows
-2026-07-08 15:04:19: 	- Excluding 0 contacts
-2026-07-08 15:04:19: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/ywhab-mlxipl/specific_interactions.txt'
-2026-07-08 15:04:19: 
+2026-07-08 15:54:53: ················································································
+2026-07-08 15:54:53: Parsing chains of 'ywhab-mlxipl' system to CALVADOS input
+2026-07-08 15:54:53: ················································································
+2026-07-08 15:54:53: Chain '1433' ('YWHAB')
+2026-07-08 15:54:53: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/5F74.cif' is specified
+2026-07-08 15:54:53: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/ywhab-mlxipl/1433.pdb'
+2026-07-08 15:54:54: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:54:54: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/ywhab-mlxipl/1433.yaml'
+2026-07-08 15:54:54: 
+2026-07-08 15:54:54: Chain 'chrebp' ('MLXIPL[peptide]')
+2026-07-08 15:54:54: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:54:54: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/ywhab-mlxipl/chrebp.fasta'
+2026-07-08 15:54:54: 
+2026-07-08 15:54:54: ················································································
+2026-07-08 15:54:54: Parsing SLiMs of 'ywhab-mlxipl' system to CALVADOS input
+2026-07-08 15:54:54: ················································································
+2026-07-08 15:54:54: SLiM '1433-chrebp' ('YWHAB-MLXIPL[peptide]')
+2026-07-08 15:54:54: 	- Verifying that acceptor '1433' and donor 'chrebp' chains are found in system
+2026-07-08 15:54:54: 	- Performing contact analysis
+2026-07-08 15:54:54: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:54:54: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:54:54: 		- Defining contacts
+2026-07-08 15:54:54: 		- Found 39 pairwise contacts
+2026-07-08 15:54:54: 		- Calculating contact distances
+2026-07-08 15:54:54: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:54:54: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:54:54: 	- Excluding 0 contacts
+2026-07-08 15:54:54: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/ywhab-mlxipl/specific_interactions.txt'
+2026-07-08 15:54:54: 
