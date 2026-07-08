@@ -7,19 +7,18 @@ src/calvados
 # GIF constructions
 figs/**/*.gif.png
 
-#sim/scan/
-sim/sandbox
-sim/scan/**/*.dcd
-sim/scan/**/*.chk
-sim/scan/**/*.pdb
-sim/scan/**/*.xml
-sim/scan/**/*.yaml
-sim/scan/**/*.txt
-sim/scan/**/*.py
-sim/scan/**/*.sh
-sim/scan/**/*.log
-sim/scan/**/*.out
-sim/scan/**/*.err
+#sim/
+sim/**/*.dcd
+sim/**/*.chk
+sim/**/*.pdb
+sim/**/*.xml
+sim/**/*.yaml
+sim/**/*.txt
+sim/**/*.py
+sim/**/*.sh
+sim/**/*.log
+sim/**/*.out
+sim/**/*.err
 
 ### STANDARD PYTHON GITIGNORE
 

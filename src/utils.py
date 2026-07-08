@@ -18,6 +18,7 @@ import struct
 import re
 import tempfile
 import warnings
+from typing import Union
 
 
 #······································································#
@@ -113,7 +114,7 @@ def parse_specific_interactions(fspecific_interactions: str) -> pd.DataFrame:
 
 #······································································#
 
-def get_dcd_frame_count(dcd_path: str):
+def get_dcd_frame_count(dcd_path: str) -> Union[int, None]:
     """Gets the number of frames in a DCD-file.
 
     Parameters
@@ -132,9 +133,38 @@ def get_dcd_frame_count(dcd_path: str):
             f.seek(8)
             # Read the first 4-byte integer of the header array
             n_frames = struct.unpack('i', f.read(4))[0]
+            return n_frames
     except FileNotFoundError:
-        return np.nan
-    return n_frames
+        return None
+
+
+#······································································#
+
+def get_log_speed(log_path: str) -> Union[int, None]:
+    """Gets the mean speed reported in a OpenMM log file.
+
+    Parameters
+    ----------
+    log_path : str
+        The path to a LOG file.
+
+    Returns
+    -------
+    ns_day : float
+        The mean simulation speed reported in the OpenMM log file, in ns/day.
+    """
+    try:
+        # Load file
+        log = pd.read_csv(log_path, delimiter='\t')
+
+        # First row always reports speed of 0; Do not include this.
+        log = log.iloc[1:]
+
+        # Return mean
+        return log['Speed (ns/day)'].mean()
+        
+    except:
+        return None
 
 
 
