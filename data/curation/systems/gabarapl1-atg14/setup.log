@@ -1,0 +1,29 @@
+2026-07-08 15:02:07: ················································································
+2026-07-08 15:02:07: Parsing chains of 'gabarapl1-atg14' system to CALVADOS input
+2026-07-08 15:02:07: ················································································
+2026-07-08 15:02:07: Chain 'gabarapl1' ('GABARAPL1')
+2026-07-08 15:02:07: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/6HOL.cif' is specified
+2026-07-08 15:02:07: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/gabarapl1-atg14/gabarapl1.pdb'
+2026-07-08 15:02:07: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:02:07: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/gabarapl1-atg14/gabarapl1.yaml'
+2026-07-08 15:02:07: 
+2026-07-08 15:02:07: Chain 'lir' ('ATG14[LIR]')
+2026-07-08 15:02:07: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:02:07: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/gabarapl1-atg14/lir.fasta'
+2026-07-08 15:02:07: 
+2026-07-08 15:02:07: ················································································
+2026-07-08 15:02:07: Parsing SLiMs of 'gabarapl1-atg14' system to CALVADOS input
+2026-07-08 15:02:07: ················································································
+2026-07-08 15:02:07: SLiM 'gabarapl1-lir' ('GABARAPL1-ATG14[LIR]')
+2026-07-08 15:02:07: 	- Verifying that acceptor 'gabarapl1' and donor 'lir' chains are found in system
+2026-07-08 15:02:07: 	- Performing contact analysis
+2026-07-08 15:02:07: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:02:07: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:02:07: 		- Defining contacts
+2026-07-08 15:02:07: 		- Found 37 pairwise contacts
+2026-07-08 15:02:07: 		- Calculating contact distances
+2026-07-08 15:02:07: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:02:07: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:02:07: 	- Excluding 0 contacts
+2026-07-08 15:02:07: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/gabarapl1-atg14/specific_interactions.txt'
+2026-07-08 15:02:07: 

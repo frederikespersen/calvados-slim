@@ -1,0 +1,10 @@
+open 3RDV
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/D,H cartoons
+sel /D:66,67,70,82,83,87,92,96,97,98,99,103,117,118,119 | /H:576,577,579,580,581
+show sel surfaces
+view sel

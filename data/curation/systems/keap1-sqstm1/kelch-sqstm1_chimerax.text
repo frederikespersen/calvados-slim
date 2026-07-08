@@ -1,0 +1,10 @@
+open 3ADE
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/A,B cartoons
+sel /A:334,338,363,364,380,382,415,483,508,509,525,530,555,556,572,577,602 | /B:348,349,350,351,352,353,354,355
+show sel surfaces
+view sel

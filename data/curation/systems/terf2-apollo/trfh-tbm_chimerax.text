@@ -1,0 +1,10 @@
+open 3BUA
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/A,E cartoons
+sel /A:80,81,83,84,87,88,91,94,98,101,102,104,105,108,109,112,117,118,119,120,121,122,142 | /E:498,500,501,502,503,504,505,506,507,508,509,510
+show sel surfaces
+view sel

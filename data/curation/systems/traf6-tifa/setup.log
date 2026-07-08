@@ -1,28 +1,29 @@
-2026-07-04 21:32:34: ················································································
-2026-07-04 21:32:34: Parsing chains of 'traf6-tifa' system to CALVADOS input
-2026-07-04 21:32:34: ················································································
-2026-07-04 21:32:34: Chain 'math' ('TRAF6[MATH]')
-2026-07-04 21:32:34: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/6A33.cif' is specified
-2026-07-04 21:32:34: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/traf6-tifa/math.pdb'
-2026-07-04 21:32:35: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
-2026-07-04 21:32:35: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/traf6-tifa/math.yaml'
-2026-07-04 21:32:35: 
-2026-07-04 21:32:35: Chain 'tbm' ('TIFA[TBM]')
-2026-07-04 21:32:35: 	- Parsing chain as an IDP, as no chain PDB is specified
-2026-07-04 21:32:35: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/traf6-tifa/tbm.fasta'
-2026-07-04 21:32:35: 
-2026-07-04 21:32:35: ················································································
-2026-07-04 21:32:35: Parsing SLiMs of 'traf6-tifa' system to CALVADOS input
-2026-07-04 21:32:35: ················································································
-2026-07-04 21:32:35: SLiM 'math-tbm' ('TRAF6[MATH]-TIFA[TBM]')
-2026-07-04 21:32:35: 	- Verifying that acceptor 'math' and donor 'tbm' chains are found in system
-2026-07-04 21:32:35: 	- Performing contact analysis
-2026-07-04 21:32:35: 		- Calculating SMOG Shadow Contact Map (SCM) from SLiM PDB
-2026-07-04 21:32:36: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
-2026-07-04 21:32:36: 		- Defining contacts
-2026-07-04 21:32:36: 		- Found 48 pairwise contacts
-2026-07-04 21:32:36: 		- Calculating contact distances
-2026-07-04 21:32:36: 	- Mapping residue indices between System and SLiM constructs
-2026-07-04 21:32:36: 	- Excluding 0 contacts
-2026-07-04 21:32:36: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/traf6-tifa/specific_interactions.txt'
-2026-07-04 21:32:36: 
+2026-07-08 15:00:49: ················································································
+2026-07-08 15:00:49: Parsing chains of 'traf6-tifa' system to CALVADOS input
+2026-07-08 15:00:49: ················································································
+2026-07-08 15:00:49: Chain 'math' ('TRAF6[MATH]')
+2026-07-08 15:00:49: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/6A33.cif' is specified
+2026-07-08 15:00:49: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/traf6-tifa/math.pdb'
+2026-07-08 15:00:49: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:00:49: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/traf6-tifa/math.yaml'
+2026-07-08 15:00:49: 
+2026-07-08 15:00:49: Chain 'tbm' ('TIFA[TBM]')
+2026-07-08 15:00:49: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:00:49: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/traf6-tifa/tbm.fasta'
+2026-07-08 15:00:49: 
+2026-07-08 15:00:49: ················································································
+2026-07-08 15:00:49: Parsing SLiMs of 'traf6-tifa' system to CALVADOS input
+2026-07-08 15:00:49: ················································································
+2026-07-08 15:00:49: SLiM 'math-tbm' ('TRAF6[MATH]-TIFA[TBM]')
+2026-07-08 15:00:49: 	- Verifying that acceptor 'math' and donor 'tbm' chains are found in system
+2026-07-08 15:00:49: 	- Performing contact analysis
+2026-07-08 15:00:49: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:00:50: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:00:50: 		- Defining contacts
+2026-07-08 15:00:50: 		- Found 33 pairwise contacts
+2026-07-08 15:00:50: 		- Calculating contact distances
+2026-07-08 15:00:50: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:00:50: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:00:50: 	- Excluding 0 contacts
+2026-07-08 15:00:50: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/traf6-tifa/specific_interactions.txt'
+2026-07-08 15:00:50: 

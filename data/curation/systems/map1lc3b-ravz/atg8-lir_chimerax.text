@@ -1,0 +1,10 @@
+open 5XAD
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/A,C cartoons
+sel /A:2,3,10 | /C:11,12,13,34
+show sel surfaces
+view sel

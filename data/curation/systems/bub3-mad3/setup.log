@@ -1,0 +1,29 @@
+2026-07-08 15:03:19: ················································································
+2026-07-08 15:03:19: Parsing chains of 'bub3-mad3' system to CALVADOS input
+2026-07-08 15:03:19: ················································································
+2026-07-08 15:03:19: Chain 'bub3' ('BUB3')
+2026-07-08 15:03:19: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/2I3T.cif' is specified
+2026-07-08 15:03:19: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/bub3-mad3/bub3.pdb'
+2026-07-08 15:03:19: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:03:19: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/bub3-mad3/bub3.yaml'
+2026-07-08 15:03:19: 
+2026-07-08 15:03:19: Chain 'mad3' ('MAD3[GLEBS]')
+2026-07-08 15:03:19: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:03:19: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/bub3-mad3/mad3.fasta'
+2026-07-08 15:03:19: 
+2026-07-08 15:03:19: ················································································
+2026-07-08 15:03:19: Parsing SLiMs of 'bub3-mad3' system to CALVADOS input
+2026-07-08 15:03:19: ················································································
+2026-07-08 15:03:19: SLiM 'bub3-mad3' ('BUB3-MAD3[GLEBS]')
+2026-07-08 15:03:19: 	- Verifying that acceptor 'bub3' and donor 'mad3' chains are found in system
+2026-07-08 15:03:19: 	- Performing contact analysis
+2026-07-08 15:03:19: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:03:20: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:03:20: 		- Defining contacts
+2026-07-08 15:03:20: 		- Found 103 pairwise contacts
+2026-07-08 15:03:20: 		- Calculating contact distances
+2026-07-08 15:03:20: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:03:20: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:03:20: 	- Excluding 0 contacts
+2026-07-08 15:03:20: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/bub3-mad3/specific_interactions.txt'
+2026-07-08 15:03:20: 

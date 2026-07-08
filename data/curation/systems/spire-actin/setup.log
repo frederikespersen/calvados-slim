@@ -1,0 +1,29 @@
+2026-07-08 15:02:43: ················································································
+2026-07-08 15:02:43: Parsing chains of 'spire-actin' system to CALVADOS input
+2026-07-08 15:02:43: ················································································
+2026-07-08 15:02:43: Chain 'actin' ('Actin5C')
+2026-07-08 15:02:43: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/3MN7.cif' is specified
+2026-07-08 15:02:43: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/spire-actin/actin.pdb'
+2026-07-08 15:02:43: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:02:43: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/spire-actin/actin.yaml'
+2026-07-08 15:02:43: 
+2026-07-08 15:02:43: Chain 'wh2' ('Spire[WH2]')
+2026-07-08 15:02:43: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:02:43: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/spire-actin/wh2.fasta'
+2026-07-08 15:02:43: 
+2026-07-08 15:02:43: ················································································
+2026-07-08 15:02:43: Parsing SLiMs of 'spire-actin' system to CALVADOS input
+2026-07-08 15:02:43: ················································································
+2026-07-08 15:02:43: SLiM 'actin-wh2' ('Actin5C-Spire[WH2]')
+2026-07-08 15:02:43: 	- Verifying that acceptor 'actin' and donor 'wh2' chains are found in system
+2026-07-08 15:02:43: 	- Performing contact analysis
+2026-07-08 15:02:43: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:02:44: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:02:44: 		- Defining contacts
+2026-07-08 15:02:44: 		- Found 43 pairwise contacts
+2026-07-08 15:02:44: 		- Calculating contact distances
+2026-07-08 15:02:44: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:02:44: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:02:44: 	- Excluding 0 contacts
+2026-07-08 15:02:44: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/spire-actin/specific_interactions.txt'
+2026-07-08 15:02:44: 

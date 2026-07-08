@@ -1,0 +1,29 @@
+2026-07-08 15:04:03: ················································································
+2026-07-08 15:04:03: Parsing chains of 'vcl-tln4' system to CALVADOS input
+2026-07-08 15:04:03: ················································································
+2026-07-08 15:04:03: Chain 'vh1' ('VCL[Vh1]')
+2026-07-08 15:04:03: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/1ZW2.cif' is specified
+2026-07-08 15:04:03: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/vcl-tln4/vh1.pdb'
+2026-07-08 15:04:04: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:04:04: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/vcl-tln4/vh1.yaml'
+2026-07-08 15:04:04: 
+2026-07-08 15:04:04: Chain 'vbs4' ('TLN1[VBS4]')
+2026-07-08 15:04:04: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:04:04: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/vcl-tln4/vbs4.fasta'
+2026-07-08 15:04:04: 
+2026-07-08 15:04:04: ················································································
+2026-07-08 15:04:04: Parsing SLiMs of 'vcl-tln4' system to CALVADOS input
+2026-07-08 15:04:04: ················································································
+2026-07-08 15:04:04: SLiM 'vh1-vbs4' ('VCL[Vh1]-TLN1[VBS4]')
+2026-07-08 15:04:04: 	- Verifying that acceptor 'vh1' and donor 'vbs4' chains are found in system
+2026-07-08 15:04:04: 	- Performing contact analysis
+2026-07-08 15:04:04: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:04:04: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:04:04: 		- Defining contacts
+2026-07-08 15:04:04: 		- Found 69 pairwise contacts
+2026-07-08 15:04:04: 		- Calculating contact distances
+2026-07-08 15:04:04: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:04:04: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:04:04: 	- Excluding 0 contacts
+2026-07-08 15:04:04: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/vcl-tln4/specific_interactions.txt'
+2026-07-08 15:04:04: 

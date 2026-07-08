@@ -1,0 +1,10 @@
+open 6HOL
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/A,C cartoons
+sel /A:17,21,28,30,31,46,48,49,50,51,52,55,59,60,63,64,67,104 | /C:1434,1435,1436,1437,1438,1439,1440,1441
+show sel surfaces
+view sel

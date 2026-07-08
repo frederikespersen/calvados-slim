@@ -1,0 +1,10 @@
+open 3R0H
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/A,a cartoons
+sel /A:589,594,595,596,597,598,599,609,610,611,612,642,646,649,650 | /a:1,3,6,7,8,9
+show sel surfaces
+view sel

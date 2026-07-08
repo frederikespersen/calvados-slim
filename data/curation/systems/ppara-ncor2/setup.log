@@ -1,0 +1,29 @@
+2026-07-08 15:01:24: ················································································
+2026-07-08 15:01:24: Parsing chains of 'ppara-ncor2' system to CALVADOS input
+2026-07-08 15:01:24: ················································································
+2026-07-08 15:01:24: Chain 'lbd' ('PPARA[LBD]')
+2026-07-08 15:01:24: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/1KKQ.cif' is specified
+2026-07-08 15:01:24: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/ppara-ncor2/lbd.pdb'
+2026-07-08 15:01:24: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:01:24: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/ppara-ncor2/lbd.yaml'
+2026-07-08 15:01:24: 
+2026-07-08 15:01:24: Chain 'cornr' ('NCOR2[CoRNR]')
+2026-07-08 15:01:24: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:01:24: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/ppara-ncor2/cornr.fasta'
+2026-07-08 15:01:24: 
+2026-07-08 15:01:24: ················································································
+2026-07-08 15:01:24: Parsing SLiMs of 'ppara-ncor2' system to CALVADOS input
+2026-07-08 15:01:24: ················································································
+2026-07-08 15:01:24: SLiM 'lbd-cornr' ('PPARA[LBD]-NCOR2[CoRNR]')
+2026-07-08 15:01:24: 	- Verifying that acceptor 'lbd' and donor 'cornr' chains are found in system
+2026-07-08 15:01:24: 	- Performing contact analysis
+2026-07-08 15:01:24: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:01:24: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:01:24: 		- Defining contacts
+2026-07-08 15:01:24: 		- Found 51 pairwise contacts
+2026-07-08 15:01:24: 		- Calculating contact distances
+2026-07-08 15:01:24: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:01:24: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:01:24: 	- Excluding 0 contacts
+2026-07-08 15:01:24: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/ppara-ncor2/specific_interactions.txt'
+2026-07-08 15:01:24: 

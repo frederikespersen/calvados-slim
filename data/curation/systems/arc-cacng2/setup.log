@@ -1,0 +1,29 @@
+2026-07-08 15:01:25: ················································································
+2026-07-08 15:01:25: Parsing chains of 'arc-cacng2' system to CALVADOS input
+2026-07-08 15:01:25: ················································································
+2026-07-08 15:01:25: Chain 'nlobe' ('ARC[Nlobe]')
+2026-07-08 15:01:25: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/6TNO.cif' is specified
+2026-07-08 15:01:25: 	- Selecting chain 'E' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/arc-cacng2/nlobe.pdb'
+2026-07-08 15:01:25: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:01:25: 	- Writing chain 'E' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/arc-cacng2/nlobe.yaml'
+2026-07-08 15:01:25: 
+2026-07-08 15:01:25: Chain 'cacng2tail' ('CACNG2[peptide]')
+2026-07-08 15:01:25: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:01:25: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/arc-cacng2/cacng2tail.fasta'
+2026-07-08 15:01:25: 
+2026-07-08 15:01:25: ················································································
+2026-07-08 15:01:25: Parsing SLiMs of 'arc-cacng2' system to CALVADOS input
+2026-07-08 15:01:25: ················································································
+2026-07-08 15:01:25: SLiM 'nlobe-cacng2tail' ('ARC[Nlobe]-CACNG2[peptide]')
+2026-07-08 15:01:25: 	- Verifying that acceptor 'nlobe' and donor 'cacng2tail' chains are found in system
+2026-07-08 15:01:25: 	- Performing contact analysis
+2026-07-08 15:01:25: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:01:25: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:01:25: 		- Defining contacts
+2026-07-08 15:01:25: 		- Found 41 pairwise contacts
+2026-07-08 15:01:25: 		- Calculating contact distances
+2026-07-08 15:01:25: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:01:25: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:01:25: 	- Excluding 0 contacts
+2026-07-08 15:01:25: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/arc-cacng2/specific_interactions.txt'
+2026-07-08 15:01:25: 

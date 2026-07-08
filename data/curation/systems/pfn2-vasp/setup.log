@@ -1,0 +1,29 @@
+2026-07-08 15:03:50: ················································································
+2026-07-08 15:03:50: Parsing chains of 'pfn2-vasp' system to CALVADOS input
+2026-07-08 15:03:50: ················································································
+2026-07-08 15:03:50: Chain 'pfn2' ('PFN2')
+2026-07-08 15:03:50: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/2V8C.cif' is specified
+2026-07-08 15:03:50: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pfn2-vasp/pfn2.pdb'
+2026-07-08 15:03:50: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:03:50: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pfn2-vasp/pfn2.yaml'
+2026-07-08 15:03:50: 
+2026-07-08 15:03:50: Chain 'vasp' ('VASP[PRM]')
+2026-07-08 15:03:50: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:03:50: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pfn2-vasp/vasp.fasta'
+2026-07-08 15:03:50: 
+2026-07-08 15:03:50: ················································································
+2026-07-08 15:03:50: Parsing SLiMs of 'pfn2-vasp' system to CALVADOS input
+2026-07-08 15:03:50: ················································································
+2026-07-08 15:03:50: SLiM 'pfn2-vasp' ('PFN2-VASP[PRM]')
+2026-07-08 15:03:50: 	- Verifying that acceptor 'pfn2' and donor 'vasp' chains are found in system
+2026-07-08 15:03:50: 	- Performing contact analysis
+2026-07-08 15:03:50: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:03:50: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:03:50: 		- Defining contacts
+2026-07-08 15:03:50: 		- Found 31 pairwise contacts
+2026-07-08 15:03:50: 		- Calculating contact distances
+2026-07-08 15:03:50: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:03:50: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:03:50: 	- Excluding 0 contacts
+2026-07-08 15:03:50: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pfn2-vasp/specific_interactions.txt'
+2026-07-08 15:03:50: 

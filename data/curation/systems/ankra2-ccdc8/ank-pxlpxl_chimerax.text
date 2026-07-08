@@ -1,0 +1,10 @@
+open 4LG6
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/A,B cartoons
+sel /A:179,181,183,187,188,191,192,216,220,221,224,245,247,248,249,250,253,254,257,280,282,286,287,290 | /B:498,499,500,501,502,503,504,505,506,507,508,509,510
+show sel surfaces
+view sel

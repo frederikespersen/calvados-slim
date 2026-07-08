@@ -16,6 +16,8 @@ from openmm.app import PDBFile, Modeller
 import gemmi
 import struct
 import re
+import tempfile
+import warnings
 
 
 #······································································#
@@ -170,6 +172,66 @@ def _label_to_auth_map(cif_path: str) -> dict[str, str]:
 
 #······································································#
 
+def _cif_input_for_pdbfixer(cif_path: str) -> str:
+    """Return a CIF path safe for PDBFixer, working around two mmCIF quirks.
+
+    PDBFixer reads mmCIF through OpenMM's ``PDBxFile`` and reconstructs missing
+    residues by aligning the resolved residues to the ``entity_poly_seq``
+    (SEQRES). Two situations break this:
+
+    - **Unknown unit cell.** Some structures (typically NMR) record a
+      placeholder cell (``_cell.length_a = '?'``). ``PDBxFile`` parses
+      ``_cell`` values as floats and raises ``ValueError`` on ``'?'``. The cell
+      is meaningless for the single-chain, coarse-grained use here.
+    - **Insertion codes.** When author numbering uses insertion codes (e.g.
+      ``113A``), PDBFixer's SEQRES alignment fails and it reconstructs *no*
+      missing residues at all -- silently dropping unresolved tags/loops.
+
+    When either is present, a sanitised copy is written to a temporary file:
+    the cell is reset to a trivial box and polymer residues are renumbered to
+    their SEQRES position (``label_seq``), which drops insertion codes while
+    preserving the resolved-vs-SEQRES gap structure. The cleaned per-chain PDB's
+    residue numbering is not used downstream (domain annotations live in the
+    construct frame; SLiM contacts read the original structure), so this
+    renumbering is safe. Files needing neither fix are returned unchanged.
+
+    Parameters
+    ----------
+    cif_path : str
+        Path to the input mmCIF file.
+
+    Returns
+    -------
+    str
+        ``cif_path`` unchanged, or the path to a sanitised temporary copy.
+    """
+    bad_cell = gemmi.cif.read(cif_path).sole_block().find_value('_cell.length_a') in ('?', '.')
+    structure = gemmi.read_structure(cif_path)
+    structure.setup_entities()
+    has_icode = any(
+        res.seqid.icode not in (' ', '\0', '')
+        for model in structure for chain in model for res in chain.get_polymer()
+    )
+    if not (bad_cell or has_icode):
+        return cif_path
+
+    if has_icode:
+        for model in structure:
+            for chain in model:
+                for res in chain.get_polymer():
+                    if res.label_seq is not None:
+                        res.seqid.num = res.label_seq
+                        res.seqid.icode = ' '
+    if bad_cell:
+        structure.cell = gemmi.UnitCell(1, 1, 1, 90, 90, 90)
+        structure.spacegroup_hm = 'P 1'
+
+    tmp = os.path.join(tempfile.mkdtemp(), os.path.basename(cif_path))
+    structure.make_mmcif_document().write_file(tmp)
+    return tmp
+
+#······································································#
+
 def select_and_clean_chains(input_path: str, output_path: str, chain_ids: list[str], add_missing: bool = True) -> None:
     """Isolate selected chains and clean a structure with PDBFixer.
 
@@ -199,13 +261,21 @@ def select_and_clean_chains(input_path: str, output_path: str, chain_ids: list[s
     ValueError
         If any requested chain id is not present in the input structure.
     """
-    fixer = PDBFixer(filename=input_path)   # Must be SEQRES-bearing file
+    is_cif = str(input_path).lower().endswith('.cif')
+    # Work around mmCIF quirks (unknown unit cell, insertion codes) that break
+    # OpenMM's reader or PDBFixer's missing-residue reconstruction
+    fixer = PDBFixer(filename=_cif_input_for_pdbfixer(input_path) if is_cif else input_path)   # Must be SEQRES-bearing file
 
     # Ensure that `chain_ids` are interpreted as author chains, to match expectations from structure viewers
-    if str(input_path).lower().endswith('.cif'):
+    if is_cif:
         label2auth = _label_to_auth_map(input_path)
         for c in fixer.topology.chains():
             c.id = label2auth.get(c.id, c.id)
+        # Relabel the SEQRES sequences too, else findMissingResidues (which
+        # matches chains to sequences by id) sees label ids on the sequences
+        # but author ids on the chains and reconstructs no missing residues.
+        for s in fixer.sequences:
+            s.chainId = label2auth.get(s.chainId, s.chainId)
 
     # Sanity check: requested author chains actually exist
     present = {c.id for c in fixer.topology.chains()}
@@ -273,6 +343,14 @@ def load_structure(structure_file: os.PathLike) -> mda.Universe:
     numbering) before being handed to MDAnalysis; ``.pdb`` inputs are read
     directly.
 
+    Waters and non-polymer heterogens (ions, buffer molecules, ``UNX``
+    unknown-density placeholders) are dropped from ``.cif`` inputs before
+    conversion. They are never part of the (protein-only) analysis, and their
+    high author sequence numbers otherwise trip MDAnalysis' PDB "resid looping"
+    heuristic (which adds 10000 whenever a residue number drops by >5000 between
+    consecutive atoms), silently offsetting every chain gemmi writes after a
+    per-chain water block.
+
     Parameters
     ----------
     structure_file : str
@@ -285,8 +363,13 @@ def load_structure(structure_file: os.PathLike) -> mda.Universe:
     """
     if os.path.splitext(structure_file)[-1].lower() in ('.cif', '.mmcif'):
         structure = gemmi.read_structure(str(structure_file))
+        structure.remove_ligands_and_waters()
         structure.setup_entities()
-        return mda.Universe(StringIO(structure.make_pdb_string()), format='PDB')
+        with warnings.catch_warnings():
+            # A placeholder (1 A^3) unit cell is irrelevant to these
+            # non-periodic analyses; silence MDAnalysis' warning about it.
+            warnings.filterwarnings('ignore', message='1 A.3 CRYST1 record')
+            return mda.Universe(StringIO(structure.make_pdb_string()), format='PDB')
     return mda.Universe(structure_file)
 
 #······································································#

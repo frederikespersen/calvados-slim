@@ -1,0 +1,10 @@
+open 2Z32
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/A,B cartoons
+sel /A:334,338,363,364,380,382,415,462,478,483,508,509,525,530,555,556,572,574,577,602 | /B:40,41,42,43,44,45,46,47
+show sel surfaces
+view sel

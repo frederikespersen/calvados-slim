@@ -1,0 +1,10 @@
+open 3VVW
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/B,A cartoons
+sel /B:29,32,33,36,54,55,56,57,58,59,60,61,64,72,76 | /A:128,129,131,132,133,134,135,136,137
+show sel surfaces
+view sel

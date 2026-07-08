@@ -1,0 +1,12 @@
+ww3 11 | pppy 7 | 1.0262 <eps_go>
+ww3 21 | pppy 5 | 0.7402 <eps_go>
+ww3 23 | pppy 7 | 0.7878 <eps_go>
+ww3 24 | pppy 7 | 0.9614 <eps_go>
+ww3 25 | pppy 7 | 0.8723 <eps_go>
+ww3 28 | pppy 7 | 0.6863 <eps_go>
+ww3 29 | pppy 7 | 0.7056 <eps_go>
+ww3 30 | pppy 4 | 0.5814 <eps_go>
+ww3 30 | pppy 5 | 0.6027 <eps_go>
+ww3 30 | pppy 7 | 0.6019 <eps_go>
+ww3 32 | pppy 4 | 0.5836 <eps_go>
+ww3 32 | pppy 5 | 0.8293 <eps_go>

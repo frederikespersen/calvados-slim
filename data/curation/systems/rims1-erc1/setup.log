@@ -1,0 +1,29 @@
+2026-07-08 15:03:55: ················································································
+2026-07-08 15:03:55: Parsing chains of 'rims1-erc1' system to CALVADOS input
+2026-07-08 15:03:55: ················································································
+2026-07-08 15:03:55: Chain 'pdz' ('RIMS1[PDZ]')
+2026-07-08 15:03:55: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/1ZUB.cif' is specified
+2026-07-08 15:03:55: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/rims1-erc1/pdz.pdb'
+2026-07-08 15:03:55: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:03:55: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/rims1-erc1/pdz.yaml'
+2026-07-08 15:03:55: 
+2026-07-08 15:03:55: Chain 'erc1' ('ERC1[peptide]')
+2026-07-08 15:03:55: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:03:55: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/rims1-erc1/erc1.fasta'
+2026-07-08 15:03:55: 
+2026-07-08 15:03:55: ················································································
+2026-07-08 15:03:55: Parsing SLiMs of 'rims1-erc1' system to CALVADOS input
+2026-07-08 15:03:55: ················································································
+2026-07-08 15:03:55: SLiM 'pdz-erc1' ('RIMS1[PDZ]-ERC1[peptide]')
+2026-07-08 15:03:55: 	- Verifying that acceptor 'pdz' and donor 'erc1' chains are found in system
+2026-07-08 15:03:55: 	- Performing contact analysis
+2026-07-08 15:03:55: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:03:56: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:03:56: 		- Defining contacts
+2026-07-08 15:03:56: 		- Found 34 pairwise contacts
+2026-07-08 15:03:56: 		- Calculating contact distances
+2026-07-08 15:03:56: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:03:56: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:03:56: 	- Excluding 0 contacts
+2026-07-08 15:03:56: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/rims1-erc1/specific_interactions.txt'
+2026-07-08 15:03:56: 

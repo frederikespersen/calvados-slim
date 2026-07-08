@@ -1,0 +1,29 @@
+2026-07-08 15:03:52: ················································································
+2026-07-08 15:03:52: Parsing chains of 'ptpn13-apc' system to CALVADOS input
+2026-07-08 15:03:52: ················································································
+2026-07-08 15:03:52: Chain 'pdz' ('PTPN13[PDZ]')
+2026-07-08 15:03:52: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/1VJ6.cif' is specified
+2026-07-08 15:03:52: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/ptpn13-apc/pdz.pdb'
+2026-07-08 15:03:54: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:03:54: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/ptpn13-apc/pdz.yaml'
+2026-07-08 15:03:54: 
+2026-07-08 15:03:54: Chain 'apc' ('APC[peptide]')
+2026-07-08 15:03:54: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:03:54: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/ptpn13-apc/apc.fasta'
+2026-07-08 15:03:54: 
+2026-07-08 15:03:54: ················································································
+2026-07-08 15:03:54: Parsing SLiMs of 'ptpn13-apc' system to CALVADOS input
+2026-07-08 15:03:54: ················································································
+2026-07-08 15:03:54: SLiM 'pdz-apc' ('PTPN13[PDZ]-APC[peptide]')
+2026-07-08 15:03:54: 	- Verifying that acceptor 'pdz' and donor 'apc' chains are found in system
+2026-07-08 15:03:54: 	- Performing contact analysis
+2026-07-08 15:03:54: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:03:54: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:03:54: 		- Defining contacts
+2026-07-08 15:03:54: 		- Found 28 pairwise contacts
+2026-07-08 15:03:54: 		- Calculating contact distances
+2026-07-08 15:03:54: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:03:54: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:03:54: 	- Excluding 1 contacts
+2026-07-08 15:03:54: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/ptpn13-apc/specific_interactions.txt'
+2026-07-08 15:03:54: 

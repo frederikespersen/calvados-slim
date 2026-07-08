@@ -1,37 +1,29 @@
-2026-06-23 00:44:23: ················································································
-2026-06-23 00:44:23: Parsing chains of 'pex14-pex5' system to CALVADOS input
-2026-06-23 00:44:23: ················································································
-2026-06-23 00:44:23: Chain 'ntd' ('PEX14[NTD]')
-2026-06-23 00:44:23: 	- Parsing chain as a MDP, as chain PDB is specified
-2026-06-23 00:44:23: 	- Selecting chain 'A' and pasting to '/home/fknudsen/calvados-slim/data/curation/systems/pex14-pex5/ntd.pdb'
-2026-06-23 00:44:24: The attribute(s) types have already been read from the topology file. The guesser will only guess empty values for this attribute, if any exists. To overwrite it by completely guessed values, you can pass the attribute to the force_guess parameter instead of the to_guess one
-2026-06-23 00:44:24: There is no empty types values. Guesser did not guess any new values for types attribute
-2026-06-23 00:44:24: attribute masses has been guessed successfully.
-2026-06-23 00:44:24: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
-2026-06-23 00:44:24: 	- Writing chain 'A' domain annotations to '/home/fknudsen/calvados-slim/data/curation/systems/pex14-pex5/ntd.yaml'
-2026-06-23 00:44:24: 
-2026-06-23 00:44:24: Chain 'lvxef' ('PEX5[LVxEF]')
-2026-06-23 00:44:24: 	- Parsing chain as an IDP, as no chain PDB is specified
-2026-06-23 00:44:24: 	- Appending sequence to '/home/fknudsen/calvados-slim/data/curation/systems/pex14-pex5/lvxef.fasta'
-2026-06-23 00:44:24: 
-2026-06-23 00:44:24: ················································································
-2026-06-23 00:44:24: Parsing SLiMs of 'pex14-pex5' system to CALVADOS input
-2026-06-23 00:44:24: ················································································
-2026-06-23 00:44:24: SLiM 'ntd-lvxef' ('PEX14[NTD]-PEX5[LVxEF]')
-2026-06-23 00:44:24: 	- Verifying that acceptor 'ntd' and donor 'lvxef' chains are found in system
-2026-06-23 00:44:24: 	- Performing contact analysis
-2026-06-23 00:44:24: 		- Calculating SMOG Shadow Contact Map (SCM) from SLiM PDB
-2026-06-23 00:44:26: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
-2026-06-23 00:44:26: 		- Defining contacts
-2026-06-23 00:44:26: 		- Found 35 pairwise contacts
-2026-06-23 00:44:26: 		- Calculating contact distances
-2026-06-23 00:44:26: The attribute(s) types have already been read from the topology file. The guesser will only guess empty values for this attribute, if any exists. To overwrite it by completely guessed values, you can pass the attribute to the force_guess parameter instead of the to_guess one
-2026-06-23 00:44:26: There is no empty types values. Guesser did not guess any new values for types attribute
-2026-06-23 00:44:26: attribute masses has been guessed successfully.
-2026-06-23 00:44:26: 	- Mapping residue indices between System and SLiM constructs
-2026-06-23 00:44:26: The attribute(s) types have already been read from the topology file. The guesser will only guess empty values for this attribute, if any exists. To overwrite it by completely guessed values, you can pass the attribute to the force_guess parameter instead of the to_guess one
-2026-06-23 00:44:26: There is no empty types values. Guesser did not guess any new values for types attribute
-2026-06-23 00:44:26: attribute masses has been guessed successfully.
-2026-06-23 00:44:26: 	- Excluding 11 contacts
-2026-06-23 00:44:26: 	- Appending contacts to '/home/fknudsen/calvados-slim/data/curation/systems/pex14-pex5/specific_interactions.txt'
-2026-06-23 00:44:26: 
+2026-07-08 15:00:24: ················································································
+2026-07-08 15:00:24: Parsing chains of 'pex14-pex5' system to CALVADOS input
+2026-07-08 15:00:24: ················································································
+2026-07-08 15:00:24: Chain 'ntd' ('PEX14[NTD]')
+2026-07-08 15:00:24: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/4BXU.cif' is specified
+2026-07-08 15:00:24: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pex14-pex5/ntd.pdb'
+2026-07-08 15:00:25: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:00:25: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pex14-pex5/ntd.yaml'
+2026-07-08 15:00:25: 
+2026-07-08 15:00:25: Chain 'lvxef' ('PEX5[LVxEF]')
+2026-07-08 15:00:25: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:00:25: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pex14-pex5/lvxef.fasta'
+2026-07-08 15:00:25: 
+2026-07-08 15:00:25: ················································································
+2026-07-08 15:00:25: Parsing SLiMs of 'pex14-pex5' system to CALVADOS input
+2026-07-08 15:00:25: ················································································
+2026-07-08 15:00:25: SLiM 'ntd-lvxef' ('PEX14[NTD]-PEX5[LVxEF]')
+2026-07-08 15:00:25: 	- Verifying that acceptor 'ntd' and donor 'lvxef' chains are found in system
+2026-07-08 15:00:25: 	- Performing contact analysis
+2026-07-08 15:00:25: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:00:25: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:00:25: 		- Defining contacts
+2026-07-08 15:00:25: 		- Found 22 pairwise contacts
+2026-07-08 15:00:25: 		- Calculating contact distances
+2026-07-08 15:00:25: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:00:25: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:00:25: 	- Excluding 6 contacts
+2026-07-08 15:00:25: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pex14-pex5/specific_interactions.txt'
+2026-07-08 15:00:25: 

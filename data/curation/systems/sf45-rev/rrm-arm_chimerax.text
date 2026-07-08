@@ -1,0 +1,10 @@
+open 6HIP
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/A,C cartoons
+sel /A:309,312,313,319,320,321,322,324,325,326,328,329,332,370,371,372,373,374,375,376,377,378,379,382 | /C:41,42,43,44,45,46,47,48
+show sel surfaces
+view sel

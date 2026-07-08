@@ -1,0 +1,29 @@
+2026-07-08 15:01:39: ················································································
+2026-07-08 15:01:39: Parsing chains of 'usp7-mdm2' system to CALVADOS input
+2026-07-08 15:01:39: ················································································
+2026-07-08 15:01:39: Chain 'math' ('USP7[MATH]')
+2026-07-08 15:01:39: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/2FOP.cif' is specified
+2026-07-08 15:01:39: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/usp7-mdm2/math.pdb'
+2026-07-08 15:01:40: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:01:40: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/usp7-mdm2/math.yaml'
+2026-07-08 15:01:40: 
+2026-07-08 15:01:40: Chain 'peptide' ('MDM2[peptide]')
+2026-07-08 15:01:40: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:01:40: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/usp7-mdm2/peptide.fasta'
+2026-07-08 15:01:40: 
+2026-07-08 15:01:40: ················································································
+2026-07-08 15:01:40: Parsing SLiMs of 'usp7-mdm2' system to CALVADOS input
+2026-07-08 15:01:40: ················································································
+2026-07-08 15:01:40: SLiM 'math-peptide' ('USP7[MATH]-MDM2[peptide]')
+2026-07-08 15:01:40: 	- Verifying that acceptor 'math' and donor 'peptide' chains are found in system
+2026-07-08 15:01:40: 	- Performing contact analysis
+2026-07-08 15:01:40: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:01:40: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:01:40: 		- Defining contacts
+2026-07-08 15:01:40: 		- Found 21 pairwise contacts
+2026-07-08 15:01:40: 		- Calculating contact distances
+2026-07-08 15:01:40: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:01:40: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:01:40: 	- Excluding 0 contacts
+2026-07-08 15:01:40: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/usp7-mdm2/specific_interactions.txt'
+2026-07-08 15:01:40: 

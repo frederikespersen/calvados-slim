@@ -1,0 +1,29 @@
+2026-07-08 15:01:15: ················································································
+2026-07-08 15:01:15: Parsing chains of 'lc3c-ndp52' system to CALVADOS input
+2026-07-08 15:01:15: ················································································
+2026-07-08 15:01:15: Chain 'lc3c' ('LC3C')
+2026-07-08 15:01:15: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/3VVW.cif' is specified
+2026-07-08 15:01:15: 	- Selecting chain 'B' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/lc3c-ndp52/lc3c.pdb'
+2026-07-08 15:01:16: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:01:16: 	- Writing chain 'B' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/lc3c-ndp52/lc3c.yaml'
+2026-07-08 15:01:16: 
+2026-07-08 15:01:16: Chain 'clir' ('NDP52[CLIR]')
+2026-07-08 15:01:16: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:01:16: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/lc3c-ndp52/clir.fasta'
+2026-07-08 15:01:16: 
+2026-07-08 15:01:16: ················································································
+2026-07-08 15:01:16: Parsing SLiMs of 'lc3c-ndp52' system to CALVADOS input
+2026-07-08 15:01:16: ················································································
+2026-07-08 15:01:16: SLiM 'lc3c-clir' ('LC3C-NDP52[CLIR]')
+2026-07-08 15:01:16: 	- Verifying that acceptor 'lc3c' and donor 'clir' chains are found in system
+2026-07-08 15:01:16: 	- Performing contact analysis
+2026-07-08 15:01:16: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:01:16: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:01:16: 		- Defining contacts
+2026-07-08 15:01:16: 		- Found 32 pairwise contacts
+2026-07-08 15:01:16: 		- Calculating contact distances
+2026-07-08 15:01:16: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:01:16: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:01:16: 	- Excluding 0 contacts
+2026-07-08 15:01:16: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/lc3c-ndp52/specific_interactions.txt'
+2026-07-08 15:01:16: 

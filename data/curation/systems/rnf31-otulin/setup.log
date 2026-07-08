@@ -1,0 +1,29 @@
+2026-07-08 15:00:55: ················································································
+2026-07-08 15:00:55: Parsing chains of 'rnf31-otulin' system to CALVADOS input
+2026-07-08 15:00:55: ················································································
+2026-07-08 15:00:55: Chain 'pub' ('RNF31[PUB]')
+2026-07-08 15:00:55: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/4P0B.cif' is specified
+2026-07-08 15:00:55: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/rnf31-otulin/pub.pdb'
+2026-07-08 15:00:55: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:00:55: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/rnf31-otulin/pub.yaml'
+2026-07-08 15:00:55: 
+2026-07-08 15:00:55: Chain 'pim' ('OTULIN[PIM]')
+2026-07-08 15:00:55: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:00:55: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/rnf31-otulin/pim.fasta'
+2026-07-08 15:00:55: 
+2026-07-08 15:00:55: ················································································
+2026-07-08 15:00:55: Parsing SLiMs of 'rnf31-otulin' system to CALVADOS input
+2026-07-08 15:00:55: ················································································
+2026-07-08 15:00:55: SLiM 'pub-pim' ('RNF31[PUB]-OTULIN[PIM]')
+2026-07-08 15:00:55: 	- Verifying that acceptor 'pub' and donor 'pim' chains are found in system
+2026-07-08 15:00:55: 	- Performing contact analysis
+2026-07-08 15:00:55: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:00:55: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:00:55: 		- Defining contacts
+2026-07-08 15:00:55: 		- Found 24 pairwise contacts
+2026-07-08 15:00:55: 		- Calculating contact distances
+2026-07-08 15:00:55: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:00:55: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:00:55: 	- Excluding 0 contacts
+2026-07-08 15:00:55: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/rnf31-otulin/specific_interactions.txt'
+2026-07-08 15:00:55: 

@@ -1,0 +1,10 @@
+open 6G86
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/A,C cartoons
+sel /A: | /C:
+show sel surfaces
+view sel

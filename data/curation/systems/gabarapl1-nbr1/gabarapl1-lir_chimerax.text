@@ -1,0 +1,10 @@
+open 2L8J
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/A,B cartoons
+sel /A:-3,12,13,16,17,20,21,24,25,28,30,48,49,50,51,52,104 | /B:722,724,729,730,731,732,733,734,735,736
+show sel surfaces
+view sel

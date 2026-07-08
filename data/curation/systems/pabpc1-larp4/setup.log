@@ -1,0 +1,29 @@
+2026-07-08 15:01:34: ················································································
+2026-07-08 15:01:34: Parsing chains of 'pabpc1-larp4' system to CALVADOS input
+2026-07-08 15:01:34: ················································································
+2026-07-08 15:01:34: Chain 'mlle' ('PABPC1[MLLE]')
+2026-07-08 15:01:34: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/3PKN.cif' is specified
+2026-07-08 15:01:34: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pabpc1-larp4/mlle.pdb'
+2026-07-08 15:01:35: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:01:35: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pabpc1-larp4/mlle.yaml'
+2026-07-08 15:01:35: 
+2026-07-08 15:01:35: Chain 'pam2' ('LARP4[PAM2]')
+2026-07-08 15:01:35: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:01:35: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pabpc1-larp4/pam2.fasta'
+2026-07-08 15:01:35: 
+2026-07-08 15:01:35: ················································································
+2026-07-08 15:01:35: Parsing SLiMs of 'pabpc1-larp4' system to CALVADOS input
+2026-07-08 15:01:35: ················································································
+2026-07-08 15:01:35: SLiM 'mlle-pam2' ('PABPC1[MLLE]-LARP4[PAM2]')
+2026-07-08 15:01:35: 	- Verifying that acceptor 'mlle' and donor 'pam2' chains are found in system
+2026-07-08 15:01:35: 	- Performing contact analysis
+2026-07-08 15:01:35: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:01:35: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:01:35: 		- Defining contacts
+2026-07-08 15:01:35: 		- Found 36 pairwise contacts
+2026-07-08 15:01:35: 		- Calculating contact distances
+2026-07-08 15:01:35: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:01:35: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:01:35: 	- Excluding 0 contacts
+2026-07-08 15:01:35: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pabpc1-larp4/specific_interactions.txt'
+2026-07-08 15:01:35: 

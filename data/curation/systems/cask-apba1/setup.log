@@ -1,0 +1,29 @@
+2026-07-08 15:03:05: ················································································
+2026-07-08 15:03:05: Parsing chains of 'cask-apba1' system to CALVADOS input
+2026-07-08 15:03:05: ················································································
+2026-07-08 15:03:05: Chain 'camk' ('CASK[CaMK]')
+2026-07-08 15:03:05: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/6LNM.cif' is specified
+2026-07-08 15:03:05: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/cask-apba1/camk.pdb'
+2026-07-08 15:03:06: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:03:06: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/cask-apba1/camk.yaml'
+2026-07-08 15:03:06: 
+2026-07-08 15:03:06: Chain 'mint1' ('APBA1[CID]')
+2026-07-08 15:03:06: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:03:06: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/cask-apba1/mint1.fasta'
+2026-07-08 15:03:06: 
+2026-07-08 15:03:06: ················································································
+2026-07-08 15:03:06: Parsing SLiMs of 'cask-apba1' system to CALVADOS input
+2026-07-08 15:03:06: ················································································
+2026-07-08 15:03:06: SLiM 'camk-mint1' ('CASK[CaMK]-APBA1[CID]')
+2026-07-08 15:03:06: 	- Verifying that acceptor 'camk' and donor 'mint1' chains are found in system
+2026-07-08 15:03:06: 	- Performing contact analysis
+2026-07-08 15:03:06: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:03:06: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:03:06: 		- Defining contacts
+2026-07-08 15:03:06: 		- Found 91 pairwise contacts
+2026-07-08 15:03:06: 		- Calculating contact distances
+2026-07-08 15:03:06: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:03:07: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:03:07: 	- Excluding 0 contacts
+2026-07-08 15:03:07: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/cask-apba1/specific_interactions.txt'
+2026-07-08 15:03:07: 

@@ -1,0 +1,10 @@
+open 1ZUB
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/A,B cartoons
+sel /A:616,629,630,631,632,633,634,635,636,638,650,651,653,673,686,687,690,691,694 | /B:943,944,945,946,947,948
+show sel surfaces
+view sel

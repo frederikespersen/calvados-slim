@@ -1,0 +1,29 @@
+2026-07-08 15:01:11: ················································································
+2026-07-08 15:01:11: Parsing chains of 'psip1-pogz' system to CALVADOS input
+2026-07-08 15:01:11: ················································································
+2026-07-08 15:01:11: Chain 'ibd' ('PSIP1[IBD]')
+2026-07-08 15:01:11: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/2N3A.cif' is specified
+2026-07-08 15:01:11: 	- Selecting chain 'B' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/psip1-pogz/ibd.pdb'
+2026-07-08 15:01:12: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:01:12: 	- Writing chain 'B' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/psip1-pogz/ibd.yaml'
+2026-07-08 15:01:12: 
+2026-07-08 15:01:12: Chain 'ibm' ('POGZ[IBM]')
+2026-07-08 15:01:12: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:01:12: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/psip1-pogz/ibm.fasta'
+2026-07-08 15:01:12: 
+2026-07-08 15:01:12: ················································································
+2026-07-08 15:01:12: Parsing SLiMs of 'psip1-pogz' system to CALVADOS input
+2026-07-08 15:01:12: ················································································
+2026-07-08 15:01:12: SLiM 'ibd-ibm' ('PSIP1[IBD]-POGZ[IBM]')
+2026-07-08 15:01:12: 	- Verifying that acceptor 'ibd' and donor 'ibm' chains are found in system
+2026-07-08 15:01:12: 	- Performing contact analysis
+2026-07-08 15:01:12: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:01:12: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:01:12: 		- Defining contacts
+2026-07-08 15:01:12: 		- Found 20 pairwise contacts
+2026-07-08 15:01:12: 		- Calculating contact distances
+2026-07-08 15:01:12: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:01:12: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:01:12: 	- Excluding 3 contacts
+2026-07-08 15:01:12: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/psip1-pogz/specific_interactions.txt'
+2026-07-08 15:01:12: 

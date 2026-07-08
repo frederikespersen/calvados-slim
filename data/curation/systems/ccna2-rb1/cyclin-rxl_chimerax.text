@@ -1,0 +1,10 @@
+open 1H25
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/B,E cartoons
+sel /B:210,213,214,217,220,221,224,250,253,254,280,281,282,283,285,411 | /E:869,870,871,872,873,874,875,877,878
+show sel surfaces
+view sel

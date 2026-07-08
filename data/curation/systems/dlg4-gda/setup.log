@@ -1,0 +1,29 @@
+2026-07-08 15:03:23: ················································································
+2026-07-08 15:03:23: Parsing chains of 'dlg4-gda' system to CALVADOS input
+2026-07-08 15:03:23: ················································································
+2026-07-08 15:03:23: Chain 'pdz12' ('DLG4[PDZ1-2]')
+2026-07-08 15:03:23: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/2KA9.cif' is specified
+2026-07-08 15:03:23: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/dlg4-gda/pdz12.pdb'
+2026-07-08 15:03:24: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:03:24: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/dlg4-gda/pdz12.yaml'
+2026-07-08 15:03:24: 
+2026-07-08 15:03:24: Chain 'gda' ('GDA[peptide]')
+2026-07-08 15:03:24: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:03:24: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/dlg4-gda/gda.fasta'
+2026-07-08 15:03:24: 
+2026-07-08 15:03:24: ················································································
+2026-07-08 15:03:24: Parsing SLiMs of 'dlg4-gda' system to CALVADOS input
+2026-07-08 15:03:24: ················································································
+2026-07-08 15:03:24: SLiM 'pdz12-gda' ('DLG4[PDZ1-2]-GDA[peptide]')
+2026-07-08 15:03:24: 	- Verifying that acceptor 'pdz12' and donor 'gda' chains are found in system
+2026-07-08 15:03:24: 	- Performing contact analysis
+2026-07-08 15:03:24: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:03:24: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:03:24: 		- Defining contacts
+2026-07-08 15:03:24: 		- Found 20 pairwise contacts
+2026-07-08 15:03:24: 		- Calculating contact distances
+2026-07-08 15:03:24: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:03:24: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:03:24: 	- Excluding 0 contacts
+2026-07-08 15:03:24: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/dlg4-gda/specific_interactions.txt'
+2026-07-08 15:03:24: 

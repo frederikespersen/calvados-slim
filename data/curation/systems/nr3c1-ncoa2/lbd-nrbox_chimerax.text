@@ -1,0 +1,10 @@
+open 1M2Z
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/A,B cartoons
+sel /A:572,575,576,579,584,585,589,590,592,593,596,597,751,752,755,756,758,759,763 | /B:738,741,742,743,744,745,746,748,749,750,751,752
+show sel surfaces
+view sel

@@ -1,0 +1,10 @@
+open 2VOI
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/A,B cartoons
+sel /A:40,43,44,47,48,51,52,55,56,58,59,70,73,74,75,77,78,83,85,86,87,88,90,91,95,147,148 | /B:81,82,83,85,86,87,89,90,91,93,94,95,97,98
+show sel surfaces
+view sel

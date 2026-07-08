@@ -1,0 +1,29 @@
+2026-07-08 15:03:59: ················································································
+2026-07-08 15:03:59: Parsing chains of 'trim7-sarscov2' system to CALVADOS input
+2026-07-08 15:03:59: ················································································
+2026-07-08 15:03:59: Chain 'spry' ('TRIM7[SPRY]')
+2026-07-08 15:03:59: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/7X6Z.cif' is specified
+2026-07-08 15:03:59: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/trim7-sarscov2/spry.pdb'
+2026-07-08 15:03:59: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:03:59: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/trim7-sarscov2/spry.yaml'
+2026-07-08 15:03:59: 
+2026-07-08 15:03:59: Chain 'sarscov2' ('SARSCOV2[Cend]')
+2026-07-08 15:03:59: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:03:59: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/trim7-sarscov2/sarscov2.fasta'
+2026-07-08 15:03:59: 
+2026-07-08 15:03:59: ················································································
+2026-07-08 15:03:59: Parsing SLiMs of 'trim7-sarscov2' system to CALVADOS input
+2026-07-08 15:03:59: ················································································
+2026-07-08 15:03:59: SLiM 'spry-sarscov2' ('TRIM7[SPRY]-SARSCOV2[Cend]')
+2026-07-08 15:03:59: 	- Verifying that acceptor 'spry' and donor 'sarscov2' chains are found in system
+2026-07-08 15:03:59: 	- Performing contact analysis
+2026-07-08 15:03:59: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:03:59: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:03:59: 		- Defining contacts
+2026-07-08 15:03:59: 		- Found 26 pairwise contacts
+2026-07-08 15:03:59: 		- Calculating contact distances
+2026-07-08 15:03:59: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:03:59: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:03:59: 	- Excluding 0 contacts
+2026-07-08 15:03:59: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/trim7-sarscov2/specific_interactions.txt'
+2026-07-08 15:03:59: 

@@ -1,0 +1,29 @@
+2026-07-08 15:00:57: ················································································
+2026-07-08 15:00:57: Parsing chains of 'cbfa2t1-ncor2' system to CALVADOS input
+2026-07-08 15:00:57: ················································································
+2026-07-08 15:00:57: Chain 'mynd' ('CBFA2T1[MYND]')
+2026-07-08 15:00:57: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/2ODD.cif' is specified
+2026-07-08 15:00:57: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/cbfa2t1-ncor2/mynd.pdb'
+2026-07-08 15:00:58: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:00:58: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/cbfa2t1-ncor2/mynd.yaml'
+2026-07-08 15:00:58: 
+2026-07-08 15:00:58: Chain 'pppli' ('NCOR2[PPPLI]')
+2026-07-08 15:00:58: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:00:58: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/cbfa2t1-ncor2/pppli.fasta'
+2026-07-08 15:00:58: 
+2026-07-08 15:00:58: ················································································
+2026-07-08 15:00:58: Parsing SLiMs of 'cbfa2t1-ncor2' system to CALVADOS input
+2026-07-08 15:00:58: ················································································
+2026-07-08 15:00:58: SLiM 'mynd-pppli' ('CBFA2T1[MYND]-NCOR2[PPPLI]')
+2026-07-08 15:00:58: 	- Verifying that acceptor 'mynd' and donor 'pppli' chains are found in system
+2026-07-08 15:00:58: 	- Performing contact analysis
+2026-07-08 15:00:58: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:00:58: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:00:58: 		- Defining contacts
+2026-07-08 15:00:58: 		- Found 29 pairwise contacts
+2026-07-08 15:00:58: 		- Calculating contact distances
+2026-07-08 15:00:58: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:00:58: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:00:58: 	- Excluding 0 contacts
+2026-07-08 15:00:58: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/cbfa2t1-ncor2/specific_interactions.txt'
+2026-07-08 15:00:58: 

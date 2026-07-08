@@ -1,0 +1,29 @@
+2026-07-08 15:02:38: ················································································
+2026-07-08 15:02:38: Parsing chains of 'traf6-sting' system to CALVADOS input
+2026-07-08 15:02:38: ················································································
+2026-07-08 15:02:38: Chain 'math' ('TRAF6[MATH]')
+2026-07-08 15:02:38: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/6MYD.cif' is specified
+2026-07-08 15:02:38: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/traf6-sting/math.pdb'
+2026-07-08 15:02:39: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:02:39: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/traf6-sting/math.yaml'
+2026-07-08 15:02:39: 
+2026-07-08 15:02:39: Chain 'ctt' ('STING[CTT]')
+2026-07-08 15:02:39: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:02:39: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/traf6-sting/ctt.fasta'
+2026-07-08 15:02:39: 
+2026-07-08 15:02:39: ················································································
+2026-07-08 15:02:39: Parsing SLiMs of 'traf6-sting' system to CALVADOS input
+2026-07-08 15:02:39: ················································································
+2026-07-08 15:02:39: SLiM 'math-ctt' ('TRAF6[MATH]-STING[CTT]')
+2026-07-08 15:02:39: 	- Verifying that acceptor 'math' and donor 'ctt' chains are found in system
+2026-07-08 15:02:39: 	- Performing contact analysis
+2026-07-08 15:02:39: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:02:39: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:02:39: 		- Defining contacts
+2026-07-08 15:02:39: 		- Found 36 pairwise contacts
+2026-07-08 15:02:39: 		- Calculating contact distances
+2026-07-08 15:02:39: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:02:39: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:02:39: 	- Excluding 0 contacts
+2026-07-08 15:02:39: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/traf6-sting/specific_interactions.txt'
+2026-07-08 15:02:39: 

@@ -1,0 +1,6 @@
+2026-07-08 15:04:06: ················································································
+2026-07-08 15:04:06: Parsing chains of 'wdr5-rbbp5' system to CALVADOS input
+2026-07-08 15:04:06: ················································································
+2026-07-08 15:04:06: Chain 'wd40' ('WDR5')
+2026-07-08 15:04:06: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/2XL2.cif' is specified
+2026-07-08 15:04:06: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/wdr5-rbbp5/wd40.pdb'

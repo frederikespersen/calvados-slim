@@ -1,0 +1,29 @@
+2026-07-08 15:03:20: ················································································
+2026-07-08 15:03:20: Parsing chains of 'cdc14-sic1' system to CALVADOS input
+2026-07-08 15:03:20: ················································································
+2026-07-08 15:03:20: Chain 'cdc14' ('CDC14')
+2026-07-08 15:03:20: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/6G86.cif' is specified
+2026-07-08 15:03:20: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/cdc14-sic1/cdc14.pdb'
+2026-07-08 15:03:21: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:03:21: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/cdc14-sic1/cdc14.yaml'
+2026-07-08 15:03:21: 
+2026-07-08 15:03:21: Chain 'sic1' ('SIC1[PxL]')
+2026-07-08 15:03:21: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:03:21: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/cdc14-sic1/sic1.fasta'
+2026-07-08 15:03:21: 
+2026-07-08 15:03:21: ················································································
+2026-07-08 15:03:21: Parsing SLiMs of 'cdc14-sic1' system to CALVADOS input
+2026-07-08 15:03:21: ················································································
+2026-07-08 15:03:21: SLiM 'cdc14-sic1' ('CDC14-SIC1[PxL]')
+2026-07-08 15:03:21: 	- Verifying that acceptor 'cdc14' and donor 'sic1' chains are found in system
+2026-07-08 15:03:21: 	- Performing contact analysis
+2026-07-08 15:03:21: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:03:21: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:03:21: 		- Defining contacts
+2026-07-08 15:03:21: 		- Found 0 pairwise contacts
+2026-07-08 15:03:21: 		- Calculating contact distances
+2026-07-08 15:03:21: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:03:21: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:03:21: 	- Excluding 0 contacts
+2026-07-08 15:03:21: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/cdc14-sic1/specific_interactions.txt'
+2026-07-08 15:03:21: 

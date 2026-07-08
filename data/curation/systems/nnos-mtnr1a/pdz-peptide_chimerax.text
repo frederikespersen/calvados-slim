@@ -1,0 +1,10 @@
+open 1B8Q
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/A,B cartoons
+sel /A:16,20,21,22,23,24,25,26,27,28,29,30,38,41,71,75,78,79 | /B:3,4,5,6,7
+show sel surfaces
+view sel

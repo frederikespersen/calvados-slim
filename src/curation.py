@@ -491,9 +491,13 @@ class System:
 
         Returns
         -------
-        tuple[np.ndarray, np.ndarray]
-            ``(construct_res_idxs, authres_ids)``, both ``(N, 2)``: the 0-based
-            construct indices and the author residue ids of each contact pair.
+        tuple[np.ndarray, np.ndarray, np.ndarray]
+            ``(construct_res_idxs, authres_ids, in_construct)``. The first two
+            are ``(N, 2)``: the 0-based construct indices and the author residue
+            ids of each contact pair. ``in_construct`` is a length-``N`` boolean
+            marking the pairs whose acceptor and donor both fall within their
+            construct windows; the construct indices of the rest are meaningless
+            (left at zero) and should be dropped by the caller.
         """
         universe = utils.load_structure(slim['PDB'])
         acc_authres_pdb = System._pdb_author_resids(universe, slim['PDB Acceptor chain ID'])
@@ -503,12 +507,18 @@ class System:
 
         construct_res_idxs = np.zeros_like(contact_pdb_idxs)
         authres_ids = np.zeros_like(contact_pdb_idxs)
+        in_construct = np.zeros(len(contact_pdb_idxs), dtype=bool)
         for i, (acc_idx, don_idx) in enumerate(contact_pdb_idxs):
-            construct_res_idxs[i, 0] = acc_map[acc_idx]
-            construct_res_idxs[i, 1] = don_map[don_idx]
             authres_ids[i, 0] = acc_authres_pdb[acc_idx]
             authres_ids[i, 1] = don_authres_pdb[don_idx]
-        return construct_res_idxs, authres_ids
+            # A contact residue only maps if its author id lies within the
+            # construct window; a longer crystallised chain (e.g. tandem SLiM
+            # motifs on one peptide) can contact residues beyond it.
+            if acc_idx in acc_map and don_idx in don_map:
+                construct_res_idxs[i, 0] = acc_map[acc_idx]
+                construct_res_idxs[i, 1] = don_map[don_idx]
+                in_construct[i] = True
+        return construct_res_idxs, authres_ids, in_construct
 
     #··································································#
     
@@ -562,9 +572,18 @@ class System:
 
         # Map contacts from PDB (resolved-residue) indexing onto the full constructs
         log.info("\t- Mapping residue indices between System and SLiM constructs")
-        construct_res_idxs, authres_ids = System._map_contacts_to_construct(
+        construct_res_idxs, authres_ids, in_construct = System._map_contacts_to_construct(
             slim, acceptor_chain, donor_chain, contact_pdb_idxs
         )
+
+        # Drop contacts to residues outside either construct window: the
+        # simulated chains span only their constructs, so such contacts (e.g.
+        # to a flanking residue of an adjacent motif on a longer peptide chain,
+        # or a distant crystal-packing partner) cannot be represented.
+        log.info(f"\t- Dropping {(~in_construct).sum()} contacts outside the construct windows")
+        construct_res_idxs = construct_res_idxs[in_construct]
+        eqdists = eqdists[in_construct]
+        authres_ids = authres_ids[in_construct]
 
         # Drop contacts involving explicitly excluded residues
         exclude_mask = (

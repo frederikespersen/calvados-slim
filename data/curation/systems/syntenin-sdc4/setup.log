@@ -1,0 +1,29 @@
+2026-07-08 15:02:18: ················································································
+2026-07-08 15:02:18: Parsing chains of 'syntenin-sdc4' system to CALVADOS input
+2026-07-08 15:02:18: ················································································
+2026-07-08 15:02:18: Chain 'pdz2' ('SDCBP[PDZ2]')
+2026-07-08 15:02:18: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/1OBY.cif' is specified
+2026-07-08 15:02:18: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/syntenin-sdc4/pdz2.pdb'
+2026-07-08 15:02:18: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:02:18: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/syntenin-sdc4/pdz2.yaml'
+2026-07-08 15:02:18: 
+2026-07-08 15:02:18: Chain 'peptide' ('SDC4[peptide]')
+2026-07-08 15:02:18: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:02:18: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/syntenin-sdc4/peptide.fasta'
+2026-07-08 15:02:18: 
+2026-07-08 15:02:18: ················································································
+2026-07-08 15:02:18: Parsing SLiMs of 'syntenin-sdc4' system to CALVADOS input
+2026-07-08 15:02:18: ················································································
+2026-07-08 15:02:18: SLiM 'pdz2-peptide' ('SDCBP[PDZ2]-SDC4[peptide]')
+2026-07-08 15:02:18: 	- Verifying that acceptor 'pdz2' and donor 'peptide' chains are found in system
+2026-07-08 15:02:18: 	- Performing contact analysis
+2026-07-08 15:02:18: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:02:18: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:02:18: 		- Defining contacts
+2026-07-08 15:02:18: 		- Found 23 pairwise contacts
+2026-07-08 15:02:18: 		- Calculating contact distances
+2026-07-08 15:02:18: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:02:18: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:02:18: 	- Excluding 0 contacts
+2026-07-08 15:02:18: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/syntenin-sdc4/specific_interactions.txt'
+2026-07-08 15:02:18: 

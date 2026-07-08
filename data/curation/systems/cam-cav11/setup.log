@@ -1,0 +1,29 @@
+2026-07-08 15:01:49: ················································································
+2026-07-08 15:01:49: Parsing chains of 'cam-cav11' system to CALVADOS input
+2026-07-08 15:01:49: ················································································
+2026-07-08 15:01:49: Chain 'cam' ('CaM')
+2026-07-08 15:01:49: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/2VAY.cif' is specified
+2026-07-08 15:01:49: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/cam-cav11/cam.pdb'
+2026-07-08 15:01:49: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:01:49: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/cam-cav11/cam.yaml'
+2026-07-08 15:01:49: 
+2026-07-08 15:01:49: Chain 'cav11' ('CAV1.1[IQ]')
+2026-07-08 15:01:49: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:01:49: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/cam-cav11/cav11.fasta'
+2026-07-08 15:01:49: 
+2026-07-08 15:01:49: ················································································
+2026-07-08 15:01:49: Parsing SLiMs of 'cam-cav11' system to CALVADOS input
+2026-07-08 15:01:49: ················································································
+2026-07-08 15:01:49: SLiM 'cam-cav11' ('CaM-CAV1.1[IQ]')
+2026-07-08 15:01:49: 	- Verifying that acceptor 'cam' and donor 'cav11' chains are found in system
+2026-07-08 15:01:49: 	- Performing contact analysis
+2026-07-08 15:01:49: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:01:49: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:01:49: 		- Defining contacts
+2026-07-08 15:01:49: 		- Found 80 pairwise contacts
+2026-07-08 15:01:49: 		- Calculating contact distances
+2026-07-08 15:01:49: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:01:49: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:01:49: 	- Excluding 0 contacts
+2026-07-08 15:01:49: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/cam-cav11/specific_interactions.txt'
+2026-07-08 15:01:49: 

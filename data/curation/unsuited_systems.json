@@ -1847,5 +1847,257 @@
         "Reason": "Only 1 polymer entity (auto-flagged); entity name is literally 'Neuropilin-1, Vascular endothelial growth factor A' and the sequence's C-terminal tail ends in the VEGF-A CendR motif '...CRCDKPRR' -- a single-chain genetic fusion of the NRP1 b1b2 domain directly to the VEGF-A C-terminal tail, not two separately crystallized chains. The nrp2-vegfa system already curates this general NRP-VEGFA CendR interaction from a genuine two-chain deposition.",
         "Rescue": "Hand-split the CIF into separate NRP1 and VEGF-A chains at the fusion junction, mirroring the 7EL6_split.cif precedent; likely low priority given nrp2-vegfa already covers this interaction type.",
         "Publication": "https://doi.org/10.1074/jbc.M111.331140"
+    },
+    {
+        "PDB": "1UEF",
+        "Category": "PTM",
+        "Reason": "Donor RET receptor peptide has PTR@9, the core load-bearing phosphotyrosine for phospho-dependent Dok1 PTB domain recognition (LIG_PTB_Phospho_1 class).",
+        "Rescue": "Not rescuable -- phosphotyrosine is obligate for this PTB-domain subclass's recognition.",
+        "Publication": "https://doi.org/10.1074/jbc.M311030200"
+    },
+    {
+        "PDB": "3ML4",
+        "Category": "PTM",
+        "Reason": "Donor MuSK receptor peptide has PTR@553, the core load-bearing phosphotyrosine for phospho-dependent Dok-7 PTB domain recognition (LIG_PTB_Phospho_1 class), same failure mode as 1UEF.",
+        "Rescue": "Not rescuable -- phosphotyrosine is obligate for this PTB-domain subclass's recognition.",
+        "Publication": "https://doi.org/10.1016/j.molcel.2010.06.007"
+    },
+    {
+        "PDB": "4L5T",
+        "Category": "Not a domain+SLiM pair",
+        "Reason": "Apo tetrameric p202 HIN2 domain (Interferon-activable protein 202) -- only 1 polymer entity, no RB pocket domain (acceptor) chain present in the deposited CIF despite this PDB being cited for a LIG_RB_LxCxE_1 ELM instance.",
+        "Rescue": "Look for a companion structure of p202's LxCxE-like motif bound to the RB pocket domain, if one exists.",
+        "Publication": "https://doi.org/10.1016/j.celrep.2013.06.024"
+    },
+    {
+        "PDB": "1JU5",
+        "Category": "PTM",
+        "Reason": "Donor Crk-derived peptide has PTR@221, the core load-bearing phosphotyrosine for Crk SH2 domain recognition (LIG_SH2_CRK class).",
+        "Rescue": "Not rescuable -- phosphotyrosine is obligate for SH2 recognition at this site.",
+        "Publication": "https://doi.org/10.1073/pnas.212518799"
+    },
+    {
+        "PDB": "1P13",
+        "Category": "PTM",
+        "Reason": "Donor peptide has PTR@3, the core load-bearing phosphotyrosine for Src-family-kinase SH2 domain recognition (LIG_SH2_SFK_2 class).",
+        "Rescue": "Not rescuable -- phosphotyrosine is obligate for SH2 recognition at this site.",
+        "Publication": "https://doi.org/10.1021/bi0340503"
+    },
+    {
+        "PDB": "2GBQ",
+        "Category": "Non-canonical residue",
+        "Reason": "Donor SOS-1 peptide is doubly capped (ACE@0 N-terminal acetyl and NH2@11 C-terminal amide), a synthetic peptide rather than a natural IDR fragment, same failure mode as 4UM9/1CZY/1EVH.",
+        "Rescue": "Graft the true native SOS-1 flanking sequence onto the proline-rich motif instead of using the doubly-capped synthetic peptide.",
+        "Publication": "https://doi.org/10.1006/jmbi.1996.0886"
+    },
+    {
+        "PDB": "1O6K",
+        "Category": "PTM",
+        "Reason": "AKT2/RAC-beta kinase domain acceptor carries obligate activation-loop phosphorylation (TPO@309) required for the active kinase conformation, same recurring issue as PKA (1ATP) and other kinase-domain acceptors in this dataset.",
+        "Rescue": "Look for an unphosphorylated (inactive-state) AKT2-GSK3beta co-complex, if one exists; otherwise not rescuable.",
+        "Publication": "https://doi.org/10.1038/NSB870"
+    },
+    {
+        "PDB": "1KPS",
+        "Category": "Not a domain+SLiM pair",
+        "Reason": "Donor RanGAP1 (chains B/D) is a ~156-171-residue, mostly-resolved folded C-terminal domain (auto-flagged), not an excisable SUMOylation-consensus peptide -- the SUMO-acceptor lysine is embedded in RanGAP1's own folded fold, same pattern as 6IEH/8AJO despite the ELM classification as MOD_SUMO_for_1.",
+        "Rescue": "Not rescuable; RanGAP1's SUMO site requires its folded domain context for UBC9 recognition.",
+        "Publication": "https://doi.org/10.1016/S0092-8674(02)00630-X"
+    },
+    {
+        "PDB": "2KFU",
+        "Category": "Intramolecular",
+        "Reason": "Only 1 polymer entity (auto-flagged) -- PknB-phosphorylated Rv1827/GarA, a single-chain construct where the FHA domain binds its own N-terminal phosphothreonine (TPO@22) intramolecularly (a documented autoinhibition mechanism in M. tuberculosis), not two separate interacting chains.",
+        "Rescue": "Not rescuable within this pipeline; would need an intermolecular FHA-phosphopeptide complex instead.",
+        "Publication": "https://doi.org/10.1126/scisignal.2000212"
+    },
+    {
+        "PDB": "1IB1",
+        "Category": "PTM",
+        "Reason": "Donor Serotonin N-acetyltransferase (AANAT, chains E-H) has TPO@31, the core load-bearing phosphothreonine for 14-3-3 recognition (LIG_14-3-3_CanoR_1 class). Independently, AANAT itself is a ~179-residue, 90%-resolved folded enzyme domain (auto-flagged), not an excisable phosphopeptide -- a compounding 'not a domain+SLiM pair' issue.",
+        "Rescue": "Not rescuable -- phosphothreonine is obligate for 14-3-3 recognition, and the donor is itself a folded catalytic domain rather than a peptide.",
+        "Publication": "https://doi.org/10.1016/S0092-8674(01)00316-6"
+    },
+    {
+        "PDB": "3EGH",
+        "Category": "Not a domain+SLiM pair",
+        "Reason": "Donor Spinophilin PP1-binding region (chains C/D) is a ~160-170-residue, mostly-resolved folded module (auto-flagged alongside the PP1alpha acceptor), not a short RVxF-motif peptide -- same 'donor too large/folded' pattern as 6IEH/8AJO despite the ELM classification as DOC_PP1_RVXF_1. A co-crystallized nodularin toxin (chains E/F) is also present but irrelevant to this System. This single PDB is cited by two rows in the priority sheet (ELMI001073, ELMI001625).",
+        "Rescue": "Would need an isolated minimal RVxF peptide of Spinophilin bound to PP1, if such a structure exists.",
+        "Publication": "https://doi.org/10.1038/nsmb.1786"
+    },
+    {
+        "PDB": "2V8F",
+        "Category": "Non-canonical residue",
+        "Reason": "Profilin-2 acceptor has CSX@16 (S-oxy cysteine, an oxidized/non-canonical residue) on both ASU copies, unlike the MSE exception. The companion PDB 2V8C (same Profilin-2 construct, bound to VASP instead of mDia1) does not carry this modification at the same position and is curated instead.",
+        "Rescue": "Not needed -- the clean companion structure 2V8C is curated for this acceptor.",
+        "Publication": "https://doi.org/10.1016/J.JMB.2007.10.050"
+    },
+    {
+        "PDB": "6KMH",
+        "Category": "Bad numbering",
+        "Reason": "Donor Mint1/APBA1 chains (C/D) have a genuine discontinuous author numbering (residues 1-337 absent from the deposited SEQRES entirely, an artificial expression-tag numbering jump). This is the same CASK-Mint1 interaction already curated cleanly as cask-apba1 from PDB 6LNM (no numbering issue there).",
+        "Rescue": "Not needed -- already curated from PDB 6LNM as cask-apba1.",
+        "Publication": "https://doi.org/10.1038/s41421-020-00216-3"
+    },
+    {
+        "PDB": "2EGK",
+        "Category": "Not a domain+SLiM pair",
+        "Reason": "Apo GRASP1/Tamalin PDZ domain (4 copies) -- only 1 polymer entity, no mGluR5 peptide (donor) chain present in the deposited CIF. Companion PDB 2EGN (same PDZ domain, peptide-bound) is curated instead.",
+        "Rescue": "Not needed -- the peptide-bound companion structure 2EGN is curated for this acceptor.",
+        "Publication": "https://doi.org/10.1038/sj.emboj.7601651"
+    },
+    {
+        "PDB": "1X27",
+        "Category": "PTM",
+        "Reason": "Donor CAS/BCAR1 peptide has PTR@762, the core load-bearing phosphotyrosine for Lck SH2 domain recognition (LIG_SH2_SFK_2 class).",
+        "Rescue": "Not rescuable -- phosphotyrosine is obligate for SH2 recognition at this site.",
+        "Publication": "https://doi.org/10.1002/jmr.755"
+    },
+    {
+        "PDB": "1TNZ",
+        "Category": "Multi-chain acceptor",
+        "Reason": "Acceptor is the obligate geranylgeranyltransferase type I alpha/beta heterodimer (GGTase-I, two different gene products), a composite prenyltransferase active site, not a single folded domain.",
+        "Rescue": "Not obviously rescuable within this pipeline; the schema has no way to represent a two-chain composite enzyme active site.",
+        "Publication": "https://doi.org/10.1016/j.jmb.2004.08.056"
+    },
+    {
+        "PDB": "4LPA",
+        "Category": "PTM",
+        "Reason": "Only 1 polymer entity (auto-flagged) -- all 4 copies of CKS1 (Cyclin-dependent kinases regulatory subunit) carry TPO@117 on their own C-terminal tail, which docks into a neighbouring CKS1 copy's phospho-binding groove (an intermolecular self-recognition/oligomerization mechanism), not a distinct donor protein. The phosphothreonine is obligate for this recognition regardless.",
+        "Rescue": "Not rescuable -- phosphothreonine is obligate, and there is no distinct second protein to pair as donor.",
+        "Publication": "https://doi.org/10.1038/nsmb.2707"
+    },
+    {
+        "PDB": "1K2N",
+        "Category": "PTM",
+        "Reason": "Donor Rad9 peptide has TPO@603, the core load-bearing phosphothreonine for RAD53 FHA2 domain recognition (LIG_FHA_1 class).",
+        "Rescue": "Not rescuable -- phosphothreonine is obligate for FHA-domain recognition at this site.",
+        "Publication": "https://doi.org/10.1006/jmbi.2001.5141"
+    },
+    {
+        "PDB": "2A0T",
+        "Category": "PTM",
+        "Reason": "Donor peptide has TPO@169, the core load-bearing phosphothreonine for RAD53 FHA1 domain recognition (LIG_FHA_1 class), same failure mode as the other RAD53/SPK1-FHA entries in this batch (1K2N, 1K3Q, 1K3N).",
+        "Rescue": "Not rescuable -- phosphothreonine is obligate for FHA-domain recognition at this site.",
+        "Publication": "https://doi.org/10.1021/ja054538m"
+    },
+    {
+        "PDB": "1K3Q",
+        "Category": "PTM",
+        "Reason": "Donor Rad9-derived peptide has TPO@169, the core load-bearing phosphothreonine for RAD53 FHA1 domain recognition (LIG_FHA_2 class), same failure mode as 1K2N/2A0T/1K3N.",
+        "Rescue": "Not rescuable -- phosphothreonine is obligate for FHA-domain recognition at this site.",
+        "Publication": "https://doi.org/10.1006/jmbi.2001.5140"
+    },
+    {
+        "PDB": "1K3N",
+        "Category": "PTM",
+        "Reason": "Donor Rad9-derived peptide has TPO@171, the core load-bearing phosphothreonine for RAD53 FHA1 domain recognition (LIG_FHA_2 class), same failure mode as 1K2N/2A0T/1K3Q (a different phosphosite on the same donor protein).",
+        "Rescue": "Not rescuable -- phosphothreonine is obligate for FHA-domain recognition at this site.",
+        "Publication": "https://doi.org/10.1006/jmbi.2001.5140"
+    },
+    {
+        "PDB": "1SXJ",
+        "Category": "Non-canonical residue",
+        "Reason": "Acceptor chain A has 51 UNK (unknown-identity) residues modelled with no real amino-acid assignment, an absolute blocker for Sequence. Independently, the deposited structure is the full 5-subunit Replication Factor C (RFC) clamp-loader complex bound to PCNA (auto-flagged: 6+ distinct large folded chains), a massive multi-subunit assembly, not a single folded domain + SLiM.",
+        "Rescue": "Not rescuable -- both the UNK residues and the composite multi-subunit acceptor are fundamental blockers.",
+        "Publication": "https://doi.org/10.1038/nature02585"
+    },
+    {
+        "PDB": "4BH6",
+        "Category": "PTM",
+        "Reason": "Donor Acm1/APC-C modulator 1 peptide has SEP@102 on all 8 ASU copies, present within the crystallized construct spanning both the D-box (DEG_APCC_DBOX_1, ELMI004589) and ABBA-motif (LIG_APCC_ABBA_1, ELMI003263) regions cited by the two ELM rows for this PDB.",
+        "Rescue": "Would need an unphosphorylated Acm1 construct or confirmation the phosphosite is well outside the degron-binding footprint; not pursued here.",
+        "Publication": "https://doi.org/10.1016/J.MOLCEL.2013.04.024"
+    },
+    {
+        "PDB": "7BRN",
+        "Category": "Fusion protein",
+        "Reason": "Only 1 polymer entity (auto-flagged); entity name is literally 'Autophagy-related protein 40,Autophagy-related protein 8' -- a single-chain genetic fusion of the ER-phagy receptor Atg40's LIR-motif region directly to Atg8, not two separately crystallized chains.",
+        "Rescue": "Hand-split the CIF into separate Atg40 and Atg8 chains at the fusion junction, mirroring the 7EL6_split.cif precedent.",
+        "Publication": "https://doi.org/10.1038/s41467-020-17163-y"
+    },
+    {
+        "PDB": "4FMN",
+        "Category": "Non-canonical residue",
+        "Reason": "Donor peptide has an ACE (N-acetyl) cap at residue 21, a synthetic peptide rather than a natural IDR fragment, same failure mode as 4UM9/1CZY/1EVH. The companion PDB 4FMO (same MLH1-PMS1 acceptor, uncapped Exo1 MIP-box donor instead) is curated.",
+        "Rescue": "Not needed -- the uncapped companion structure 4FMO is curated for this acceptor.",
+        "Publication": "https://doi.org/10.1038/nsmb.2511"
+    },
+    {
+        "PDB": "4U4C",
+        "Category": "Fusion protein",
+        "Reason": "Only 1 polymer entity for the donor chain (auto-flagged); entity name is literally 'Protein AIR2,Poly(A) RNA polymerase protein 2' -- a single-chain genetic fusion of AIR2 and Trf4 fragments, not two separately crystallized proteins. Independently, this same donor chain also has a genuine discontinuous author numbering (residues 63-110 absent from the deposited SEQRES entirely). This one PDB is cited by three ELM rows in the priority sheet (ELMI004670/LIG_MTR4_AIM_1, ELMI002850/LIG_Mtr4_Air2_1, ELMI002853/LIG_Mtr4_Trf4_1), all blocked by the same fusion construct.",
+        "Rescue": "Hand-split the CIF into separate AIR2 and Trf4 chains at the fusion junction, then separately address the numbering gap; not pursued here.",
+        "Publication": "https://doi.org/10.1016/j.molcel.2014.07.020"
+    },
+    {
+        "PDB": "4WFD",
+        "Category": "Multi-chain acceptor",
+        "Reason": "Rrp6 and Rrp47 form an obligate heterodimer whose Mtr4-recruiting surface is a genuine composite interface: contact-count verification shows the Mtr4-derived peptide makes substantial, near-equal contacts to both subunits (37 vs 43 all-atom contacts, i.e. neither carries a clean majority) -- same failure mode as 3AA6/1F95. The primary publication's own title states Rrp6 and Rrp47 'form a composite surface' for this recruitment.",
+        "Rescue": "Not obviously rescuable within this pipeline; the schema has no way to represent a two-chain composite groove for a single SLiM.",
+        "Publication": "https://doi.org/10.15252/embj.201488757"
+    },
+    {
+        "PDB": "3NYB",
+        "Category": "Not a domain+SLiM pair",
+        "Reason": "Donor AIR2 fragment (chain B, 64 resolved residues) is a compact folded zinc-knuckle module (two CCHC-type zinc fingers visible in the sequence; measured end-to-end extent only ~38 A for 64 residues, far too compact for an extended disordered peptide), not an excisable linear IWRxY motif, despite the ELM classification as LIG_Trf4_IWRxY_1.",
+        "Rescue": "Would need an isolated minimal IWRxY peptide of AIR2 (outside the zinc-finger fold) bound to Trf4, if such a structure exists.",
+        "Publication": "https://doi.org/10.1073/pnas.1003505107"
+    },
+    {
+        "PDB": "6OWT",
+        "Category": "Multi-chain acceptor",
+        "Reason": "Cryo-EM structure of the full AP-2 clathrin adaptor complex (alpha/beta/mu1/sigma subunits, 4+ distinct large folded chains), a massive multi-subunit assembly, not a single folded domain + SLiM -- same pattern as the already-discarded 4P6Z/6DFF (AP-1). The donor chain is also a 'Tetherin,Protein Nef' genetic fusion with a genuine discontinuous-numbering gap (residues 26-34 absent from SEQRES), a compounding blocker.",
+        "Rescue": "Not obviously rescuable within this pipeline; the schema has no way to represent a multi-subunit composite adaptor complex.",
+        "Publication": "https://doi.org/10.1016/j.chom.2019.08.002"
+    },
+    {
+        "PDB": "2XS8",
+        "Category": "Not a domain+SLiM pair",
+        "Reason": "Same oversized Bro1+V multi-domain ALIX acceptor issue as the already-discarded 2R02/2R03/2R05 (identical ~697-residue construct spanning two independently-characterized folded domains). The donor SIV Gag p6 peptide also has a genuine discontinuous author numbering (residue 36 absent from the deposited SEQRES), a compounding blocker.",
+        "Rescue": "Would need a smaller isolated-domain ALIX construct (e.g. just the V-domain); not available among the priority PDBs.",
+        "Publication": "https://doi.org/10.1128/JVI.01683-10"
+    },
+    {
+        "PDB": "2XS1",
+        "Category": "Not a domain+SLiM pair",
+        "Reason": "Same oversized Bro1+V multi-domain ALIX acceptor issue as the already-discarded 2R02/2R03/2R05/2XS8 (identical ~697-residue construct spanning two independently-characterized folded domains), here bound to a SIV Gag polyprotein LYPxL peptide.",
+        "Rescue": "Would need a smaller isolated-domain ALIX construct (e.g. just the V-domain); not available among the priority PDBs.",
+        "Publication": "https://doi.org/10.1128/JVI.01683-10"
+    },
+    {
+        "PDB": "1GH6",
+        "Category": "Bad numbering",
+        "Reason": "RB pocket domain has a genuine ~61-residue spacer deletion (584-644) absent from the deposited SEQRES entirely -- discontinuous author numbering, same recurring failure mode as 1N4M/3AU4/2R7G (the same RB pocket spacer-deletion construct type, here bound to SV40 Large T antigen's LxCxE motif instead of adenovirus E1A or HPV E7).",
+        "Rescue": "Model the deleted spacer with a grafted/modelled linker to restore continuous authored numbering.",
+        "Publication": "https://doi.org/10.1093/emboj/20.1.295"
+    },
+    {
+        "PDB": "1F2J",
+        "Category": "Not a domain+SLiM pair",
+        "Reason": "Apo Trypanosoma brucei glycosomal fructose-1,6-bisphosphate aldolase (the PTS2-bearing cargo protein) -- only 1 polymer entity, no PEX7/WD40 receptor (acceptor) chain in the deposited CIF, same pattern as the already-discarded 1EPX (Leishmania aldolase).",
+        "Rescue": "Look for a PEX7-aldolase (or PEX7-PTS2 peptide) co-complex structure, if one exists.",
+        "Publication": "https://doi.org/10.1006/jmbi.2000.3910"
+    },
+    {
+        "PDB": "3M1F",
+        "Category": "Non-canonical residue",
+        "Reason": "Actin acceptor has HIC@73 (4-methyl-histidine), a modified residue not in this pipeline's MSE-only exception list -- unlike selenomethionine, HIC is not treated as its parent residue by the curation tooling.",
+        "Rescue": "Not rescuable within this pipeline as deposited; would need an actin structure without this modification (rare, since His73 methylation is near-universal on cellular actin).",
+        "Publication": "https://doi.org/10.1016/j.jmb.2010.08.040"
+    },
+    {
+        "PDB": "2HG0",
+        "Category": "Not a domain+SLiM pair",
+        "Reason": "Apo West Nile virus envelope glycoprotein -- only 1 polymer entity, no OST/STT3 (acceptor) chain in the deposited CIF. Independently, the ELM class (MOD_N-GLC_1, an N-glycosylation sequon) describes a covalent enzymatic modification site rather than a reversible domain-SLiM protein-protein interaction, arguably out of scope for this pipeline regardless.",
+        "Rescue": "Not rescuable; N-glycosylation sequons are not the kind of interaction this benchmark models.",
+        "Publication": "https://doi.org/10.1128/JVI.01125-06"
+    },
+    {
+        "PDB": "7EL6",
+        "Category": "Fusion protein",
+        "Reason": "FEM1B's ankyrin domain and the SMCR8 C-degron are deposited as a single-chain genetic fusion joined by an engineered glycine linker (one auth chain, one entity, one SEQRES). This system was previously registered as fem1b-smcr8 by hand-splitting the CIF into two synthetic chains (data/pdb/7EL6_split.cif), but is being moved here for consistency with the other fusion-protein entries in this dataset (1MKE, 6HYL, 5V4K, 6HOJ, 4BLD, 7BRT, 7BRQ, 6HYM, 6HYO, 7CNG) that cite the same hand-split rescue path without acting on it.",
+        "Rescue": "Hand-split the CIF into two synthetic chains at the fusion linker, as was previously done for the now-removed data/pdb/7EL6_split.cif, if this system is reinstated.",
+        "Publication": "https://doi.org/10.1016/j.bbrc.2021.04.046"
     }
 ]

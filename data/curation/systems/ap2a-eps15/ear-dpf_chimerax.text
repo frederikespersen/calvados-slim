@@ -1,0 +1,10 @@
+open 1KYU
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/A,P cartoons
+sel /A:836,837,840,841,880,881,882,888,905,920 | /P:629,630,631,632
+show sel surfaces
+view sel

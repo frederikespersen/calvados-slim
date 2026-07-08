@@ -1,0 +1,10 @@
+open 3PKN
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/A,B cartoons
+sel /A:560,563,564,567,568,579,580,582,583,584,585,586,587,588,606,609,610,613,614,617 | /B:15,16,17,18,19,20,21,22,24,25
+show sel surfaces
+view sel

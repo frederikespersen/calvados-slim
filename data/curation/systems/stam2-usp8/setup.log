@@ -1,0 +1,29 @@
+2026-07-08 15:03:57: ················································································
+2026-07-08 15:03:57: Parsing chains of 'stam2-usp8' system to CALVADOS input
+2026-07-08 15:03:57: ················································································
+2026-07-08 15:03:57: Chain 'sh3' ('STAM2[SH3]')
+2026-07-08 15:03:57: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/1UJ0.cif' is specified
+2026-07-08 15:03:57: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/stam2-usp8/sh3.pdb'
+2026-07-08 15:03:57: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:03:57: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/stam2-usp8/sh3.yaml'
+2026-07-08 15:03:57: 
+2026-07-08 15:03:57: Chain 'usp8' ('USP8[peptide]')
+2026-07-08 15:03:57: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:03:57: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/stam2-usp8/usp8.fasta'
+2026-07-08 15:03:57: 
+2026-07-08 15:03:57: ················································································
+2026-07-08 15:03:57: Parsing SLiMs of 'stam2-usp8' system to CALVADOS input
+2026-07-08 15:03:57: ················································································
+2026-07-08 15:03:57: SLiM 'sh3-usp8' ('STAM2[SH3]-USP8[peptide]')
+2026-07-08 15:03:57: 	- Verifying that acceptor 'sh3' and donor 'usp8' chains are found in system
+2026-07-08 15:03:57: 	- Performing contact analysis
+2026-07-08 15:03:57: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:03:57: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:03:57: 		- Defining contacts
+2026-07-08 15:03:57: 		- Found 25 pairwise contacts
+2026-07-08 15:03:57: 		- Calculating contact distances
+2026-07-08 15:03:57: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:03:57: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:03:57: 	- Excluding 0 contacts
+2026-07-08 15:03:57: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/stam2-usp8/specific_interactions.txt'
+2026-07-08 15:03:57: 

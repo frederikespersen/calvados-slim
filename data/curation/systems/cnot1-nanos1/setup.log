@@ -1,0 +1,29 @@
+2026-07-08 15:00:53: ················································································
+2026-07-08 15:00:53: Parsing chains of 'cnot1-nanos1' system to CALVADOS input
+2026-07-08 15:00:53: ················································································
+2026-07-08 15:00:53: Chain 'nimdock' ('CNOT1[NIMdock]')
+2026-07-08 15:00:53: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/4CQO.cif' is specified
+2026-07-08 15:00:53: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/cnot1-nanos1/nimdock.pdb'
+2026-07-08 15:00:54: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:00:54: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/cnot1-nanos1/nimdock.yaml'
+2026-07-08 15:00:54: 
+2026-07-08 15:00:54: Chain 'nim' ('NANOS1[NIM]')
+2026-07-08 15:00:54: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:00:54: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/cnot1-nanos1/nim.fasta'
+2026-07-08 15:00:54: 
+2026-07-08 15:00:54: ················································································
+2026-07-08 15:00:54: Parsing SLiMs of 'cnot1-nanos1' system to CALVADOS input
+2026-07-08 15:00:54: ················································································
+2026-07-08 15:00:54: SLiM 'nimdock-nim' ('CNOT1[NIMdock]-NANOS1[NIM]')
+2026-07-08 15:00:54: 	- Verifying that acceptor 'nimdock' and donor 'nim' chains are found in system
+2026-07-08 15:00:54: 	- Performing contact analysis
+2026-07-08 15:00:54: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:00:54: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:00:54: 		- Defining contacts
+2026-07-08 15:00:54: 		- Found 26 pairwise contacts
+2026-07-08 15:00:54: 		- Calculating contact distances
+2026-07-08 15:00:54: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:00:54: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:00:54: 	- Excluding 0 contacts
+2026-07-08 15:00:54: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/cnot1-nanos1/specific_interactions.txt'
+2026-07-08 15:00:54: 

@@ -1,0 +1,10 @@
+open 6TQ0
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/A,B cartoons
+sel /A:212,213,214,215,217,220,223,224,227,244,245,246,247,250,271,274,275 | /B:225,226,227,228,229,230,231,232
+show sel surfaces
+view sel

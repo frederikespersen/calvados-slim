@@ -1,0 +1,29 @@
+2026-07-08 15:03:56: ················································································
+2026-07-08 15:03:56: Parsing chains of 'shank1-arhgef7' system to CALVADOS input
+2026-07-08 15:03:56: ················································································
+2026-07-08 15:03:56: Chain 'pdz' ('SHANK1[PDZ]')
+2026-07-08 15:03:56: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/3L4F.cif' is specified
+2026-07-08 15:03:56: 	- Selecting chain 'D' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/shank1-arhgef7/pdz.pdb'
+2026-07-08 15:03:56: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:03:56: 	- Writing chain 'D' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/shank1-arhgef7/pdz.yaml'
+2026-07-08 15:03:56: 
+2026-07-08 15:03:56: Chain 'arhgef7' ('ARHGEF7[peptide]')
+2026-07-08 15:03:56: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:03:56: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/shank1-arhgef7/arhgef7.fasta'
+2026-07-08 15:03:56: 
+2026-07-08 15:03:56: ················································································
+2026-07-08 15:03:56: Parsing SLiMs of 'shank1-arhgef7' system to CALVADOS input
+2026-07-08 15:03:56: ················································································
+2026-07-08 15:03:56: SLiM 'pdz-arhgef7' ('SHANK1[PDZ]-ARHGEF7[peptide]')
+2026-07-08 15:03:56: 	- Verifying that acceptor 'pdz' and donor 'arhgef7' chains are found in system
+2026-07-08 15:03:56: 	- Performing contact analysis
+2026-07-08 15:03:56: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:03:56: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:03:56: 		- Defining contacts
+2026-07-08 15:03:56: 		- Found 35 pairwise contacts
+2026-07-08 15:03:56: 		- Calculating contact distances
+2026-07-08 15:03:56: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:03:56: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:03:56: 	- Excluding 0 contacts
+2026-07-08 15:03:56: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/shank1-arhgef7/specific_interactions.txt'
+2026-07-08 15:03:56: 

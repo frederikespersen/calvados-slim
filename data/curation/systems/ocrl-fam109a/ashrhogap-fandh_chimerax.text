@@ -1,0 +1,10 @@
+open 3QIS
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/A,B cartoons
+sel /A:691,730,731,732,733,734,736,739,740,742,743,746,776,834,837,838,841,842,845 | /B:1,2,3,5,6,9,10,11,12,13
+show sel surfaces
+view sel

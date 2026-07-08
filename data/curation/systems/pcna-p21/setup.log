@@ -1,0 +1,29 @@
+2026-07-08 15:02:21: ················································································
+2026-07-08 15:02:21: Parsing chains of 'pcna-p21' system to CALVADOS input
+2026-07-08 15:02:21: ················································································
+2026-07-08 15:02:21: Chain 'pcna' ('PCNA')
+2026-07-08 15:02:21: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/1AXC.cif' is specified
+2026-07-08 15:02:21: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pcna-p21/pcna.pdb'
+2026-07-08 15:02:21: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:02:21: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pcna-p21/pcna.yaml'
+2026-07-08 15:02:21: 
+2026-07-08 15:02:21: Chain 'pip' ('CDKN1A[PIP]')
+2026-07-08 15:02:21: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:02:21: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pcna-p21/pip.fasta'
+2026-07-08 15:02:21: 
+2026-07-08 15:02:21: ················································································
+2026-07-08 15:02:21: Parsing SLiMs of 'pcna-p21' system to CALVADOS input
+2026-07-08 15:02:21: ················································································
+2026-07-08 15:02:21: SLiM 'pcna-pip' ('PCNA-CDKN1A[PIP]')
+2026-07-08 15:02:21: 	- Verifying that acceptor 'pcna' and donor 'pip' chains are found in system
+2026-07-08 15:02:21: 	- Performing contact analysis
+2026-07-08 15:02:21: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:02:21: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:02:21: 		- Defining contacts
+2026-07-08 15:02:21: 		- Found 77 pairwise contacts
+2026-07-08 15:02:21: 		- Calculating contact distances
+2026-07-08 15:02:22: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:02:22: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:02:22: 	- Excluding 0 contacts
+2026-07-08 15:02:22: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pcna-p21/specific_interactions.txt'
+2026-07-08 15:02:22: 

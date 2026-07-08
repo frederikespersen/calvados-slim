@@ -1,0 +1,16 @@
+cid 24 | trf4 7 | 0.7232 <eps_go>
+cid 26 | trf4 7 | 0.5795 <eps_go>
+cid 29 | trf4 7 | 0.7599 <eps_go>
+cid 67 | trf4 7 | 0.6177 <eps_go>
+cid 67 | trf4 9 | 0.6779 <eps_go>
+cid 70 | trf4 7 | 0.9550 <eps_go>
+cid 70 | trf4 9 | 0.5460 <eps_go>
+cid 71 | trf4 7 | 0.9686 <eps_go>
+cid 74 | trf4 7 | 1.1904 <eps_go>
+cid 74 | trf4 9 | 0.6826 <eps_go>
+cid 126 | trf4 8 | 0.8257 <eps_go>
+cid 126 | trf4 9 | 0.7900 <eps_go>
+cid 127 | trf4 9 | 0.6183 <eps_go>
+cid 130 | trf4 9 | 0.6626 <eps_go>
+cid 130 | trf4 10 | 0.5880 <eps_go>
+cid 133 | trf4 10 | 1.0552 <eps_go>

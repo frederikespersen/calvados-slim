@@ -1,0 +1,10 @@
+open 1Q3P
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/A,C cartoons
+sel /A:596,601,602,603,604,605,606,607,608,609,629,631,632,634,663,667,670,671 | /C:1,2,3,4,5,6
+show sel surfaces
+view sel

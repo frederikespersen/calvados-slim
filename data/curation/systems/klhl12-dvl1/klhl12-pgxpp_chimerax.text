@@ -1,0 +1,10 @@
+open 6TTK
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/A,E cartoons
+sel /A:289,293,320,321,371,417,434,439,464,481,486,511,512,528,533,558 | /E:657,658,659,660,661,662,663
+show sel surfaces
+view sel

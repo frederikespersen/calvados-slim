@@ -1,28 +1,29 @@
-2026-07-04 21:32:24: ················································································
-2026-07-04 21:32:24: Parsing chains of 'rev1-polh' system to CALVADOS input
-2026-07-04 21:32:24: ················································································
-2026-07-04 21:32:24: Chain 'ct' ('REV1[CT]')
-2026-07-04 21:32:24: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/2LSK.cif' is specified
-2026-07-04 21:32:24: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/rev1-polh/ct.pdb'
-2026-07-04 21:32:24: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
-2026-07-04 21:32:24: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/rev1-polh/ct.yaml'
-2026-07-04 21:32:24: 
-2026-07-04 21:32:24: Chain 'rir' ('POLH[RIR]')
-2026-07-04 21:32:24: 	- Parsing chain as an IDP, as no chain PDB is specified
-2026-07-04 21:32:24: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/rev1-polh/rir.fasta'
-2026-07-04 21:32:24: 
-2026-07-04 21:32:24: ················································································
-2026-07-04 21:32:24: Parsing SLiMs of 'rev1-polh' system to CALVADOS input
-2026-07-04 21:32:24: ················································································
-2026-07-04 21:32:24: SLiM 'ct-rir' ('REV1[CT]-POLH[RIR]')
-2026-07-04 21:32:24: 	- Verifying that acceptor 'ct' and donor 'rir' chains are found in system
-2026-07-04 21:32:24: 	- Performing contact analysis
-2026-07-04 21:32:24: 		- Calculating SMOG Shadow Contact Map (SCM) from SLiM PDB
-2026-07-04 21:32:26: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
-2026-07-04 21:32:26: 		- Defining contacts
-2026-07-04 21:32:26: 		- Found 42 pairwise contacts
-2026-07-04 21:32:26: 		- Calculating contact distances
-2026-07-04 21:32:26: 	- Mapping residue indices between System and SLiM constructs
-2026-07-04 21:32:26: 	- Excluding 10 contacts
-2026-07-04 21:32:26: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/rev1-polh/specific_interactions.txt'
-2026-07-04 21:32:26: 
+2026-07-08 15:00:44: ················································································
+2026-07-08 15:00:44: Parsing chains of 'rev1-polh' system to CALVADOS input
+2026-07-08 15:00:44: ················································································
+2026-07-08 15:00:44: Chain 'ct' ('REV1[CT]')
+2026-07-08 15:00:44: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/2LSK.cif' is specified
+2026-07-08 15:00:44: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/rev1-polh/ct.pdb'
+2026-07-08 15:00:44: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:00:44: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/rev1-polh/ct.yaml'
+2026-07-08 15:00:44: 
+2026-07-08 15:00:44: Chain 'rir' ('POLH[RIR]')
+2026-07-08 15:00:44: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:00:44: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/rev1-polh/rir.fasta'
+2026-07-08 15:00:44: 
+2026-07-08 15:00:44: ················································································
+2026-07-08 15:00:44: Parsing SLiMs of 'rev1-polh' system to CALVADOS input
+2026-07-08 15:00:44: ················································································
+2026-07-08 15:00:44: SLiM 'ct-rir' ('REV1[CT]-POLH[RIR]')
+2026-07-08 15:00:44: 	- Verifying that acceptor 'ct' and donor 'rir' chains are found in system
+2026-07-08 15:00:44: 	- Performing contact analysis
+2026-07-08 15:00:44: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:00:44: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:00:44: 		- Defining contacts
+2026-07-08 15:00:44: 		- Found 30 pairwise contacts
+2026-07-08 15:00:44: 		- Calculating contact distances
+2026-07-08 15:00:44: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:00:44: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:00:44: 	- Excluding 6 contacts
+2026-07-08 15:00:44: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/rev1-polh/specific_interactions.txt'
+2026-07-08 15:00:44: 

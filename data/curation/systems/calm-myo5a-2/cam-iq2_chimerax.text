@@ -1,0 +1,10 @@
+open 2IX7
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/B,C cartoons
+sel /B:14,17,18,19,34,37,38,40,41,42,43,44,45,80,81,84,85,88,89,91,92,108,109,112,113,114,115,116,120,123,124,127,144,145,146 | /C:792,793,794,795,796,797,798,799,800,801,802,803,804,805,806,808,809,812,813,816
+show sel surfaces
+view sel

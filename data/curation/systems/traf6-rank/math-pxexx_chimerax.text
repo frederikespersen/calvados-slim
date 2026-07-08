@@ -1,0 +1,10 @@
+open 1LB5
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/A,B cartoons
+sel /A:374,376,392,394,410,412,448,450,456,457,458,466,468,469,470,471,472,473,474,475 | /B:601,602,603,604,605,606,607,608
+show sel surfaces
+view sel

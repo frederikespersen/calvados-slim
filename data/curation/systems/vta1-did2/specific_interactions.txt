@@ -1,0 +1,15 @@
+vta1 25 | did2 27 | 0.9358 <eps_go>
+vta1 25 | did2 28 | 0.8717 <eps_go>
+vta1 29 | did2 24 | 0.8693 <eps_go>
+vta1 29 | did2 27 | 0.9375 <eps_go>
+vta1 29 | did2 28 | 0.8312 <eps_go>
+vta1 32 | did2 24 | 0.8030 <eps_go>
+vta1 32 | did2 28 | 1.1452 <eps_go>
+vta1 33 | did2 28 | 1.1584 <eps_go>
+vta1 46 | did2 17 | 0.8781 <eps_go>
+vta1 49 | did2 20 | 0.9112 <eps_go>
+vta1 53 | did2 20 | 0.7862 <eps_go>
+vta1 53 | did2 23 | 0.8293 <eps_go>
+vta1 56 | did2 27 | 0.8521 <eps_go>
+vta1 57 | did2 23 | 1.0888 <eps_go>
+vta1 60 | did2 27 | 0.9310 <eps_go>

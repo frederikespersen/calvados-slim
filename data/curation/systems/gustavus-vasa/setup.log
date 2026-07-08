@@ -1,0 +1,29 @@
+2026-07-08 15:02:45: ················································································
+2026-07-08 15:02:45: Parsing chains of 'gustavus-vasa' system to CALVADOS input
+2026-07-08 15:02:45: ················································································
+2026-07-08 15:02:45: Chain 'spry' ('Gustavus[SPRY]')
+2026-07-08 15:02:45: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/2IHS.cif' is specified
+2026-07-08 15:02:45: 	- Selecting chain 'B' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/gustavus-vasa/spry.pdb'
+2026-07-08 15:02:46: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:02:46: 	- Writing chain 'B' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/gustavus-vasa/spry.yaml'
+2026-07-08 15:02:46: 
+2026-07-08 15:02:46: Chain 'pep' ('Vasa[Pep]')
+2026-07-08 15:02:46: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:02:46: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/gustavus-vasa/pep.fasta'
+2026-07-08 15:02:46: 
+2026-07-08 15:02:46: ················································································
+2026-07-08 15:02:46: Parsing SLiMs of 'gustavus-vasa' system to CALVADOS input
+2026-07-08 15:02:46: ················································································
+2026-07-08 15:02:46: SLiM 'spry-pep' ('Gustavus[SPRY]-Vasa[Pep]')
+2026-07-08 15:02:46: 	- Verifying that acceptor 'spry' and donor 'pep' chains are found in system
+2026-07-08 15:02:46: 	- Performing contact analysis
+2026-07-08 15:02:46: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:02:46: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:02:46: 		- Defining contacts
+2026-07-08 15:02:46: 		- Found 49 pairwise contacts
+2026-07-08 15:02:46: 		- Calculating contact distances
+2026-07-08 15:02:46: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:02:46: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:02:46: 	- Excluding 0 contacts
+2026-07-08 15:02:46: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/gustavus-vasa/specific_interactions.txt'
+2026-07-08 15:02:46: 

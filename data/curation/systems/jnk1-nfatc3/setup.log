@@ -1,0 +1,29 @@
+2026-07-08 15:02:03: ················································································
+2026-07-08 15:02:03: Parsing chains of 'jnk1-nfatc3' system to CALVADOS input
+2026-07-08 15:02:03: ················································································
+2026-07-08 15:02:03: Chain 'jnk1' ('JNK1')
+2026-07-08 15:02:03: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/2XS0.cif' is specified
+2026-07-08 15:02:03: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/jnk1-nfatc3/jnk1.pdb'
+2026-07-08 15:02:03: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:02:03: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/jnk1-nfatc3/jnk1.yaml'
+2026-07-08 15:02:03: 
+2026-07-08 15:02:03: Chain 'def' ('NFATC3[DEF]')
+2026-07-08 15:02:03: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:02:03: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/jnk1-nfatc3/def.fasta'
+2026-07-08 15:02:03: 
+2026-07-08 15:02:03: ················································································
+2026-07-08 15:02:03: Parsing SLiMs of 'jnk1-nfatc3' system to CALVADOS input
+2026-07-08 15:02:03: ················································································
+2026-07-08 15:02:03: SLiM 'jnk1-def' ('JNK1-NFATC3[DEF]')
+2026-07-08 15:02:03: 	- Verifying that acceptor 'jnk1' and donor 'def' chains are found in system
+2026-07-08 15:02:03: 	- Performing contact analysis
+2026-07-08 15:02:03: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:02:04: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:02:04: 		- Defining contacts
+2026-07-08 15:02:04: 		- Found 45 pairwise contacts
+2026-07-08 15:02:04: 		- Calculating contact distances
+2026-07-08 15:02:04: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:02:04: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:02:04: 	- Excluding 0 contacts
+2026-07-08 15:02:04: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/jnk1-nfatc3/specific_interactions.txt'
+2026-07-08 15:02:04: 

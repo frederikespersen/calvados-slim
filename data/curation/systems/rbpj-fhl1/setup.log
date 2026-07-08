@@ -1,0 +1,29 @@
+2026-07-08 15:03:04: ················································································
+2026-07-08 15:03:04: Parsing chains of 'rbpj-fhl1' system to CALVADOS input
+2026-07-08 15:03:04: ················································································
+2026-07-08 15:03:04: Chain 'btd' ('RBPJ[BTD]')
+2026-07-08 15:03:04: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/4J2X.cif' is specified
+2026-07-08 15:03:04: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/rbpj-fhl1/btd.pdb'
+2026-07-08 15:03:05: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:03:05: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/rbpj-fhl1/btd.yaml'
+2026-07-08 15:03:05: 
+2026-07-08 15:03:05: Chain 'kyot2' ('FHL1[KyoT2]')
+2026-07-08 15:03:05: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:03:05: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/rbpj-fhl1/kyot2.fasta'
+2026-07-08 15:03:05: 
+2026-07-08 15:03:05: ················································································
+2026-07-08 15:03:05: Parsing SLiMs of 'rbpj-fhl1' system to CALVADOS input
+2026-07-08 15:03:05: ················································································
+2026-07-08 15:03:05: SLiM 'btd-kyot2' ('RBPJ[BTD]-FHL1[KyoT2]')
+2026-07-08 15:03:05: 	- Verifying that acceptor 'btd' and donor 'kyot2' chains are found in system
+2026-07-08 15:03:05: 	- Performing contact analysis
+2026-07-08 15:03:05: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:03:05: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:03:05: 		- Defining contacts
+2026-07-08 15:03:05: 		- Found 57 pairwise contacts
+2026-07-08 15:03:05: 		- Calculating contact distances
+2026-07-08 15:03:05: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:03:05: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:03:05: 	- Excluding 0 contacts
+2026-07-08 15:03:05: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/rbpj-fhl1/specific_interactions.txt'
+2026-07-08 15:03:05: 

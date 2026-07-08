@@ -1,0 +1,10 @@
+open 6V7O
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/A,C cartoons
+sel /A:289,293,294,320,321,371,417,434,439,464,481,486,511,512,528,533,558 | /C:679,680,681,682,683,684,685
+show sel surfaces
+view sel

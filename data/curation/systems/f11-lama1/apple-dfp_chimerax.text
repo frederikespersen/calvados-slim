@@ -1,0 +1,10 @@
+open 5EOD
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/A,B cartoons
+sel /A:101,103,104,105,106,107,108,109,132,133,134,138,140,143,146,148,150,163,166 | /B:0,1,2,3,4,5
+show sel surfaces
+view sel
