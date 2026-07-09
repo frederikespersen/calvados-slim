@@ -34,7 +34,7 @@ class Simulation:
         ionic_strength: float,
         pH: float,
         sim_dir: str,
-        platform: Literal['GPU', 'CPU'],
+        platform: Literal['GPU', 'CPU', 'LOCAL'],
     ) -> None:
         """Write the CALVADOS ``config.yaml`` for one simulation.
 
@@ -54,8 +54,10 @@ class Simulation:
             The pH.
         sim_dir : str
             Output directory for the simulation.
-        platform : Literal['GPU', 'CPU']
+        platform : Literal['GPU', 'CPU', 'LOCAL']
             Which platform to specify for the config YAML and submssion scripts.
+            ``'GPU'`` -> CUDA (cluster), ``'LOCAL'`` -> OpenCL (local GPU),
+            ``'CPU'`` -> CPU.
 
         """
 
@@ -72,7 +74,7 @@ class Simulation:
             wfreq = stride, # dcd writing interval, 1 = 10 fs
             steps = stride*frames, # number of simulation steps
             runtime = 0,
-            platform = 'CUDA' if platform == 'GPU' else platform,
+            platform = {'GPU': 'CUDA', 'LOCAL': 'OpenCL', 'CPU': 'CPU'}[platform],
             restart = 'checkpoint',
             frestart = 'restart.chk',
             verbose = True,
@@ -161,7 +163,7 @@ class Simulation:
     #··································································#
 
     @staticmethod
-    def _write_submission_scripts(system: dict, particles: int, slurm_scripts_dir: str, sim_dir: str, platform: Literal['GPU', 'CPU']) -> None:
+    def _write_submission_scripts(system: dict, particles: int, slurm_scripts_dir: str, sim_dir: str, platform: Literal['GPU', 'CPU', 'LOCAL']) -> None:
         """Instantiate the templated Slurm submission scripts for one simulation.
 
         Substitutes the job name into every script and, for CPU scripts, fills
@@ -177,21 +179,25 @@ class Simulation:
             Directory of templated Slurm scripts.
         sim_dir : str
             Output directory for the simulation.
-        platform : Literal['GPU', 'CPU']
+        platform : Literal['GPU', 'CPU', 'LOCAL']
             Which platform to specify for the config YAML and submssion scripts.
         """
         for script in os.listdir(slurm_scripts_dir):
-            if platform.lower() in script:
-                utils.copy_with_substitution(
-                    os.path.join(slurm_scripts_dir, script),
-                    os.path.join(sim_dir, script),
-                    old='<JOB-NAME>', new=system['ID']
-                )
-                utils.copy_with_substitution(
-                    os.path.join(sim_dir, script),
-                    os.path.join(sim_dir, script),
-                    old='<MEM>', new=utils.estimate_memory(particles)
-                )
+            if platform.lower() not in script:
+                continue
+            # 'local_gpu.sh' also matches the 'gpu' keyword; reserve it for LOCAL
+            if platform == 'GPU' and 'local' in script:
+                continue
+            utils.copy_with_substitution(
+                os.path.join(slurm_scripts_dir, script),
+                os.path.join(sim_dir, script),
+                old='<JOB-NAME>', new=system['ID']
+            )
+            utils.copy_with_substitution(
+                os.path.join(sim_dir, script),
+                os.path.join(sim_dir, script),
+                old='<MEM>', new=utils.estimate_memory(particles)
+            )
                 
     
     #··································································#
@@ -202,7 +208,7 @@ class Simulation:
         system_dir: str,
         eps_go: float,
         sim_dir: str,
-        platform: Literal['GPU', 'CPU'],
+        platform: Literal['GPU', 'CPU', 'LOCAL'],
         stride: int,
         frames: int,
         temperature: float=298.15,
@@ -234,8 +240,10 @@ class Simulation:
             interactions, in place of the ``<eps_go>`` template placeholder.
         sim_dir : str
             Output directory for the simulation; created files are written here.
-        platform : Literal['GPU', 'CPU']
+        platform : Literal['GPU', 'CPU', 'LOCAL']
             Which platform to specify for the config YAML and submssion scripts.
+            ``'GPU'`` -> CUDA (cluster), ``'LOCAL'`` -> OpenCL (local GPU),
+            ``'CPU'`` -> CPU.
         stride : int
             Write stride (simulation steps between written frames).
         frames : int
