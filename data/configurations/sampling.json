@@ -11,6 +11,10 @@
         "Stride": 50000,
         "Frames": 10000
     },
+    "Refinement": {
+        "Stride": 50000,
+        "Frames": 10000
+    },
     "Convergence": {
         "Stride": 50000, 
         "Frames": 100000

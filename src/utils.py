@@ -166,6 +166,44 @@ def get_log_speed(log_path: str) -> Union[int, None]:
     except:
         return None
 
+#······································································#
+
+def get_sim_dirs(sim_path: str='./sim') -> pd.DataFrame:
+    """Gets a summary of the simulation directories in the specified ``sim/`` dir.
+
+    Assumes the following schema:
+    ``. / sim / [system] / eps_go=[eps_go] / [sampling_mode] / [replicate]``
+
+    Parameters
+    ----------
+    sim_path : str
+        The ``sim`` directory containing simulations.
+
+    Returns
+    -------
+    pd.DataFrame
+        A summary dataframe describing the simulation directories.
+    """
+    dirs = []
+    for system in os.listdir(sim_path):
+        system_path = os.path.join(sim_path, system)
+        for eps_dir in os.listdir(system_path):
+            eps_go = float(eps_dir.split('=')[-1])
+            eps_path = os.path.join(system_path, eps_dir)
+            for sampling_mode in os.listdir(eps_path):
+                sampling_path = os.path.join(eps_path, sampling_mode)
+                for rep_dir in os.listdir(sampling_path):
+                    rep = int(rep_dir[3:])
+                    rep_path = os.path.join(sampling_path, rep_dir)
+                    dirs.append({
+                        "System": system,
+                        "eps_go": eps_go,
+                        "Sampling mode": sampling_mode.capitalize(),
+                        "Replicate": rep,
+                        "Path": rep_path
+                    })
+    return pd.DataFrame(dirs).sort_values(['System','eps_go', 'Sampling mode', 'Replicate'], ignore_index=True)
+
 
 
 #······································································#

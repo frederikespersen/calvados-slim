@@ -9,6 +9,7 @@ import warnings
 import numpy as np
 import MDAnalysis as mda
 from MDAnalysis.lib.distances import calc_bonds
+from scipy.special import expit
 from scipy.stats import gaussian_kde
 from typing import Union
 import pandas as pd
@@ -54,7 +55,7 @@ def _kd_from_fraction_bound(fraction_bound: float, protein_total: float, ligand_
 
 #······································································#
 
-def dG(Kd: float, T: float = 298.15) -> float:
+def dG(Kd: Union[float, np.ndarray], T: float = 298.15) -> Union[float, np.ndarray]:
     """Binding free energy from a dissociation constant.
 
     Computes ``ΔG = R·T·ln(Kd / C°)`` relative to a standard state of
@@ -63,19 +64,23 @@ def dG(Kd: float, T: float = 298.15) -> float:
 
     Parameters
     ----------
-    Kd : float
-        Dissociation constant in molar.
+    Kd : float or numpy.ndarray
+        Dissociation constant(s) in molar. Array-likes (e.g. the
+        ``(Kd, Kd_lower, Kd_upper)`` tuple from :meth:`TwoChain.get_kd_sem`)
+        are handled element-wise.
     T : float, optional
         Temperature in Kelvin, by default ``298.15`` (25 °C).
 
     Returns
     -------
-    float
-        Binding free energy in kJ/mol (``-inf`` when ``Kd`` is ``0``).
+    float or numpy.ndarray
+        Binding free energy in kJ/mol (``-inf`` where ``Kd`` is ``0``).
+        Scalar in, scalar out; array in, array out.
     """
-    if Kd == 0:
-        return -np.inf
-    return constants.R * T * np.log(Kd)
+    Kd = np.asarray(Kd, dtype=float)
+    with np.errstate(divide='ignore'): # ln(0) == -inf is the intended value
+        dG = constants.R * T * np.log(Kd)
+    return dG if dG.ndim else dG.item()
 
 
 #······································································#
@@ -146,7 +151,7 @@ def _native_contact_fraction(
        the National Academy of Sciences, 110(44), 17874-17879.
        https://doi.org/10.1073/pnas.1311599110
     """
-    switch = 1.0 / (1.0 + np.exp(beta_q * (contact_dists - lambda_q*contact_eqdists)))
+    switch = expit(-beta_q * (contact_dists - lambda_q*contact_eqdists))
     return switch.mean(axis=1)
 
 #······································································#
@@ -321,6 +326,100 @@ def _bound_q(
         return bound_q_fallback
 
     return grid[valley]
+
+
+#······································································#
+# Binding/unbinding state transitions
+#······································································#
+
+def _state_transitions(bound_state: np.ndarray) -> tuple[int, int]:
+    """Count binding and unbinding transitions along a bound-state trace.
+
+    Reads the transitions off the ``Q``-derived per-frame bound state (see
+    :meth:`TwoChain._bound_state`): each ``unbound -> bound`` step is a binding
+    event and each ``bound -> unbound`` step an unbinding event.
+
+    Parameters
+    ----------
+    bound_state : numpy.ndarray
+        Per-frame Boolean bound state.
+
+    Returns
+    -------
+    tuple[int, int]
+        ``(n_binding, n_unbinding)`` transition counts.
+    """
+    steps = np.diff(bound_state.astype(np.int8))
+    return int((steps == 1).sum()), int((steps == -1).sum())
+
+#······································································#
+
+def _warn_never_unbinds(bound_state: np.ndarray, traj_dcd: Union[str, None] = None) -> None:
+    """Warn when a run binds but never unbinds within the trajectory.
+
+    A trajectory whose SLiM binds and then never dissociates (no
+    ``bound -> unbound`` transition after the first binding event) leaves the
+    unbinding rate unsampled. The bound fraction is then biased towards ``1``,
+    so the resulting ``Kd`` is only a lower bound (affinity overestimated) and
+    its blocking SEM is understated. The condition is read off the
+    ``Q``-derived state transitions (see :func:`_state_transitions`) and also
+    covers a run that starts bound and stays bound.
+
+    Parameters
+    ----------
+    bound_state : numpy.ndarray
+        Per-frame Boolean bound state.
+    traj_dcd : str or None, optional
+        Trajectory path, included in the message to identify the run.
+
+    Warns
+    -----
+    UserWarning
+        If the run is bound in at least one frame but records no unbinding
+        transition.
+    """
+    n_binding, n_unbinding = _state_transitions(bound_state)
+    if bound_state.any() and n_unbinding == 0:
+        where = f" in '{traj_dcd}'" if isinstance(traj_dcd, str) else ""
+        warnings.warn(
+            f"SLiM never unbinds after its first binding event{where} "
+            f"({n_binding} binding, {n_unbinding} unbinding transitions; bound "
+            f"fraction {bound_state.mean():.3f}). Dissociation is unsampled, so "
+            f"the estimated Kd is only a lower bound (affinity overestimated) "
+            f"and its SEM is understated."
+        )
+
+#······································································#
+
+def _warn_never_binds(bound_state: np.ndarray, traj_dcd: Union[str, None] = None) -> None:
+    """Warn when a run never reaches the bound state.
+
+    A trajectory whose SLiM never binds leaves the association rate unsampled:
+    the bound fraction is ``0``, so ``Kd`` is unbounded (``ΔG = +inf``). With
+    more sampling the pair might still associate, so this is a degenerate
+    "no measurable binding" estimate rather than a converged one. The
+    condition is read off the ``Q``-derived bound-state trace (see
+    :func:`_state_transitions`): no frame is ever bound.
+
+    Parameters
+    ----------
+    bound_state : numpy.ndarray
+        Per-frame Boolean bound state.
+    traj_dcd : str or None, optional
+        Trajectory path, included in the message to identify the run.
+
+    Warns
+    -----
+    UserWarning
+        If the run is unbound in every frame.
+    """
+    if not bound_state.any():
+        where = f" in '{traj_dcd}'" if isinstance(traj_dcd, str) else ""
+        warnings.warn(
+            f"SLiM never binds{where} (0 binding transitions; bound fraction "
+            f"0.000). Association is unsampled, so Kd is unbounded (ΔG = +inf) "
+            f"-- treat as 'no measurable binding' rather than a converged estimate."
+        )
 
 
 #······································································#
@@ -531,6 +630,7 @@ class TwoChain:
             beta_q: float=_DEFAULT_BETA_Q,
             lambda_q: float=_DEFAULT_LAMBDA_Q,
             bound_q: Union[float, None]=None,
+            verbose: bool=True,
         ) -> float:
         """Estimate the dissociation constant from a two-chain trajectory.
 
@@ -559,6 +659,11 @@ class TwoChain:
             Bound/unbound dividing point on ``Q``.
             If not specified, it will be calculated from the estimated
             ``Q`` distribution using :func:`_bound_q`.
+        verbose : bool, optional
+            If ``True`` (default), warn when the run never binds or never
+            unbinds (see :func:`_warn_never_binds`/:func:`_warn_never_unbinds`).
+            Set ``False`` to silence these warnings, e.g. when sweeping many
+            runs.
 
         Returns
         -------
@@ -569,6 +674,9 @@ class TwoChain:
             top_pdb, traj_dcd, specific_interactions_txt,
             beta_q, lambda_q, bound_q,
         )
+        if verbose:
+            _warn_never_binds(bound_state, traj_dcd)
+            _warn_never_unbinds(bound_state, traj_dcd)
 
         # Kd estimate
         fraction_bound = bound_state.mean()
@@ -588,6 +696,7 @@ class TwoChain:
             bound_q: Union[float, None]=None,
             n_sem: float=1,
             csv_path: Union[str, None]=None,
+            verbose: bool=True,
         ) -> tuple[float, float, float]:
         """Estimate ``Kd`` with a blocking-based confidence interval.
 
@@ -619,6 +728,11 @@ class TwoChain:
             Number of standard errors used for the bounds, by default ``1``.
         csv_path : str, optional
             If given, write the mean and bounds to this CSV path.
+        verbose : bool, optional
+            If ``True`` (default), warn when the run never binds or never
+            unbinds (see :func:`_warn_never_binds`/:func:`_warn_never_unbinds`).
+            Set ``False`` to silence these warnings, e.g. when sweeping many
+            runs.
 
         Returns
         -------
@@ -630,6 +744,9 @@ class TwoChain:
             top_pdb, traj_dcd, specific_interactions_txt,
             beta_q, lambda_q, bound_q,
         )
+        if verbose:
+            _warn_never_binds(bound_state, traj_dcd)
+            _warn_never_unbinds(bound_state, traj_dcd)
 
         # Kd blocking estimates
         ba = BlockAnalysis(bound_state)

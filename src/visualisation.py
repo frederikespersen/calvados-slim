@@ -153,6 +153,7 @@ plt.rcParams.update({
 
     # Text
     'axes.titleweight': 'bold',
+    'axes.unicode_minus': False,  # Use ASCII hyphen (CMU Serif lacks U+2212)
 
     # Colour
     'axes.prop_cycle': plt.cycler(color=palette),
