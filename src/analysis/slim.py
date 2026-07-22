@@ -434,6 +434,7 @@ class TwoChain:
             top_pdb: str,
             traj_dcd: Union[str, list[str]],
             specific_interactions_txt: str,
+            stride: int = 1,
         ) -> tuple[np.ndarray, np.ndarray, float]:
         """Load a two-chain run's per-frame specific-contact distances.
 
@@ -449,6 +450,12 @@ class TwoChain:
         specific_interactions_txt : str
             Path to the run's ``specific_interactions.txt`` defining the
             contacts and their equilibrium distances.
+        stride : int, optional
+            Keep every ``stride``-th frame. Applied at the trajectory-reader
+            level (``u.trajectory[::stride]``), so skipped frames are never
+            read or scored -- unlike subsampling the returned array after
+            loading, this actually saves the I/O and ``calc_bonds`` cost, by
+            default ``1``.
 
         Returns
         -------
@@ -491,10 +498,12 @@ class TwoChain:
         pair_a = acceptor_atoms[contact_indices[:, 0]]
         pair_b = donor_atoms[contact_indices[:, 1]]
 
-        # Per-frame minimum-image distances (Å), converted to nm
-        contact_dists = np.empty((u.trajectory.n_frames, len(pair_a)))
+        # Per-frame minimum-image distances (Å), converted to nm. Strided at
+        # the reader level so skipped frames are never read or scored.
+        traj = u.trajectory[::stride] if stride != 1 else u.trajectory
+        contact_dists = np.empty((len(traj), len(pair_a)))
         box_volume_L = None
-        for f, ts in enumerate(u.trajectory):
+        for f, ts in enumerate(traj):
             if f == 0:
                 # NVT ensemble: box volume is constant, so frame 0 suffices
                 box_volume_L = ts.volume * 1e-27  # Å³ -> L

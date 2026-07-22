@@ -165,8 +165,9 @@ def state_samples(
     cutoff : float, optional
         Gō contact cutoff (nm), by default :data:`SPECIFIC_CUTOFF`.
     stride : int, optional
-        Keep every ``stride``-th frame (reduces autocorrelation and cost), by
-        default ``1``.
+        Keep every ``stride``-th frame (reduces autocorrelation and cost).
+        Applied at the trajectory-reader level, so skipped frames are never
+        read or scored, by default ``1``.
 
     Returns
     -------
@@ -175,8 +176,7 @@ def state_samples(
         (as floats), and the single-copy box concentration in molar.
     """
     contact_dists, contact_eqdists, c_box = slim.TwoChain._load_contacts(
-        top_pdb, traj_dcd, specific_interactions_txt)
-    contact_dists = contact_dists[::stride]
+        top_pdb, traj_dcd, specific_interactions_txt, stride=stride)
     G = go_collective_variable(contact_dists, contact_eqdists, cutoff)
     Q = slim._native_contact_fraction(contact_dists, contact_eqdists, beta_q, lambda_q)
     return G, (Q > bound_q).astype(float), c_box
@@ -590,6 +590,75 @@ def reweight_curve(
                             temperature=temperature, seed=seed)
         curve["dG_sigma"] = boot["dG_boot_sigma"].to_numpy()   # swap in correlation-aware sigma
     return curve
+
+
+#······································································#
+# Per-system reweighting (multiprocessing-friendly entry point)
+#······································································#
+
+def reweight_system(
+        system_id: str,
+        dGs_subset: pd.DataFrame,
+        sims: pd.DataFrame,
+        bound_q: float,
+        eps_go_grid: np.ndarray,
+        stride: int = 1,
+        temperature: float = 298.15,
+        errors: str = "bootstrap",
+        n_boot: int = 200,
+        block_size: int = 1,
+        seed: int | None = None,
+    ) -> pd.DataFrame:
+    """Load one system's sampled ``eps_go`` states and reweight onto the grid.
+
+    Loads and pools every converged ``eps_go`` state for ``system_id``, then
+    calls :func:`reweight_curve`. Systems are independent of one another (each
+    loads its own trajectories and solves its own MBAR/bootstrap), so this is
+    the unit of work for dispatching the reweighting loop across processes,
+    e.g. with :class:`concurrent.futures.ProcessPoolExecutor`.
+
+    Parameters
+    ----------
+    system_id : str
+        System identifier, matching the ``System`` column/index of
+        ``dGs_subset`` and ``sims``.
+    dGs_subset : pandas.DataFrame
+        This system's rows of the scan summary (already filtered to the
+        converged trajectories the caller wants pooled), with an ``eps_go``
+        column.
+    sims : pandas.DataFrame
+        Simulation directory table with ``System``, ``eps_go`` and ``Path``
+        columns (see ``src.utils.get_sim_dirs``).
+    bound_q : float
+        Bound/unbound dividing point on ``Q`` for this system (see
+        :func:`state_samples`).
+    eps_go_grid : numpy.ndarray
+        Target ``eps_go`` grid, passed through to :func:`reweight_curve`.
+    stride, temperature, errors, n_boot, block_size, seed : optional
+        Passed through to :func:`state_samples` (``stride``) and
+        :func:`reweight_curve` (the rest).
+
+    Returns
+    -------
+    pandas.DataFrame
+        This system's reweighted curve (see :func:`reweight_curve`).
+    """
+    states = []
+    c_box = None
+    for eps_go, _ in dGs_subset.groupby("eps_go"):
+        sims_subset = sims[(sims["System"] == system_id) & (sims["eps_go"] == eps_go)]
+
+        traj_dcds = sims_subset["Path"] + f"/{system_id}.dcd"
+        top_pdb = sims_subset["Path"].iloc[0] + "/top.pdb"
+        spec_txt = sims_subset["Path"].iloc[0] + "/specific_interactions.txt"
+
+        G, bound, c_box = state_samples(top_pdb, traj_dcds, spec_txt, bound_q=bound_q, stride=stride)
+        states.append({"eps_go": eps_go, "G": G, "bound": bound})
+
+    states.sort(key=lambda s: s["eps_go"])
+
+    return reweight_curve(states, c_box, eps_go_grid, temperature=temperature, errors=errors,
+                          n_boot=n_boot, block_size=block_size, seed=seed)
 
 
 def preliminary_mbar(
