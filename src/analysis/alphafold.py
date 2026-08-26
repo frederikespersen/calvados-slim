@@ -202,8 +202,8 @@ def inter_chain_pinc(
     
     Model
     -----
-    Within the PAE framework the *scored* residue is the one whose position is
-    being evaluated and the *aligned* residue is the reference assumed to be
+    Within the PAE framework the scored residue is the one whose position is
+    being evaluated and the aligned residue is the reference assumed to be
     correctly placed [2]_. Two spheres are defined per ordered pair:
  
     - ``S_C``: a contact sphere of radius ``r_c`` centred on the reference

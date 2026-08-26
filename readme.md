@@ -14,22 +14,6 @@ provides a pipeline to model these interactions with the CALVADOS coarse-grained
 force field, augmented with **specific inter-molecular ("Go") contacts** that
 encode a known SLiM interface.
 
-The pipeline has three stages:
-
-1. **Curation** — turn a structural specification of a system (chains + SLiMs,
-   backed by PDB and/or AlphaFold structures) into ready-to-run CALVADOS input.
-   SLiM interfaces are derived from the *buried solvent-accessible surface area*
-   between the chains, optionally combined with AlphaFold confidence metrics
-   (PAE and the P<sub>inc</sub> interface score), then assigned equilibrium
-   distances from the structure.
-2. **Simulation** — run the curated systems with the `slim` branch of a CALVADOS
-   fork, scanning the Go interaction strength `k`.
-3. **Analysis** — estimate binding affinities (K<sub>d</sub>, ΔG) from the
-   trajectories, with blocking-based error bars.
-
-The four numbered notebooks in [`notebooks/`](notebooks/) walk through the
-workflow end-to-end.
-
 ---
 
 ## Installation
@@ -73,36 +57,6 @@ The package is imported as `src.…`, and the CALVADOS fork as
 `src.calvados.calvados.…`, so commands and notebooks should be run from the
 repository root (with it on `PYTHONPATH`).
 
-### 6. (Optional) Install SMOG2
-
-Curation derives SLiM contacts from buried surface area
-([`src.analysis.bsa`](src/analysis/bsa.py)) and needs no external tools.
-SMOG2 is only required if you want to cross-check those contacts against a
-[SMOG2](https://smog-server.org/smog2/) *Shadow Contact Map*
-([`src.analysis.smog`](src/analysis/smog.py)); if so, install it separately and
-pass its `bin` directory to `shadow_contact_map` via the `smog_bin` argument:
-
-```python
-import os
-from src.analysis import smog
-
-contacts = smog.shadow_contact_map(
-    structure_file="data/pdb/2MPS.cif",
-    chain1_id="A",
-    chain2_id="B",
-    smog_bin=os.path.expanduser("~/software/smog-2.5/bin"),
-)
-```
-
-
----
-
-## Example of use
-
-A minimal end-to-end run for the bundled systems. See the
-[`notebooks/`](notebooks/) for the full, annotated version.
-
-[To-do]
 
 ---
 

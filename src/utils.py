@@ -168,16 +168,16 @@ def get_log_speed(log_path: str) -> Union[int, None]:
 
 #······································································#
 
-def get_sim_dirs(sim_path: str='./sim') -> pd.DataFrame:
-    """Gets a summary of the simulation directories in the specified ``sim/`` dir.
+def get_scan_dirs(sim_path: str='./sim') -> pd.DataFrame:
+    """Gets a summary of the simulation eps_go scan directories in the specifieddir.
 
     Assumes the following schema:
-    ``. / sim / [system] / eps_go=[eps_go] / [sampling_mode] / [replicate]``
+    ``[sim_path] / [system] / eps_go=[eps_go] / [sampling_mode] / [replicate]``
 
     Parameters
     ----------
     sim_path : str
-        The ``sim`` directory containing simulations.
+        The directory containing simulations.
 
     Returns
     -------
@@ -247,13 +247,13 @@ def _cif_input_for_pdbfixer(cif_path: str) -> str:
     residues by aligning the resolved residues to the ``entity_poly_seq``
     (SEQRES). Two situations break this:
 
-    - **Unknown unit cell.** Some structures (typically NMR) record a
+    - Unknown unit cell. Some structures (typically NMR) record a
       placeholder cell (``_cell.length_a = '?'``). ``PDBxFile`` parses
       ``_cell`` values as floats and raises ``ValueError`` on ``'?'``. The cell
       is meaningless for the single-chain, coarse-grained use here.
-    - **Insertion codes.** When author numbering uses insertion codes (e.g.
-      ``113A``), PDBFixer's SEQRES alignment fails and it reconstructs *no*
-      missing residues at all -- silently dropping unresolved tags/loops.
+    - Insertion codes. When author numbering uses insertion codes (e.g.
+      ``113A``), PDBFixer's SEQRES alignment fails and it reconstructs no
+      missing residues at all, silently dropping unresolved tags/loops.
 
     When either is present, a sanitised copy is written to a temporary file:
     the cell is reset to a trivial box and polymer residues are renumbered to

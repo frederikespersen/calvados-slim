@@ -1,13 +1,26 @@
 ### LOCAL GITIGNORE
-exp/
 .*
 src/calvados
 *.code-workspace
 
+# Private docs
+docs
+data/planning
+data/configurations/slurm
+
+# Fetched files
+data/pdb
+data/alphafold3
+
+# Local and tests
+data/curation
+data/synthetic
+data/curation/mdp
+
 # GIF constructions
 figs/**/*.gif.png
 
-#sim/
+# Simulations
 sim/**/*.dcd
 sim/**/*.chk
 sim/**/*.pdb
@@ -19,6 +32,17 @@ sim/**/*.sh
 sim/**/*.log
 sim/**/*.out
 sim/**/*.err
+
+# Thesis scratchpad notebooks
+notebooks/6_modelling.ipynb
+notebooks/7_experiments.ipynb
+notebooks/8_figures.ipynb
+notebooks/9_ablation.ipynb
+data/modelling
+
+# Cached calculations
+data/synthetic/graph_variants
+data/modelling/ablation/folds
 
 ### STANDARD PYTHON GITIGNORE
 

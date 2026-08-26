@@ -5,6 +5,15 @@
         "Ionic strength": 0.150,
         "pH": 7.0,
         "CALVADOS residue parameters": "data/configurations/residues.csv"
+    },
+    "PRPF40A-SF1": {
+        "Temperature": 298.15,
+        "Ionic strength": 0.127,
+        "pH": 6.5,
+        "CALVADOS residue parameters": "data/configurations/residues.csv",
+        "Buffer": "20 mM sodium phosphate pH 6.5, 100 mM NaCl",
+        "Applies to": "ITC, NMR and SAXS in Martinez-Lumbreras et al. 2024 (doi:10.1038/s41467-024-48004-x); all three used the same buffer at 25 C",
+        "Ionic strength derivation": "100 mM NaCl (I = 0.100) plus 20 mM total phosphate at pH 6.5 (pKa2 7.20 -> 16.7 mM H2PO4- and 3.3 mM HPO4(2-), 23.3 mM Na+ counter-ion; I = 0.027)"
     }
 }
 

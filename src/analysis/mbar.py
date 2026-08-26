@@ -12,25 +12,24 @@ sample ``X`` at well depth ``eps_go`` as
    \\qquad \\beta = 1/(R T),
 
 the ``eps_go``-independent CALVADOS energy ``U₀`` is a per-sample constant
-common to every state, and MBAR is invariant to such shifts -- it cancels in
-every reduced-potential *difference* ``u_{\\varepsilon'} - u_{\\varepsilon} =
+common to every state, and MBAR is invariant to such shifts: it cancels in every
+reduced-potential difference ``u_{\\varepsilon'} - u_{\\varepsilon} =
 \\beta(\\varepsilon' - \\varepsilon)\\,G``. Reweighting between ``eps_go`` states
 therefore depends only on the single, cheaply computable coordinate ``G(X)``,
-making MBAR here an (essentially exact) 1-D reweighting along ``eps_go``.
+making MBAR here a 1-D reweighting along ``eps_go``.
 
-From existing scans this module:
+The same linearity extends the reweighting to a second axis. ``G`` is a sum over
+contacts, ``G = Σ_{i∈E} g_i``, so deleting a subset ``S`` of the Gō edges is just
+another reduced potential of the same samples, ``u(X) = βε\\,(G(X) - G_S(X))``,
+and the sampled trajectories can be re-expressed on an edited contact graph
+without re-simulating. That two-dimensional (``eps_go`` × edge-subset)
+reweighting keeps the parent's bound indicator, so it answers how the free energy
+of forming the original native pose changes as Gō terms are removed. It cannot
+create sampling: the log-weight variance grows as ``(βε)² Var(G_S)``, so
+``N_eff/N ≈ exp[-(βε)² Var(G_S)]`` and aggressive edits collapse the estimate,
+which the reported ``N_eff_minor`` makes visible.
 
-1. reweights to a fine ``eps_go`` grid -> ``dG(eps_go)`` with an uncertainty band;
-2. builds the state overlap matrix to locate broken links in the ``eps_go`` chain;
-3. reports the most negative (tightest-affinity) ``dG`` still reachable at
-   acceptable variance;
-4. distinguishes "extend this run" (low internal effective sample size) from
-   "add a new state" (an overlap gap); and
-5. proposes the next ``eps_go`` to simulate -- the point of maximum ``dG``
-   variance inside the target window.
-
-This module takes *explicit file paths* (see :func:`state_samples`); the mapping
-from systems to trajectory files is the caller's responsibility, so no
+Trajectory files are passed as explicit paths (see :func:`state_samples`), so no
 simulation-directory layout is assumed here.
 
 MBAR is implemented here (``pymbar`` is not a project dependency).
@@ -61,6 +60,7 @@ References
 import warnings
 import numpy as np
 import pandas as pd
+from scipy.interpolate import interp1d, PchipInterpolator
 from scipy.special import logsumexp
 
 from src import constants
@@ -82,6 +82,40 @@ DEFAULT_NEFF_MIN = 50.0
 # Gō collective variable
 #······································································#
 
+def go_contact_wells(
+        contact_dists: np.ndarray,
+        contact_eqdists: np.ndarray,
+        cutoff: float = SPECIFIC_CUTOFF,
+    ) -> np.ndarray:
+    """Per-frame, per-contact Gō 12-10 well values ``g_i(X)``.
+
+    The resolved form of :func:`go_collective_variable`, which is their sum over
+    contacts. Keeping the contacts separate allows the Gō graph to be
+    edited after the fact: any subset ``E'`` of the edges has collective variable
+    ``G_{E'} = Σ_{i∈E'} g_i`` computable from the same frames, which is the basis
+    of :func:`reweight_subgraph_curve`.
+
+    Parameters
+    ----------
+    contact_dists : numpy.ndarray
+        Per-frame, per-contact distances, shape ``(n_frames, n_contacts)``, nm.
+    contact_eqdists : numpy.ndarray
+        Equilibrium distance per contact, shape ``(n_contacts,)``, nm.
+    cutoff : float, optional
+        Distance beyond which a contact contributes nothing, by default
+        :data:`SPECIFIC_CUTOFF`.
+
+    Returns
+    -------
+    numpy.ndarray
+        Well value per frame and contact, shape ``(n_frames, n_contacts)``, each
+        in ``[-1, 0]`` up to the repulsive core (``-1`` at ``r_ij = s_ij``).
+    """
+    sr = contact_eqdists[None, :] / contact_dists
+    well = 5.0 * sr**12 - 6.0 * sr**10
+    return np.where(contact_dists <= cutoff, well, 0.0)
+
+
 def go_collective_variable(
         contact_dists: np.ndarray,
         contact_eqdists: np.ndarray,
@@ -102,7 +136,7 @@ def go_collective_variable(
     (``r_ij = s_ij``), so the Gō energy at well depth ``eps_go`` is exactly
     ``eps_go * G``. ``G ≈ 0`` when unbound (contacts beyond ``cutoff``) and
     ``G ≈ -N_contacts`` when fully bound. Because MBAR needs only energy
-    *differences* between ``eps_go`` states, ``G`` is the sole quantity required
+    differences between ``eps_go`` states, ``G`` is the sole quantity required
     (see the module docstring).
 
     Parameters
@@ -120,10 +154,7 @@ def go_collective_variable(
     numpy.ndarray
         ``G`` per frame, shape ``(n_frames,)``.
     """
-    sr = contact_eqdists[None, :] / contact_dists
-    well = 5.0 * sr**12 - 6.0 * sr**10
-    well = np.where(contact_dists <= cutoff, well, 0.0)
-    return well.sum(axis=1)
+    return go_contact_wells(contact_dists, contact_eqdists, cutoff).sum(axis=1)
 
 
 #······································································#
@@ -175,11 +206,60 @@ def state_samples(
         ``(G, bound, c_box)``: per-frame Gō CV, per-frame Boolean bound state
         (as floats), and the single-copy box concentration in molar.
     """
+    wells, bound, c_box = state_contact_samples(
+        top_pdb, traj_dcd, specific_interactions_txt, bound_q,
+        beta_q=beta_q, lambda_q=lambda_q, cutoff=cutoff, stride=stride)
+    return wells.sum(axis=1), bound, c_box
+
+
+def state_contact_samples(
+        top_pdb: str,
+        traj_dcd: str | list[str],
+        specific_interactions_txt: str,
+        bound_q: float,
+        beta_q: float = slim._DEFAULT_BETA_Q,
+        lambda_q: float = slim._DEFAULT_LAMBDA_Q,
+        cutoff: float = SPECIFIC_CUTOFF,
+        stride: int = 1,
+    ) -> tuple[np.ndarray, np.ndarray, float]:
+    """Per-contact Gō wells and bound indicator for one ``eps_go`` state.
+
+    The contact-resolved counterpart of :func:`state_samples`, which sums over
+    contacts. Use this when the Gō graph is to be edited after sampling, since
+    the per-contact wells are what let any edge subset be re-summed later
+    (:func:`reweight_subgraph_curve`).
+
+    The bound indicator is unchanged: it is always the parent system's
+    ``Q > bound_q`` over its full native contact set, because the question a
+    contact-subgraph reweighting answers is how the free energy of forming the
+    original pose responds to deleting Gō terms, not how a differently
+    defined complex would bind.
+
+    Parameters
+    ----------
+    top_pdb : str
+        Path to the topology PDB.
+    traj_dcd : str or list[str]
+        Path(s) to the trajectory DCD(s) of this state.
+    specific_interactions_txt : str
+        Path to the state's ``specific_interactions.txt``.
+    bound_q : float
+        Bound/unbound dividing point on ``Q`` (per-system calibrated value).
+    beta_q, lambda_q, cutoff, stride : optional
+        As in :func:`state_samples`.
+
+    Returns
+    -------
+    tuple[numpy.ndarray, numpy.ndarray, float]
+        ``(wells, bound, c_box)``: per-frame per-contact well values with shape
+        ``(n_frames, n_contacts)``, per-frame Boolean bound state (as floats),
+        and the single-copy box concentration in molar.
+    """
     contact_dists, contact_eqdists, c_box = slim.TwoChain._load_contacts(
         top_pdb, traj_dcd, specific_interactions_txt, stride=stride)
-    G = go_collective_variable(contact_dists, contact_eqdists, cutoff)
+    wells = go_contact_wells(contact_dists, contact_eqdists, cutoff)
     Q = slim._native_contact_fraction(contact_dists, contact_eqdists, beta_q, lambda_q)
-    return G, (Q > bound_q).astype(float), c_box
+    return wells, (Q > bound_q).astype(float), c_box
 
 
 #······································································#
@@ -208,7 +288,7 @@ class MBAR:
     Parameters
     ----------
     u_kn : numpy.ndarray
-        Reduced potential of every pooled sample at every *sampled* state,
+        Reduced potential of every pooled sample at every sampled state,
         shape ``(n_states, n_samples)``.
     N_k : numpy.ndarray
         Number of samples drawn from each sampled state, shape ``(n_states,)``.
@@ -356,12 +436,13 @@ class MBAR:
 def _dg_with_sigma(f_bound: float, f_var: float, c_box: float, temperature: float) -> tuple[float, float]:
     """``dG`` and its 1σ from a bound fraction and its variance.
 
-    With ``Kd = C_box (1-f)^2 / f`` (equimolar single-copy box) and
+    With ``Kd = C_box (1-f) / f`` (single-copy box, see
+    :func:`src.analysis.slim._kd_from_fraction_bound`) and
     ``dG = R T \\ln Kd``, propagating ``Var(f)`` by the delta method gives
 
-    .. math:: \\Delta G = R T\\,[\\ln C_{\\mathrm{box}} + 2\\ln(1-f) - \\ln f],
+    .. math:: \\Delta G = R T\\,[\\ln C_{\\mathrm{box}} + \\ln(1-f) - \\ln f],
         \\qquad
-        \\sigma_{\\Delta G} = R T\\left(\\frac{2}{1-f} + \\frac{1}{f}\\right)\\sigma_f .
+        \\sigma_{\\Delta G} = R T\\left(\\frac{1}{1-f} + \\frac{1}{f}\\right)\\sigma_f .
 
     The prefactor diverges as ``f -> 0`` or ``1``, correctly flagging the
     plateaus/censored regime where ``dG`` is unresolved. Being first-order and
@@ -374,7 +455,7 @@ def _dg_with_sigma(f_bound: float, f_var: float, c_box: float, temperature: floa
     Kd = slim._kd_from_fraction_bound(f_bound, c_box)
     dG = slim.dG(Kd)
     rt = constants.R * temperature
-    dG_sigma = rt * (2.0 / (1.0 - f_bound) + 1.0 / f_bound) * np.sqrt(max(f_var, 0.0))
+    dG_sigma = rt * (1.0 / (1.0 - f_bound) + 1.0 / f_bound) * np.sqrt(max(f_var, 0.0))
     return dG, dG_sigma
 
 
@@ -387,7 +468,7 @@ def _circular_block_indices(n: int, block_size: int, rng: np.random.Generator) -
 
     Draws ``⌈n / block_size⌉`` blocks of ``block_size`` consecutive frames from
     random (wrap-around) start points and concatenates them, truncated to ``n``
-    [Kunsch1989]_ [Politis1992]_. Resampling *blocks* rather than single frames
+    [Kunsch1989]_ [Politis1992]_. Resampling blocks rather than single frames
     preserves the trajectory's autocorrelation, so the bootstrap spread reflects
     the true (correlated) sampling error rather than an ``iid`` under-estimate.
     ``block_size = 1`` reduces to the ordinary ``iid`` bootstrap.
@@ -429,8 +510,8 @@ def bootstrap_dg(
     Repeatedly resamples each sampled state's frames with a circular moving-block
     bootstrap (:func:`_circular_block_indices`), re-solves MBAR on the resample,
     reweights to every grid ``eps_go`` and recomputes ``dG``. The spread of the
-    replicate ``dG`` values is a correlation-aware uncertainty that -- unlike the
-    fixed-weight delta method in :func:`_dg_with_sigma` -- also captures the
+    replicate ``dG`` values is a correlation-aware uncertainty that, unlike the
+    fixed-weight delta method in :func:`_dg_with_sigma`, also captures the
     error in the MBAR free energies ``f_k`` and the frame-to-frame correlation,
     at the cost of re-solving MBAR ``n_boot`` times. Censored grid points (a
     replicate with ``f_bound`` at 0 or 1, i.e. ``dG`` unresolved) contribute no
@@ -510,7 +591,7 @@ def bootstrap_dg(
 
 
 #······································································#
-# Reweighted dG(eps_go) curve -- single entry point
+# Reweighted dG(eps_go) curve
 #······································································#
 
 def reweight_curve(
@@ -529,7 +610,7 @@ def reweight_curve(
     the pooled (converged) states and evaluates the bound fraction, ``dG`` and its
     uncertainty at every grid ``eps_go``. The returned schema is *identical*
     whichever error method is selected, so ``errors='delta'`` and
-    ``errors='bootstrap'`` are drop-in interchangeable for downstream code -- only
+    ``errors='bootstrap'`` are interchangeable for downstream code; only
     the provenance of the ``dG_sigma`` column changes, never its name or shape.
 
     Parameters
@@ -563,7 +644,7 @@ def reweight_curve(
     pandas.DataFrame
         Columns ``['eps_go', 'f_bound', 'dG', 'dG_sigma', 'N_eff', 'N_eff_minor']``.
         ``N_eff_minor = N_eff · min(f, 1−f)`` is the effective sample size of the
-        *rarer* (minor) state: it collapses in overlap gaps and at censored edges, and is
+        rarer (minor) state: it collapses in overlap gaps and at censored edges, and is
         the basis for both the reliability flag and the sampling-value score.
     """
     if errors not in ("bootstrap", "delta"):
@@ -661,6 +742,333 @@ def reweight_system(
                           n_boot=n_boot, block_size=block_size, seed=seed)
 
 
+#······································································#
+# Contact-subgraph reweighting  (eps_go × edge subset, no new simulation)
+#······································································#
+
+def _keep_mask(keep, n_contacts: int) -> np.ndarray:
+    """Normalise a contact selection to a boolean mask over ``n_contacts``."""
+    if keep is None:
+        return np.ones(n_contacts, dtype=bool)
+    mask = np.asarray(keep)
+    if mask.dtype == bool:
+        if mask.shape != (n_contacts,):
+            raise ValueError(
+                f"Boolean keep mask has shape {mask.shape}, expected ({n_contacts},) "
+                f"to match the sampled contact set."
+            )
+    else:
+        if mask.size and (mask.min() < 0 or mask.max() >= n_contacts):
+            raise ValueError(
+                f"Contact indices must lie in [0, {n_contacts}); got "
+                f"[{mask.min()}, {mask.max()}]."
+            )
+        index, mask = mask, np.zeros(n_contacts, dtype=bool)
+        mask[index] = True
+    if not mask.any():
+        raise ValueError("keep selects no contacts; the edited graph would have no Gō term.")
+    return mask
+
+
+def _stack_states(states: list[dict]) -> tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
+    """Pool contact-resolved states into ``(eps, wells, bound, N_k)``."""
+    if not states:
+        raise ValueError("No states given.")
+    missing = [k for k in ("eps_go", "wells", "bound") if k not in states[0]]
+    if missing:
+        raise KeyError(
+            f"States must carry {missing}; build them with state_contact_samples(), "
+            f"not state_samples() (which has already summed over contacts)."
+        )
+    widths = {np.shape(s["wells"])[1] for s in states}
+    if len(widths) != 1:
+        raise ValueError(
+            f"States disagree on the contact count ({sorted(widths)}); every state must "
+            f"be sampled on the same native contact set for a subgraph to be defined."
+        )
+    return (np.array([s["eps_go"] for s in states], dtype=float),
+            np.concatenate([np.asarray(s["wells"], dtype=float) for s in states], axis=0),
+            np.concatenate([np.asarray(s["bound"], dtype=float) for s in states]),
+            np.array([len(s["wells"]) for s in states], dtype=float))
+
+
+def _subgraph_rows(estimator, beta, wells, bound, mask, c_box, grid, temperature) -> list[tuple]:
+    """Evaluate one edited graph over the ``eps_go`` grid (shared by both entry points)."""
+    G_kept = wells[:, mask].sum(axis=1)
+    rows = []
+    for eps in grid:
+        weights, n_eff = estimator.reweight(beta * eps * G_kept)
+        f_bound, f_var = estimator.expectation(bound, weights)
+        dG, dG_sigma = _dg_with_sigma(f_bound, f_var, c_box, temperature)
+        rows.append((eps, f_bound, dG, dG_sigma, n_eff, n_eff * min(f_bound, 1.0 - f_bound)))
+    return rows
+
+
+def reweight_subgraph_curve(
+        states: list[dict],
+        c_box: float,
+        eps_go_grid: np.ndarray,
+        keep=None,
+        temperature: float = 298.15,
+    ) -> pd.DataFrame:
+    """Reweight sampled states onto an edited contact graph -> ``dG(eps_go)``.
+
+    The two-dimensional counterpart of :func:`reweight_curve`: it reweights in
+    ``eps_go`` and in the Gō edge set at once, so an existing scan yields the
+    curve the system would have shown had it been simulated with only the
+    contacts in ``keep``. Because the Gō energy is a sum of per-contact wells,
+    both moves are the same operation, a change of reduced potential on frames
+    already in hand, and the result is exact in the MBAR sense, with no new
+    simulation:
+
+    .. math:: u(X;\\varepsilon, E') = \\beta\\varepsilon \\sum_{i \\in E'} g_i(X).
+
+    The MBAR mixture is built from the full contact set, the Hamiltonian the
+    frames were generated under; only the target state
+    uses the subset. Note the corollary: passing these states to
+    :func:`bootstrap_dg` with the subgraph ``G`` substituted would be wrong, as
+    that would claim the samples were drawn from the edited graph.
+
+    The bound indicator is the parent's throughout (see
+    :func:`state_contact_samples`), so this measures how the free energy of
+    forming the original native pose responds to deleting Gō terms.
+
+    Reweighting cannot manufacture sampling. Deleting edges whose wells fluctuate
+    strongly inflates the log-weight variance as ``(βε)² Var(G_S)`` over the
+    removed set ``S``, and ``N_eff/N ≈ exp[-(βε)² Var(G_S)]`` collapses. Trust a
+    row only where ``N_eff_minor`` stays comfortably above ~5; deleting the
+    loosest contacts is cheapest, since they are the least often formed and so
+    carry the least variance.
+
+    Parameters
+    ----------
+    states : list[dict]
+        Sampled states, each ``{'eps_go', 'wells', 'bound'}`` from
+        :func:`state_contact_samples`. Every state must share one contact set.
+    c_box : float
+        Single-copy box concentration in molar.
+    eps_go_grid : numpy.ndarray
+        Target ``eps_go`` grid to evaluate.
+    keep : array-like or None, optional
+        Contacts retained in the edited graph, as a boolean mask of length
+        ``n_contacts`` or an array of contact indices, ordered as in the state's
+        ``specific_interactions.txt``. ``None`` (default) keeps every contact and
+        so reproduces :func:`reweight_curve`, the natural self-check, which
+        agrees to ~1e-10 kJ/mol wherever ``f_bound`` is more than ~1e-6 from
+        saturation. Closer than that the two can differ by ~0.1 kJ/mol on
+        identical weights, because ``Kd = C(1-f)²/f`` cancels catastrophically as
+        ``f -> 1``; those points carry ``N_eff_minor = 0`` and are not estimates
+        at all. Filter on ``N_eff_minor`` rather than trusting a finite ``dG``.
+    temperature : float, optional
+        Temperature in Kelvin, by default ``298.15``.
+
+    Returns
+    -------
+    pandas.DataFrame
+        Columns ``['eps_go', 'f_bound', 'dG', 'dG_sigma', 'N_eff',
+        'N_eff_minor']``, the same schema as :func:`reweight_curve`, so the two
+        are interchangeable downstream. ``dG_sigma`` is the fixed-weight delta
+        method only: the block bootstrap is not offered here because it would
+        re-solve MBAR per replicate per variant, which is prohibitive when
+        scanning many edited graphs.
+
+    Raises
+    ------
+    KeyError
+        If the states carry ``'G'`` rather than ``'wells'`` (i.e. came from
+        :func:`state_samples`, which has already summed over contacts).
+    ValueError
+        If the states disagree on the contact count, or ``keep`` is the wrong
+        shape, out of range, or empty.
+    """
+    eps_states, wells, bound, N_k = _stack_states(states)
+    mask = _keep_mask(keep, wells.shape[1])
+    beta = 1.0 / (constants.R * temperature)
+    grid = np.asarray(eps_go_grid, dtype=float)
+
+    estimator = MBAR(beta * eps_states[:, None] * wells.sum(axis=1)[None, :], N_k)
+    rows = _subgraph_rows(estimator, beta, wells, bound, mask, c_box, grid, temperature)
+    return pd.DataFrame(rows, columns=["eps_go", "f_bound", "dG", "dG_sigma",
+                                       "N_eff", "N_eff_minor"])
+
+
+def reweight_subgraph_system(
+        system_id: str,
+        dGs_subset: pd.DataFrame,
+        sims: pd.DataFrame,
+        bound_q: float,
+        eps_go_grid: np.ndarray,
+        keeps: dict,
+        stride: int = 1,
+        temperature: float = 298.15,
+    ) -> pd.DataFrame:
+    """Reweight one system onto many edited contact graphs, loading it once.
+
+    The per-system entry point for contact-graph editing, mirroring
+    :func:`reweight_system`. Trajectories are read and MBAR is solved once,
+    then every variant in ``keeps`` is evaluated against that single estimator --
+    which is the whole economy of the approach, since the MBAR solve dominates
+    and a parent typically spawns tens of edited graphs. Systems are independent,
+    so this is again the unit of work to dispatch across processes.
+
+    Parameters
+    ----------
+    system_id : str
+        System identifier, matching the ``System`` column of ``dGs_subset`` and
+        ``sims``.
+    dGs_subset : pandas.DataFrame
+        This system's rows of the scan summary, already filtered to the converged
+        trajectories to pool, with an ``eps_go`` column.
+    sims : pandas.DataFrame
+        Simulation directory table with ``System``, ``eps_go`` and ``Path``
+        columns (see ``src.utils.get_sim_dirs``).
+    bound_q : float
+        Bound/unbound dividing point on ``Q`` for this system.
+    eps_go_grid : numpy.ndarray
+        Target ``eps_go`` grid, passed through to :func:`reweight_subgraph_curve`.
+    keeps : dict
+        Variant name -> contact selection (boolean mask or index array; see
+        ``keep`` in :func:`reweight_subgraph_curve`). Include an unedited entry
+        to carry the parent curve through the same code path as its children.
+    stride, temperature : optional
+        Passed through to :func:`state_contact_samples` and the reweighting.
+
+    Returns
+    -------
+    pandas.DataFrame
+        Long-form curves, the :func:`reweight_subgraph_curve` schema prefixed by
+        ``['System', 'variant']``.
+    """
+    states, c_box = [], None
+    for eps_go, _ in dGs_subset.groupby("eps_go"):
+        sims_subset = sims[(sims["System"] == system_id) & (sims["eps_go"] == eps_go)]
+        if not len(sims_subset):
+            continue
+        wells, bound, c_box = state_contact_samples(
+            sims_subset["Path"].iloc[0] + "/top.pdb",
+            list(sims_subset["Path"] + f"/{system_id}.dcd"),
+            sims_subset["Path"].iloc[0] + "/specific_interactions.txt",
+            bound_q=bound_q, stride=stride)
+        states.append({"eps_go": eps_go, "wells": wells, "bound": bound})
+    states.sort(key=lambda s: s["eps_go"])
+
+    eps_states, wells, bound, N_k = _stack_states(states)
+    beta = 1.0 / (constants.R * temperature)
+    grid = np.asarray(eps_go_grid, dtype=float)
+    estimator = MBAR(beta * eps_states[:, None] * wells.sum(axis=1)[None, :], N_k)
+
+    frames = []
+    for variant, keep in keeps.items():
+        mask = _keep_mask(keep, wells.shape[1])
+        curve = pd.DataFrame(
+            _subgraph_rows(estimator, beta, wells, bound, mask, c_box, grid, temperature),
+            columns=["eps_go", "f_bound", "dG", "dG_sigma", "N_eff", "N_eff_minor"])
+        curve.insert(0, "variant", variant)
+        curve.insert(0, "System", system_id)
+        frames.append(curve)
+    return pd.concat(frames, ignore_index=True)
+
+
+#······································································#
+# Per-system overlap diagnostics (multiprocessing-friendly entry point)
+#······································································#
+
+def overlap_system(
+        system_id: str,
+        dGs_subset: pd.DataFrame,
+        sims: pd.DataFrame,
+        bound_q: float,
+        stride: int = 1,
+        temperature: float = 298.15,
+    ) -> dict:
+    """Load one system's sampled ``eps_go`` states and diagnose the MBAR overlap chain.
+
+    Loads and pools every converged ``eps_go`` state for ``system_id`` (same
+    loading as :func:`reweight_system`), then builds MBAR from the *sampled*
+    states only: no fine grid, no bootstrap, since only the discrete link
+    structure between consecutive scanned states is wanted here, not the
+    reweighted curve. A weak adjacent overlap means those two states barely
+    share configuration space, so any target ``eps_go`` between them rests on
+    an unbridged MBAR extrapolation however many frames either state has (see
+    :meth:`MBAR.overlap_matrix`); its midpoint is where a new simulation would
+    repair the gap. This is the cheap connectivity half of what
+    :func:`preliminary_mbar` computes, split out so it can be dispatched
+    per-system (e.g. with :class:`concurrent.futures.ProcessPoolExecutor`)
+    without also paying for a fine-grid bootstrap reweight.
+
+    Parameters
+    ----------
+    system_id : str
+        System identifier, matching the ``System`` column/index of
+        ``dGs_subset`` and ``sims``.
+    dGs_subset : pandas.DataFrame
+        This system's rows of the scan summary (already filtered to the
+        converged trajectories the caller wants pooled), with an ``eps_go``
+        column.
+    sims : pandas.DataFrame
+        Simulation directory table with ``System``, ``eps_go`` and ``Path``
+        columns (see ``src.utils.get_sim_dirs``).
+    bound_q : float
+        Bound/unbound dividing point on ``Q`` for this system (see
+        :func:`state_samples`).
+    stride, temperature : optional
+        Passed through to :func:`state_samples` (``stride``) and the reduced
+        potential (``temperature``).
+
+    Returns
+    -------
+    dict
+        ``eps_go_sampled`` (sorted array of sampled ``eps_go``),
+        ``adjacent_overlap`` (list of ``(eps_i, eps_j, overlap)`` for each
+        consecutive sampled pair), ``weakest_link`` (the entry with lowest
+        overlap, or ``None`` if fewer than two states), ``self_N_eff`` (each
+        sampled state's own MBAR effective sample size; low means poorly
+        connected to the rest of the chain) and ``state_transitions`` (each
+        state's own ``(n_bind, n_unbind)`` count; few means that state's run
+        itself is under-sampled and should be extended rather than bridged).
+    """
+    states = []
+    for eps_go, _ in dGs_subset.groupby("eps_go"):
+        sims_subset = sims[(sims["System"] == system_id) & (sims["eps_go"] == eps_go)]
+
+        traj_dcds = sims_subset["Path"] + f"/{system_id}.dcd"
+        top_pdb = sims_subset["Path"].iloc[0] + "/top.pdb"
+        spec_txt = sims_subset["Path"].iloc[0] + "/specific_interactions.txt"
+
+        G, bound, _ = state_samples(top_pdb, traj_dcds, spec_txt, bound_q=bound_q, stride=stride)
+        states.append({"eps_go": eps_go, "G": G, "bound": bound})
+
+    states.sort(key=lambda s: s["eps_go"])
+    eps_states = np.array([s["eps_go"] for s in states], dtype=float)
+
+    if len(states) < 2:
+        return {"eps_go_sampled": eps_states, "adjacent_overlap": [], "weakest_link": None,
+                "self_N_eff": {}, "state_transitions": {}}
+
+    G_all = np.concatenate([s["G"] for s in states])
+    N_k = np.array([len(s["G"]) for s in states], dtype=float)
+    state_index = np.concatenate([np.full(len(s["G"]), i) for i, s in enumerate(states)])
+    beta = 1.0 / (constants.R * temperature)
+
+    u_kn = beta * eps_states[:, None] * G_all[None, :]
+    est = MBAR(u_kn, N_k)
+
+    overlap = est.overlap_matrix(state_index)
+    adj = [(eps_states[i], eps_states[i + 1], float(overlap[i, i + 1]))
+           for i in range(len(eps_states) - 1)]
+    weakest = min(adj, key=lambda t: t[2]) if adj else None
+
+    self_neff, state_transitions = {}, {}
+    for i, s in enumerate(states):
+        _, ne = est.reweight(u_kn[i])
+        self_neff[float(s["eps_go"])] = float(ne)
+        n_bind, n_unbind = slim._state_transitions(s["bound"].astype(bool))
+        state_transitions[float(s["eps_go"])] = (n_bind, n_unbind)
+
+    return {"eps_go_sampled": eps_states, "adjacent_overlap": adj, "weakest_link": weakest,
+            "self_N_eff": self_neff, "state_transitions": state_transitions}
+
+
 def preliminary_mbar(
         states: list[dict],
         c_box: float,
@@ -695,10 +1103,10 @@ def preliminary_mbar(
         Effective-sample-size floor for "reachable" estimates, by default
         :data:`DEFAULT_NEFF_MIN`.
     min_unbound_eff : float, optional
-        Minimum effective number of *unbound* samples (``N_eff * (1 - f_bound)``)
+        Minimum effective number of unbound samples (``N_eff * (1 - f_bound)``)
         for a target ``eps_go`` to count as "reachable". In the ``f -> 1`` tail
-        the reweighted ensemble retains no unbound frames, so ``(1 - f)`` -- and
-        hence ``dG`` -- is unresolved even though the fixed-weight variance looks
+        the reweighted ensemble retains no unbound frames, so ``(1 - f)``, and
+        hence ``dG``, is unresolved even though the fixed-weight variance looks
         small. This is the rule-of-three censoring bound [Jovanovic1997]_: with
         zero observed unbound events in ``N_eff`` independent samples, the 95%
         bound on the unbound fraction is ``≈ 3/N_eff``, so ``dG`` is only
@@ -706,7 +1114,7 @@ def preliminary_mbar(
     errors : {'bootstrap', 'delta'}, optional
         Source of the curve's ``dG_sigma`` column, passed through to
         :func:`reweight_curve`; ``'bootstrap'`` (default) is correlation-aware,
-        ``'delta'`` is the cheap fixed-weight method. Interchangeable I/O -- the
+        ``'delta'`` is the cheap fixed-weight method. Interchangeable I/O: the
         column name and shape are identical either way.
     n_boot : int, optional
         Bootstrap replicates when ``errors='bootstrap'``, by default ``200``.
@@ -748,7 +1156,7 @@ def preliminary_mbar(
     u_kn = beta * eps_states[:, None] * G_all[None, :]
     mbar = MBAR(u_kn, N_k)
 
-    # --- diagnostics ---
+    # Diagnostics.
     overlap = mbar.overlap_matrix(state_index)
     adj = [(eps_states[i], eps_states[i + 1], float(overlap[i, i + 1]))
            for i in range(len(eps_states) - 1)]
@@ -795,3 +1203,168 @@ def preliminary_mbar(
         "suggested_reason": suggest_reason,
     }
     return curve, diagnostics
+
+
+#······································································#
+# Held-out validation: reweighting vs interpolation between simulations
+#······································································#
+
+# Interpolation schemes benchmarked against reweighting, cheapest last.
+INTERPOLATORS = ("linear", "quadratic", "pchip", "nearest")
+
+
+def interpolate_curve(
+        train_eps_go: np.ndarray,
+        train_dG: np.ndarray,
+        targets: np.ndarray,
+    ) -> dict[str, np.ndarray]:
+    """Interpolated ``dG`` at ``targets`` from simulated ``dG(eps_go)`` points.
+
+    The no-reweighting baseline: draw a curve through the per-simulation
+    trajectory ``dG`` estimates and read it off at the target ``eps_go``. Unlike
+    reweighting, every scheme here passes exactly through its anchors, so it
+    inherits their sampling error, and none of them extrapolate; targets
+    outside ``[min, max]`` of ``train_eps_go`` come back ``nan`` rather than
+    silently continuing the last segment.
+
+    Parameters
+    ----------
+    train_eps_go : numpy.ndarray
+        Sampled ``eps_go`` of the training simulations, strictly increasing.
+    train_dG : numpy.ndarray
+        Their trajectory ``dG`` estimates in kJ/mol (finite values only).
+    targets : numpy.ndarray
+        ``eps_go`` values to predict.
+
+    Returns
+    -------
+    dict[str, numpy.ndarray]
+        One prediction array per scheme in :data:`INTERPOLATORS`; ``nan`` where
+        a scheme is undefined (outside the hull, or too few anchors: 2 for
+        ``linear``/``pchip``, 3 for ``quadratic``).
+    """
+    targets = np.asarray(targets, dtype=float)
+    predictions = {name: np.full(len(targets), np.nan) for name in INTERPOLATORS}
+    if len(train_eps_go) == 0:
+        return predictions
+
+    predictions["nearest"] = train_dG[np.abs(targets[:, None] - train_eps_go[None, :]).argmin(axis=1)]
+    if len(train_eps_go) >= 2:
+        predictions["linear"] = interp1d(train_eps_go, train_dG, kind="linear", bounds_error=False)(targets)
+        predictions["pchip"] = PchipInterpolator(train_eps_go, train_dG, extrapolate=False)(targets)
+    if len(train_eps_go) >= 3:
+        predictions["quadratic"] = interp1d(train_eps_go, train_dG, kind="quadratic", bounds_error=False)(targets)
+    return predictions
+
+
+def holdout_system(
+        system_id: str,
+        dGs_subset: pd.DataFrame,
+        sims: pd.DataFrame,
+        bound_q: float,
+        coarse: tuple[float, ...] = (0.0, 1.0, 2.0, 3.0, 4.0, 5.0),
+        stride: int = 1,
+        temperature: float = 298.15,
+    ) -> pd.DataFrame:
+    """Score reweighting against interpolation on held-out simulations.
+
+    Two held-out experiments, both judged against the trajectory ``dG`` of a
+    simulation withheld from every predictor:
+
+    ``'refinement'``
+        train on the coarse scan (``eps_go`` in ``coarse``), predict every
+        refinement simulation, the operational question of whether reweighting
+        was a sound basis for choosing where to simulate next.
+    ``'LOO'``
+        train on all-but-one sampled state, predict the held-out one; every
+        simulation serves as a test point once.
+
+    Each system's states are loaded once and MBAR is re-solved per fold, so the
+    cost is dominated by the folds, not the trajectory I/O. Systems are
+    independent, making this the unit of work for
+    :class:`concurrent.futures.ProcessPoolExecutor`.
+
+    Parameters
+    ----------
+    system_id : str
+        System identifier, matching the ``System`` column of ``dGs_subset`` and
+        ``sims``.
+    dGs_subset : pandas.DataFrame
+        This system's rows of the scan summary; unconverged states (never bound
+        or never unbound) and non-finite ``dG`` are dropped here, since they can
+        serve neither as training anchors nor as truth.
+    sims : pandas.DataFrame
+        Simulation directory table with ``System``, ``eps_go`` and ``Path``
+        columns (see ``src.utils.get_scan_dirs``).
+    bound_q : float
+        Bound/unbound dividing point on ``Q`` for this system.
+    coarse : tuple[float, ...], optional
+        The ``eps_go`` values constituting the original coarse scan, by default
+        ``(0, 1, 2, 3, 4, 5)``.
+    stride, temperature : optional
+        Passed through to :func:`state_samples` (``stride``) and
+        :func:`reweight_curve` (``temperature``).
+
+    Returns
+    -------
+    pandas.DataFrame
+        One row per (experiment, target ``eps_go``) with the truth
+        (``dG_true``, ``dG_true_sem``, ``traj_transitions``), the fold geometry
+        (``n_train``, ``gap`` to the nearest training state, ``bracketed``), the
+        reweighted prediction and its support (``pred_mbar``, ``mbar_sigma``,
+        ``N_eff``, ``N_eff_minor``), and one ``pred_<scheme>`` column per entry
+        of :data:`INTERPOLATORS`. Empty if fewer than three states converge.
+    """
+    converged = dGs_subset[~dGs_subset.traj_never_binds & ~dGs_subset.traj_never_unbinds]
+    converged = converged[np.isfinite(converged.dG)]
+
+    states, c_box = {}, None
+    for eps_go in sorted(converged.eps_go.unique()):
+        paths = sims[sims.eps_go == eps_go]["Path"]
+        if len(paths) == 0:                              # summarised state whose run is gone/too short
+            continue
+        G, bound, c_box = state_samples(
+            paths.iloc[0] + "/top.pdb", paths + f"/{system_id}.dcd",
+            paths.iloc[0] + "/specific_interactions.txt", bound_q=bound_q, stride=stride)
+        states[eps_go] = {"eps_go": eps_go, "G": G, "bound": bound}
+    if len(states) < 3:
+        return pd.DataFrame()
+
+    truth = converged.set_index("eps_go")
+    sampled = np.array(sorted(states))
+
+    # (experiment, training eps_go, target eps_go) per fold
+    folds = []
+    coarse_eps = np.array([e for e in sampled if e in coarse])
+    refine_eps = np.array([e for e in sampled if e not in coarse])
+    if len(coarse_eps) >= 2 and len(refine_eps) > 0:
+        folds.append(("refinement", coarse_eps, refine_eps))
+    folds += [("LOO", sampled[sampled != eps_go], np.array([eps_go])) for eps_go in sampled]
+
+    rows = []
+    for experiment, train_eps_go, targets in folds:
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore")              # fold-level non-convergence is a reported outcome
+            curve = reweight_curve([states[e] for e in train_eps_go], c_box, targets,
+                                   temperature=temperature, errors="delta")
+        interpolated = interpolate_curve(train_eps_go, truth.loc[train_eps_go, "dG"].to_numpy(), targets)
+
+        for i, target in enumerate(targets):
+            state = truth.loc[target]
+            rows.append({
+                "System": system_id,
+                "experiment": experiment,
+                "eps_go": target,
+                "dG_true": state.dG,
+                "dG_true_sem": 0.5 * (state["dG+1SEM"] - state["dG-1SEM"]),
+                "traj_transitions": state.traj_transitions,
+                "n_train": len(train_eps_go),
+                "gap": np.abs(target - train_eps_go).min(),
+                "bracketed": bool(train_eps_go.min() <= target <= train_eps_go.max()),
+                "pred_mbar": curve.dG.iloc[i],
+                "mbar_sigma": curve.dG_sigma.iloc[i],
+                "N_eff": curve.N_eff.iloc[i],
+                "N_eff_minor": curve.N_eff_minor.iloc[i],
+                **{f"pred_{name}": values[i] for name, values in interpolated.items()},
+            })
+    return pd.DataFrame(rows)

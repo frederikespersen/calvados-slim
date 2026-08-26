@@ -23,35 +23,56 @@ from src.calvados.calvados.analysis import BlockAnalysis
 # Thermodynamics
 #······································································#
 
-def _kd_from_fraction_bound(fraction_bound: float, protein_total: float, ligand_total: Union[float,None]=None) -> float:
-    """Dissociation constant from a bound fraction and total concentrations.
+def _kd_from_fraction_bound(fraction_bound: float, c_box: float) -> float:
+    """Dissociation constant from a bound fraction in a single-copy box.
 
-    Inverts the 1:1 binding equilibrium ``P + L <-> PL`` for the
-    dissociation constant ``Kd`` given the fraction of the limiting species
-    that is bound and the total protein/ligand concentrations.
+    A simulation box holding exactly one acceptor and one donor is either
+    fully monomeric or fully dimeric, so "acceptor free" and "donor free" are
+    the same event rather than two independent ones. The dilute law of mass
+    action, which assumes the two species fluctuate independently, therefore
+    does not apply. Counting the two states directly gives
+
+    .. math:: \\frac{\\theta}{1-\\theta} = \\frac{c_{\\mathrm{box}}}{K_d},
+        \\qquad
+        K_d = c_{\\mathrm{box}}\\,\\frac{1-\\theta}{\\theta} ,
+
+    equivalently ``Kd = c_box * P_unbound / P_bound``, which is the
+    two-particle result of de Jong et al. [1]_ (their equation 13). The same
+    expression follows from the elementary kinetics, since
+    ``theta/(1-theta) = tau_off/tau_on = k_on c_box / k_off = c_box / Kd``.
+
+    The mass-action form ``c_box (1-theta)^2 / theta`` used previously is the
+    ``ln(P_1/P_0^2)`` branch that reference shows to be incorrect for two
+    molecules; it is recovered only in the many-copy limit. Relative to this
+    function it biases ``dG`` by ``R T ln(1-theta)``, i.e. towards tighter
+    binding, negligibly so at low ``theta`` and by over 10 kJ/mol as
+    ``theta -> 1``.
 
     Parameters
     ----------
     fraction_bound : float
-        Fraction of complex formed, in ``[0, 1]``.
-    protein_total : float
-        Total protein (acceptor) concentration, in molar.
-    ligand_total : float or None, optional
-        Total ligand (donor) concentration in molar; defaults to
-        ``protein_total`` when ``None`` (equimolar two-chain box).
+        Fraction of frames in the bound state, in ``[0, 1]``.
+    c_box : float
+        Concentration of a single copy in the box, in molar, i.e.
+        ``1 / (N_A V_box)``.
 
     Returns
     -------
     float
         Dissociation constant ``Kd`` in molar (``inf`` if nothing is bound,
         ``0`` if fully bound).
+
+    References
+    ----------
+    .. [1] D. H. de Jong, L. V. Schäfer, A. H. de Vries, S. J. Marrink,
+       H. J. C. Berendsen and H. Grubmüller, "Determining equilibrium
+       constants for dimerization reactions from molecular dynamics
+       simulations", J. Comput. Chem. 32, 1919-1928 (2011).
     """
-    ligand_total = protein_total if ligand_total is None else ligand_total
     fb = fraction_bound
     if fb <= 0.0: return np.inf
-    if fb >= 1.0: return 0
-    Kd = protein_total * fb + ligand_total / fb - protein_total - ligand_total
-    return Kd
+    if fb >= 1.0: return 0.0
+    return c_box * (1.0 - fb) / fb
 
 #······································································#
 
@@ -121,8 +142,8 @@ def _native_contact_fraction(
         a hard cutoff, by default ``50.0`` (5 Å⁻¹), matching Best, Hummer and
         Eaton [1]_ directly.
     lambda_q : float, optional
-        Tolerance on the equilibrium distance -- a contact is "native-like"
-        up to ``lambda_q * r0`` -- by default ``1.8``, matching [1]_ directly.
+        Tolerance on the equilibrium distance: a contact is "native-like"
+        up to ``lambda_q * r0``, by default ``1.8``, matching [1]_ directly.
 
     Returns
     -------
@@ -174,11 +195,11 @@ def _calibrate_switching_params(
     noise, and ``lambda_q`` is set so a contact stays "native-like" up to
     ``tolerance_sigmas`` spreads above its equilibrium distance.
 
-    An *absolute* proximity criterion is used rather than a fixed quantile
+    An absolute proximity criterion is used rather than a fixed quantile
     of ranked distances (e.g. "closest 20% of frames"): a quantile always
-    returns *something*, even for a contact that never actually forms, in
+    returns something, even for a contact that never actually forms, in
     which case it measures the spread of a freely diffusing pair rather than
-    a formed contact's thermal noise -- yielding a near-zero ``beta_q`` and a
+    a formed contact's thermal noise, yielding a near-zero ``beta_q`` and a
     ``lambda_q`` covering most of the box. Contacts (or whole trajectories) with
     too few genuinely near-equilibrium frames fall back to
     ``beta_q_fallback``/``lambda_q_fallback`` instead.
@@ -254,11 +275,11 @@ def _bound_q(
     """Data-driven bound/unbound dividing point on a ``Q`` trace.
 
     Evaluates a Gaussian kernel density estimate of the ``Q`` trace on a fine
-    grid and returns the density minimum between the unbound mode -- anchored
-    at ``Q = 0`` by construction, since "no native contacts formed" is a
-    well-defined physical reference point -- and the bound mode, taken as the
-    tallest remaining peak at least ``min_mode_separation`` away from ``Q = 0``.
-    Picking the *tallest* peak, rather than e.g. the one nearest ``Q = 1``,
+    grid and returns the density minimum between the unbound mode, anchored at
+    ``Q = 0`` since "no native contacts formed" is a well-defined physical
+    reference point, and the bound mode, taken as the tallest remaining peak at
+    least ``min_mode_separation`` away from ``Q = 0``.
+    Picking the tallest peak, rather than e.g. the one nearest ``Q = 1``,
     correctly handles two distinct bound states: it selects the dominant one
     instead of an arbitrary or incidental secondary population.
 
@@ -301,8 +322,7 @@ def _bound_q(
     grid = np.linspace(0.0, 1.0, n_grid)
     density = gaussian_kde(Q, bw_method="silverman")(grid)
 
-    # Unbound mode is anchored at Q=0 by construction, rather than found by
-    # peak height.
+    # Unbound mode is anchored at Q=0, rather than found by peak height.
     mode_a = 0
 
     # Bound mode: the tallest peak beyond min_mode_separation, including a
@@ -321,7 +341,7 @@ def _bound_q(
     valley = mode_a + valley_offset
     if valley == mode_a:
         # Density rises monotonically all the way from Q=0 to the bound
-        # mode with no interior dip -- there is no real unbound population
+        # mode with no interior dip, so there is no real unbound population
         # to divide from (e.g. an always-bound run).
         return bound_q_fallback
 
@@ -453,8 +473,8 @@ class TwoChain:
         stride : int, optional
             Keep every ``stride``-th frame. Applied at the trajectory-reader
             level (``u.trajectory[::stride]``), so skipped frames are never
-            read or scored -- unlike subsampling the returned array after
-            loading, this actually saves the I/O and ``calc_bonds`` cost, by
+            read or scored, so unlike subsampling the returned array after
+            loading, the I/O and ``calc_bonds`` cost is saved too, by
             default ``1``.
 
         Returns
@@ -706,7 +726,7 @@ class TwoChain:
             n_sem: float=1,
             csv_path: Union[str, None]=None,
             verbose: bool=True,
-        ) -> tuple[float, float, float]:
+        ) -> tuple[float, float, float, float, float]:
         """Estimate ``Kd`` with a blocking-based confidence interval.
 
         Like :meth:`get_kd`, but propagates the standard error of the bound
@@ -745,9 +765,14 @@ class TwoChain:
 
         Returns
         -------
-        tuple[float, float, float]
-            ``(Kd, Kd_lower, Kd_upper)`` in molar, where the bounds correspond
-            to ``±n_sem`` standard errors on the bound fraction.
+        tuple[float, float, float, float, float]
+            ``(Kd, Kd_lower, Kd_upper, theta, theta_sem)``, the first three in molar with
+            the bounds corresponding to ``±n_sem`` standard errors on the bound
+            fraction, and ``theta`` the bound fraction itself. ``theta`` is
+            returned alongside because it, rather than ``Kd``, is what the
+            trajectory measures directly: every downstream quantity is a
+            function of it, and its distance from 0 and 1 is what decides
+            whether ``Kd`` is resolved at all.
         """
         bound_state, concentration = TwoChain._bound_state(
             top_pdb, traj_dcd, specific_interactions_txt,
@@ -771,7 +796,9 @@ class TwoChain:
             pd.DataFrame({
                 'Mean Kd': [Kd],
                 'Mean Kd -1 SEM': [Kd_lower],
-                'Mean Kd +1 SEM': [Kd_upper]
+                'Mean Kd +1 SEM': [Kd_upper],
+                'theta': [fraction_bound],
+                'theta SEM': [fraction_bound_sem]
             }).to_csv(csv_path, index=False)
 
-        return Kd, Kd_lower, Kd_upper
+        return Kd, Kd_lower, Kd_upper, fraction_bound, fraction_bound_sem

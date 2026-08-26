@@ -3,20 +3,16 @@ src.analysis.bsa
 ------------------------------------------------------------------------
 Buried-surface-area (BSA) contact map from a full-atom structure.
 
-Inter-chain residue contacts are read off the solvent-
-accessible surface each chain loses to the other. A residue pair counts as a
-contact only if it clears two independent bars:
+Inter-chain residue contacts are read off the solvent-accessible surface each
+chain loses to the other. A residue pair counts as a contact only if it clears
+two independent criteria: the surface a single partner residue buries is a
+sizeable fraction of at least one of the two residues' own isolated SASA (see
+:func:`buried_contact_map`), and at least one heavy-atom pair between the two
+residues sits within van der Waals contact distance.
 
-1. **Meaningful burial**: The surface buried by a single partner residue
-   is a real fraction of at least one of the two residues' own isolated
-   SASA, not just a sliver of it (see :func:`buried_contact_map`).
-2. **Direct contact**: At least one heavy-atom pair between the two
-   residues sits within van der Waals contact distance.
-
-Burial alone can flag residues separated by a pinched-off solvent channel
-with no atoms actually touching; proximity alone can flag residues that
-brush past each other without meaningfully occluding either one's surface.
-Requiring both keeps the map to contacts that are substantial and physical.
+Burial alone can flag residues separated by a pinched-off solvent channel with
+no atoms touching; proximity alone can flag residues that brush past each other
+without occluding either one's surface.
 
 Lengths and areas are in Å / Å² throughout (MDAnalysis' native unit).
 """
@@ -49,7 +45,7 @@ _DEFAULT_VDW = 1.70
 # residue must bury to count as a meaningful (not just measurable) burial.
 _RELATIVE_BURIAL_CUTOFF = 0.10
 
-# Maximum heavy-atom-heavy-atom distance, Å, counted as direct contact -- the
+# Maximum heavy-atom-heavy-atom distance, Å, counted as direct contact; the
 # common CAPRI-style cutoff for an atomic interface contact.
 _CONTACT_DISTANCE = 5.0
 
@@ -191,9 +187,9 @@ def _atom_sasa(positions: np.ndarray, radii: np.ndarray, probe_radius: float, sp
     """Per-atom SASA of a standalone atom set, via Shrake-Rupley.
 
     Unlike :func:`_buried_area_matrix`, every atom is scored regardless of
-    whether it has any burial -- this is the isolated-chain SASA used as the
+    whether it has any burial. This is the isolated-chain SASA used as the
     denominator for relative burial in :func:`buried_contact_map`, so buried
-    core atoms (contributing zero) must be included, not skipped.
+    core atoms (contributing zero) must be included.
 
     Parameters
     ----------
@@ -474,12 +470,12 @@ def buried_contact_map(
 
     A residue pair is a contact only if it is both meaningfully buried and
     directly touching (see the module docstring for the rationale): the
-    burial from :func:`buried_surface_area` must exceed `relative_cutoff` of
+    burial from :func:`buried_surface_area` must exceed ``relative_cutoff`` of
     at least one of the two residues' own isolated SASA (from
-    :func:`_residue_sasa`), *and* at least one heavy-atom pair between them
-    must lie within `contact_distance`. Mirrors
+    :func:`_residue_sasa`), and at least one heavy-atom pair between them must
+    lie within ``contact_distance``. Mirrors
     :func:`src.analysis.smog.shadow_contact_map` in signature and output, and
-    can be used as a self-contained (no external SMOG2 binary) drop-in for it.
+    needs no external SMOG2 binary.
 
     Parameters
     ----------
@@ -491,9 +487,9 @@ def buried_contact_map(
         Author chain id of the second chain.
     relative_cutoff : float, optional
         Minimum fraction of a residue's own isolated SASA that a partner
-        residue must bury, by default ``0.10`` -- large enough to exclude a
-        glancing, negligible loss of surface, without requiring the
-        (arbitrarily large) absolute burial a bulky residue could offer.
+        residue must bury, by default ``0.10``; large enough to exclude a
+        glancing loss of surface, without requiring the (arbitrarily large)
+        absolute burial a bulky residue could offer.
     contact_distance : float, optional
         Maximum heavy-atom-heavy-atom distance counted as direct contact, Å,
         by default ``5.0`` (the common CAPRI-style atomic-contact cutoff).
@@ -527,3 +523,365 @@ def buried_contact_map(
     direct = _direct_contact_matrix(pos1, pos2, res1, res2, n1, n2, contact_distance)
 
     return meaningful & direct
+
+
+#······································································#
+# Residue geometry
+#······································································#
+
+def cg_residue_sasa(
+        positions: np.ndarray,
+        radii: np.ndarray,
+        probe_radius: float = _PROBE_RADIUS,
+        n_points: int = _N_SPHERE_POINTS,
+    ) -> np.ndarray:
+    """Per-bead solvent-accessible surface of an isolated coarse-grained chain, Å².
+
+    The coarse-grained counterpart of :func:`residue_sasa`: one bead per residue at
+    its Cα, each taking its CALVADOS σ as a diameter. A one-bead model has no side
+    chains and no molecular surface, so an all-atom SASA describes geometry the
+    simulation cannot represent.
+
+    Parameters
+    ----------
+    positions : numpy.ndarray
+        Bead centres, shape ``(n_residues, 3)``, Å.
+    radii : numpy.ndarray
+        Per-bead radii, shape ``(n_residues,)``, Å (CALVADOS ``σ/2``).
+    probe_radius : float, optional
+        Solvent probe radius, Å, by default ``1.4``.
+    n_points : int, optional
+        Sphere test points per bead, by default ``960``.
+
+    Returns
+    -------
+    numpy.ndarray
+        Isolated-chain bead SASA, shape ``(n_residues,)``, Å².
+    """
+    labels = np.arange(positions.shape[0])
+    return _residue_sasa(positions, radii, labels, positions.shape[0], probe_radius,
+                         _fibonacci_sphere(n_points))
+
+
+def cg_buried_surface_area(
+        positions_1: np.ndarray,
+        radii_1: np.ndarray,
+        positions_2: np.ndarray,
+        radii_2: np.ndarray,
+        probe_radius: float = _PROBE_RADIUS,
+        n_points: int = _N_SPHERE_POINTS,
+    ) -> np.ndarray:
+    """Inter-chain bead buried-surface-area map in the coarse-grained frame, Å².
+
+    The coarse-grained counterpart of :func:`buried_surface_area`, computed on Cα
+    beads carrying their CALVADOS σ rather than on heavy atoms, so the burial it
+    reports is burial the force field resolves.
+
+    Parameters
+    ----------
+    positions_1, positions_2 : numpy.ndarray
+        Bead centres of each chain, shape ``(n, 3)``, Å.
+    radii_1, radii_2 : numpy.ndarray
+        Per-bead radii of each chain, Å (CALVADOS ``σ/2``).
+    probe_radius : float, optional
+        Solvent probe radius, Å, by default ``1.4``.
+    n_points : int, optional
+        Sphere test points per bead, by default ``960``.
+
+    Returns
+    -------
+    numpy.ndarray
+        Buried surface per bead pair, shape ``(n_1, n_2)``, Å².
+    """
+    n_1, n_2 = positions_1.shape[0], positions_2.shape[0]
+    positions, radii, chain_labels, res_labels = _combine_chains(
+        positions_1, radii_1, np.arange(n_1), positions_2, radii_2, np.arange(n_2))
+    return _buried_area_matrix(positions, radii, chain_labels, res_labels, n_1, n_2,
+                               probe_radius, _fibonacci_sphere(n_points))
+
+
+def residue_sasa(
+        structure_file: os.PathLike,
+        chain_id: str,
+        probe_radius: float = _PROBE_RADIUS,
+        n_points: int = _N_SPHERE_POINTS,
+    ) -> np.ndarray:
+    """Per-residue solvent-accessible surface of a chain in isolation, Å².
+
+    The partner chain is absent, so this is the denominator that turns
+    :func:`buried_surface_area`'s absolute burial into a relative burial, i.e.
+    the fraction of each residue's own available surface that binding takes
+    away. Indexed in the same residue order as
+    :func:`buried_surface_area`'s axes, :func:`residue_centroids` and
+    :func:`chain_sequence`, so the two can be divided elementwise.
+
+    Parameters
+    ----------
+    structure_file : os.PathLike
+        Path to the input structure (``.pdb`` or ``.cif``).
+    chain_id : str
+        Author chain id to extract.
+    probe_radius : float, optional
+        Solvent probe radius, Å, by default ``1.4``.
+    n_points : int, optional
+        Sphere test points per atom, by default ``960``.
+
+    Returns
+    -------
+    numpy.ndarray
+        Isolated-chain SASA per residue, shape ``(n_residues,)``, Å².
+    """
+    universe = utils.load_structure(structure_file)
+    positions, radii, res_index, n_res = _chain_atoms(universe, chain_id)
+    return _residue_sasa(positions, radii, res_index, n_res, probe_radius,
+                         _fibonacci_sphere(n_points))
+
+
+def residue_numbers(structure_file: os.PathLike, chain_id: str) -> np.ndarray:
+    """Author residue numbers of a chain's resolved standard residues.
+
+    Indexed in the same order as :func:`residue_centroids`, :func:`ca_coordinates`
+    and :func:`chain_sequence`, so annotations expressed in author numbering (e.g.
+    ``PDB Domains``) can be mapped onto the structure's residues directly, without
+    assuming the resolved residues are contiguous.
+
+    Parameters
+    ----------
+    structure_file : os.PathLike
+        Path to the input structure (``.pdb`` or ``.cif``).
+    chain_id : str
+        Author chain id to extract.
+
+    Returns
+    -------
+    numpy.ndarray
+        Author residue numbers, shape ``(n_residues,)``.
+    """
+    universe = utils.load_structure(structure_file)
+    return np.array([res.resid for res in utils.select_chain(universe, chain_id).residues
+                     if res.resname in constants.residue.name3to1])
+
+
+def residue_centroids(structure_file: os.PathLike, chain_id: str) -> np.ndarray:
+    """Per-residue heavy-atom centroid positions of a chain, Å.
+
+    Indexed in the same residue order as the axes of
+    :func:`buried_surface_area`'s map, so burial and position can be combined
+    per residue (e.g. to describe the 3-D shape of the interface patch).
+
+    Parameters
+    ----------
+    structure_file : os.PathLike
+        Path to the input structure (``.pdb`` or ``.cif``).
+    chain_id : str
+        Author chain id to extract.
+
+    Returns
+    -------
+    numpy.ndarray
+        Residue centroids, shape ``(n_residues, 3)``, Å.
+    """
+    universe = utils.load_structure(structure_file)
+    positions, _radii, res_index, n_res = _chain_atoms(universe, chain_id)
+    centroids = np.zeros((n_res, 3))
+    counts = np.zeros(n_res)
+    np.add.at(centroids, res_index, positions)
+    np.add.at(counts, res_index, 1)
+    return centroids / counts[:, None]
+
+
+def chain_sequence(structure_file: os.PathLike, chain_id: str) -> str:
+    """One-letter sequence of a chain's resolved standard residues.
+
+    Indexed in the same residue order as :func:`residue_centroids` and
+    :func:`ca_coordinates`, so per-residue parameters (λ, σ, q) can be attached
+    to those coordinates without going through the authored chain sequence,
+    which also contains unresolved residues and expression tags and so does not
+    align with the structure.
+
+    Parameters
+    ----------
+    structure_file : os.PathLike
+        Path to the input structure (``.pdb`` or ``.cif``).
+    chain_id : str
+        Author chain id to extract.
+
+    Returns
+    -------
+    str
+        One-letter sequence of the resolved standard residues, in structure
+        order.
+    """
+    universe = utils.load_structure(structure_file)
+    return "".join(
+        constants.residue.name3to1[res.resname]
+        for res in utils.select_chain(universe, chain_id).residues
+        if res.resname in constants.residue.name3to1
+    )
+
+
+def ca_coordinates(structure_file: os.PathLike, chain_id: str) -> np.ndarray:
+    """Per-residue Cα positions of a chain, Å.
+
+    Indexed in the same residue order as :func:`residue_centroids` and the axes
+    of :func:`buried_surface_area`'s map. Where the centroid follows the whole
+    side chain, the Cα traces the backbone itself, the reference for
+    chain-geometry measures such as contour extension, since CALVADOS' beads sit
+    on the Cα positions and consecutive beads are ~3.8 Å apart.
+
+    Residues with no resolved Cα (rare, in poorly resolved structures) fall back
+    to their heavy-atom centroid.
+
+    Parameters
+    ----------
+    structure_file : os.PathLike
+        Path to the input structure (``.pdb`` or ``.cif``).
+    chain_id : str
+        Author chain id to extract.
+
+    Returns
+    -------
+    numpy.ndarray
+        Cα positions, shape ``(n_residues, 3)``, Å.
+    """
+    universe = utils.load_structure(structure_file)
+    residues = [res for res in utils.select_chain(universe, chain_id).residues
+                if res.resname in constants.residue.name3to1]
+    if not residues:
+        raise ValueError(f"Chain '{chain_id}' has no resolved standard amino-acid residues.")
+
+    positions = np.zeros((len(residues), 3))
+    for i, res in enumerate(residues):
+        alpha = res.atoms[res.atoms.names == "CA"]
+        positions[i] = alpha.positions[0] if len(alpha) else res.atoms.positions.mean(axis=0)
+    return positions
+
+
+#······································································#
+# Shape complementarity
+#······································································#
+
+# Lawrence-Colman distance-weighting constant, Å⁻² (their published value).
+_SC_WEIGHT = 0.5
+
+
+def _interface_surface_points(
+        pos_self: np.ndarray, rad_self: np.ndarray,
+        pos_partner: np.ndarray, rad_partner: np.ndarray,
+        probe_radius: float, sphere_points: np.ndarray,
+    ) -> tuple[np.ndarray, np.ndarray]:
+    """Solvent-accessible surface points of ``self`` that the partner occludes.
+
+    For each ``self`` atom, samples its probe-inflated sphere and keeps points
+    that are accessible with only ``self`` present but fall inside a partner
+    atom's inflated sphere, i.e. the interface patch of the self surface. Each
+    kept point's outward normal is its sphere direction (radial from the atom).
+
+    Returns
+    -------
+    tuple[numpy.ndarray, numpy.ndarray]
+        ``(points, normals)``, shapes ``(P, 3)``: interface surface points and
+        their unit outward normals.
+    """
+    infl_s = rad_self + probe_radius
+    infl_p = rad_partner + probe_radius
+    # self-self neighbours (for the accessibility test) and partner proximity.
+    d_ss = distance_array(pos_self, pos_self)
+    np.fill_diagonal(d_ss, np.inf)
+    d_sp = distance_array(pos_self, pos_partner)
+    near_partner = d_sp.min(axis=1) < (infl_s + infl_p.max())
+
+    pts, nrm = [], []
+    for a in np.flatnonzero(near_partner):
+        surface = pos_self[a] + sphere_points * infl_s[a]
+        self_nb = np.flatnonzero(d_ss[a] < infl_s[a] + infl_s)
+        if self_nb.size:
+            accessible = ~(distance_array(surface, pos_self[self_nb]) < infl_s[self_nb]).any(axis=1)
+        else:
+            accessible = np.ones(len(surface), dtype=bool)
+        occluded = (distance_array(surface, pos_partner) < infl_p).any(axis=1)
+        keep = accessible & occluded
+        if keep.any():
+            pts.append(surface[keep])
+            nrm.append(sphere_points[keep])
+    if not pts:
+        return np.empty((0, 3)), np.empty((0, 3))
+    return np.vstack(pts), np.vstack(nrm)
+
+
+def _complementarity(pts_a: np.ndarray, nrm_a: np.ndarray,
+                     pts_b: np.ndarray, nrm_b: np.ndarray, weight: float) -> np.ndarray:
+    """Per-point complementarity of surface A against the nearest point of B.
+
+    For each A point, finds its nearest B point and scores
+    ``(n_a · −n_b) · exp(−weight·d²)`` [Lawrence1993]_: high where the surfaces
+    face into each other (anti-parallel normals) and are close.
+    """
+    d = distance_array(pts_a, pts_b)
+    nearest = d.argmin(axis=1)
+    dmin = d[np.arange(len(pts_a)), nearest]
+    facing = np.einsum("ij,ij->i", nrm_a, -nrm_b[nearest])
+    return facing * np.exp(-weight * dmin**2)
+
+
+def shape_complementarity(
+        structure_file: os.PathLike,
+        chain1_id: str,
+        chain2_id: str,
+        weight: float = _SC_WEIGHT,
+        probe_radius: float = 0.0,
+        n_points: int = _N_SPHERE_POINTS,
+    ) -> float:
+    """Lawrence-Colman shape complementarity ``Sc`` of the two chains' interface.
+
+    Builds each chain's interface solvent-accessible surface patch (the part the
+    partner buries) with unit normals, and scores how well the two surfaces mesh:
+    for every surface point, the alignment of its normal with the nearest partner
+    point's (anti-parallel = complementary), distance-weighted by
+    ``exp(−weight·d²)``. ``Sc`` is the mean of the two per-side medians
+    [Lawrence1993]_ and lies in ``[−1, 1]`` (well-packed protein interfaces are
+    typically ``~0.6–0.8``). A tighter, more complementary interface deepens the
+    ``eps_go``-independent background attraction, so ``Sc`` informs the binding
+    strength beyond raw buried area.
+
+    Parameters
+    ----------
+    structure_file : os.PathLike
+        Path to the full-atom complex (``.pdb``/``.cif``).
+    chain1_id, chain2_id : str
+        Author chain ids of the two interface partners.
+    weight : float, optional
+        Distance-weighting constant, Å⁻², by default ``0.5`` [Lawrence1993]_.
+    probe_radius : float, optional
+        Surface probe radius, Å, by default ``0.0``, i.e. the van der Waals
+        contact surface, where the interfaces touch and their normals align
+        (a positive probe inflates and separates the surfaces, degrading the
+        radial-normal approximation used here).
+    n_points : int, optional
+        Sphere test points per atom, by default ``960``.
+
+    Returns
+    -------
+    float
+        Shape complementarity ``Sc`` in ``[−1, 1]``, or ``nan`` if either
+        interface surface is empty.
+
+    References
+    ----------
+    .. [Lawrence1993] Lawrence, M.C. & Colman, P.M. (1993) Shape complementarity
+       at protein/protein interfaces. Journal of Molecular Biology, 234(4),
+       946-950. https://doi.org/10.1006/jmbi.1993.1648
+    """
+    universe = utils.load_structure(structure_file)
+    pos1, rad1, res1, _ = _chain_atoms(universe, chain1_id)
+    pos2, rad2, res2, _ = _chain_atoms(universe, chain2_id)
+    sphere_points = _fibonacci_sphere(n_points)
+
+    pts1, nrm1 = _interface_surface_points(pos1, rad1, pos2, rad2, probe_radius, sphere_points)
+    pts2, nrm2 = _interface_surface_points(pos2, rad2, pos1, rad1, probe_radius, sphere_points)
+    if len(pts1) == 0 or len(pts2) == 0:
+        return float("nan")
+
+    sc12 = np.median(_complementarity(pts1, nrm1, pts2, nrm2, weight))
+    sc21 = np.median(_complementarity(pts2, nrm2, pts1, nrm1, weight))
+    return float(0.5 * (sc12 + sc21))
