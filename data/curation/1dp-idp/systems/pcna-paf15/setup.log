@@ -1,0 +1,29 @@
+2026-07-08 15:50:27: ················································································
+2026-07-08 15:50:27: Parsing chains of 'pcna-paf15' system to CALVADOS input
+2026-07-08 15:50:27: ················································································
+2026-07-08 15:50:27: Chain 'pcna' ('PCNA')
+2026-07-08 15:50:27: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/4D2G.cif' is specified
+2026-07-08 15:50:27: 	- Selecting chain 'C' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pcna-paf15/pcna.pdb'
+2026-07-08 15:50:28: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:50:28: 	- Writing chain 'C' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pcna-paf15/pcna.yaml'
+2026-07-08 15:50:28: 
+2026-07-08 15:50:28: Chain 'pip' ('PAF15[PIP]')
+2026-07-08 15:50:28: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:50:28: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pcna-paf15/pip.fasta'
+2026-07-08 15:50:28: 
+2026-07-08 15:50:28: ················································································
+2026-07-08 15:50:28: Parsing SLiMs of 'pcna-paf15' system to CALVADOS input
+2026-07-08 15:50:28: ················································································
+2026-07-08 15:50:28: SLiM 'pcna-pip' ('PCNA-PAF15[PIP]')
+2026-07-08 15:50:28: 	- Verifying that acceptor 'pcna' and donor 'pip' chains are found in system
+2026-07-08 15:50:28: 	- Performing contact analysis
+2026-07-08 15:50:28: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:50:28: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:50:28: 		- Defining contacts
+2026-07-08 15:50:28: 		- Found 72 pairwise contacts
+2026-07-08 15:50:28: 		- Calculating contact distances
+2026-07-08 15:50:28: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:50:28: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:50:28: 	- Excluding 0 contacts
+2026-07-08 15:50:28: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pcna-paf15/specific_interactions.txt'
+2026-07-08 15:50:28: 

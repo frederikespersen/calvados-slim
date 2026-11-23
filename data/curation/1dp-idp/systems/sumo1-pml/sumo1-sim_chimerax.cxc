@@ -1,0 +1,11 @@
+open 4WJO
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/A,B cartoons
+sel /A:21,23,32,33,34,35,36,37,38,42,46,47,50,54,55 | /B:9,10,11,12,13,14,15
+show sel surfaces
+view sel
+scale 200

@@ -1,0 +1,11 @@
+open 4CY3
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/A,D cartoons
+sel /A:73,74,76,92,116,117,118,119,134,158,160,161,176,202,218,243,245,261,285,286,287,288,290,332,348,349 | /D:718,719,720,721,722,723,724,725
+show sel surfaces
+view sel
+scale 200

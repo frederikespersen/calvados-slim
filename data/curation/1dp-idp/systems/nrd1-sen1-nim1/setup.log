@@ -1,0 +1,29 @@
+2026-07-08 15:54:24: ················································································
+2026-07-08 15:54:24: Parsing chains of 'nrd1-sen1-nim1' system to CALVADOS input
+2026-07-08 15:54:24: ················································································
+2026-07-08 15:54:24: Chain 'cid' ('NRD1[CID]')
+2026-07-08 15:54:24: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/6O3X.cif' is specified
+2026-07-08 15:54:24: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/nrd1-sen1-nim1/cid.pdb'
+2026-07-08 15:54:25: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:54:25: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/nrd1-sen1-nim1/cid.yaml'
+2026-07-08 15:54:25: 
+2026-07-08 15:54:25: Chain 'sen1nim1' ('SEN1[NIM1]')
+2026-07-08 15:54:25: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:54:25: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/nrd1-sen1-nim1/sen1nim1.fasta'
+2026-07-08 15:54:25: 
+2026-07-08 15:54:25: ················································································
+2026-07-08 15:54:25: Parsing SLiMs of 'nrd1-sen1-nim1' system to CALVADOS input
+2026-07-08 15:54:25: ················································································
+2026-07-08 15:54:25: SLiM 'cid-sen1nim1' ('NRD1[CID]-SEN1[NIM1]')
+2026-07-08 15:54:25: 	- Verifying that acceptor 'cid' and donor 'sen1nim1' chains are found in system
+2026-07-08 15:54:25: 	- Performing contact analysis
+2026-07-08 15:54:25: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:54:25: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:54:25: 		- Defining contacts
+2026-07-08 15:54:25: 		- Found 20 pairwise contacts
+2026-07-08 15:54:25: 		- Calculating contact distances
+2026-07-08 15:54:25: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:54:25: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:54:25: 	- Excluding 0 contacts
+2026-07-08 15:54:25: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/nrd1-sen1-nim1/specific_interactions.txt'
+2026-07-08 15:54:25: 

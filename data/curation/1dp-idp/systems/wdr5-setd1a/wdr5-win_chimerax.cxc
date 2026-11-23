@@ -1,0 +1,11 @@
+open 3UVN
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/A,B cartoons
+sel /A:46,47,49,65,89,90,91,92,107,131,133,134,149,175,191,216,234,258,259,260,261,263,305,321 | /B:1492,1493,1494,1495,1496,1497,1498,1499,1500
+show sel surfaces
+view sel
+scale 200

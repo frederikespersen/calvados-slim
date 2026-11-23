@@ -1,0 +1,29 @@
+2026-07-08 15:54:50: ················································································
+2026-07-08 15:54:50: Parsing chains of 'vta1-did2' system to CALVADOS input
+2026-07-08 15:54:50: ················································································
+2026-07-08 15:54:50: Chain 'vta1' ('VTA1')
+2026-07-08 15:54:50: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/5H7P.cif' is specified
+2026-07-08 15:54:50: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/vta1-did2/vta1.pdb'
+2026-07-08 15:54:51: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:54:51: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/vta1-did2/vta1.yaml'
+2026-07-08 15:54:51: 
+2026-07-08 15:54:51: Chain 'did2' ('DID2[MIM]')
+2026-07-08 15:54:51: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:54:51: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/vta1-did2/did2.fasta'
+2026-07-08 15:54:51: 
+2026-07-08 15:54:51: ················································································
+2026-07-08 15:54:51: Parsing SLiMs of 'vta1-did2' system to CALVADOS input
+2026-07-08 15:54:51: ················································································
+2026-07-08 15:54:51: SLiM 'vta1-did2' ('VTA1-DID2[MIM]')
+2026-07-08 15:54:51: 	- Verifying that acceptor 'vta1' and donor 'did2' chains are found in system
+2026-07-08 15:54:51: 	- Performing contact analysis
+2026-07-08 15:54:51: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:54:51: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:54:51: 		- Defining contacts
+2026-07-08 15:54:51: 		- Found 16 pairwise contacts
+2026-07-08 15:54:51: 		- Calculating contact distances
+2026-07-08 15:54:51: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:54:52: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:54:52: 	- Excluding 1 contacts
+2026-07-08 15:54:52: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/vta1-did2/specific_interactions.txt'
+2026-07-08 15:54:52: 

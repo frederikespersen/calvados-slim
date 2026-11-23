@@ -1,0 +1,29 @@
+2026-07-08 15:51:43: ················································································
+2026-07-08 15:51:43: Parsing chains of 'rev1-polk' system to CALVADOS input
+2026-07-08 15:51:43: ················································································
+2026-07-08 15:51:43: Chain 'ct' ('REV1[CT]')
+2026-07-08 15:51:43: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/2LSI.cif' is specified
+2026-07-08 15:51:43: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/rev1-polk/ct.pdb'
+2026-07-08 15:51:44: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:51:44: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/rev1-polk/ct.yaml'
+2026-07-08 15:51:44: 
+2026-07-08 15:51:44: Chain 'rir' ('POLK[RIR]')
+2026-07-08 15:51:44: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:51:44: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/rev1-polk/rir.fasta'
+2026-07-08 15:51:44: 
+2026-07-08 15:51:44: ················································································
+2026-07-08 15:51:44: Parsing SLiMs of 'rev1-polk' system to CALVADOS input
+2026-07-08 15:51:44: ················································································
+2026-07-08 15:51:44: SLiM 'ct-rir' ('REV1[CT]-POLK[RIR]')
+2026-07-08 15:51:44: 	- Verifying that acceptor 'ct' and donor 'rir' chains are found in system
+2026-07-08 15:51:44: 	- Performing contact analysis
+2026-07-08 15:51:44: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:51:44: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:51:44: 		- Defining contacts
+2026-07-08 15:51:44: 		- Found 34 pairwise contacts
+2026-07-08 15:51:44: 		- Calculating contact distances
+2026-07-08 15:51:44: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:51:44: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:51:44: 	- Excluding 3 contacts
+2026-07-08 15:51:44: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/rev1-polk/specific_interactions.txt'
+2026-07-08 15:51:44: 

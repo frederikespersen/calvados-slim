@@ -1,0 +1,11 @@
+open 1KKQ
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/A,E cartoons
+sel /A:209,212,216,281,284,285,288,289,292,302,303,305,306,309,310,311,313,314,437,441,445,460,464,465,468 | /E:682,683,684,685,686,687,688,689,690,691,692,693,694,695,696,698,700
+show sel surfaces
+view sel
+scale 200

@@ -1,0 +1,11 @@
+open 1ZMS
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/A,B cartoons
+sel /A:374,375,393,395,399,400,410,448,449,454,455,456,457,466,467,468,469,471 | /B:204,205,206,207,208,210
+show sel surfaces
+view sel
+scale 200

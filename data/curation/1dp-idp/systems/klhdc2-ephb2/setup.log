@@ -1,0 +1,29 @@
+2026-07-08 15:50:19: ················································································
+2026-07-08 15:50:19: Parsing chains of 'klhdc2-ephb2' system to CALVADOS input
+2026-07-08 15:50:19: ················································································
+2026-07-08 15:50:19: Chain 'sbd' ('KLHDC2[SBD]')
+2026-07-08 15:50:19: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/8EBL.cif' is specified
+2026-07-08 15:50:19: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/klhdc2-ephb2/sbd.pdb'
+2026-07-08 15:50:20: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:50:20: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/klhdc2-ephb2/sbd.yaml'
+2026-07-08 15:50:20: 
+2026-07-08 15:50:20: Chain 'cdeg' ('EPHB2[Cdeg]')
+2026-07-08 15:50:20: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:50:20: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/klhdc2-ephb2/cdeg.fasta'
+2026-07-08 15:50:20: 
+2026-07-08 15:50:20: ················································································
+2026-07-08 15:50:20: Parsing SLiMs of 'klhdc2-ephb2' system to CALVADOS input
+2026-07-08 15:50:20: ················································································
+2026-07-08 15:50:20: SLiM 'sbd-cdeg' ('KLHDC2[SBD]-EPHB2[Cdeg]')
+2026-07-08 15:50:20: 	- Verifying that acceptor 'sbd' and donor 'cdeg' chains are found in system
+2026-07-08 15:50:20: 	- Performing contact analysis
+2026-07-08 15:50:20: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:50:20: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:50:20: 		- Defining contacts
+2026-07-08 15:50:20: 		- Found 42 pairwise contacts
+2026-07-08 15:50:20: 		- Calculating contact distances
+2026-07-08 15:50:20: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:50:20: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:50:20: 	- Excluding 0 contacts
+2026-07-08 15:50:20: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/klhdc2-ephb2/specific_interactions.txt'
+2026-07-08 15:50:20: 

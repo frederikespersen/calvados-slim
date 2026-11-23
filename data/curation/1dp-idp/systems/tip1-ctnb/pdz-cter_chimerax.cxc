@@ -1,0 +1,11 @@
+open 3DIW
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/A,C cartoons
+sel /A:27,28,29,30,31,32,33,34,35,38,39,40,41,43,44,45,46,54,56,58,59,90,94,97,98 | /C:774,775,776,777,778,779,780,781
+show sel surfaces
+view sel
+scale 150

@@ -1,0 +1,29 @@
+2026-07-08 15:54:31: ················································································
+2026-07-08 15:54:31: Parsing chains of 'pex13-pex14' system to CALVADOS input
+2026-07-08 15:54:31: ················································································
+2026-07-08 15:54:31: Chain 'sh3' ('PEX13[SH3]')
+2026-07-08 15:54:31: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/1N5Z.cif' is specified
+2026-07-08 15:54:31: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pex13-pex14/sh3.pdb'
+2026-07-08 15:54:32: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:54:32: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pex13-pex14/sh3.yaml'
+2026-07-08 15:54:32: 
+2026-07-08 15:54:32: Chain 'pex14' ('PEX14[peptide]')
+2026-07-08 15:54:32: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:54:32: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pex13-pex14/pex14.fasta'
+2026-07-08 15:54:32: 
+2026-07-08 15:54:32: ················································································
+2026-07-08 15:54:32: Parsing SLiMs of 'pex13-pex14' system to CALVADOS input
+2026-07-08 15:54:32: ················································································
+2026-07-08 15:54:32: SLiM 'sh3-pex14' ('PEX13[SH3]-PEX14[peptide]')
+2026-07-08 15:54:32: 	- Verifying that acceptor 'sh3' and donor 'pex14' chains are found in system
+2026-07-08 15:54:32: 	- Performing contact analysis
+2026-07-08 15:54:32: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:54:32: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:54:32: 		- Defining contacts
+2026-07-08 15:54:32: 		- Found 29 pairwise contacts
+2026-07-08 15:54:32: 		- Calculating contact distances
+2026-07-08 15:54:32: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:54:32: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:54:32: 	- Excluding 0 contacts
+2026-07-08 15:54:32: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pex13-pex14/specific_interactions.txt'
+2026-07-08 15:54:32: 

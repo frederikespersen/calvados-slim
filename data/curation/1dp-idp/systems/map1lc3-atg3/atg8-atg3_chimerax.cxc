@@ -1,0 +1,11 @@
+open 4EOY
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/A,D cartoons
+sel /A:17,21,28,30,31,46,48,49,50,51,52,54,55,59,60,63,67,113 | /D:104,105,106,107,108,109,110
+show sel surfaces
+view sel
+scale 200

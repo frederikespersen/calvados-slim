@@ -1,0 +1,11 @@
+open 5JER
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/A,B cartoons
+sel /A:211,256,257,260,263,264,267,285,288,289,290,292,349,350,351,360,362 | /B:482,484,485,486,487,488,489,490
+show sel surfaces
+view sel
+scale 200

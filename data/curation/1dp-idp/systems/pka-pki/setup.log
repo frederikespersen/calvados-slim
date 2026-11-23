@@ -1,0 +1,29 @@
+2026-07-08 15:53:02: ················································································
+2026-07-08 15:53:02: Parsing chains of 'pka-pki' system to CALVADOS input
+2026-07-08 15:53:02: ················································································
+2026-07-08 15:53:02: Chain 'pkacd' ('PRKACA[CD]')
+2026-07-08 15:53:02: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/2OH0.cif' is specified
+2026-07-08 15:53:02: 	- Selecting chain 'E' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pka-pki/pkacd.pdb'
+2026-07-08 15:53:03: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:53:03: 	- Writing chain 'E' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pka-pki/pkacd.yaml'
+2026-07-08 15:53:03: 
+2026-07-08 15:53:03: Chain 'pseudosubstrate' ('PKIA[Pseudosubstrate]')
+2026-07-08 15:53:03: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:53:03: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pka-pki/pseudosubstrate.fasta'
+2026-07-08 15:53:03: 
+2026-07-08 15:53:03: ················································································
+2026-07-08 15:53:03: Parsing SLiMs of 'pka-pki' system to CALVADOS input
+2026-07-08 15:53:03: ················································································
+2026-07-08 15:53:03: SLiM 'pkacd-pseudosubstrate' ('PRKACA[CD]-PKIA[Pseudosubstrate]')
+2026-07-08 15:53:03: 	- Verifying that acceptor 'pkacd' and donor 'pseudosubstrate' chains are found in system
+2026-07-08 15:53:03: 	- Performing contact analysis
+2026-07-08 15:53:03: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:53:03: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:53:03: 		- Defining contacts
+2026-07-08 15:53:03: 		- Found 57 pairwise contacts
+2026-07-08 15:53:03: 		- Calculating contact distances
+2026-07-08 15:53:03: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:53:03: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:53:03: 	- Excluding 0 contacts
+2026-07-08 15:53:03: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pka-pki/specific_interactions.txt'
+2026-07-08 15:53:03: 

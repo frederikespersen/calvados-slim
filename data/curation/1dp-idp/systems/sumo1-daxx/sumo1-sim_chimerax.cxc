@@ -1,0 +1,11 @@
+open 2KQS
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/A,B cartoons
+sel /A:21,32,33,34,35,36,37,38,39,41,42,43,46,47,50,51,54,55 | /B:731,732,733,734,735,736,738,739,740
+show sel surfaces
+view sel
+scale 200

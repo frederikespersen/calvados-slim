@@ -1,0 +1,29 @@
+2026-07-08 15:50:22: ················································································
+2026-07-08 15:50:22: Parsing chains of 'psip1-mll' system to CALVADOS input
+2026-07-08 15:50:22: ················································································
+2026-07-08 15:50:22: Chain 'ibd' ('PSIP1[IBD]')
+2026-07-08 15:50:22: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/2MSR.cif' is specified
+2026-07-08 15:50:22: 	- Selecting chain 'B' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/psip1-mll/ibd.pdb'
+2026-07-08 15:50:23: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:50:23: 	- Writing chain 'B' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/psip1-mll/ibd.yaml'
+2026-07-08 15:50:23: 
+2026-07-08 15:50:23: Chain 'lbd' ('MLL[LBD]')
+2026-07-08 15:50:23: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:50:23: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/psip1-mll/lbd.fasta'
+2026-07-08 15:50:23: 
+2026-07-08 15:50:23: ················································································
+2026-07-08 15:50:23: Parsing SLiMs of 'psip1-mll' system to CALVADOS input
+2026-07-08 15:50:23: ················································································
+2026-07-08 15:50:23: SLiM 'ibd-lbd' ('PSIP1[IBD]-MLL[LBD]')
+2026-07-08 15:50:23: 	- Verifying that acceptor 'ibd' and donor 'lbd' chains are found in system
+2026-07-08 15:50:23: 	- Performing contact analysis
+2026-07-08 15:50:23: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:50:23: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:50:23: 		- Defining contacts
+2026-07-08 15:50:23: 		- Found 13 pairwise contacts
+2026-07-08 15:50:23: 		- Calculating contact distances
+2026-07-08 15:50:24: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:50:24: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:50:24: 	- Excluding 2 contacts
+2026-07-08 15:50:24: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/psip1-mll/specific_interactions.txt'
+2026-07-08 15:50:24: 

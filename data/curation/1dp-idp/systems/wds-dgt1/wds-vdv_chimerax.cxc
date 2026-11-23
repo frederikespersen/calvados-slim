@@ -1,0 +1,11 @@
+open 4CY5
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/A,C cartoons
+sel /A:208,250,251,252,254,255,267,276,277,293,295,299,315,316 | /C:158,159,160,161,162,163,164,165
+show sel surfaces
+view sel
+scale 200

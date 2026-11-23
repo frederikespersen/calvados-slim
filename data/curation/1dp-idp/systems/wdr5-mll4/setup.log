@@ -1,0 +1,29 @@
+2026-07-08 21:38:36: ················································································
+2026-07-08 21:38:36: Parsing chains of 'wdr5-mll4' system to CALVADOS input
+2026-07-08 21:38:36: ················································································
+2026-07-08 21:38:36: Chain 'wdr5' ('WDR5')
+2026-07-08 21:38:36: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/4ERZ.cif' is specified
+2026-07-08 21:38:36: 	- Selecting chain 'A' and pasting to '/lustre/hpc/sbinlab/fknudsen/calvados-slim/data/curation/systems/wdr5-mll4/wdr5.pdb'
+2026-07-08 21:38:38: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 21:38:38: 	- Writing chain 'A' domain annotations to '/lustre/hpc/sbinlab/fknudsen/calvados-slim/data/curation/systems/wdr5-mll4/wdr5.yaml'
+2026-07-08 21:38:38: 
+2026-07-08 21:38:38: Chain 'win' ('MLL4[WIN]')
+2026-07-08 21:38:38: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 21:38:38: 	- Appending sequence to '/lustre/hpc/sbinlab/fknudsen/calvados-slim/data/curation/systems/wdr5-mll4/win.fasta'
+2026-07-08 21:38:38: 
+2026-07-08 21:38:38: ················································································
+2026-07-08 21:38:38: Parsing SLiMs of 'wdr5-mll4' system to CALVADOS input
+2026-07-08 21:38:38: ················································································
+2026-07-08 21:38:38: SLiM 'wdr5-win' ('WDR5-MLL4[WIN]')
+2026-07-08 21:38:38: 	- Verifying that acceptor 'wdr5' and donor 'win' chains are found in system
+2026-07-08 21:38:38: 	- Performing contact analysis
+2026-07-08 21:38:38: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 21:38:39: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 21:38:39: 		- Defining contacts
+2026-07-08 21:38:39: 		- Found 47 pairwise contacts
+2026-07-08 21:38:39: 		- Calculating contact distances
+2026-07-08 21:38:39: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 21:38:39: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 21:38:39: 	- Excluding 0 contacts
+2026-07-08 21:38:39: 	- Appending contacts to '/lustre/hpc/sbinlab/fknudsen/calvados-slim/data/curation/systems/wdr5-mll4/specific_interactions.txt'
+2026-07-08 21:38:39: 

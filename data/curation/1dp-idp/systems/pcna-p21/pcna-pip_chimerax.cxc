@@ -1,0 +1,11 @@
+open 1AXC
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/A,B cartoons
+sel /A:27,29,40,43,44,45,46,47,67,68,69,96,97,118,119,120,121,122,123,124,125,126,127,128,129,131,133,208,211,232,233,234,250,251,252,253,254,255 | /B:143,144,145,146,147,148,150,151,152,153,154,155,156,157,158,159,160
+show sel surfaces
+view sel
+scale 200

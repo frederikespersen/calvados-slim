@@ -1,0 +1,13 @@
+b1 25 | cendr 2 | 0.8953 <eps_go>
+b1 25 | cendr 4 | 0.6585 <eps_go>
+b1 29 | cendr 4 | 0.6484 <eps_go>
+b1 44 | cendr 4 | 0.8545 <eps_go>
+b1 48 | cendr 4 | 1.1043 <eps_go>
+b1 74 | cendr 4 | 0.6685 <eps_go>
+b1 76 | cendr 3 | 0.6220 <eps_go>
+b1 76 | cendr 4 | 0.5819 <eps_go>
+b1 77 | cendr 3 | 0.7694 <eps_go>
+b1 77 | cendr 4 | 0.6361 <eps_go>
+b1 81 | cendr 4 | 0.7487 <eps_go>
+b1 142 | cendr 4 | 0.9827 <eps_go>
+b1 143 | cendr 4 | 1.1011 <eps_go>

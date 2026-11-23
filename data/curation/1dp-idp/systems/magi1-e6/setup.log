@@ -1,0 +1,29 @@
+2026-07-08 15:53:32: ················································································
+2026-07-08 15:53:32: Parsing chains of 'magi1-e6' system to CALVADOS input
+2026-07-08 15:53:32: ················································································
+2026-07-08 15:53:32: Chain 'pdz1' ('MAGI1[PDZ1]')
+2026-07-08 15:53:32: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/2KPL.cif' is specified
+2026-07-08 15:53:32: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/magi1-e6/pdz1.pdb'
+2026-07-08 15:53:33: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:53:33: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/magi1-e6/pdz1.yaml'
+2026-07-08 15:53:33: 
+2026-07-08 15:53:33: Chain 'cter' ('E6[Cter]')
+2026-07-08 15:53:33: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:53:33: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/magi1-e6/cter.fasta'
+2026-07-08 15:53:33: 
+2026-07-08 15:53:33: ················································································
+2026-07-08 15:53:33: Parsing SLiMs of 'magi1-e6' system to CALVADOS input
+2026-07-08 15:53:33: ················································································
+2026-07-08 15:53:33: SLiM 'pdz1-cter' ('MAGI1[PDZ1]-E6[Cter]')
+2026-07-08 15:53:33: 	- Verifying that acceptor 'pdz1' and donor 'cter' chains are found in system
+2026-07-08 15:53:33: 	- Performing contact analysis
+2026-07-08 15:53:33: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:53:33: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:53:33: 		- Defining contacts
+2026-07-08 15:53:33: 		- Found 50 pairwise contacts
+2026-07-08 15:53:33: 		- Calculating contact distances
+2026-07-08 15:53:33: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:53:33: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:53:33: 	- Excluding 23 contacts
+2026-07-08 15:53:33: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/magi1-e6/specific_interactions.txt'
+2026-07-08 15:53:33: 

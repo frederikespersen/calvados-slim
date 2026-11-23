@@ -1,0 +1,11 @@
+open 1MK9
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/D,C cartoons
+sel /D:209,211,212,215,296,299,300,303 | /C:745,746,747,749,750
+show sel surfaces
+view sel
+scale 200

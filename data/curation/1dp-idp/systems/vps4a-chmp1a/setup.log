@@ -1,0 +1,29 @@
+2026-07-08 15:50:24: ················································································
+2026-07-08 15:50:24: Parsing chains of 'vps4a-chmp1a' system to CALVADOS input
+2026-07-08 15:50:24: ················································································
+2026-07-08 15:50:24: Chain 'mit' ('VPS4A[MIT]')
+2026-07-08 15:50:24: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/2JQ9.cif' is specified
+2026-07-08 15:50:24: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/vps4a-chmp1a/mit.pdb'
+2026-07-08 15:50:26: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:50:26: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/vps4a-chmp1a/mit.yaml'
+2026-07-08 15:50:26: 
+2026-07-08 15:50:26: Chain 'cter' ('CHMP1A[Cter]')
+2026-07-08 15:50:26: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:50:26: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/vps4a-chmp1a/cter.fasta'
+2026-07-08 15:50:26: 
+2026-07-08 15:50:26: ················································································
+2026-07-08 15:50:26: Parsing SLiMs of 'vps4a-chmp1a' system to CALVADOS input
+2026-07-08 15:50:26: ················································································
+2026-07-08 15:50:26: SLiM 'mit-cter' ('VPS4A[MIT]-CHMP1A[Cter]')
+2026-07-08 15:50:26: 	- Verifying that acceptor 'mit' and donor 'cter' chains are found in system
+2026-07-08 15:50:26: 	- Performing contact analysis
+2026-07-08 15:50:26: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:50:26: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:50:26: 		- Defining contacts
+2026-07-08 15:50:26: 		- Found 26 pairwise contacts
+2026-07-08 15:50:26: 		- Calculating contact distances
+2026-07-08 15:50:26: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:50:26: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:50:26: 	- Excluding 0 contacts
+2026-07-08 15:50:26: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/vps4a-chmp1a/specific_interactions.txt'
+2026-07-08 15:50:26: 

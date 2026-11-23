@@ -1,0 +1,30 @@
+2026-07-09 00:31:35: ················································································
+2026-07-09 00:31:35: Parsing chains of 'nck1-abl1' system to CALVADOS input
+2026-07-09 00:31:35: ················································································
+2026-07-09 00:31:35: Chain 'sh3' ('Nck1[SH3]')
+2026-07-09 00:31:35: 	- Parsing chain as a MDP, as chain PDB 'data/alphafold3/fold_sh3_1/fold_sh3_1_model_0.cif' is specified
+2026-07-09 00:31:35: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/nck1-abl1/sh3.pdb'
+2026-07-09 00:31:35: 	- Parsing MDP PDB as an AlphaFold structure, as chain PDB AlphaFold data JSON is specified
+2026-07-09 00:31:35: 	- Writing chain 'A' intra-chain PAEs to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/nck1-abl1/sh3.json'
+2026-07-09 00:31:35: 
+2026-07-09 00:31:35: Chain 'prm' ('ABL1[PRM]')
+2026-07-09 00:31:35: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-09 00:31:35: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/nck1-abl1/prm.fasta'
+2026-07-09 00:31:35: 
+2026-07-09 00:31:35: ················································································
+2026-07-09 00:31:35: Parsing SLiMs of 'nck1-abl1' system to CALVADOS input
+2026-07-09 00:31:35: ················································································
+2026-07-09 00:31:35: SLiM 'sh3-prm' ('SH3-PRM')
+2026-07-09 00:31:35: 	- Verifying that acceptor 'sh3' and donor 'prm' chains are found in system
+2026-07-09 00:31:35: 	- Performing contact analysis
+2026-07-09 00:31:35: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-09 00:31:35: 		- Parsing SLiM PDB as an AlphaFold structure, as SLiM PDB AlphaFold data JSON is specified
+2026-07-09 00:31:35: 		- Calculating AlphaFold contact metrics (PAE, Pinc)
+2026-07-09 00:31:35: 		- Defining contacts
+2026-07-09 00:31:35: 		- Found 19 pairwise contacts
+2026-07-09 00:31:35: 		- Calculating contact distances
+2026-07-09 00:31:35: 	- Mapping residue indices between System and SLiM constructs
+2026-07-09 00:31:35: 	- Dropping 0 contacts outside the construct windows
+2026-07-09 00:31:35: 	- Excluding 0 contacts
+2026-07-09 00:31:35: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/nck1-abl1/specific_interactions.txt'
+2026-07-09 00:31:35: 

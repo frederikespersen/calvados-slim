@@ -1,0 +1,11 @@
+open 8PXX
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/A,B cartoons
+sel /A:149,151,155,157,159,166,167,168,198,200,207,208,209 | /B:575,576,577,578,579,580,581,582,584,586,587,588,589,590
+show sel surfaces
+view sel
+scale 200

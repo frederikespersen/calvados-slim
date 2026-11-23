@@ -1,0 +1,29 @@
+2026-07-08 15:51:52: ················································································
+2026-07-08 15:51:52: Parsing chains of 'traf6-cd40' system to CALVADOS input
+2026-07-08 15:51:52: ················································································
+2026-07-08 15:51:52: Chain 'math' ('TRAF6[MATH]')
+2026-07-08 15:51:52: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/1LB6.cif' is specified
+2026-07-08 15:51:52: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/traf6-cd40/math.pdb'
+2026-07-08 15:51:52: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:51:52: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/traf6-cd40/math.yaml'
+2026-07-08 15:51:52: 
+2026-07-08 15:51:52: Chain 'pxexx' ('CD40[PxExx]')
+2026-07-08 15:51:52: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:51:52: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/traf6-cd40/pxexx.fasta'
+2026-07-08 15:51:52: 
+2026-07-08 15:51:52: ················································································
+2026-07-08 15:51:52: Parsing SLiMs of 'traf6-cd40' system to CALVADOS input
+2026-07-08 15:51:52: ················································································
+2026-07-08 15:51:52: SLiM 'math-pxexx' ('TRAF6[MATH]-CD40[PxExx]')
+2026-07-08 15:51:52: 	- Verifying that acceptor 'math' and donor 'pxexx' chains are found in system
+2026-07-08 15:51:52: 	- Performing contact analysis
+2026-07-08 15:51:52: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:51:52: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:51:52: 		- Defining contacts
+2026-07-08 15:51:52: 		- Found 33 pairwise contacts
+2026-07-08 15:51:52: 		- Calculating contact distances
+2026-07-08 15:51:52: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:51:52: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:51:52: 	- Excluding 0 contacts
+2026-07-08 15:51:52: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/traf6-cd40/specific_interactions.txt'
+2026-07-08 15:51:52: 

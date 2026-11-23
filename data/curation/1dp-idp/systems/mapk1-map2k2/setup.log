@@ -1,0 +1,29 @@
+2026-07-08 15:51:22: ················································································
+2026-07-08 15:51:22: Parsing chains of 'mapk1-map2k2' system to CALVADOS input
+2026-07-08 15:51:22: ················································································
+2026-07-08 15:51:22: Chain 'cd' ('MAPK1[CD]')
+2026-07-08 15:51:22: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/4H3Q.cif' is specified
+2026-07-08 15:51:22: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/mapk1-map2k2/cd.pdb'
+2026-07-08 15:51:23: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:51:23: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/mapk1-map2k2/cd.yaml'
+2026-07-08 15:51:23: 
+2026-07-08 15:51:23: Chain 'dmotif' ('MAP2K2[D-motif]')
+2026-07-08 15:51:23: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:51:23: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/mapk1-map2k2/dmotif.fasta'
+2026-07-08 15:51:23: 
+2026-07-08 15:51:23: ················································································
+2026-07-08 15:51:23: Parsing SLiMs of 'mapk1-map2k2' system to CALVADOS input
+2026-07-08 15:51:23: ················································································
+2026-07-08 15:51:23: SLiM 'cd-dmotif' ('MAPK1[CD]-MAP2K2[D-motif]')
+2026-07-08 15:51:23: 	- Verifying that acceptor 'cd' and donor 'dmotif' chains are found in system
+2026-07-08 15:51:23: 	- Performing contact analysis
+2026-07-08 15:51:23: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:51:23: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:51:23: 		- Defining contacts
+2026-07-08 15:51:23: 		- Found 33 pairwise contacts
+2026-07-08 15:51:23: 		- Calculating contact distances
+2026-07-08 15:51:23: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:51:23: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:51:23: 	- Excluding 0 contacts
+2026-07-08 15:51:23: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/mapk1-map2k2/specific_interactions.txt'
+2026-07-08 15:51:23: 

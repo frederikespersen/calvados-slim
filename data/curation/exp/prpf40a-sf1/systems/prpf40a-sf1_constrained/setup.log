@@ -1,0 +1,29 @@
+2026-08-06 18:43:25: ················································································
+2026-08-06 18:43:25: Parsing chains of 'prpf40a-sf1_constrained' system to CALVADOS input
+2026-08-06 18:43:25: ················································································
+2026-08-06 18:43:25: Chain 'ww12' ('PRPF40A[WW12]')
+2026-08-06 18:43:25: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/8PXX.cif' is specified
+2026-08-06 18:43:25: 	- Selecting chain 'A' and pasting to 'data/curation/exp/prpf40a-sf1/systems/prpf40a-sf1_constrained/ww12.pdb'
+2026-08-06 18:43:25: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-08-06 18:43:25: 	- Writing chain 'A' domain annotations to 'data/curation/exp/prpf40a-sf1/systems/prpf40a-sf1_constrained/ww12.yaml'
+2026-08-06 18:43:25: 
+2026-08-06 18:43:25: Chain 'wwbs' ('SF1[WWbs]')
+2026-08-06 18:43:25: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-08-06 18:43:25: 	- Appending sequence to 'data/curation/exp/prpf40a-sf1/systems/prpf40a-sf1_constrained/wwbs.fasta'
+2026-08-06 18:43:25: 
+2026-08-06 18:43:25: ················································································
+2026-08-06 18:43:25: Parsing SLiMs of 'prpf40a-sf1_constrained' system to CALVADOS input
+2026-08-06 18:43:25: ················································································
+2026-08-06 18:43:25: SLiM 'ww12-wwbs' ('PRPF40A[WW12]-SF1[WWbs]')
+2026-08-06 18:43:25: 	- Verifying that acceptor 'ww12' and donor 'wwbs' chains are found in system
+2026-08-06 18:43:25: 	- Performing contact analysis
+2026-08-06 18:43:25: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-08-06 18:43:26: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-08-06 18:43:26: 		- Defining contacts
+2026-08-06 18:43:26: 		- Found 33 pairwise contacts
+2026-08-06 18:43:26: 		- Calculating contact distances
+2026-08-06 18:43:26: 	- Mapping residue indices between System and SLiM constructs
+2026-08-06 18:43:26: 	- Dropping 0 contacts outside the construct windows
+2026-08-06 18:43:26: 	- Excluding 3 contacts
+2026-08-06 18:43:26: 	- Appending contacts to 'data/curation/exp/prpf40a-sf1/systems/prpf40a-sf1_constrained/specific_interactions.txt'
+2026-08-06 18:43:26: 

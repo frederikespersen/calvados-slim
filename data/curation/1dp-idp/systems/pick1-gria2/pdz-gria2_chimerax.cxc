@@ -1,0 +1,11 @@
+open 2PKU
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/A,B cartoons
+sel /A:27,30,32,33,34,35,36,37,38,50,53,83,87,90,91 | /B:121,122,123,124,125
+show sel surfaces
+view sel
+scale 150

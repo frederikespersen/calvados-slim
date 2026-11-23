@@ -1,0 +1,11 @@
+open 6FQ4
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/A,B cartoons
+sel /A:8,11,12,13,16,19,20,23,38,40,43,44,46,47,50,51,53,54,57,88,108,112,115,116,119,123,126 | /B:851,852,853,854,855,856,857,858,860,861,862,864,865,866
+show sel surfaces
+view sel
+scale 200

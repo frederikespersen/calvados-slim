@@ -1,0 +1,29 @@
+2026-07-08 15:50:48: ················································································
+2026-07-08 15:50:48: Parsing chains of 'rfxank-rfx5' system to CALVADOS input
+2026-07-08 15:50:48: ················································································
+2026-07-08 15:50:48: Chain 'ank' ('RFXANK[ANK]')
+2026-07-08 15:50:48: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/3V30.cif' is specified
+2026-07-08 15:50:48: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/rfxank-rfx5/ank.pdb'
+2026-07-08 15:50:48: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:50:48: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/rfxank-rfx5/ank.yaml'
+2026-07-08 15:50:48: 
+2026-07-08 15:50:48: Chain 'pxlpxl' ('RFX5[PxLPxL]')
+2026-07-08 15:50:48: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:50:48: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/rfxank-rfx5/pxlpxl.fasta'
+2026-07-08 15:50:48: 
+2026-07-08 15:50:48: ················································································
+2026-07-08 15:50:48: Parsing SLiMs of 'rfxank-rfx5' system to CALVADOS input
+2026-07-08 15:50:48: ················································································
+2026-07-08 15:50:48: SLiM 'ank-pxlpxl' ('RFXANK[ANK]-RFX5[PxLPxL]')
+2026-07-08 15:50:48: 	- Verifying that acceptor 'ank' and donor 'pxlpxl' chains are found in system
+2026-07-08 15:50:48: 	- Performing contact analysis
+2026-07-08 15:50:48: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:50:49: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:50:49: 		- Defining contacts
+2026-07-08 15:50:49: 		- Found 56 pairwise contacts
+2026-07-08 15:50:49: 		- Calculating contact distances
+2026-07-08 15:50:49: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:50:49: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:50:49: 	- Excluding 0 contacts
+2026-07-08 15:50:49: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/rfxank-rfx5/specific_interactions.txt'
+2026-07-08 15:50:49: 

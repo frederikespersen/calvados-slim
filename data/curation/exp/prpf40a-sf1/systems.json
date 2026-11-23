@@ -1,0 +1,532 @@
+[
+ {
+  "ID": "prpf40a-sf1",
+  "Name": "PRPF40A[WW12]-SF1[WWbs]",
+  "Authenticity": "NMR; Claude+Val",
+  "Box sides": [
+   20,
+   20,
+   20
+  ],
+  "Sources": [
+   {
+    "Name": "Mart\u00ednez-Lumbreras et al. 2024",
+    "Description": "Primary publication; source of the SF1 16-mer series, ITC affinities, NMR structures and SAXS data",
+    "Link": "https://doi.org/10.1038/s41467-024-48004-x"
+   },
+   {
+    "Name": "8PXX",
+    "Description": "PDB structure (NMR, 20 models) of PRPF40A WW12 bound to SF1 WWbs",
+    "Link": "https://www.rcsb.org/structure/8PXX"
+   },
+   {
+    "Name": "8PXW",
+    "Description": "PDB structure (NMR) of free PRPF40A WW12; apo reference",
+    "Link": "https://www.rcsb.org/structure/8PXW"
+   },
+   {
+    "Name": "BMRB 34839 / 34840",
+    "Description": "Chemical shifts, WW12 apo and WW12/SF1 complex; CSP by subtraction",
+    "Link": "https://bmrb.io/data_library/summary/index.php?bmrbId=34840"
+   },
+   {
+    "Name": "SASDSK7 / SASDSL7",
+    "Description": "SEC-SAXS of WW12 free and bound to SF1 WWbs (batch mode: SASDUH4 / SASDUJ4)",
+    "Link": "https://www.sasbdb.org/data/SASDSL7/"
+   },
+   {
+    "Name": "Zenodo 10.5281/zenodo.10988522",
+    "Description": "Raw ITC curves and analysis projects for all titrations",
+    "Link": "https://doi.org/10.5281/zenodo.10988522"
+   }
+  ],
+  "Chains": [
+   {
+    "ID": "ww12",
+    "Name": "PRPF40A[WW12]",
+    "Description": "Tandem WW domains of PRPF40A; GAM expression-tag remnant plus residues 141-236. Restrained as four independent rigid blocks -- WW1 (145-175), linker helix (176-185), WW2 (186-216) and the C-terminal helix (217-227) -- not as one domain. In the apo ensemble 8PXW the two WW domains are individually rigid (intra CA-CA distance SD 0.14-0.23 A) but their relative orientation is undefined: WW2 sits at 21.9 +/- 11.2 A RMSD (max 40.2 A) after superposition on WW1, versus 1.64 +/- 0.61 A in the bound 8PXX. The primary publication reaches the same conclusion from the absence of interdomain NOEs and from PRE data, describing the domains as independent modules separated by a hinge and a short helix, and correcting an earlier compact model from the truncated construct 2L5F. Each block is internally rigid in the apo ensemble, so restraining them separately preserves the real secondary structure while leaving the hinge free.",
+    "Copies": 1,
+    "Sequence": "GAMGAKSMWTEHKSPDGRTYYYNTETKQSTWEKPDDLKTPAEQLLSKCPWKEYKSDSGKPYYYNSQTKESRWAKPKELEDLEGYQNTIVAGSLITKSNL",
+    "Construct": {
+     "start": 138,
+     "end": 236
+    },
+    "PDB": "data/pdb/8PXX.cif",
+    "PDB chain ID": "A",
+    "PDB AlphaFold data JSON": "",
+    "PDB Domains": [
+     {
+      "start": 145,
+      "end": 175
+     },
+     {
+      "start": 176,
+      "end": 185
+     },
+     {
+      "start": 186,
+      "end": 216
+     },
+     {
+      "start": 217,
+      "end": 227
+     }
+    ],
+    "PTMs": []
+   },
+   {
+    "ID": "wwbs",
+    "Name": "SF1[WWbs]",
+    "Description": "High-affinity PRPF40A WW-binding site of SF1 (residues 575-590) in the 8PXX construct, with GAM tag and SGS/SGSGN linkers",
+    "Copies": 1,
+    "Sequence": "GAMSGSPPLPPGAPPPPPPPPPSGSGN",
+    "Construct": {
+     "start": 569,
+     "end": 595
+    },
+    "PDB": "",
+    "PDB chain ID": "",
+    "PDB AlphaFold data JSON": "",
+    "PDB Domains": [],
+    "PTMs": []
+   }
+  ],
+  "SLiMs": [
+   {
+    "ID": "ww12-wwbs",
+    "Name": "PRPF40A[WW12]-SF1[WWbs]",
+    "Notes": "Affinity is the ITC Kd for the WW12 construct; confirm the exact value against the Zenodo deposit. Tag and linker residues excluded from contacts. This is a bivalent interaction in which the peptide clamps two otherwise independently mobile WW domains together -- WW1 engages the N-terminal PPLP motif and WW2 the C-terminal proline-rich end -- so eps_go must pay for inter-domain ordering as well as motif contact. Do not restrain the tandem as a single rigid domain: that pre-pays the conformational cost and would bias the tuned eps_go low.",
+    "Acceptor ID": "ww12",
+    "Donor ID": "wwbs",
+    "Affinity": 1.8e-06,
+    "PDB": "data/pdb/8PXX.cif",
+    "PDB AlphaFold data JSON": "",
+    "PDB Acceptor chain ID": "A",
+    "PDB Acceptor construct": {
+     "start": 138,
+     "end": 236
+    },
+    "PDB Acceptor exclude": [
+     138,
+     139,
+     140
+    ],
+    "PDB Donor chain ID": "B",
+    "PDB Donor construct": {
+     "start": 569,
+     "end": 595
+    },
+    "PDB Donor exclude": [
+     569,
+     570,
+     571,
+     572,
+     573,
+     574,
+     591,
+     592,
+     593,
+     594,
+     595
+    ]
+   }
+  ]
+ },
+ {
+  "ID": "prpf40a-sf1_constrained",
+  "Name": "PRPF40A[WW12]-SF1[WWbs] (constrained tandem)",
+  "Authenticity": "NMR; Claude+Val",
+  "Box sides": [
+   20,
+   20,
+   20
+  ],
+  "Sources": [
+   {
+    "Name": "Mart\u00ednez-Lumbreras et al. 2024",
+    "Description": "Primary publication; source of the SF1 16-mer series, ITC affinities, NMR structures and SAXS data",
+    "Link": "https://doi.org/10.1038/s41467-024-48004-x"
+   },
+   {
+    "Name": "8PXX",
+    "Description": "PDB structure (NMR, 20 models) of PRPF40A WW12 bound to SF1 WWbs",
+    "Link": "https://www.rcsb.org/structure/8PXX"
+   },
+   {
+    "Name": "8PXW",
+    "Description": "PDB structure (NMR) of free PRPF40A WW12; apo reference",
+    "Link": "https://www.rcsb.org/structure/8PXW"
+   },
+   {
+    "Name": "BMRB 34839 / 34840",
+    "Description": "Chemical shifts, WW12 apo and WW12/SF1 complex; CSP by subtraction",
+    "Link": "https://bmrb.io/data_library/summary/index.php?bmrbId=34840"
+   },
+   {
+    "Name": "SASDSK7 / SASDSL7",
+    "Description": "SEC-SAXS of WW12 free and bound to SF1 WWbs (batch mode: SASDUH4 / SASDUJ4)",
+    "Link": "https://www.sasbdb.org/data/SASDSL7/"
+   },
+   {
+    "Name": "Zenodo 10.5281/zenodo.10988522",
+    "Description": "Raw ITC curves and analysis projects for all titrations",
+    "Link": "https://doi.org/10.5281/zenodo.10988522"
+   }
+  ],
+  "Chains": [
+   {
+    "ID": "ww12",
+    "Name": "PRPF40A[WW12]",
+    "Description": "Tandem WW domains of PRPF40A; GAM expression-tag remnant plus residues 141-236. CONTROL VARIANT: the whole tandem is restrained as a single rigid block (143-217), fixing the two WW domains in their bound-state relative orientation. This is deliberately contrary to the experimental evidence -- in the apo ensemble 8PXW the inter-domain orientation is undefined (WW2 at 21.9 +/- 11.2 A RMSD after WW1 superposition, versus 1.64 +/- 0.61 A in the bound 8PXX) -- and exists only as a paired comparison against 'prpf40a-sf1', which restrains WW1, the linker helix, WW2 and the C-terminal helix as four independent blocks.",
+    "Copies": 1,
+    "Sequence": "GAMGAKSMWTEHKSPDGRTYYYNTETKQSTWEKPDDLKTPAEQLLSKCPWKEYKSDSGKPYYYNSQTKESRWAKPKELEDLEGYQNTIVAGSLITKSNL",
+    "Construct": {
+     "start": 138,
+     "end": 236
+    },
+    "PDB": "data/pdb/8PXX.cif",
+    "PDB chain ID": "A",
+    "PDB AlphaFold data JSON": "",
+    "PDB Domains": [
+     {
+      "start": 143,
+      "end": 217
+     }
+    ],
+    "PTMs": []
+   },
+   {
+    "ID": "wwbs",
+    "Name": "SF1[WWbs]",
+    "Description": "High-affinity PRPF40A WW-binding site of SF1 (residues 575-590) in the 8PXX construct, with GAM tag and SGS/SGSGN linkers",
+    "Copies": 1,
+    "Sequence": "GAMSGSPPLPPGAPPPPPPPPPSGSGN",
+    "Construct": {
+     "start": 569,
+     "end": 595
+    },
+    "PDB": "",
+    "PDB chain ID": "",
+    "PDB AlphaFold data JSON": "",
+    "PDB Domains": [],
+    "PTMs": []
+   }
+  ],
+  "SLiMs": [
+   {
+    "ID": "ww12-wwbs",
+    "Name": "PRPF40A[WW12]-SF1[WWbs]",
+    "Notes": "CONTROL VARIANT of 'prpf40a-sf1' differing ONLY in the acceptor domain definition: one rigid block (143-217) instead of four. Restraining the tandem rigidly pre-pays the conformational cost of inter-domain ordering, so dG at a given eps_go should come out more favourable and the tuned eps_go correspondingly lower. The difference between the two entries measures how much of this bivalent interaction's affinity comes from clamping the hinge rather than from motif contact. Affinity as in the parent entry; confirm against the Zenodo ITC deposit.",
+    "Acceptor ID": "ww12",
+    "Donor ID": "wwbs",
+    "Affinity": 1.8e-06,
+    "PDB": "data/pdb/8PXX.cif",
+    "PDB AlphaFold data JSON": "",
+    "PDB Acceptor chain ID": "A",
+    "PDB Acceptor construct": {
+     "start": 138,
+     "end": 236
+    },
+    "PDB Acceptor exclude": [
+     138,
+     139,
+     140
+    ],
+    "PDB Donor chain ID": "B",
+    "PDB Donor construct": {
+     "start": 569,
+     "end": 595
+    },
+    "PDB Donor exclude": [
+     569,
+     570,
+     571,
+     572,
+     573,
+     574,
+     591,
+     592,
+     593,
+     594,
+     595
+    ]
+   }
+  ]
+ },
+ {
+  "ID": "prpf40a-sf1_tandem",
+  "Name": "PRPF40A[WW12]-SF1[WWbs]x2",
+  "Authenticity": "NMR; Claude+Val",
+  "Box sides": [
+   20,
+   20,
+   20
+  ],
+  "Sources": [
+   {
+    "Name": "Mart\u00ednez-Lumbreras et al. 2024",
+    "Description": "Primary publication; source of the SF1 16-mer series, ITC affinities, NMR structures and SAXS data",
+    "Link": "https://doi.org/10.1038/s41467-024-48004-x"
+   },
+   {
+    "Name": "8PXX",
+    "Description": "PDB structure (NMR, 20 models) of PRPF40A WW12 bound to SF1 WWbs",
+    "Link": "https://www.rcsb.org/structure/8PXX"
+   },
+   {
+    "Name": "8PXW",
+    "Description": "PDB structure (NMR) of free PRPF40A WW12; apo reference",
+    "Link": "https://www.rcsb.org/structure/8PXW"
+   },
+   {
+    "Name": "BMRB 34839 / 34840",
+    "Description": "Chemical shifts, WW12 apo and WW12/SF1 complex; CSP by subtraction",
+    "Link": "https://bmrb.io/data_library/summary/index.php?bmrbId=34840"
+   },
+   {
+    "Name": "SASDSK7 / SASDSL7",
+    "Description": "SEC-SAXS of WW12 free and bound to SF1 WWbs (batch mode: SASDUH4 / SASDUJ4)",
+    "Link": "https://www.sasbdb.org/data/SASDSL7/"
+   },
+   {
+    "Name": "Zenodo 10.5281/zenodo.10988522",
+    "Description": "Raw ITC curves and analysis projects for all titrations",
+    "Link": "https://doi.org/10.5281/zenodo.10988522"
+   }
+  ],
+  "Chains": [
+   {
+    "ID": "ww12",
+    "Name": "PRPF40A[WW12]",
+    "Description": "Tandem WW domains of PRPF40A; GAM expression-tag remnant plus residues 141-236. Restrained as four independent rigid blocks -- WW1 (145-175), linker helix (176-185), WW2 (186-216) and the C-terminal helix (217-227) -- not as one domain. In the apo ensemble 8PXW the two WW domains are individually rigid (intra CA-CA distance SD 0.14-0.23 A) but their relative orientation is undefined: WW2 sits at 21.9 +/- 11.2 A RMSD (max 40.2 A) after superposition on WW1, versus 1.64 +/- 0.61 A in the bound 8PXX. The primary publication reaches the same conclusion from the absence of interdomain NOEs and from PRE data, describing the domains as independent modules separated by a hinge and a short helix, and correcting an earlier compact model from the truncated construct 2L5F. Each block is internally rigid in the apo ensemble, so restraining them separately preserves the real secondary structure while leaving the hinge free.",
+    "Copies": 1,
+    "Sequence": "GAMGAKSMWTEHKSPDGRTYYYNTETKQSTWEKPDDLKTPAEQLLSKCPWKEYKSDSGKPYYYNSQTKESRWAKPKELEDLEGYQNTIVAGSLITKSNL",
+    "Construct": {
+     "start": 138,
+     "end": 236
+    },
+    "PDB": "data/pdb/8PXX.cif",
+    "PDB chain ID": "A",
+    "PDB AlphaFold data JSON": "",
+    "PDB Domains": [
+     {
+      "start": 145,
+      "end": 175
+     },
+     {
+      "start": 176,
+      "end": 185
+     },
+     {
+      "start": 186,
+      "end": 216
+     },
+     {
+      "start": 217,
+      "end": 227
+     }
+    ],
+    "PTMs": []
+   },
+   {
+    "ID": "wwbs",
+    "Name": "SF1[WWbs] x2",
+    "Description": "Two tandem copies of the 8PXX SF1 WWbs construct (GAM tag + SGS linker + the 575-590 motif + SGSGN), concatenated head-to-tail into a single 54-residue donor chain. Synthetic construct with no experimental structure, so numbering is 1-54 rather than SF1 author numbering.",
+    "Copies": 1,
+    "Sequence": "GAMSGSPPLPPGAPPPPPPPPPSGSGNGAMSGSPPLPPGAPPPPPPPPPSGSGN",
+    "Construct": {
+     "start": 1,
+     "end": 54
+    },
+    "PDB": "",
+    "PDB chain ID": "",
+    "PDB AlphaFold data JSON": "",
+    "PDB Domains": [],
+    "PTMs": []
+   }
+  ],
+  "SLiMs": [
+   {
+    "ID": "ww12-wwbs2",
+    "Name": "PRPF40A[WW12]-SF1[WWbs]x2",
+    "Notes": "AVIDITY EXPERIMENT: identical to 'prpf40a-sf1' except the donor carries two copies of the WWbs motif instead of one. specific_interactions.txt is HAND-BUILT -- the parent's 30 contacts duplicated with the donor bead index offset by +27 -- because no experimental structure exists for the doubled peptide. Do NOT re-run System.curate on this entry; it would fail on the sequence/PDB mismatch. Run at the eps_go tuned for 'prpf40a-sf1' and compare the resulting dG: the enhancement over the single-motif parent is the avidity, which depends on linker entropy and (in the flexible variant) on hinge ordering. Affinity set to -1: the paper's two-tract peptides bind at ~10 uM versus ~20-30 uM for single-tract, but no ITC value exists for this exact synthetic construct. Analysis needs a donor-aware class; TwoChain assumes one motif per donor chain.",
+    "Acceptor ID": "ww12",
+    "Donor ID": "wwbs",
+    "Affinity": -1,
+    "PDB": "data/pdb/8PXX.cif",
+    "PDB AlphaFold data JSON": "",
+    "PDB Acceptor chain ID": "A",
+    "PDB Acceptor construct": {
+     "start": 138,
+     "end": 236
+    },
+    "PDB Acceptor exclude": [
+     138,
+     139,
+     140
+    ],
+    "PDB Donor chain ID": "B",
+    "PDB Donor construct": {
+     "start": 1,
+     "end": 54
+    },
+    "PDB Donor exclude": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     30,
+     31,
+     32,
+     33,
+     50,
+     51,
+     52,
+     53,
+     54
+    ]
+   }
+  ]
+ },
+ {
+  "ID": "prpf40a-sf1_tandem_constrained",
+  "Name": "PRPF40A[WW12]-SF1[WWbs]x2 (constrained tandem)",
+  "Authenticity": "NMR; Claude+Val",
+  "Box sides": [
+   20,
+   20,
+   20
+  ],
+  "Sources": [
+   {
+    "Name": "Mart\u00ednez-Lumbreras et al. 2024",
+    "Description": "Primary publication; source of the SF1 16-mer series, ITC affinities, NMR structures and SAXS data",
+    "Link": "https://doi.org/10.1038/s41467-024-48004-x"
+   },
+   {
+    "Name": "8PXX",
+    "Description": "PDB structure (NMR, 20 models) of PRPF40A WW12 bound to SF1 WWbs",
+    "Link": "https://www.rcsb.org/structure/8PXX"
+   },
+   {
+    "Name": "8PXW",
+    "Description": "PDB structure (NMR) of free PRPF40A WW12; apo reference",
+    "Link": "https://www.rcsb.org/structure/8PXW"
+   },
+   {
+    "Name": "BMRB 34839 / 34840",
+    "Description": "Chemical shifts, WW12 apo and WW12/SF1 complex; CSP by subtraction",
+    "Link": "https://bmrb.io/data_library/summary/index.php?bmrbId=34840"
+   },
+   {
+    "Name": "SASDSK7 / SASDSL7",
+    "Description": "SEC-SAXS of WW12 free and bound to SF1 WWbs (batch mode: SASDUH4 / SASDUJ4)",
+    "Link": "https://www.sasbdb.org/data/SASDSL7/"
+   },
+   {
+    "Name": "Zenodo 10.5281/zenodo.10988522",
+    "Description": "Raw ITC curves and analysis projects for all titrations",
+    "Link": "https://doi.org/10.5281/zenodo.10988522"
+   }
+  ],
+  "Chains": [
+   {
+    "ID": "ww12",
+    "Name": "PRPF40A[WW12]",
+    "Description": "Tandem WW domains of PRPF40A; GAM expression-tag remnant plus residues 141-236. CONTROL VARIANT: the whole tandem is restrained as a single rigid block (143-217), fixing the two WW domains in their bound-state relative orientation. This is deliberately contrary to the experimental evidence -- in the apo ensemble 8PXW the inter-domain orientation is undefined (WW2 at 21.9 +/- 11.2 A RMSD after WW1 superposition, versus 1.64 +/- 0.61 A in the bound 8PXX) -- and exists only as a paired comparison against 'prpf40a-sf1', which restrains WW1, the linker helix, WW2 and the C-terminal helix as four independent blocks.",
+    "Copies": 1,
+    "Sequence": "GAMGAKSMWTEHKSPDGRTYYYNTETKQSTWEKPDDLKTPAEQLLSKCPWKEYKSDSGKPYYYNSQTKESRWAKPKELEDLEGYQNTIVAGSLITKSNL",
+    "Construct": {
+     "start": 138,
+     "end": 236
+    },
+    "PDB": "data/pdb/8PXX.cif",
+    "PDB chain ID": "A",
+    "PDB AlphaFold data JSON": "",
+    "PDB Domains": [
+     {
+      "start": 143,
+      "end": 217
+     }
+    ],
+    "PTMs": []
+   },
+   {
+    "ID": "wwbs",
+    "Name": "SF1[WWbs] x2",
+    "Description": "Two tandem copies of the 8PXX SF1 WWbs construct (GAM tag + SGS linker + the 575-590 motif + SGSGN), concatenated head-to-tail into a single 54-residue donor chain. Synthetic construct with no experimental structure, so numbering is 1-54 rather than SF1 author numbering.",
+    "Copies": 1,
+    "Sequence": "GAMSGSPPLPPGAPPPPPPPPPSGSGNGAMSGSPPLPPGAPPPPPPPPPSGSGN",
+    "Construct": {
+     "start": 1,
+     "end": 54
+    },
+    "PDB": "",
+    "PDB chain ID": "",
+    "PDB AlphaFold data JSON": "",
+    "PDB Domains": [],
+    "PTMs": []
+   }
+  ],
+  "SLiMs": [
+   {
+    "ID": "ww12-wwbs2",
+    "Name": "PRPF40A[WW12]-SF1[WWbs]x2 (constrained tandem)",
+    "Notes": "AVIDITY EXPERIMENT: identical to 'prpf40a-sf1_constrained' except the donor carries two copies of the WWbs motif instead of one. specific_interactions.txt is HAND-BUILT -- the parent's 30 contacts duplicated with the donor bead index offset by +27 -- because no experimental structure exists for the doubled peptide. Do NOT re-run System.curate on this entry; it would fail on the sequence/PDB mismatch. Run at the eps_go tuned for 'prpf40a-sf1_constrained' and compare the resulting dG: the enhancement over the single-motif parent is the avidity, which depends on linker entropy and (in the flexible variant) on hinge ordering. Affinity set to -1: the paper's two-tract peptides bind at ~10 uM versus ~20-30 uM for single-tract, but no ITC value exists for this exact synthetic construct. Analysis needs a donor-aware class; TwoChain assumes one motif per donor chain.",
+    "Acceptor ID": "ww12",
+    "Donor ID": "wwbs",
+    "Affinity": -1,
+    "PDB": "data/pdb/8PXX.cif",
+    "PDB AlphaFold data JSON": "",
+    "PDB Acceptor chain ID": "A",
+    "PDB Acceptor construct": {
+     "start": 138,
+     "end": 236
+    },
+    "PDB Acceptor exclude": [
+     138,
+     139,
+     140
+    ],
+    "PDB Donor chain ID": "B",
+    "PDB Donor construct": {
+     "start": 1,
+     "end": 54
+    },
+    "PDB Donor exclude": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     30,
+     31,
+     32,
+     33,
+     50,
+     51,
+     52,
+     53,
+     54
+    ]
+   }
+  ]
+ }
+]

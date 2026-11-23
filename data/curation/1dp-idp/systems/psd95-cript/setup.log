@@ -1,0 +1,29 @@
+2026-07-08 15:50:18: ················································································
+2026-07-08 15:50:18: Parsing chains of 'psd95-cript' system to CALVADOS input
+2026-07-08 15:50:18: ················································································
+2026-07-08 15:50:18: Chain 'pdz' ('PSD-95[PDZ]')
+2026-07-08 15:50:18: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/1BE9.cif' is specified
+2026-07-08 15:50:18: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/psd95-cript/pdz.pdb'
+2026-07-08 15:50:18: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:50:18: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/psd95-cript/pdz.yaml'
+2026-07-08 15:50:18: 
+2026-07-08 15:50:18: Chain 'cter' ('CRIPT[Cter]')
+2026-07-08 15:50:18: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:50:18: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/psd95-cript/cter.fasta'
+2026-07-08 15:50:18: 
+2026-07-08 15:50:18: ················································································
+2026-07-08 15:50:18: Parsing SLiMs of 'psd95-cript' system to CALVADOS input
+2026-07-08 15:50:18: ················································································
+2026-07-08 15:50:18: SLiM 'pdz-cter' ('PDZ-Cter')
+2026-07-08 15:50:18: 	- Verifying that acceptor 'pdz' and donor 'cter' chains are found in system
+2026-07-08 15:50:18: 	- Performing contact analysis
+2026-07-08 15:50:18: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:50:18: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:50:18: 		- Defining contacts
+2026-07-08 15:50:18: 		- Found 26 pairwise contacts
+2026-07-08 15:50:18: 		- Calculating contact distances
+2026-07-08 15:50:18: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:50:18: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:50:18: 	- Excluding 0 contacts
+2026-07-08 15:50:18: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/psd95-cript/specific_interactions.txt'
+2026-07-08 15:50:18: 

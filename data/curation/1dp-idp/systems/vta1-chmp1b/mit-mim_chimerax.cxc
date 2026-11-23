@@ -1,0 +1,11 @@
+open 4TXR
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/A,B cartoons
+sel /A:36,40,43,44,47,51,57,60,61,64,65,67,68,71,81,82,83,130,131 | /B:186,187,188,189,191,192,194,195,196,197,198,199
+show sel surfaces
+view sel
+scale 150

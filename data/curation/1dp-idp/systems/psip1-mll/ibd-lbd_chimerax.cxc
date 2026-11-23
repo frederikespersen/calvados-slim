@@ -1,0 +1,11 @@
+open 2MSR
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/B,A cartoons
+sel /B:359,360,363,365,399,402,403,406,408 | /A:148,149,151
+show sel surfaces
+view sel
+scale 200

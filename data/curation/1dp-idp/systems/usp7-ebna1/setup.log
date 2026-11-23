@@ -1,0 +1,29 @@
+2026-07-08 15:53:28: ················································································
+2026-07-08 15:53:28: Parsing chains of 'usp7-ebna1' system to CALVADOS input
+2026-07-08 15:53:28: ················································································
+2026-07-08 15:53:28: Chain 'math' ('USP7[MATH]')
+2026-07-08 15:53:28: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/1YY6.cif' is specified
+2026-07-08 15:53:28: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/usp7-ebna1/math.pdb'
+2026-07-08 15:53:29: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:53:29: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/usp7-ebna1/math.yaml'
+2026-07-08 15:53:29: 
+2026-07-08 15:53:29: Chain 'peptide' ('EBNA1[peptide]')
+2026-07-08 15:53:29: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:53:29: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/usp7-ebna1/peptide.fasta'
+2026-07-08 15:53:29: 
+2026-07-08 15:53:29: ················································································
+2026-07-08 15:53:29: Parsing SLiMs of 'usp7-ebna1' system to CALVADOS input
+2026-07-08 15:53:29: ················································································
+2026-07-08 15:53:29: SLiM 'math-peptide' ('USP7[MATH]-EBNA1[peptide]')
+2026-07-08 15:53:29: 	- Verifying that acceptor 'math' and donor 'peptide' chains are found in system
+2026-07-08 15:53:29: 	- Performing contact analysis
+2026-07-08 15:53:29: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:53:29: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:53:29: 		- Defining contacts
+2026-07-08 15:53:29: 		- Found 25 pairwise contacts
+2026-07-08 15:53:29: 		- Calculating contact distances
+2026-07-08 15:53:29: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:53:29: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:53:29: 	- Excluding 0 contacts
+2026-07-08 15:53:29: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/usp7-ebna1/specific_interactions.txt'
+2026-07-08 15:53:29: 

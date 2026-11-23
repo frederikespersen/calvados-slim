@@ -1,0 +1,29 @@
+2026-07-08 15:53:37: ················································································
+2026-07-08 15:53:37: Parsing chains of 'pp1c-ppp1r2' system to CALVADOS input
+2026-07-08 15:53:37: ················································································
+2026-07-08 15:53:37: Chain 'pp1c' ('PP1C[gamma]')
+2026-07-08 15:53:37: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/2O8G.cif' is specified
+2026-07-08 15:53:37: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pp1c-ppp1r2/pp1c.pdb'
+2026-07-08 15:53:39: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:53:39: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pp1c-ppp1r2/pp1c.yaml'
+2026-07-08 15:53:39: 
+2026-07-08 15:53:39: Chain 'ppp1r2' ('PPP1R2[SILK]')
+2026-07-08 15:53:39: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:53:39: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pp1c-ppp1r2/ppp1r2.fasta'
+2026-07-08 15:53:39: 
+2026-07-08 15:53:39: ················································································
+2026-07-08 15:53:39: Parsing SLiMs of 'pp1c-ppp1r2' system to CALVADOS input
+2026-07-08 15:53:39: ················································································
+2026-07-08 15:53:39: SLiM 'pp1c-ppp1r2' ('PP1C[gamma]-PPP1R2[SILK]')
+2026-07-08 15:53:39: 	- Verifying that acceptor 'pp1c' and donor 'ppp1r2' chains are found in system
+2026-07-08 15:53:39: 	- Performing contact analysis
+2026-07-08 15:53:39: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:53:39: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:53:39: 		- Defining contacts
+2026-07-08 15:53:39: 		- Found 132 pairwise contacts
+2026-07-08 15:53:39: 		- Calculating contact distances
+2026-07-08 15:53:39: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:53:39: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:53:39: 	- Excluding 0 contacts
+2026-07-08 15:53:39: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/pp1c-ppp1r2/specific_interactions.txt'
+2026-07-08 15:53:39: 

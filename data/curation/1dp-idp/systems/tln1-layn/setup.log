@@ -1,0 +1,29 @@
+2026-07-08 15:54:42: ················································································
+2026-07-08 15:54:42: Parsing chains of 'tln1-layn' system to CALVADOS input
+2026-07-08 15:54:42: ················································································
+2026-07-08 15:54:42: Chain 'f3' ('TLN1[F3]')
+2026-07-08 15:54:42: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/2K00.cif' is specified
+2026-07-08 15:54:42: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/tln1-layn/f3.pdb'
+2026-07-08 15:54:42: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:54:42: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/tln1-layn/f3.yaml'
+2026-07-08 15:54:42: 
+2026-07-08 15:54:42: Chain 'layn' ('LAYN[peptide]')
+2026-07-08 15:54:42: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:54:42: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/tln1-layn/layn.fasta'
+2026-07-08 15:54:42: 
+2026-07-08 15:54:42: ················································································
+2026-07-08 15:54:42: Parsing SLiMs of 'tln1-layn' system to CALVADOS input
+2026-07-08 15:54:42: ················································································
+2026-07-08 15:54:42: SLiM 'f3-layn' ('TLN1[F3]-LAYN[peptide]')
+2026-07-08 15:54:42: 	- Verifying that acceptor 'f3' and donor 'layn' chains are found in system
+2026-07-08 15:54:42: 	- Performing contact analysis
+2026-07-08 15:54:42: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:54:42: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:54:42: 		- Defining contacts
+2026-07-08 15:54:42: 		- Found 33 pairwise contacts
+2026-07-08 15:54:42: 		- Calculating contact distances
+2026-07-08 15:54:43: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:54:43: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:54:43: 	- Excluding 1 contacts
+2026-07-08 15:54:43: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/tln1-layn/specific_interactions.txt'
+2026-07-08 15:54:43: 

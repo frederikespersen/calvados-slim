@@ -1,0 +1,11 @@
+open 1U76
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/A,B cartoons
+sel /A:40,44,45,46,47,124,125,126,127,128,129,206,208,232,233,234,250,251,252,253,254,255,256,257 | /B:453,454,455,456,457,458,459,460,462,463,464
+show sel surfaces
+view sel
+scale 200

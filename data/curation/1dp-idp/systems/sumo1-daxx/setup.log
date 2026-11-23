@@ -1,0 +1,29 @@
+2026-07-08 15:52:36: ················································································
+2026-07-08 15:52:36: Parsing chains of 'sumo1-daxx' system to CALVADOS input
+2026-07-08 15:52:36: ················································································
+2026-07-08 15:52:36: Chain 'sumo1' ('SUMO1')
+2026-07-08 15:52:36: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/2KQS.cif' is specified
+2026-07-08 15:52:36: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/sumo1-daxx/sumo1.pdb'
+2026-07-08 15:52:37: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:52:37: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/sumo1-daxx/sumo1.yaml'
+2026-07-08 15:52:37: 
+2026-07-08 15:52:37: Chain 'sim' ('DAXX[SIM]')
+2026-07-08 15:52:37: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:52:37: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/sumo1-daxx/sim.fasta'
+2026-07-08 15:52:37: 
+2026-07-08 15:52:37: ················································································
+2026-07-08 15:52:37: Parsing SLiMs of 'sumo1-daxx' system to CALVADOS input
+2026-07-08 15:52:37: ················································································
+2026-07-08 15:52:37: SLiM 'sumo1-sim' ('SUMO1-DAXX[SIM]')
+2026-07-08 15:52:37: 	- Verifying that acceptor 'sumo1' and donor 'sim' chains are found in system
+2026-07-08 15:52:37: 	- Performing contact analysis
+2026-07-08 15:52:37: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:52:37: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:52:37: 		- Defining contacts
+2026-07-08 15:52:37: 		- Found 39 pairwise contacts
+2026-07-08 15:52:37: 		- Calculating contact distances
+2026-07-08 15:52:37: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:52:37: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:52:37: 	- Excluding 3 contacts
+2026-07-08 15:52:37: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/sumo1-daxx/specific_interactions.txt'
+2026-07-08 15:52:37: 

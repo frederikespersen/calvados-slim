@@ -1,0 +1,29 @@
+2026-07-08 15:54:45: ················································································
+2026-07-08 15:54:45: Parsing chains of 'vcl-ipaa1' system to CALVADOS input
+2026-07-08 15:54:45: ················································································
+2026-07-08 15:54:45: Chain 'vh1' ('VCL[Vh1]')
+2026-07-08 15:54:45: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/2HSQ.cif' is specified
+2026-07-08 15:54:45: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/vcl-ipaa1/vh1.pdb'
+2026-07-08 15:54:45: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:54:45: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/vcl-ipaa1/vh1.yaml'
+2026-07-08 15:54:45: 
+2026-07-08 15:54:45: Chain 'ipaa1' ('IpaA[VBS1]')
+2026-07-08 15:54:45: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:54:45: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/vcl-ipaa1/ipaa1.fasta'
+2026-07-08 15:54:45: 
+2026-07-08 15:54:45: ················································································
+2026-07-08 15:54:45: Parsing SLiMs of 'vcl-ipaa1' system to CALVADOS input
+2026-07-08 15:54:45: ················································································
+2026-07-08 15:54:45: SLiM 'vh1-ipaa1' ('VCL[Vh1]-IpaA[VBS1]')
+2026-07-08 15:54:45: 	- Verifying that acceptor 'vh1' and donor 'ipaa1' chains are found in system
+2026-07-08 15:54:45: 	- Performing contact analysis
+2026-07-08 15:54:45: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:54:46: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:54:46: 		- Defining contacts
+2026-07-08 15:54:46: 		- Found 72 pairwise contacts
+2026-07-08 15:54:46: 		- Calculating contact distances
+2026-07-08 15:54:46: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:54:46: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:54:46: 	- Excluding 0 contacts
+2026-07-08 15:54:46: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/vcl-ipaa1/specific_interactions.txt'
+2026-07-08 15:54:46: 

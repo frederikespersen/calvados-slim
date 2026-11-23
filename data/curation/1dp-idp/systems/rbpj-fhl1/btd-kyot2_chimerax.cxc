@@ -1,0 +1,11 @@
+open 4J2X
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/A,B cartoons
+sel /A:234,235,236,249,257,258,259,260,261,262,263,264,265,275,277,282,283,284,285,286,316,322,324,330,331,332,333 | /B:183,184,185,186,187,188,189,190,191,192,193,194,195,196
+show sel surfaces
+view sel
+scale 250

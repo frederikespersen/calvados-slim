@@ -1,0 +1,11 @@
+open 4WPH
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/A,D cartoons
+sel /A:628,629,630,637,679,681,682,683,684,685,709,710,736,739,754,758,759,760,761,762,764 | /D:618,619,620,621,622,623,624,625,626
+show sel surfaces
+view sel
+scale 250

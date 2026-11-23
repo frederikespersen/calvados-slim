@@ -1,0 +1,11 @@
+open 3CS8
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/A,B cartoons
+sel /A:293,294,297,298,301,306,311,312,314,315,318,319,467,468,471,472 | /B:141,142,143,144,145,147,148,149,150,152
+show sel surfaces
+view sel
+scale 200

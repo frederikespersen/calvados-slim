@@ -1,0 +1,29 @@
+2026-07-08 15:53:30: ················································································
+2026-07-08 15:53:30: Parsing chains of 'rsk2-orf45' system to CALVADOS input
+2026-07-08 15:53:30: ················································································
+2026-07-08 15:53:30: Chain 'rsk2' ('RSK2')
+2026-07-08 15:53:30: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/7OPO.cif' is specified
+2026-07-08 15:53:30: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/rsk2-orf45/rsk2.pdb'
+2026-07-08 15:53:31: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:53:31: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/rsk2-orf45/rsk2.yaml'
+2026-07-08 15:53:31: 
+2026-07-08 15:53:31: Chain 'ddvf' ('ORF45[DDVF]')
+2026-07-08 15:53:31: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:53:31: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/rsk2-orf45/ddvf.fasta'
+2026-07-08 15:53:31: 
+2026-07-08 15:53:31: ················································································
+2026-07-08 15:53:31: Parsing SLiMs of 'rsk2-orf45' system to CALVADOS input
+2026-07-08 15:53:31: ················································································
+2026-07-08 15:53:31: SLiM 'rsk2-ddvf' ('RSK2-ORF45[DDVF]')
+2026-07-08 15:53:31: 	- Verifying that acceptor 'rsk2' and donor 'ddvf' chains are found in system
+2026-07-08 15:53:31: 	- Performing contact analysis
+2026-07-08 15:53:31: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:53:32: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:53:32: 		- Defining contacts
+2026-07-08 15:53:32: 		- Found 122 pairwise contacts
+2026-07-08 15:53:32: 		- Calculating contact distances
+2026-07-08 15:53:32: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:53:32: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:53:32: 	- Excluding 0 contacts
+2026-07-08 15:53:32: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/rsk2-orf45/specific_interactions.txt'
+2026-07-08 15:53:32: 

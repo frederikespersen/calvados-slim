@@ -1,0 +1,29 @@
+2026-07-08 15:51:24: ················································································
+2026-07-08 15:51:24: Parsing chains of 'tle1-gsc' system to CALVADOS input
+2026-07-08 15:51:24: ················································································
+2026-07-08 15:51:24: Chain 'wd40' ('TLE1[WD40]')
+2026-07-08 15:51:24: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/2CE8.cif' is specified
+2026-07-08 15:51:24: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/tle1-gsc/wd40.pdb'
+2026-07-08 15:51:25: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:51:25: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/tle1-gsc/wd40.yaml'
+2026-07-08 15:51:25: 
+2026-07-08 15:51:25: Chain 'eh1' ('GSC[EH1]')
+2026-07-08 15:51:25: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:51:25: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/tle1-gsc/eh1.fasta'
+2026-07-08 15:51:25: 
+2026-07-08 15:51:25: ················································································
+2026-07-08 15:51:25: Parsing SLiMs of 'tle1-gsc' system to CALVADOS input
+2026-07-08 15:51:25: ················································································
+2026-07-08 15:51:25: SLiM 'wd40-eh1' ('TLE1[WD40]-GSC[EH1]')
+2026-07-08 15:51:25: 	- Verifying that acceptor 'wd40' and donor 'eh1' chains are found in system
+2026-07-08 15:51:25: 	- Performing contact analysis
+2026-07-08 15:51:25: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:51:25: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:51:25: 		- Defining contacts
+2026-07-08 15:51:25: 		- Found 28 pairwise contacts
+2026-07-08 15:51:25: 		- Calculating contact distances
+2026-07-08 15:51:25: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:51:25: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:51:25: 	- Excluding 0 contacts
+2026-07-08 15:51:25: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/tle1-gsc/specific_interactions.txt'
+2026-07-08 15:51:25: 

@@ -1,0 +1,11 @@
+open 1CA9
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/B,H cartoons
+sel /B:393,395,399,400,410,446,447,448,449,450,453,454,455,456,465,466,467,468,470 | /H:420,421,422,423,424,425,426,427,428
+show sel surfaces
+view sel
+scale 200

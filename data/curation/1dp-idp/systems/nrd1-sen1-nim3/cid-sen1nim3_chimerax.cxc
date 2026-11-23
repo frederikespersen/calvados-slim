@@ -1,0 +1,11 @@
+open 6O3Y
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/A,D cartoons
+sel /A:22,24,25,26,27,29,67,70,71,74,126,127,130 | /D:2055,2056,2057,2058,2060,2061
+show sel surfaces
+view sel
+scale 200

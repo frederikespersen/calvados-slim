@@ -1,0 +1,29 @@
+2026-07-08 15:52:46: ················································································
+2026-07-08 15:52:46: Parsing chains of 'syntenin-il5ra' system to CALVADOS input
+2026-07-08 15:52:46: ················································································
+2026-07-08 15:52:46: Chain 'pdz12' ('SDCBP[PDZ1-2]')
+2026-07-08 15:52:46: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/1OBZ.cif' is specified
+2026-07-08 15:52:46: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/syntenin-il5ra/pdz12.pdb'
+2026-07-08 15:52:47: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:52:47: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/syntenin-il5ra/pdz12.yaml'
+2026-07-08 15:52:47: 
+2026-07-08 15:52:47: Chain 'peptide' ('IL5RA[peptide]')
+2026-07-08 15:52:47: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:52:47: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/syntenin-il5ra/peptide.fasta'
+2026-07-08 15:52:47: 
+2026-07-08 15:52:47: ················································································
+2026-07-08 15:52:47: Parsing SLiMs of 'syntenin-il5ra' system to CALVADOS input
+2026-07-08 15:52:47: ················································································
+2026-07-08 15:52:47: SLiM 'pdz12-peptide' ('SDCBP[PDZ1-2]-IL5RA[peptide]')
+2026-07-08 15:52:47: 	- Verifying that acceptor 'pdz12' and donor 'peptide' chains are found in system
+2026-07-08 15:52:47: 	- Performing contact analysis
+2026-07-08 15:52:47: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:52:47: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:52:47: 		- Defining contacts
+2026-07-08 15:52:47: 		- Found 22 pairwise contacts
+2026-07-08 15:52:47: 		- Calculating contact distances
+2026-07-08 15:52:47: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:52:47: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:52:47: 	- Excluding 0 contacts
+2026-07-08 15:52:47: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/syntenin-il5ra/specific_interactions.txt'
+2026-07-08 15:52:47: 
