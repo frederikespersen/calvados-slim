@@ -1,0 +1,67 @@
+[
+    {
+        "ID": "",
+        "Name": "",
+        "Authenticity": "",
+        "Box sides": [0,0,0],
+        "Sources": [
+            {
+                "Name": "",
+                "Description": "",
+                "Link": ""
+            }
+        ],
+        "Chains": [
+            {
+                "ID": "",
+                "Name": "",
+                "Description": "",
+                "Copies": 1,
+                "Sequence": "",
+                "Construct":  {
+                    "start": -1,
+                    "end": -1
+                },
+                "PDB": "",
+                "PDB chain ID": "",
+                "PDB AlphaFold data JSON": "",
+                "PDB Domains": [
+                    {
+                        "start": -1,
+                        "end": -1
+                    }
+                ],
+                "PTMs": [
+                    {
+                        "Position": "",
+                        "Type": ""
+                    }
+                ]
+            }
+        ],
+        "SLiMs": [
+            {
+                "ID": "",
+                "Name": "",
+                "Notes": "",
+                "Acceptor ID": "",
+                "Donor ID": "",
+                "Affinity": -1,
+                "PDB": "",
+                "PDB AlphaFold data JSON": "",
+                "PDB Acceptor chain ID": "",
+                "PDB Acceptor construct": {
+                    "start": -1,
+                    "end": -1
+                },
+                "PDB Acceptor exclude": [],
+                "PDB Donor chain ID": "",
+                "PDB Donor construct":  {
+                    "start": -1,
+                    "end": -1
+                },
+                "PDB Donor exclude": []
+            }
+        ]
+    }
+]

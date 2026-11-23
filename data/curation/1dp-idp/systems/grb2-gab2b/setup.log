@@ -1,0 +1,29 @@
+2026-07-08 15:52:24: ················································································
+2026-07-08 15:52:24: Parsing chains of 'grb2-gab2b' system to CALVADOS input
+2026-07-08 15:52:24: ················································································
+2026-07-08 15:52:24: Chain 'sh3c' ('GRB2[SH3c]')
+2026-07-08 15:52:24: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/2VWF.cif' is specified
+2026-07-08 15:52:24: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/grb2-gab2b/sh3c.pdb'
+2026-07-08 15:52:24: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:52:24: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/grb2-gab2b/sh3c.yaml'
+2026-07-08 15:52:24: 
+2026-07-08 15:52:24: Chain 'gab2b' ('GAB2[epitope-b]')
+2026-07-08 15:52:24: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:52:24: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/grb2-gab2b/gab2b.fasta'
+2026-07-08 15:52:24: 
+2026-07-08 15:52:24: ················································································
+2026-07-08 15:52:24: Parsing SLiMs of 'grb2-gab2b' system to CALVADOS input
+2026-07-08 15:52:24: ················································································
+2026-07-08 15:52:24: SLiM 'sh3c-gab2b' ('GRB2[SH3c]-GAB2[epitope-b]')
+2026-07-08 15:52:24: 	- Verifying that acceptor 'sh3c' and donor 'gab2b' chains are found in system
+2026-07-08 15:52:24: 	- Performing contact analysis
+2026-07-08 15:52:24: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:52:24: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:52:24: 		- Defining contacts
+2026-07-08 15:52:24: 		- Found 33 pairwise contacts
+2026-07-08 15:52:24: 		- Calculating contact distances
+2026-07-08 15:52:24: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:52:24: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:52:24: 	- Excluding 0 contacts
+2026-07-08 15:52:24: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/grb2-gab2b/specific_interactions.txt'
+2026-07-08 15:52:24: 

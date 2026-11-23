@@ -1,0 +1,29 @@
+2026-07-08 15:54:00: ················································································
+2026-07-08 15:54:00: Parsing chains of 'csk-ptpn22' system to CALVADOS input
+2026-07-08 15:54:00: ················································································
+2026-07-08 15:54:00: Chain 'sh3' ('CSK[SH3]')
+2026-07-08 15:54:00: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/1JEG.cif' is specified
+2026-07-08 15:54:00: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/csk-ptpn22/sh3.pdb'
+2026-07-08 15:54:01: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:54:01: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/csk-ptpn22/sh3.yaml'
+2026-07-08 15:54:01: 
+2026-07-08 15:54:01: Chain 'ptpn22' ('PTPN22[peptide]')
+2026-07-08 15:54:01: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:54:01: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/csk-ptpn22/ptpn22.fasta'
+2026-07-08 15:54:01: 
+2026-07-08 15:54:01: ················································································
+2026-07-08 15:54:01: Parsing SLiMs of 'csk-ptpn22' system to CALVADOS input
+2026-07-08 15:54:01: ················································································
+2026-07-08 15:54:01: SLiM 'sh3-ptpn22' ('CSK[SH3]-PTPN22[peptide]')
+2026-07-08 15:54:01: 	- Verifying that acceptor 'sh3' and donor 'ptpn22' chains are found in system
+2026-07-08 15:54:01: 	- Performing contact analysis
+2026-07-08 15:54:01: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:54:01: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:54:01: 		- Defining contacts
+2026-07-08 15:54:01: 		- Found 34 pairwise contacts
+2026-07-08 15:54:01: 		- Calculating contact distances
+2026-07-08 15:54:01: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:54:01: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:54:01: 	- Excluding 6 contacts
+2026-07-08 15:54:01: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/csk-ptpn22/specific_interactions.txt'
+2026-07-08 15:54:01: 

@@ -1,0 +1,11 @@
+open 3E1R
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/A,C cartoons
+sel /A:176,177,180,183,184,186,187,190,191,193,194 | /C:798,799,800,801,802,803,804,805,806,807,808,809
+show sel surfaces
+view sel
+scale 200

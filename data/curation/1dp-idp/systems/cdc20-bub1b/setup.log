@@ -1,0 +1,29 @@
+2026-07-08 15:50:54: ················································································
+2026-07-08 15:50:54: Parsing chains of 'cdc20-bub1b' system to CALVADOS input
+2026-07-08 15:50:54: ················································································
+2026-07-08 15:50:54: Chain 'wd40' ('CDC20[WD40]')
+2026-07-08 15:50:54: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/4GGD.cif' is specified
+2026-07-08 15:50:54: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/cdc20-bub1b/wd40.pdb'
+2026-07-08 15:50:56: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:50:56: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/cdc20-bub1b/wd40.yaml'
+2026-07-08 15:50:56: 
+2026-07-08 15:50:56: Chain 'kenbox' ('BUB1B[KENbox]')
+2026-07-08 15:50:56: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:50:56: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/cdc20-bub1b/kenbox.fasta'
+2026-07-08 15:50:56: 
+2026-07-08 15:50:56: ················································································
+2026-07-08 15:50:56: Parsing SLiMs of 'cdc20-bub1b' system to CALVADOS input
+2026-07-08 15:50:56: ················································································
+2026-07-08 15:50:56: SLiM 'wd40-kenbox' ('CDC20[WD40]-BUB1B[KENbox]')
+2026-07-08 15:50:56: 	- Verifying that acceptor 'wd40' and donor 'kenbox' chains are found in system
+2026-07-08 15:50:56: 	- Performing contact analysis
+2026-07-08 15:50:56: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:50:57: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:50:57: 		- Defining contacts
+2026-07-08 15:50:57: 		- Found 25 pairwise contacts
+2026-07-08 15:50:57: 		- Calculating contact distances
+2026-07-08 15:50:57: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:50:57: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:50:57: 	- Excluding 0 contacts
+2026-07-08 15:50:57: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/cdc20-bub1b/specific_interactions.txt'
+2026-07-08 15:50:57: 

@@ -1,0 +1,11 @@
+open 2ODD
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/A,B cartoons
+sel /A:671,672,673,674,675,676,678,682,684,685,688,689,692,693,696,699 | /B:1102,1103,1104,1105,1106,1107,1108,1109,1110,1111
+show sel surfaces
+view sel
+scale 150

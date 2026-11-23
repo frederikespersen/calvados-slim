@@ -13,7 +13,6 @@ data/pdb
 data/alphafold3
 
 # Local and tests
-data/curation
 data/synthetic
 data/curation/mdp
 
@@ -38,7 +37,7 @@ notebooks/6_modelling.ipynb
 notebooks/7_experiments.ipynb
 notebooks/8_figures.ipynb
 notebooks/9_ablation.ipynb
-data/modelling
+data/modelling/*/
 
 # Cached calculations
 data/synthetic/graph_variants

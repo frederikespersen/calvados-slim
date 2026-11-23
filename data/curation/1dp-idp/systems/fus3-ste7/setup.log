@@ -1,0 +1,29 @@
+2026-07-08 15:54:07: ················································································
+2026-07-08 15:54:07: Parsing chains of 'fus3-ste7' system to CALVADOS input
+2026-07-08 15:54:07: ················································································
+2026-07-08 15:54:07: Chain 'fus3' ('FUS3')
+2026-07-08 15:54:07: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/2B9H.cif' is specified
+2026-07-08 15:54:07: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/fus3-ste7/fus3.pdb'
+2026-07-08 15:54:07: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:54:07: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/fus3-ste7/fus3.yaml'
+2026-07-08 15:54:07: 
+2026-07-08 15:54:07: Chain 'ste7' ('STE7[D]')
+2026-07-08 15:54:07: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:54:07: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/fus3-ste7/ste7.fasta'
+2026-07-08 15:54:07: 
+2026-07-08 15:54:07: ················································································
+2026-07-08 15:54:07: Parsing SLiMs of 'fus3-ste7' system to CALVADOS input
+2026-07-08 15:54:07: ················································································
+2026-07-08 15:54:07: SLiM 'fus3-ste7' ('FUS3-STE7[D]')
+2026-07-08 15:54:07: 	- Verifying that acceptor 'fus3' and donor 'ste7' chains are found in system
+2026-07-08 15:54:07: 	- Performing contact analysis
+2026-07-08 15:54:07: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:54:08: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:54:08: 		- Defining contacts
+2026-07-08 15:54:08: 		- Found 45 pairwise contacts
+2026-07-08 15:54:08: 		- Calculating contact distances
+2026-07-08 15:54:08: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:54:08: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:54:08: 	- Excluding 0 contacts
+2026-07-08 15:54:08: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/fus3-ste7/specific_interactions.txt'
+2026-07-08 15:54:08: 

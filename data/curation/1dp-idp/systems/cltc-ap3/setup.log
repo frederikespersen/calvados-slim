@@ -1,0 +1,29 @@
+2026-07-08 15:50:35: ················································································
+2026-07-08 15:50:35: Parsing chains of 'cltc-ap3' system to CALVADOS input
+2026-07-08 15:50:35: ················································································
+2026-07-08 15:50:35: Chain 'ntd' ('CLTC[NTD]')
+2026-07-08 15:50:35: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/1C9I.cif' is specified
+2026-07-08 15:50:35: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/cltc-ap3/ntd.pdb'
+2026-07-08 15:50:36: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:50:36: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/cltc-ap3/ntd.yaml'
+2026-07-08 15:50:36: 
+2026-07-08 15:50:36: Chain 'clbox' ('AP3B1[ClBox]')
+2026-07-08 15:50:36: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:50:36: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/cltc-ap3/clbox.fasta'
+2026-07-08 15:50:36: 
+2026-07-08 15:50:36: ················································································
+2026-07-08 15:50:36: Parsing SLiMs of 'cltc-ap3' system to CALVADOS input
+2026-07-08 15:50:36: ················································································
+2026-07-08 15:50:36: SLiM 'ntd-clbox' ('CLTC[NTD]-AP3B1[ClBox]')
+2026-07-08 15:50:36: 	- Verifying that acceptor 'ntd' and donor 'clbox' chains are found in system
+2026-07-08 15:50:36: 	- Performing contact analysis
+2026-07-08 15:50:36: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:50:36: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:50:36: 		- Defining contacts
+2026-07-08 15:50:36: 		- Found 32 pairwise contacts
+2026-07-08 15:50:36: 		- Calculating contact distances
+2026-07-08 15:50:36: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:50:36: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:50:36: 	- Excluding 0 contacts
+2026-07-08 15:50:36: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/cltc-ap3/specific_interactions.txt'
+2026-07-08 15:50:36: 

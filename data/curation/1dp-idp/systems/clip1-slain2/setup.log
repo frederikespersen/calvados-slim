@@ -1,0 +1,29 @@
+2026-07-08 15:51:36: ················································································
+2026-07-08 15:51:36: Parsing chains of 'clip1-slain2' system to CALVADOS input
+2026-07-08 15:51:36: ················································································
+2026-07-08 15:51:36: Chain 'capgly' ('CLIP1[CAP-Gly]')
+2026-07-08 15:51:36: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/3RDV.cif' is specified
+2026-07-08 15:51:36: 	- Selecting chain 'D' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/clip1-slain2/capgly.pdb'
+2026-07-08 15:51:36: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:51:36: 	- Writing chain 'D' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/clip1-slain2/capgly.yaml'
+2026-07-08 15:51:36: 
+2026-07-08 15:51:36: Chain 'cterm' ('SLAIN2[Cterm]')
+2026-07-08 15:51:36: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:51:36: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/clip1-slain2/cterm.fasta'
+2026-07-08 15:51:36: 
+2026-07-08 15:51:36: ················································································
+2026-07-08 15:51:36: Parsing SLiMs of 'clip1-slain2' system to CALVADOS input
+2026-07-08 15:51:36: ················································································
+2026-07-08 15:51:36: SLiM 'capgly-cterm' ('CLIP1[CAP-Gly]-SLAIN2')
+2026-07-08 15:51:36: 	- Verifying that acceptor 'capgly' and donor 'cterm' chains are found in system
+2026-07-08 15:51:36: 	- Performing contact analysis
+2026-07-08 15:51:36: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:51:36: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:51:36: 		- Defining contacts
+2026-07-08 15:51:36: 		- Found 24 pairwise contacts
+2026-07-08 15:51:36: 		- Calculating contact distances
+2026-07-08 15:51:36: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:51:36: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:51:36: 	- Excluding 0 contacts
+2026-07-08 15:51:36: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/clip1-slain2/specific_interactions.txt'
+2026-07-08 15:51:36: 

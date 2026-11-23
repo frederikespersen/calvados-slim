@@ -1,0 +1,11 @@
+open 2J7I
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/B,D cartoons
+sel /B:8,10,14,16,17,34,35,36,37,48,50,52,53 | /D:324,327,328,329,330,331,332,333
+show sel surfaces
+view sel
+scale 200

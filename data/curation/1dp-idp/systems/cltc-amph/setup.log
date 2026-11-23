@@ -1,0 +1,29 @@
+2026-07-08 15:51:45: ················································································
+2026-07-08 15:51:45: Parsing chains of 'cltc-amph' system to CALVADOS input
+2026-07-08 15:51:45: ················································································
+2026-07-08 15:51:45: Chain 'td' ('CLTC[TD]')
+2026-07-08 15:51:45: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/1UTC.cif' is specified
+2026-07-08 15:51:45: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/cltc-amph/td.pdb'
+2026-07-08 15:51:46: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:51:46: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/cltc-amph/td.yaml'
+2026-07-08 15:51:46: 
+2026-07-08 15:51:46: Chain 'clatbox' ('AMPH[ClatBox]')
+2026-07-08 15:51:46: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:51:46: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/cltc-amph/clatbox.fasta'
+2026-07-08 15:51:46: 
+2026-07-08 15:51:46: ················································································
+2026-07-08 15:51:46: Parsing SLiMs of 'cltc-amph' system to CALVADOS input
+2026-07-08 15:51:46: ················································································
+2026-07-08 15:51:46: SLiM 'td-clatbox' ('CLTC[TD]-AMPH[ClatBox]')
+2026-07-08 15:51:46: 	- Verifying that acceptor 'td' and donor 'clatbox' chains are found in system
+2026-07-08 15:51:46: 	- Performing contact analysis
+2026-07-08 15:51:46: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:51:46: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:51:46: 		- Defining contacts
+2026-07-08 15:51:46: 		- Found 26 pairwise contacts
+2026-07-08 15:51:46: 		- Calculating contact distances
+2026-07-08 15:51:46: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:51:46: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:51:46: 	- Excluding 0 contacts
+2026-07-08 15:51:46: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/cltc-amph/specific_interactions.txt'
+2026-07-08 15:51:46: 

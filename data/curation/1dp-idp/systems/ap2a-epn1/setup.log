@@ -1,0 +1,29 @@
+2026-07-08 15:53:51: ················································································
+2026-07-08 15:53:51: Parsing chains of 'ap2a-epn1' system to CALVADOS input
+2026-07-08 15:53:51: ················································································
+2026-07-08 15:53:51: Chain 'ear' ('AP2A[ear]')
+2026-07-08 15:53:51: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/1KY6.cif' is specified
+2026-07-08 15:53:51: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/ap2a-epn1/ear.pdb'
+2026-07-08 15:53:51: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:53:51: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/ap2a-epn1/ear.yaml'
+2026-07-08 15:53:51: 
+2026-07-08 15:53:51: Chain 'epn1' ('EPN1[peptide]')
+2026-07-08 15:53:51: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:53:51: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/ap2a-epn1/epn1.fasta'
+2026-07-08 15:53:51: 
+2026-07-08 15:53:51: ················································································
+2026-07-08 15:53:51: Parsing SLiMs of 'ap2a-epn1' system to CALVADOS input
+2026-07-08 15:53:51: ················································································
+2026-07-08 15:53:51: SLiM 'ear-epn1' ('AP2A[ear]-EPN1[peptide]')
+2026-07-08 15:53:51: 	- Verifying that acceptor 'ear' and donor 'epn1' chains are found in system
+2026-07-08 15:53:51: 	- Performing contact analysis
+2026-07-08 15:53:51: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:53:52: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:53:52: 		- Defining contacts
+2026-07-08 15:53:52: 		- Found 24 pairwise contacts
+2026-07-08 15:53:52: 		- Calculating contact distances
+2026-07-08 15:53:52: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:53:52: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:53:52: 	- Excluding 0 contacts
+2026-07-08 15:53:52: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/ap2a-epn1/specific_interactions.txt'
+2026-07-08 15:53:52: 

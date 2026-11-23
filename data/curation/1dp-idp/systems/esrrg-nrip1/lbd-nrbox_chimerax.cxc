@@ -1,0 +1,11 @@
+open 2GPO
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/A,C cartoons
+sel /A:277,280,284,289,294,297,298,301,302,448,449,452,453 | /C:378,379,380,381,383,384,385,386,387
+show sel surfaces
+view sel
+scale 200

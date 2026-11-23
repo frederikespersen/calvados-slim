@@ -1,0 +1,29 @@
+2026-07-08 15:51:14: ················································································
+2026-07-08 15:51:14: Parsing chains of 'arc-dlgap1' system to CALVADOS input
+2026-07-08 15:51:14: ················································································
+2026-07-08 15:51:14: Chain 'nlobe' ('ARC[N-lobe]')
+2026-07-08 15:51:14: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/6TQ0.cif' is specified
+2026-07-08 15:51:14: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/arc-dlgap1/nlobe.pdb'
+2026-07-08 15:51:15: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:51:15: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/arc-dlgap1/nlobe.yaml'
+2026-07-08 15:51:15: 
+2026-07-08 15:51:15: Chain 'gkaprpt' ('DLGAP1[GKAP-rpt5]')
+2026-07-08 15:51:15: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:51:15: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/arc-dlgap1/gkaprpt.fasta'
+2026-07-08 15:51:15: 
+2026-07-08 15:51:15: ················································································
+2026-07-08 15:51:15: Parsing SLiMs of 'arc-dlgap1' system to CALVADOS input
+2026-07-08 15:51:15: ················································································
+2026-07-08 15:51:15: SLiM 'nlobe-gkaprpt' ('ARC[N-lobe]-DLGAP1[GKAP-rpt5]')
+2026-07-08 15:51:15: 	- Verifying that acceptor 'nlobe' and donor 'gkaprpt' chains are found in system
+2026-07-08 15:51:15: 	- Performing contact analysis
+2026-07-08 15:51:15: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:51:15: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:51:15: 		- Defining contacts
+2026-07-08 15:51:15: 		- Found 36 pairwise contacts
+2026-07-08 15:51:15: 		- Calculating contact distances
+2026-07-08 15:51:15: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:51:15: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:51:15: 	- Excluding 0 contacts
+2026-07-08 15:51:15: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/arc-dlgap1/specific_interactions.txt'
+2026-07-08 15:51:15: 

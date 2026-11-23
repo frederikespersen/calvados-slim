@@ -1,0 +1,11 @@
+open 5JJA
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/A,C cartoons
+sel /A:180,183,184,187,188,190,191,194,197,226,227,230,231,233,234,235,236,240,243 | /C:668,669,670,671,672,673,674,675
+show sel surfaces
+view sel
+scale 250

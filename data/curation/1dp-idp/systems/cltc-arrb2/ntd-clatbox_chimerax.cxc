@@ -1,0 +1,11 @@
+open 1C9L
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/A,C cartoons
+sel /A:47,50,64,65,66,67,68,80,82,83,84,87,88,89,91,92,93,96,97,98 | /C:370,371,372,373,374,375,376,377
+show sel surfaces
+view sel
+scale 200

@@ -1,0 +1,11 @@
+open 2QT5
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/A,X cartoons
+sel /A:63,64,65,66,67,68,69,81,84,114,118,121,122 | /X:1006,1007,1008,1009
+show sel surfaces
+view sel
+scale 200

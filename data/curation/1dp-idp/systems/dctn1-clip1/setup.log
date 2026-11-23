@@ -1,0 +1,29 @@
+2026-07-08 15:50:46: ················································································
+2026-07-08 15:50:46: Parsing chains of 'dctn1-clip1' system to CALVADOS input
+2026-07-08 15:50:46: ················································································
+2026-07-08 15:50:46: Chain 'capgly' ('DCTN1[CAP-Gly]')
+2026-07-08 15:50:46: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/2PZO.cif' is specified
+2026-07-08 15:50:46: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/dctn1-clip1/capgly.pdb'
+2026-07-08 15:50:47: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:50:47: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/dctn1-clip1/capgly.yaml'
+2026-07-08 15:50:47: 
+2026-07-08 15:50:47: Chain 'eey' ('CLIP1[EEY]')
+2026-07-08 15:50:47: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:50:47: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/dctn1-clip1/eey.fasta'
+2026-07-08 15:50:47: 
+2026-07-08 15:50:47: ················································································
+2026-07-08 15:50:47: Parsing SLiMs of 'dctn1-clip1' system to CALVADOS input
+2026-07-08 15:50:47: ················································································
+2026-07-08 15:50:47: SLiM 'capgly-eey' ('DCTN1[CAP-Gly]-CLIP1[EEY]')
+2026-07-08 15:50:47: 	- Verifying that acceptor 'capgly' and donor 'eey' chains are found in system
+2026-07-08 15:50:47: 	- Performing contact analysis
+2026-07-08 15:50:47: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:50:47: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:50:47: 		- Defining contacts
+2026-07-08 15:50:47: 		- Found 33 pairwise contacts
+2026-07-08 15:50:47: 		- Calculating contact distances
+2026-07-08 15:50:47: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:50:47: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:50:47: 	- Excluding 0 contacts
+2026-07-08 15:50:47: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/dctn1-clip1/specific_interactions.txt'
+2026-07-08 15:50:47: 

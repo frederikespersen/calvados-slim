@@ -1,0 +1,3 @@
+pdz 57 | grm5 2 | 0.6281 <eps_go>
+pdz 94 | grm5 1 | 0.6595 <eps_go>
+pdz 96 | grm5 1 | 0.3331 <eps_go>

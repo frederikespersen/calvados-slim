@@ -1,0 +1,11 @@
+open 4WCI
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/A,B cartoons
+sel /A:8,10,14,16,17,34,35,36,37,48,50,51,52,53 | /B:381,382,383,384,385,386,387,388,389
+show sel surfaces
+view sel
+scale 200

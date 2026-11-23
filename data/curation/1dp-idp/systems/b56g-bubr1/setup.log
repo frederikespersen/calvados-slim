@@ -1,0 +1,29 @@
+2026-07-08 15:50:49: ················································································
+2026-07-08 15:50:49: Parsing chains of 'b56g-bubr1' system to CALVADOS input
+2026-07-08 15:50:49: ················································································
+2026-07-08 15:50:49: Chain 'arm' ('B56G[ARM]')
+2026-07-08 15:50:49: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/5JJA.cif' is specified
+2026-07-08 15:50:49: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/b56g-bubr1/arm.pdb'
+2026-07-08 15:50:50: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:50:50: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/b56g-bubr1/arm.yaml'
+2026-07-08 15:50:50: 
+2026-07-08 15:50:50: Chain 'lxxixe' ('BUBR1[LxxIxE]')
+2026-07-08 15:50:50: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:50:50: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/b56g-bubr1/lxxixe.fasta'
+2026-07-08 15:50:50: 
+2026-07-08 15:50:50: ················································································
+2026-07-08 15:50:50: Parsing SLiMs of 'b56g-bubr1' system to CALVADOS input
+2026-07-08 15:50:50: ················································································
+2026-07-08 15:50:50: SLiM 'arm-lxxixe' ('B56G[ARM]-BUBR1[LxxIxE]')
+2026-07-08 15:50:50: 	- Verifying that acceptor 'arm' and donor 'lxxixe' chains are found in system
+2026-07-08 15:50:50: 	- Performing contact analysis
+2026-07-08 15:50:50: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:50:50: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:50:50: 		- Defining contacts
+2026-07-08 15:50:50: 		- Found 33 pairwise contacts
+2026-07-08 15:50:50: 		- Calculating contact distances
+2026-07-08 15:50:50: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:50:50: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:50:50: 	- Excluding 0 contacts
+2026-07-08 15:50:50: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/b56g-bubr1/specific_interactions.txt'
+2026-07-08 15:50:50: 

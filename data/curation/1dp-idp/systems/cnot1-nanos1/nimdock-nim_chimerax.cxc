@@ -1,0 +1,11 @@
+open 4CQO
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/A,B cartoons
+sel /A:2146,2326,2327,2330,2331,2338,2343,2350,2353,2354,2356,2357,2358,2361 | /B:40,41,42,43,46,47,49,51,54
+show sel surfaces
+view sel
+scale 250

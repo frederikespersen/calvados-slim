@@ -1,0 +1,11 @@
+open 2IV8
+set bgColor white
+style stick
+color bychain
+show cartoons
+hide
+hide ~/A,P cartoons
+sel /A:834,835,837,838,841,842,846,849,876,877,879,881,882,884,886,888,902,904,915,917 | /P:2,3,5,6,7,9,10,11,13,14
+show sel surfaces
+view sel
+scale 200

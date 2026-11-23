@@ -1,0 +1,29 @@
+2026-07-08 15:54:08: ················································································
+2026-07-08 15:54:08: Parsing chains of 'grap2-map4k1' system to CALVADOS input
+2026-07-08 15:54:08: ················································································
+2026-07-08 15:54:08: Chain 'sh3' ('GRAP2[SH3C]')
+2026-07-08 15:54:08: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/1UTI.cif' is specified
+2026-07-08 15:54:08: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/grap2-map4k1/sh3.pdb'
+2026-07-08 15:54:08: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:54:08: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/grap2-map4k1/sh3.yaml'
+2026-07-08 15:54:08: 
+2026-07-08 15:54:08: Chain 'map4k1' ('MAP4K1[peptide]')
+2026-07-08 15:54:08: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:54:08: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/grap2-map4k1/map4k1.fasta'
+2026-07-08 15:54:08: 
+2026-07-08 15:54:08: ················································································
+2026-07-08 15:54:08: Parsing SLiMs of 'grap2-map4k1' system to CALVADOS input
+2026-07-08 15:54:08: ················································································
+2026-07-08 15:54:08: SLiM 'sh3-map4k1' ('GRAP2[SH3C]-MAP4K1[peptide]')
+2026-07-08 15:54:08: 	- Verifying that acceptor 'sh3' and donor 'map4k1' chains are found in system
+2026-07-08 15:54:08: 	- Performing contact analysis
+2026-07-08 15:54:08: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:54:08: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:54:08: 		- Defining contacts
+2026-07-08 15:54:08: 		- Found 36 pairwise contacts
+2026-07-08 15:54:08: 		- Calculating contact distances
+2026-07-08 15:54:08: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:54:08: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:54:08: 	- Excluding 0 contacts
+2026-07-08 15:54:08: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/grap2-map4k1/specific_interactions.txt'
+2026-07-08 15:54:08: 

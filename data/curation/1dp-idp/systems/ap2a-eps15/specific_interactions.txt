@@ -1,0 +1,14 @@
+ear 145 | dpf 5 | 0.9068 <eps_go>
+ear 146 | dpf 4 | 0.5598 <eps_go>
+ear 146 | dpf 5 | 0.6337 <eps_go>
+ear 149 | dpf 5 | 0.6325 <eps_go>
+ear 150 | dpf 4 | 0.7757 <eps_go>
+ear 150 | dpf 6 | 0.6863 <eps_go>
+ear 189 | dpf 4 | 0.9047 <eps_go>
+ear 190 | dpf 5 | 0.7988 <eps_go>
+ear 191 | dpf 3 | 0.6746 <eps_go>
+ear 191 | dpf 4 | 0.7654 <eps_go>
+ear 197 | dpf 5 | 1.1238 <eps_go>
+ear 214 | dpf 3 | 1.0677 <eps_go>
+ear 214 | dpf 5 | 0.7452 <eps_go>
+ear 229 | dpf 6 | 1.0381 <eps_go>

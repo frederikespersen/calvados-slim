@@ -1,0 +1,29 @@
+2026-07-08 15:53:42: ················································································
+2026-07-08 15:53:42: Parsing chains of 'calm-myo5a' system to CALVADOS input
+2026-07-08 15:53:42: ················································································
+2026-07-08 15:53:42: Chain 'cam' ('CALM')
+2026-07-08 15:53:42: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/2IX7.cif' is specified
+2026-07-08 15:53:42: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/calm-myo5a/cam.pdb'
+2026-07-08 15:53:43: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:53:43: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/calm-myo5a/cam.yaml'
+2026-07-08 15:53:43: 
+2026-07-08 15:53:43: Chain 'iq1' ('MYO5A[IQ1]')
+2026-07-08 15:53:43: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:53:43: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/calm-myo5a/iq1.fasta'
+2026-07-08 15:53:43: 
+2026-07-08 15:53:43: ················································································
+2026-07-08 15:53:43: Parsing SLiMs of 'calm-myo5a' system to CALVADOS input
+2026-07-08 15:53:43: ················································································
+2026-07-08 15:53:43: SLiM 'cam-iq1' ('CALM[EF-hand]-MYO5A[IQ1]')
+2026-07-08 15:53:43: 	- Verifying that acceptor 'cam' and donor 'iq1' chains are found in system
+2026-07-08 15:53:43: 	- Performing contact analysis
+2026-07-08 15:53:43: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:53:43: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:53:43: 		- Defining contacts
+2026-07-08 15:53:43: 		- Found 80 pairwise contacts
+2026-07-08 15:53:43: 		- Calculating contact distances
+2026-07-08 15:53:43: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:53:43: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:53:43: 	- Excluding 0 contacts
+2026-07-08 15:53:43: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/calm-myo5a/specific_interactions.txt'
+2026-07-08 15:53:43: 

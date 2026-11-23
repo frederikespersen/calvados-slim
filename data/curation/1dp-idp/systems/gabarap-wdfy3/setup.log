@@ -1,0 +1,29 @@
+2026-07-08 15:52:36: ················································································
+2026-07-08 15:52:36: Parsing chains of 'gabarap-wdfy3' system to CALVADOS input
+2026-07-08 15:52:36: ················································································
+2026-07-08 15:52:36: Chain 'gabarap' ('GABARAP')
+2026-07-08 15:52:36: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/3WIM.cif' is specified
+2026-07-08 15:52:36: 	- Selecting chain 'A' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/gabarap-wdfy3/gabarap.pdb'
+2026-07-08 15:52:36: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:52:36: 	- Writing chain 'A' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/gabarap-wdfy3/gabarap.yaml'
+2026-07-08 15:52:36: 
+2026-07-08 15:52:36: Chain 'lir' ('WDFY3[LIR]')
+2026-07-08 15:52:36: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:52:36: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/gabarap-wdfy3/lir.fasta'
+2026-07-08 15:52:36: 
+2026-07-08 15:52:36: ················································································
+2026-07-08 15:52:36: Parsing SLiMs of 'gabarap-wdfy3' system to CALVADOS input
+2026-07-08 15:52:36: ················································································
+2026-07-08 15:52:36: SLiM 'gabarap-lir' ('GABARAP-WDFY3[LIR]')
+2026-07-08 15:52:36: 	- Verifying that acceptor 'gabarap' and donor 'lir' chains are found in system
+2026-07-08 15:52:36: 	- Performing contact analysis
+2026-07-08 15:52:36: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:52:36: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:52:36: 		- Defining contacts
+2026-07-08 15:52:36: 		- Found 41 pairwise contacts
+2026-07-08 15:52:36: 		- Calculating contact distances
+2026-07-08 15:52:36: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:52:36: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:52:36: 	- Excluding 0 contacts
+2026-07-08 15:52:36: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/gabarap-wdfy3/specific_interactions.txt'
+2026-07-08 15:52:36: 

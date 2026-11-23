@@ -1,0 +1,29 @@
+2026-07-08 15:52:01: ················································································
+2026-07-08 15:52:01: Parsing chains of 'ccna2-rb1' system to CALVADOS input
+2026-07-08 15:52:01: ················································································
+2026-07-08 15:52:01: Chain 'cyclin' ('CCNA2[Cyclin]')
+2026-07-08 15:52:01: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/1H25.cif' is specified
+2026-07-08 15:52:01: 	- Selecting chain 'B' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/ccna2-rb1/cyclin.pdb'
+2026-07-08 15:52:01: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:52:01: 	- Writing chain 'B' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/ccna2-rb1/cyclin.yaml'
+2026-07-08 15:52:01: 
+2026-07-08 15:52:01: Chain 'rxl' ('RB1[RxL]')
+2026-07-08 15:52:01: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:52:01: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/ccna2-rb1/rxl.fasta'
+2026-07-08 15:52:01: 
+2026-07-08 15:52:01: ················································································
+2026-07-08 15:52:01: Parsing SLiMs of 'ccna2-rb1' system to CALVADOS input
+2026-07-08 15:52:01: ················································································
+2026-07-08 15:52:01: SLiM 'cyclin-rxl' ('CCNA2[Cyclin]-RB1[RxL]')
+2026-07-08 15:52:01: 	- Verifying that acceptor 'cyclin' and donor 'rxl' chains are found in system
+2026-07-08 15:52:01: 	- Performing contact analysis
+2026-07-08 15:52:01: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:52:02: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:52:02: 		- Defining contacts
+2026-07-08 15:52:02: 		- Found 32 pairwise contacts
+2026-07-08 15:52:02: 		- Calculating contact distances
+2026-07-08 15:52:02: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:52:02: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:52:02: 	- Excluding 0 contacts
+2026-07-08 15:52:02: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/ccna2-rb1/specific_interactions.txt'
+2026-07-08 15:52:02: 

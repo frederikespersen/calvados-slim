@@ -1,0 +1,29 @@
+2026-07-08 15:51:46: ················································································
+2026-07-08 15:51:46: Parsing chains of 'bin1-myc' system to CALVADOS input
+2026-07-08 15:51:46: ················································································
+2026-07-08 15:51:46: Chain 'sh3' ('BIN1[SH3]')
+2026-07-08 15:51:46: 	- Parsing chain as a MDP, as chain PDB 'data/pdb/1MV0.cif' is specified
+2026-07-08 15:51:46: 	- Selecting chain 'B' and pasting to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/bin1-myc/sh3.pdb'
+2026-07-08 15:51:47: 	- Parsing MDP PDB as an experimental structure, as chain PDB AlphaFold data JSON is not specified
+2026-07-08 15:51:47: 	- Writing chain 'B' domain annotations to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/bin1-myc/sh3.yaml'
+2026-07-08 15:51:47: 
+2026-07-08 15:51:47: Chain 'mbi' ('MYC[MBI]')
+2026-07-08 15:51:47: 	- Parsing chain as an IDP, as no chain PDB is specified
+2026-07-08 15:51:47: 	- Appending sequence to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/bin1-myc/mbi.fasta'
+2026-07-08 15:51:47: 
+2026-07-08 15:51:47: ················································································
+2026-07-08 15:51:47: Parsing SLiMs of 'bin1-myc' system to CALVADOS input
+2026-07-08 15:51:47: ················································································
+2026-07-08 15:51:47: SLiM 'sh3-mbi' ('BIN1[SH3]-MYC[MBI]')
+2026-07-08 15:51:47: 	- Verifying that acceptor 'sh3' and donor 'mbi' chains are found in system
+2026-07-08 15:51:47: 	- Performing contact analysis
+2026-07-08 15:51:47: 		- Calculating buried-surface-area (BSA) contact map from SLiM PDB
+2026-07-08 15:51:47: 		- Parsing SLiM PDB as an experimental structure, as SLiM PDB AlphaFold data JSON is not specified
+2026-07-08 15:51:47: 		- Defining contacts
+2026-07-08 15:51:47: 		- Found 36 pairwise contacts
+2026-07-08 15:51:47: 		- Calculating contact distances
+2026-07-08 15:51:47: 	- Mapping residue indices between System and SLiM constructs
+2026-07-08 15:51:47: 	- Dropping 0 contacts outside the construct windows
+2026-07-08 15:51:47: 	- Excluding 2 contacts
+2026-07-08 15:51:47: 	- Appending contacts to '/Users/frederikespersenknudsen/Repositories/calvados-slim/data/curation/systems/bin1-myc/specific_interactions.txt'
+2026-07-08 15:51:47: 
